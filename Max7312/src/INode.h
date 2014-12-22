@@ -12,6 +12,7 @@
 
 class INode{
 public:
+   virtual ~INode(){}
    virtual wiringPiNodeStruct* getNode() =  0;
    virtual bool readPort(int pin) =  0;
    virtual void writePort(int pin, int value) =  0;

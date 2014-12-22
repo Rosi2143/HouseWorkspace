@@ -3226,3 +3226,15 @@ Binding(ALT+CTRL+H,
 
 !ENTRY org.eclipse.cdt.core 1 0 2014-12-22 12:14:33.878
 !MESSAGE Indexed 'Ds1621' (0 sources, 0 headers) in 0.00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-12-22 13:15:17.492
+!MESSAGE Indexed 'DS1621_utest' (0 sources, 0 headers) in 0.00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-12-22 13:39:06.709
+!MESSAGE Indexed 'Max7312_test' (0 sources, 0 headers) in 0.00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-12-22 14:37:13.728
+!MESSAGE Indexed 'gmock_wiringPi' (0 sources, 0 headers) in 0.00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-12-22 14:38:10.221
+!MESSAGE Indexed 'wiringPi_gmock' (0 sources, 0 headers) in 0.00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)

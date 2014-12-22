@@ -1,16 +1,6 @@
-11:51:28 **** Incremental Build of configuration Debug for project Max7312 ****
+14:31:47 **** Incremental Build of configuration Debug for project Max7312 ****
 make all 
-Building file: ../src/Max7312.cpp
-Invoking: Cross G++ Compiler
-arm-linux-gnueabihf-g++ -std=c++1y -I/home/micha/mntpi/wiringPi/wiringPi/wiringPi -I/home/micha/git_repositories/wiringPi/wiringPi -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Max7312.d" -MT"src/Max7312.d" -o "src/Max7312.o" "../src/Max7312.cpp"
-Finished building: ../src/Max7312.cpp
- 
-Building target: libMax7312.a
-Invoking: Cross GCC Archiver
-arm-linux-gnueabihf-ar -r  "libMax7312.a"  ./src/Max7312.o   
-arm-linux-gnueabihf-ar: creating libMax7312.a
-Finished building target: libMax7312.a
- 
+make: Nothing to be done for `all'.
 
-11:51:29 Build Finished (took 665ms)
+14:31:47 Build Finished (took 179ms)
 

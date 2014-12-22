@@ -4,6 +4,7 @@
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="/home/micha/git_repositories/HSHSB3_C/i2cRaspi/Ds1621"/>
 			<item value="/home/micha/git_repositories/HSHSB3_C/MAX7312"/>
 		</list>
 	</section>
@@ -20,27 +21,28 @@
 		</list>
 	</section>
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="4" key="DIALOG_Y_ORIGIN"/>
-		<item value="371" key="DIALOG_X_ORIGIN"/>
-	</section>
-	<section name="NewWizardAction">
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
+		<item value="312" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="InstallationDialogSettings">
 		<item value="812" key="DIALOG_WIDTH"/>
 		<item value="-198" key="DIALOG_Y_ORIGIN"/>
-		<item value="-136" key="DIALOG_X_ORIGIN"/>
 		<item value="741" key="DIALOG_HEIGHT"/>
+		<item value="-136" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="NewWizardAction">
 	</section>
 	<section name="ShowViewDialog">
 		<item value="377" key="DIALOG_WIDTH"/>
-		<item value="org.eclipse.rse.ui.view.systemTableView" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
+		<item value="org.eclipse.cdt.testsrunner.resultsview" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
 		<item value="140" key="DIALOG_Y_ORIGIN"/>
-		<item value="495" key="DIALOG_X_ORIGIN"/>
 		<item value="473" key="DIALOG_HEIGHT"/>
+		<item value="495" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.rse.ui.view"/>
+			<item value="org.eclipse.cdt.ui.views"/>
+			<item value="org.eclipse.dltk.ui.main"/>
 		</list>
 	</section>
 	<section name="ImportExportAction">
