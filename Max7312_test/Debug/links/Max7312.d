@@ -1,15 +1,18 @@
-links/Max7312.d: ../links/Max7312.cpp ../links/Max7312.h \
- /home/micha/workspace/Max7312/src/INode.h \
- /home/micha/git_repositories/wiringPi/wiringPi/wiringPi.h \
- /home/micha/git_repositories/wiringPi/wiringPi/wiringPiI2C.h \
- /home/micha/workspace/Max7312/src/helper.h
+links/Max7312.d: ../links/Max7312.cpp \
+ /home/micha/workspace/wiringPi_gmock/mocks/wiringPi_Mock.h \
+ /home/micha/workspace/wiringPi_gmock/mocks/wiringPiI2C_Mock.h \
+ ../links/Max7312.h /home/micha/workspace/Max7312/Interfaces/INode.h \
+ /home/micha/workspace/Max7312/Interfaces/../../wiringPi_gmock/mocks/wiringPi_Mock.h \
+ /home/micha/workspace/Max7312/Interfaces/helper.h
+
+/home/micha/workspace/wiringPi_gmock/mocks/wiringPi_Mock.h:
+
+/home/micha/workspace/wiringPi_gmock/mocks/wiringPiI2C_Mock.h:
 
 ../links/Max7312.h:
 
-/home/micha/workspace/Max7312/src/INode.h:
+/home/micha/workspace/Max7312/Interfaces/INode.h:
 
-/home/micha/git_repositories/wiringPi/wiringPi/wiringPi.h:
+/home/micha/workspace/Max7312/Interfaces/../../wiringPi_gmock/mocks/wiringPi_Mock.h:
 
-/home/micha/git_repositories/wiringPi/wiringPi/wiringPiI2C.h:
-
-/home/micha/workspace/Max7312/src/helper.h:
+/home/micha/workspace/Max7312/Interfaces/helper.h:

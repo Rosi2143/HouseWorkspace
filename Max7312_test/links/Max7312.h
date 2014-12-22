@@ -135,9 +135,9 @@ public:
   virtual int  setPortActive(int portValue, int pin, bool newState);
   virtual bool isPortInput (int pin);
   virtual wiringPiNodeStruct* getNode(){return node;}
-  virtual bool readPort  (int pin) =  0;
-  virtual void writePort (int pin, bool state) =  0;
-  virtual void configPort(int pin, bool mode) =  0;
+  virtual bool readPort  (int pin);
+  virtual void writePort (int pin, bool state);
+  virtual void configPort(int pin, bool mode);
 private:
 
   void initDataBuffers();

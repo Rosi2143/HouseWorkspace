@@ -1,15 +1,15 @@
-13:35:32 **** Incremental Build of configuration Debug for project DS1621_utest ****
+19:38:52 **** Incremental Build of configuration Debug for project DS1621_utest ****
 make all 
 Building file: ../test/main.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++1y -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"test/main.d" -MT"test/main.d" -o "test/main.o" "../test/main.cpp"
+g++ -std=c++1y -I"/home/micha/workspace/DS1621_utest/links" -I"/home/micha/workspace/wiringPi_gmock/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"test/main.d" -MT"test/main.d" -o "test/main.o" "../test/main.cpp"
 Finished building: ../test/main.cpp
  
 Building target: DS1621_utest
 Invoking: GCC C++ Linker
-g++  -o "DS1621_utest"  ./test/main.o   -lgtest -lgtest_main -lpthread
+g++  -o "DS1621_utest"  ./test/main.o  ./links/Ds1621.o  /home/micha/workspace/wiringPi_gmock/Debug/libwiringPi_gmock.a -lgtest -lgmock -lgtest_main -lpthread
 Finished building target: DS1621_utest
  
 
-13:35:34 Build Finished (took 1s.912ms)
+19:38:55 Build Finished (took 3s.38ms)
 

@@ -3238,3 +3238,759 @@ Binding(ALT+CTRL+H,
 
 !ENTRY org.eclipse.cdt.core 1 0 2014-12-22 14:38:10.221
 !MESSAGE Indexed 'wiringPi_gmock' (0 sources, 0 headers) in 0.00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+!SESSION 2014-12-22 16:48:07.291 -----------------------------------------------
+eclipse.buildId=4.4.1.Z20141128-1105
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-12-22 16:48:37.712
+!MESSAGE Indexed 'C-Blink' (1 sources, 2 headers) in 2.72 sec: 143 declarations; 34 references; 2 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+!SESSION 2014-12-22 16:38:36.924 -----------------------------------------------
+eclipse.buildId=4.4.1.Z20141128-1105
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:52.636
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-modelbase.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:52.985
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dltk-core.index.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:53.187
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dltk-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:53.703
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/remote.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:53.867
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-enablement.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:54.460
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/gef.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:54.587
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/emf.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:54.911
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-sqldevtools.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:55.172
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-servertools-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:55.281
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-common-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:55.559
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-servertools.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:55.943
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:56.333
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-connectivity.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:56.492
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/rse.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:57.956
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pdt-tests.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:58.134
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/xsd.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:58.317
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-common.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:58.475
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-sourceediting.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:59.588
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pydev.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:59.728
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-doc.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:59.814
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/jdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:38:59.964
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/cdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:39:00.512
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/sdk.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:39:01.230
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/cvs.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:39:05.576
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/plugins/violetumleditor-2.0.1.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:39:05.630
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/plugins/violetumleditor-2.0.1.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:39:05.682
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/plugins/violetumleditor-2.0.1.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:39:05.728
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/plugins/violetumleditor-2.0.1.jar.
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-12-22 16:49:06.749
+!MESSAGE Indexed 'DS1621_utest' (1 sources, 124 headers) in 28.5 sec: 33,135 declarations; 38,296 references; 65 unresolved inclusions; 0 syntax errors; 3,748 unresolved names (5%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-12-22 16:49:11.151
+!MESSAGE Indexed 'Ds1621' (1 sources, 102 headers) in 4.17 sec: 6,782 declarations; 9,155 references; 0 unresolved inclusions; 0 syntax errors; 2 unresolved names (0.013%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-12-22 16:49:17.116
+!MESSAGE Indexed 'HelloRaspiWorld' (1 sources, 108 headers) in 5.83 sec: 9,260 declarations; 15,118 references; 0 unresolved inclusions; 0 syntax errors; 2 unresolved names (0.0082%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-12-22 16:49:17.838
+!MESSAGE Indexed 'Max7312' (1 sources, 5 headers) in 0.568 sec: 327 declarations; 265 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-12-22 16:49:38.385
+!MESSAGE Indexed 'Max7312_test' (2 sources, 248 headers) in 20.3 sec: 47,290 declarations; 65,948 references; 0 unresolved inclusions; 0 syntax errors; 2 unresolved names (0.0018%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-12-22 16:49:38.402
+!MESSAGE Indexed 'wiringPi_gmock' (0 sources, 1 headers) in 0.013 sec: 0 declarations; 1 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:49:43.376
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/plugins/violetumleditor-2.0.1.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 16:49:44.667
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/plugins/violetumleditor-2.0.1.jar.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 10053 2014-12-22 17:00:28.059
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 10053 2014-12-22 17:00:28.059
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-12-22 17:00:28.059
+!MESSAGE Software being installed: JST Server UI 3.4.100.v201411181020 (org.eclipse.jst.server_ui.feature.feature.group 3.4.100.v201411181020)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-12-22 17:00:28.059
+!MESSAGE Missing requirement: JST Server UI 3.4.100.v201411181020 (org.eclipse.jst.server_ui.feature.feature.group 3.4.100.v201411181020) requires 'org.eclipse.jst.server_core.feature.feature.group [3.4.100.v201411181020]' but it could not be found
+
+!ENTRY org.eclipse.equinox.p2.operations 4 10053 2014-12-22 17:00:28.066
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 10053 2014-12-22 17:00:28.066
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-12-22 17:00:28.066
+!MESSAGE Software being installed: JST Server UI 3.4.100.v201411181020 (org.eclipse.jst.server_ui.feature.feature.group 3.4.100.v201411181020)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-12-22 17:00:28.066
+!MESSAGE Missing requirement: JST Server UI 3.4.100.v201411181020 (org.eclipse.jst.server_ui.feature.feature.group 3.4.100.v201411181020) requires 'org.eclipse.jst.server_core.feature.feature.group [3.4.100.v201411181020]' but it could not be found
+
+!ENTRY org.eclipse.equinox.p2.operations 4 10053 2014-12-22 17:00:28.097
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 10053 2014-12-22 17:00:28.097
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-12-22 17:00:28.097
+!MESSAGE Software being installed: JST Server UI 3.4.100.v201411181020 (org.eclipse.jst.server_ui.feature.feature.group 3.4.100.v201411181020)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-12-22 17:00:28.097
+!MESSAGE Missing requirement: JST Server UI 3.4.100.v201411181020 (org.eclipse.jst.server_ui.feature.feature.group 3.4.100.v201411181020) requires 'org.eclipse.jst.server_core.feature.feature.group [3.4.100.v201411181020]' but it could not be found
+
+!ENTRY org.eclipse.equinox.p2.operations 4 10053 2014-12-22 17:00:28.097
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 10053 2014-12-22 17:00:28.097
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-12-22 17:00:28.097
+!MESSAGE Software being installed: JST Server UI 3.4.100.v201411181020 (org.eclipse.jst.server_ui.feature.feature.group 3.4.100.v201411181020)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-12-22 17:00:28.097
+!MESSAGE Missing requirement: JST Server UI 3.4.100.v201411181020 (org.eclipse.jst.server_ui.feature.feature.group 3.4.100.v201411181020) requires 'org.eclipse.jst.server_core.feature.feature.group [3.4.100.v201411181020]' but it could not be found
+!SESSION 2014-12-22 17:03:40.121 -----------------------------------------------
+eclipse.buildId=4.4.1.Z20141128-1105
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:45.554
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-modelbase.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:45.750
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dltk-core.index.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:45.858
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dltk-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:46.016
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/remote.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:46.115
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-enablement.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:46.392
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/gef.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:46.443
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/emf.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:46.597
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-sqldevtools.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:46.774
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-servertools-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:46.817
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-common-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:46.888
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-servertools.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:46.983
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:47.064
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-connectivity.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:47.144
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/rse.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:47.464
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pdt-tests.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:47.493
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/xsd.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:47.548
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-common.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:47.579
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-sourceediting.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:47.732
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pydev.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:47.803
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-doc.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:47.835
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/jdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:47.916
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/cdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:48.118
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/sdk.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:48.398
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/cvs.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:49.275
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/plugins/violetumleditor-2.0.1.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2014-12-22 17:03:49.316
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/plugins/violetumleditor-2.0.1.jar.
+
+!ENTRY org.eclipse.jface 2 0 2014-12-22 17:07:49.487
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-12-22 17:07:49.487
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
+		Open an element in an Editor,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6311640d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
+		Open an element in an Editor,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6311640d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3a42610,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-12-22 17:07:49.488
+!MESSAGE A conflict occurred for ALT+CTRL+H:
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
+		Opens the call hierarchy for the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1107cbd8,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
+		Opens the call hierarchy for the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1107cbd8,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.call.hierarchy,Open Call Hierarchy,
+		Open a call hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@610640e3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-12-22 17:07:49.488
+!MESSAGE A conflict occurred for CTRL+SHIFT+H:
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@95f61c2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@95f61c2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2be9425f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-12-22 17:07:49.488
+!MESSAGE A conflict occurred for CTRL+SHIFT+G:
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
+		Searches for references to the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@41f05f1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
+		Searches for references to the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@41f05f1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace,References in Workspace,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@57cd5cc9,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-12-22 17:07:49.488
+!MESSAGE A conflict occurred for CTRL+G:
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Searches for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@25ee6683,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Searches for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@25ee6683,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace,Declaration in Workspace,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@44f433db,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-12-22 17:07:49.488
+!MESSAGE A conflict occurred for ALT+CTRL+I:
+Binding(ALT+CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
+		Open an include browser on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@38388639,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
+		Open an include browser on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@38388639,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-12-22 17:07:49.490
+!MESSAGE A conflict occurred for F3:
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
+		Opens an editor on the selected element's declaration(s),
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5aeaee3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
+		Opens an editor on the selected element's declaration(s),
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5aeaee3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.editor,Open Declaration,
+		Open an editor on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@53a20aab,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-12-22 17:07:49.490
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
+		Renames the selected element,
+		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@362d91ef,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
+		Renames the selected element,
+		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@362d91ef,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4a58d05d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-12-22 17:07:49.490
+!MESSAGE A conflict occurred for F4:
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3af1b643,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3af1b643,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@79c514e4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2014-12-22 19:04:35.630 -----------------------------------------------
+eclipse.buildId=4.4.1.Z20141128-1105
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-12-22 19:12:55.477
+!MESSAGE Indexed 'Max7312_test' (2 sources, 247 headers) in 23.4 sec: 47,215 declarations; 65,939 references; 0 unresolved inclusions; 0 syntax errors; 2 unresolved names (0.0018%)
+
+!ENTRY org.eclipse.jface 2 0 2014-12-22 19:32:45.578
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-12-22 19:32:45.578
+!MESSAGE A conflict occurred for F3:
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
+		Opens an editor on the selected element's declaration(s),
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@562c828e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
+		Opens an editor on the selected element's declaration(s),
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@562c828e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.editor,Open Declaration,
+		Open an editor on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@15b97f0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-12-22 19:32:45.581
+!MESSAGE A conflict occurred for F4:
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6afc4d00,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6afc4d00,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@16caff76,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-12-22 19:32:45.581
+!MESSAGE A conflict occurred for ALT+CTRL+H:
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
+		Opens the call hierarchy for the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@244037d3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
+		Opens the call hierarchy for the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@244037d3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.call.hierarchy,Open Call Hierarchy,
+		Open a call hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@79f9d0bc,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-12-22 19:32:45.581
+!MESSAGE A conflict occurred for CTRL+SHIFT+H:
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@716516ce,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@716516ce,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@301576db,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-12-22 19:32:45.581
+!MESSAGE A conflict occurred for CTRL+SHIFT+G:
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
+		Searches for references to the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@154e31a5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
+		Searches for references to the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@154e31a5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace,References in Workspace,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@22057f80,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-12-22 19:32:45.582
+!MESSAGE A conflict occurred for CTRL+G:
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Searches for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7b0fce68,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Searches for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7b0fce68,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace,Declaration in Workspace,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@60b7dc7c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-12-22 19:32:45.582
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
+		Open an element in an Editor,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4101ad6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
+		Open an element in an Editor,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4101ad6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@de08cab,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-12-22 19:32:45.582
+!MESSAGE A conflict occurred for ALT+CTRL+I:
+Binding(ALT+CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
+		Open an include browser on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@8196ff1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
+		Open an include browser on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@8196ff1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-12-22 19:32:45.582
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
+		Renames the selected element,
+		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@561306b2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
+		Renames the selected element,
+		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@561306b2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@52d1600c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-12-22 19:34:03.642
+!MESSAGE Indexed 'DS1621_utest' (2 sources, 247 headers) in 15.7 sec: 47,753 declarations; 66,743 references; 0 unresolved inclusions; 0 syntax errors; 29 unresolved names (0.025%)
+
+!ENTRY org.eclipse.cdt.testsrunner.gtest 4 4 2014-12-22 20:28:31.953
+!MESSAGE Unknown error during parsing Google Test module output: Unexpected test module output.
+!STACK 0
+org.eclipse.cdt.testsrunner.model.TestingException: Unknown error during parsing Google Test module output: Unexpected test module output.
+	at org.eclipse.cdt.testsrunner.internal.gtest.OutputHandler.generateInternalError(OutputHandler.java:620)
+	at org.eclipse.cdt.testsrunner.internal.gtest.OutputHandler.run(OutputHandler.java:609)
+	at org.eclipse.cdt.testsrunner.internal.gtest.GoogleTestsRunnerProvider.run(GoogleTestsRunnerProvider.java:91)
+	at org.eclipse.cdt.testsrunner.internal.model.TestingSession.run(TestingSession.java:192)
+	at org.eclipse.cdt.testsrunner.internal.launcher.TestingProcessFactory$TestingSessionRunner.run(TestingProcessFactory.java:53)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.jface 2 0 2014-12-22 20:54:21.744
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-12-22 20:54:21.745
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@30882057,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5a658029,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.cdt.testsrunner.gtest 4 4 2014-12-22 21:00:06.998
+!MESSAGE Unknown error during parsing Google Test module output: Unexpected test module output.
+!STACK 0
+org.eclipse.cdt.testsrunner.model.TestingException: Unknown error during parsing Google Test module output: Unexpected test module output.
+	at org.eclipse.cdt.testsrunner.internal.gtest.OutputHandler.generateInternalError(OutputHandler.java:620)
+	at org.eclipse.cdt.testsrunner.internal.gtest.OutputHandler.run(OutputHandler.java:609)
+	at org.eclipse.cdt.testsrunner.internal.gtest.GoogleTestsRunnerProvider.run(GoogleTestsRunnerProvider.java:91)
+	at org.eclipse.cdt.testsrunner.internal.model.TestingSession.run(TestingSession.java:192)
+	at org.eclipse.cdt.testsrunner.internal.launcher.TestingProcessFactory$TestingSessionRunner.run(TestingProcessFactory.java:53)
+	at java.lang.Thread.run(Thread.java:745)

@@ -1,0 +1,58 @@
+/*
+ * wiringPi_mock.cpp
+ *
+ *  Created on: Dec 22, 2014
+ *      Author: micha
+ */
+
+
+#include <gmock/gmock.h>  // Brings in Google Mock.
+
+class MockWiringPi{
+ public:
+   static MockWiringPi* Instance();
+   // Core wiringPi functions
+   MOCK_METHOD0(wiringPiSetup,     int());
+   MOCK_METHOD0(wiringPiSetupSys,  int());
+   MOCK_METHOD0(wiringPiSetupGpio, int());
+   MOCK_METHOD0(wiringPiSetupPhys, int());
+
+   MOCK_METHOD2(pinModeAlt, void(int pin, int mode));
+   MOCK_METHOD2(pinMode,    void(int pin, int mode));
+   MOCK_METHOD2(pullUpDnControl, void(int pin, int pud));
+   MOCK_METHOD1(digitalRead, int(int pin));
+   MOCK_METHOD2(digitalWrite, void(int pin, int value));
+   MOCK_METHOD2(pwmWrite, void(int pin, int value));
+   MOCK_METHOD1(analogRead, int(int pin));
+   MOCK_METHOD2(analogWrite, void(int pin, int value));
+ private:
+   MockWiringPi(){};
+   MockWiringPi(MockWiringPi const&){};
+   MockWiringPi& operator=(MockWiringPi const&){};
+   static MockWiringPi* m_pInstance;
+};
+
+MockWiringPi* ::m_pInstance = NULL;
+
+MockWiringPi* MockWiringPi::Instance()
+13 {
+14    if (!m_pInstance)
+15       m_pInstance = new MockWiringPi;
+16
+17    return m_pInstance;
+18 }
+// Core wiringPi functions
+
+int  wiringPiSetup       (void) ;
+int  wiringPiSetupSys    (void) ;
+int  wiringPiSetupGpio   (void) ;
+int  wiringPiSetupPhys   (void) ;
+
+void pinModeAlt          (int pin, int mode) ;
+void pinMode             (int pin, int mode) ;
+void pullUpDnControl     (int pin, int pud) ;
+int  digitalRead         (int pin) ;
+void digitalWrite        (int pin, int value) ;
+void pwmWrite            (int pin, int value) ;
+int  analogRead          (int pin) ;
+void analogWrite         (int pin, int value) ;

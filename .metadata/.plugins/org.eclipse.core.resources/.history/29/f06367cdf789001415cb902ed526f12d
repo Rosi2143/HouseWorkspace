@@ -1,0 +1,105 @@
+/*
+ * wiringPi_mock.cpp
+ *
+ *  Created on: Dec 22, 2014
+ *      Author: micha
+ */
+
+
+#include <gmock/gmock.h>  // Brings in Google Mock.
+
+class MockWiringPi{
+ public:
+   static MockWiringPi* Instance();
+   // Core wiringPi functions
+   MOCK_METHOD0(wiringPiSetup,     int());
+   MOCK_METHOD0(wiringPiSetupSys,  int());
+   MOCK_METHOD0(wiringPiSetupGpio, int());
+   MOCK_METHOD0(wiringPiSetupPhys, int());
+
+   MOCK_METHOD2(pinModeAlt, void(int pin, int mode));
+   MOCK_METHOD2(pinMode,    void(int pin, int mode));
+   MOCK_METHOD2(pullUpDnControl, void(int pin, int pud));
+   MOCK_METHOD1(digitalRead, int(int pin));
+   MOCK_METHOD2(digitalWrite, void(int pin, int value));
+   MOCK_METHOD2(pwmWrite, void(int pin, int value));
+   MOCK_METHOD1(analogRead, int(int pin));
+   MOCK_METHOD2(analogWrite, void(int pin, int value));
+ private:
+   MockWiringPi(){};
+   MockWiringPi(MockWiringPi const&){};
+   MockWiringPi& operator=(MockWiringPi const&){};
+   static MockWiringPi* m_pInstance;
+};
+
+MockWiringPi* ::m_pInstance = NULL;
+
+MockWiringPi* MockWiringPi::Instance()
+{
+   if (!m_pInstance){
+      m_pInstance = new MockWiringPi;
+   }
+   return m_pInstance;
+}
+
+// Core wiringPi functions
+
+int  wiringPiSetup       (void)
+{
+   return MockWiringPi::Instance()->wiringPiSetup();
+}
+
+int  wiringPiSetupSys    (void)
+{
+   return MockWiringPi::Instance()->wiringPiSetupSys();
+}
+
+int  wiringPiSetupGpio   (void)
+{
+   return MockWiringPi::Instance()->wiringPiSetupGpio();
+}
+
+int  wiringPiSetupPhys   (void)
+{
+   return MockWiringPi::Instance()->wiringPiSetupPhys();
+}
+
+void pinModeAlt          (int pin, int mode)
+{
+   MockWiringPi::Instance()->pinModeAlt(pin, mode);
+}
+
+void pinMode             (int pin, int mode)
+{
+   MockWiringPi::Instance()->pinMode(pin, mode);
+}
+
+void pullUpDnControl     (int pin, int pud)
+{
+   MockWiringPi::Instance()->pullUpDnControl(pin, pud);
+}
+
+int  digitalRead         (int pin)
+{
+   return MockWiringPi::Instance()->digitalRead(pin);
+}
+
+void digitalWrite        (int pin, int value)
+{
+   MockWiringPi::Instance()->digitalWrite(pin, value);
+}
+
+void pwmWrite            (int pin, int value)
+{
+   MockWiringPi::Instance()->pwmWrite(pin, value);
+}
+
+int  analogRead          (int pin)
+{
+   return MockWiringPi::Instance()->analogRead(pin);
+}
+
+void analogWrite         (int pin, int value)
+{
+   MockWiringPi::Instance()->analogWrite(pin, value);
+}

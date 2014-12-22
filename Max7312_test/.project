@@ -3,7 +3,7 @@
 	<name>Max7312_test</name>
 	<comment></comment>
 	<projects>
-		<project>Max7312</project>
+		<project>wiringPi_gmock</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

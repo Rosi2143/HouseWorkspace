@@ -1,45 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<section name="FileSystemImportWizard">
-		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
-		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
-		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
-			<item value="/home/micha/git_repositories/HSHSB3_C/i2cRaspi/Ds1621"/>
-			<item value="/home/micha/git_repositories/HSHSB3_C/MAX7312"/>
-		</list>
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
+		<item value="211" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="847" key="dialogWidth"/>
 		<item value="474" key="dialogHeight"/>
+		<item value="847" key="dialogWidth"/>
+		<list key="textEntries">
+		</list>
+		<list key="orderedElements">
+		</list>
 		<list key="orderedProviders">
 		</list>
 		<list key="textArray">
 		</list>
-		<list key="orderedElements">
-		</list>
-		<list key="textEntries">
-		</list>
-	</section>
-	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="312" key="DIALOG_X_ORIGIN"/>
-	</section>
-	<section name="InstallationDialogSettings">
-		<item value="812" key="DIALOG_WIDTH"/>
-		<item value="-198" key="DIALOG_Y_ORIGIN"/>
-		<item value="741" key="DIALOG_HEIGHT"/>
-		<item value="-136" key="DIALOG_X_ORIGIN"/>
-		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="NewWizardAction">
 	</section>
+	<section name="InstallationDialogSettings">
+		<item value="812" key="DIALOG_WIDTH"/>
+		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="741" key="DIALOG_HEIGHT"/>
+		<item value="-198" key="DIALOG_Y_ORIGIN"/>
+		<item value="-136" key="DIALOG_X_ORIGIN"/>
+	</section>
 	<section name="ShowViewDialog">
 		<item value="377" key="DIALOG_WIDTH"/>
-		<item value="org.eclipse.cdt.testsrunner.resultsview" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
-		<item value="140" key="DIALOG_Y_ORIGIN"/>
-		<item value="473" key="DIALOG_HEIGHT"/>
-		<item value="495" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="org.eclipse.cdt.testsrunner.resultsview" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
+		<item value="473" key="DIALOG_HEIGHT"/>
+		<item value="140" key="DIALOG_Y_ORIGIN"/>
+		<item value="495" key="DIALOG_X_ORIGIN"/>
 		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.cdt.ui.views"/>
 			<item value="org.eclipse.dltk.ui.main"/>
@@ -50,6 +42,14 @@
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
 			<item value="org.eclipse.cdt.ui.importWizardCategory"/>
+		</list>
+	</section>
+	<section name="FileSystemImportWizard">
+		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
+		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
+		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="/home/micha/git_repositories/HSHSB3_C/i2cRaspi/Ds1621"/>
+			<item value="/home/micha/git_repositories/HSHSB3_C/MAX7312"/>
 		</list>
 	</section>
 </section>

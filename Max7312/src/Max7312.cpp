@@ -1,8 +1,8 @@
 
+#include <stddef.h>
+#include <wiringPi_Mock.h>
+#include <wiringPiI2C_Mock.h>
 #include "Max7312.h"
-//#include "Ardino.h"
-#include "wiringPi.h"
-#include "wiringPiI2C.h"
 #include "helper.h"
 
 /**
@@ -11,8 +11,16 @@
  * @param pin - port relative to pinBase
  * @return
  */
-static int _readPortMax7312(struct wiringPiNodeStruct *node, int pin){
+int _readPortMax7312(struct wiringPiNodeStruct *node, int pin){
+   if(node == NULL)
+   {
+      return 0;
+   }
    Max7312* _this = (Max7312*)(node->thisNode);
+   if(_this == NULL)
+   {
+      return 0;
+   }
    return _this->readPort(pin);
 }
 
@@ -22,8 +30,16 @@ static int _readPortMax7312(struct wiringPiNodeStruct *node, int pin){
  * @param pin - port relative to pinBase
  * @param value - value to port should be set to 0 - OFF, 1 - ON
  */
-static void _writePortMax7312(struct wiringPiNodeStruct *node, int pin, int value){
+void _writePortMax7312(struct wiringPiNodeStruct *node, int pin, int value){
+   if(node == NULL)
+   {
+      return;
+   }
    Max7312* _this = (Max7312*)(node->thisNode);
+   if(_this == NULL)
+   {
+      return;
+   }
    _this->writePort(pin, value);
 }
 
@@ -33,8 +49,15 @@ static void _writePortMax7312(struct wiringPiNodeStruct *node, int pin, int valu
  * @param pin - port relative to pinBase
  * @param mode - 0 - Output; 1 - Input
  */
-static void _configPortMax7312(struct wiringPiNodeStruct *node, int pin, int mode){
+void _configPortMax7312(struct wiringPiNodeStruct *node, int pin, int mode){
+   {
+      return;
+   }
    Max7312* _this = (Max7312*)(node->thisNode);
+   if(_this == NULL)
+   {
+      return;
+   }
    _this->configPort(pin, mode);
 }
 
@@ -158,6 +181,7 @@ node->digitalRead  = _readPortMax7312;
 node->digitalWrite = _writePortMax7312;
 node->data1        = readPort1 () ;
 node->data2        = readPort2 () ;
+node->thisNode     = this;
 configPort1(portDirection1);
 configPort2(portDirection2);
 configTimeout(timeoutFlag);
