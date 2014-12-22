@@ -1,0 +1,19 @@
+/*
+ * INode.h
+ *
+ *  Created on: Dec 19, 2014
+ *      Author: micha
+ */
+
+#ifndef INODE_H_
+#define INODE_H_
+
+#include "wiringPi.h"
+
+class INode{
+public:
+	  wiringPiNodeStruct* getNode(){return node;}
+};
+
+
+#endif /* INODE_H_ */

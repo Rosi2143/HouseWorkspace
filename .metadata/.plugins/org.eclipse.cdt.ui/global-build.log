@@ -1,0 +1,13 @@
+12:22:19 **** Incremental Build of configuration Debug for project Ds1621 ****
+make all 
+Building file: ../src/Ds1621.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/home/micha/git_repositories/wiringPi/wiringPi -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Ds1621.d" -MT"src/Ds1621.d" -o "src/Ds1621.o" "../src/Ds1621.cpp"
+Finished building: ../src/Ds1621.cpp
+ 
+Building target: libDs1621.a
+Invoking: Cross GCC Archiver
+arm-linux-gnueabihf-ar -r  "libDs1621.a"  ./src/Ds1621.o   
+arm-linux-gnueabihf-ar: creating libDs1621.a
+Finished building target: libDs1621.a
+ 

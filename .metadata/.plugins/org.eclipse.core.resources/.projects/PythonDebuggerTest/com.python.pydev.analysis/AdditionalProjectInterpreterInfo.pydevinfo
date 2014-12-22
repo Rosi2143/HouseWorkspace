@@ -1,0 +1,16 @@
+-- VERSION_4
+-- START DISKCACHE
+/home/micha/workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/PythonDebuggerTest/com.python.pydev.analysis/v2_indexcache
+DebuggerTest|1410812346000|/home/micha/workspace/PythonDebuggerTest/DebuggerTest.py
+-- END DISKCACHE
+-- START DICTIONARY
+1
+1=DebuggerTest
+-- END DICTIONARY
+-- START TREE 1
+1
+ctr|1|ctr!11@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE
