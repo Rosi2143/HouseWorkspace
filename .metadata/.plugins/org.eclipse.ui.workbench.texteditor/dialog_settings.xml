@@ -2,35 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="wiringPiNewNode" key="selection"/>
+		<item value="isPortInput" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
-		<item value="true" key="wholeword"/>
+		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="wiringPiNewNode"/>
-			<item value="configPort"/>
-			<item value="readport"/>
-			<item value="thisNode"/>
-			<item value="m_szAddres"/>
-			<item value="m_isDeviceInitialized"/>
-			<item value="extern"/>
-			<item value="incl"/>
+			<item value="isPortInput"/>
+			<item value="setPort"/>
+			<item value="isPortActive"/>
+			<item value="pin - _pinBase"/>
+			<item value="GET_HIGHER_PIN_ID"/>
+			<item value="pin - _pinBase - 8"/>
+			<item value="- 8"/>
+			<item value="-8"/>
 		</list>
 		<list key="replacehistory">
-			<item value="MockWiringPiI2C::"/>
-			<item value="wiringPiI2CSetup"/>
-			<item value="Write"/>
-			<item value="MockWiringPiI2C"/>
-			<item value=""/>
-			<item value="MockWiringPi"/>
+			<item value="GET_LOWER_PIN_ID(pin)"/>
+			<item value="GET_HIGHER_PIN_ID(pin)"/>
+			<item value="GET_HIGHER_PIN_ID"/>
+			<item value="0xFF"/>
+			<item value="isPortInput"/>
+			<item value="testMax-&gt;"/>
+			<item value="Led"/>
+			<item value="rotate"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="287" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="659" key="DIALOG_HEIGHT"/>
-		<item value="54" key="DIALOG_Y_ORIGIN"/>
-		<item value="194" key="DIALOG_X_ORIGIN"/>
+		<item value="741" key="DIALOG_HEIGHT"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
+		<item value="56" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>

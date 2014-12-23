@@ -1,6 +1,18 @@
-11:45:58 **** Incremental Build of configuration Debug for project C-Blink ****
+20:58:52 **** Incremental Build of configuration Debug for project C-Blink ****
 make all 
-make: Nothing to be done for `all'.
+Building file: ../blink.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -std=c++0x -I/home/micha/git_repositories/wiringPi/wiringPi -I/home/micha/git_repositories/wiringPi/devLib -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"blink.d" -MT"blink.d" -o "blink.o" "../blink.cpp"
+Finished building: ../blink.cpp
+ 
+Building target: C-Blink
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -L/home/micha/mntpi_usrlocallib -L/home/micha/mntpi_usrlib -L/home/micha/mntpi_usrlocallib -o "C-Blink"  ./blink.o   -lwiringPi -lwiringPiDev -lboost_program_options
+Finished building target: C-Blink
+ 
+make --no-print-directory post-build
+cp ~/workspace/C-Blink/Debug/C-Blink ~/mntpi/projects/
+ 
 
-11:45:59 Build Finished (took 320ms)
+20:59:00 Build Finished (took 8s.542ms)
 

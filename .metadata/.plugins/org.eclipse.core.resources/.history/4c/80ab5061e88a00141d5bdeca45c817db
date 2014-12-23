@@ -1,0 +1,128 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Dec 22, 2014
+ *      Author: micha
+ */
+
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
+#include "Max7312.h"
+#include "wiringPi_Mock.h"
+#include "wiringPiI2C_Mock.h"
+
+using namespace std;
+using ::testing::_;
+using ::testing::Return;
+using ::testing::Invoke;
+
+extern int _readPortMax7312(struct wiringPiNodeStruct *node, int pin);
+extern void _writePortMax7312(struct wiringPiNodeStruct *node, int pin, int value);
+extern void _configPortMax7312(struct wiringPiNodeStruct *node, int pin, int mode);
+
+void SetExpectationsConstructor()
+{
+   int fd = 10;
+   EXPECT_CALL(*(MockWiringPiI2C::Instance()), wiringPiI2CSetup(_)).WillOnce(Return(fd));
+   EXPECT_CALL(*(MockWiringPiI2C::Instance()), wiringPiI2CWrite(fd, INPUT_PORT_1)).Times(1);
+   EXPECT_CALL(*(MockWiringPiI2C::Instance()), wiringPiI2CWrite(fd, INPUT_PORT_2)).Times(1);
+   EXPECT_CALL(*(MockWiringPiI2C::Instance()), wiringPiI2CRead (fd)).WillRepeatedly(Return(true));;
+   EXPECT_CALL(*(MockWiringPiI2C::Instance()), wiringPiI2CWriteReg16(fd, CONFIGURATION_PORT_1, 0)).Times(1);
+   EXPECT_CALL(*(MockWiringPiI2C::Instance()), wiringPiI2CWriteReg16(fd, CONFIGURATION_PORT_2, 0)).Times(1);
+   EXPECT_CALL(*(MockWiringPiI2C::Instance()), wiringPiI2CWriteReg16(fd, TIMEOUT_REGISTER, 1)).Times(1);
+}
+TEST(StaticFunctions, ReadPort_NodeNULL_OK)
+{
+   ASSERT_EQ(_readPortMax7312(NULL, 0),NULL);
+}
+
+TEST(StaticFunctions, ReadPort_thisNULL_OK)
+{
+   struct wiringPiNodeStruct *node ;
+   node = new wiringPiNodeStruct();
+   node->thisNode = NULL;
+   ASSERT_EQ(_readPortMax7312(node, 0),NULL);
+}
+
+TEST(StaticFunctions, ReadPort_allOk_OK)
+{
+   struct wiringPiNodeStruct *node;
+   node = new wiringPiNodeStruct();
+
+   SetExpectationsConstructor();
+
+   EXPECT_CALL(*(MockWiringPi::Instance()),wiringPiNewNode(_, _)).WillOnce(Return(node));
+   Max7312 testMax;
+   node->thisNode = &testMax;
+   //ON_CALL(*(MockWiringPi::Instance()),wiringPiNewNode(_, _)).WillByDefault(Invoke());
+   ASSERT_EQ(_readPortMax7312(NULL, 0),NULL);
+}
+
+TEST(StaticFunctions, WritePort_NodeNULL_OK)
+{
+   ASSERT_NO_THROW(_writePortMax7312(NULL, 0, 0));
+}
+
+TEST(StaticFunctions, WritePort_thisNULL_OK)
+{
+   struct wiringPiNodeStruct *node ;
+   node = new wiringPiNodeStruct();
+   node->thisNode = NULL;
+   ASSERT_NO_THROW(_writePortMax7312(node, 0, 0));
+}
+
+TEST(StaticFunctions, ConfigPort_NULL_OK)
+{
+   ASSERT_NO_THROW(_configPortMax7312(NULL, 0, 0));
+}
+
+TEST(StaticFunctions, ConfigPort_thisNULL_OK)
+{
+   struct wiringPiNodeStruct *node ;
+   node = new wiringPiNodeStruct();
+   node->thisNode = NULL;
+   ASSERT_NO_THROW(_configPortMax7312(node, 0, 0));
+}
+
+// test testfunctions
+TEST(TestFunctions, isLowerPort_low0_yes)
+{
+   SetExpectationsConstructor();
+   Max7312 testMax;
+   ASSERT_EQ(testMax.isLowerPort(0), true);
+}
+
+TEST(TestFunctions, isLowerPort_low3_yes)
+{
+   SetExpectationsConstructor();
+   Max7312 testMax;
+   ASSERT_EQ(testMax.isLowerPort(3), true);
+}
+
+TEST(TestFunctions, isLowerPort_low7_yes)
+{
+   SetExpectationsConstructor();
+   Max7312 testMax;
+   ASSERT_EQ(testMax.isLowerPort(7), true);
+}
+
+TEST(TestFunctions, isLowerPort_high8_yes)
+{
+   SetExpectationsConstructor();
+   Max7312 testMax;
+   ASSERT_EQ(testMax.isLowerPort(8), false);
+}
+
+TEST(TestFunctions, isLowerPort_high11_yes)
+{
+   SetExpectationsConstructor();
+   Max7312 testMax;
+   ASSERT_EQ(testMax.isLowerPort(11), false);
+}
+
+TEST(TestFunctions, isLowerPort_high15_yes)
+{
+   SetExpectationsConstructor();
+   Max7312 testMax;
+   ASSERT_EQ(testMax.isLowerPort(15), false);
+}

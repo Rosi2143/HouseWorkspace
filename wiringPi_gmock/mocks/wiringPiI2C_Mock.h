@@ -22,6 +22,28 @@
  ***********************************************************************
  */
 
+class MockWiringPiI2C{
+ public:
+   static MockWiringPiI2C* Instance();
+   // Core wiringPi functions
+   MOCK_METHOD1(wiringPiI2CRead,      int(int fd));
+   MOCK_METHOD2(wiringPiI2CReadReg8,  int(int fd, int reg));
+   MOCK_METHOD2(wiringPiI2CReadReg16, int(int fd, int reg));
+
+   MOCK_METHOD2(wiringPiI2CWrite,      int(int fd, int data));
+   MOCK_METHOD3(wiringPiI2CWriteReg8,  int(int fd, int reg, int data));
+   MOCK_METHOD3(wiringPiI2CWriteReg16, int(int fd, int reg, int data));
+
+   MOCK_METHOD2(wiringPiI2CSetupInterface, int(const char *device, int devId));
+   MOCK_METHOD1(wiringPiI2CSetup,          int(const int devId));
+
+   ~MockWiringPiI2C(){delete m_pInstance;}
+private:
+   MockWiringPiI2C(){};
+   MockWiringPiI2C(MockWiringPiI2C const&){};
+   static MockWiringPiI2C* m_pInstance;
+};
+
 extern int wiringPiI2CRead           (int fd) ;
 extern int wiringPiI2CReadReg8       (int fd, int reg) ;
 extern int wiringPiI2CReadReg16      (int fd, int reg) ;

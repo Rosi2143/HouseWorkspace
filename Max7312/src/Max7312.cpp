@@ -6,7 +6,21 @@
 #include "helper.h"
 
 /**
- * read a single port - function required for wiringPi interface
+ * get the pin inside a byte from the pin - relative to pinBase
+ * @param pin - pin relative to pinbase
+ * @return ID in the byte
+ */
+#define GET_LOWER_PIN_ID(pin) (pin - _pinBase)
+
+/**
+ * get the pin inside a byte from the pin - relative to pinBase
+ * @param pin - pin relative to pinbase
+ * @return ID in the byte
+ */
+#define GET_HIGHER_PIN_ID(pin) (GET_LOWER_PIN_ID(pin) - 8)
+
+/**
+* read a single port - function required for wiringPi interface
  * @param node link to port structure
  * @param pin - port relative to pinBase
  * @return
@@ -50,6 +64,7 @@ void _writePortMax7312(struct wiringPiNodeStruct *node, int pin, int value){
  * @param mode - 0 - Output; 1 - Input
  */
 void _configPortMax7312(struct wiringPiNodeStruct *node, int pin, int mode){
+   if(node == NULL)
    {
       return;
    }
@@ -121,16 +136,16 @@ init(portDirection1, portDirection2, timeoutFlag);
  */
 void Max7312::setChipAddress(unsigned char chipAddress)
 {
-if( (MAX7312_MIN_ADDRESS <= chipAddress)
-and (MAX7312_MAX_ADDRESS >= chipAddress)
-)
-{
-_chipAddress=chipAddress;
-}
-else
-{
-_chipAddress=MAX7312_MIN_ADDRESS;
-}
+   if( (MAX7312_MIN_ADDRESS <= chipAddress)
+   and (MAX7312_MAX_ADDRESS >= chipAddress)
+   )
+   {
+      _chipAddress=chipAddress;
+   }
+   else
+   {
+      _chipAddress=MAX7312_MIN_ADDRESS;
+   }
 }
 
 /**
@@ -139,14 +154,14 @@ _chipAddress=MAX7312_MIN_ADDRESS;
  */
 void Max7312::setPinBase(unsigned int pinBase)
 {
-if(MAX7312_MIN_PINBASE <= pinBase)
-{
-_pinBase=pinBase;
-}
-else
-{
-_pinBase=MAX7312_MIN_PINBASE;
-}
+   if(MAX7312_MIN_PINBASE <= pinBase)
+   {
+      _pinBase=pinBase;
+   }
+   else
+   {
+      _pinBase=MAX7312_MIN_PINBASE;
+   }
 }
 
 /**
@@ -156,7 +171,7 @@ _pinBase=MAX7312_MIN_PINBASE;
  */
 void Max7312::init(unsigned char portDirection1, unsigned char portDirection2)
 {
-init(portDirection1, portDirection2, 0x01);
+   init(portDirection1, portDirection2, 0x01);
 }
 
 /**
@@ -167,26 +182,27 @@ init(portDirection1, portDirection2, 0x01);
 */
 void Max7312::init(unsigned char portDirection1, unsigned char portDirection2, unsigned char timeoutFlag)
 {
-initDataBuffers();
+   initDataBuffers();
 
 
-if ((fd = wiringPiI2CSetup (_chipAddress)) < 0)
-  return;
+   if ((fd = wiringPiI2CSetup (_chipAddress)) < 0)
+     return;
 
-node = wiringPiNewNode (_pinBase, MAX7312_NUM_OF_PORTS) ;
+   node = wiringPiNewNode (_pinBase, MAX7312_NUM_OF_PORTS) ;
 
-node->fd           = fd ;
-node->pinMode      = _configPortMax7312;
-node->digitalRead  = _readPortMax7312;
-node->digitalWrite = _writePortMax7312;
-node->data1        = readPort1 () ;
-node->data2        = readPort2 () ;
-node->thisNode     = this;
-configPort1(portDirection1);
-configPort2(portDirection2);
-configTimeout(timeoutFlag);
+   node->fd           = fd ;
+   node->pinMode      = _configPortMax7312;
+   node->digitalRead  = _readPortMax7312;
+   node->digitalWrite = _writePortMax7312;
+   node->data1        = readPort1 () ;
+   node->data2        = readPort2 () ;
+   node->thisNode     = this;
+   configPort1(portDirection1);
+   configPort2(portDirection2);
+   configTimeout(timeoutFlag);
+   _port1_mode = portDirection1;
+   _port2_mode = portDirection2;
 }
-
 
 /**
  * set all port data to 0
@@ -254,11 +270,11 @@ void Max7312::readIntFlag(){}
  * @param portValue
  * @return true - port pin is active, false port pin is inactive
  */
-bool Max7312::isPortActive(int portValue, int pin){
+bool Max7312::isPortActive(int pin){
    if(isLowerPort(pin)){
-      return (CHECKBIT(portValue, (pin - _pinBase)));
+      return (CHECKBIT(_port1_data, (GET_LOWER_PIN_ID(pin))));
    } else {
-      return (CHECKBIT(portValue, (pin - _pinBase - 8)));
+      return (CHECKBIT(_port2_data, (GET_HIGHER_PIN_ID(pin))));
    }
 }
 
@@ -269,11 +285,21 @@ bool Max7312::isPortActive(int portValue, int pin){
  * @param newState true - new port state is active, false new port state is inactive
  * @return new value of port
  */
-int Max7312::setPortActive(int portValue, int pin, bool newState){
+int Max7312::setPort(int pin, bool newState){
    if(isLowerPort(pin)){
-      return (CHECKBIT(portValue, (pin - _pinBase)));
+      if(newState){
+         SETBIT(_port1_data, (GET_LOWER_PIN_ID(pin)));
+      } else {
+         CLEARBIT(_port1_data, (GET_LOWER_PIN_ID(pin)));
+      }
+      return _port1_data;
    } else {
-      return (CHECKBIT(portValue, (pin - _pinBase - 8)));
+      if(newState){
+         SETBIT(_port2_data, (GET_LOWER_PIN_ID(pin)));
+      } else {
+         CLEARBIT(_port2_data, (GET_LOWER_PIN_ID(pin)));
+      }
+      return _port2_data;
    }
 }
 
@@ -284,9 +310,9 @@ int Max7312::setPortActive(int portValue, int pin, bool newState){
  */
 bool Max7312::isPortInput(int pin){
    if(isLowerPort(pin)){
-      return (CHECKBIT(_port1_mode, (pin - _pinBase)));
+      return (CHECKBIT(_port1_mode, (GET_LOWER_PIN_ID(pin))));
    } else {
-      return (CHECKBIT(_port2_mode, (pin - _pinBase - 8)));
+      return (CHECKBIT(_port2_mode, (GET_HIGHER_PIN_ID(pin))));
    }
 }
 
@@ -296,7 +322,7 @@ bool Max7312::isPortInput(int pin){
  * @return TRUE - pin belongs to Port1(lower), FALSE - pin belongs to Port2(higher)
  */
 bool Max7312::isLowerPort(int pin){
-   if( (pin - _pinBase) <= 7){
+   if( (GET_LOWER_PIN_ID(pin)) <= 7){
       return true;
    }
    else {
@@ -326,11 +352,16 @@ bool Max7312::readPort(int pin){
       }
    }
    int port_data=wiringPiI2CRead(fd);
-   return isPortActive(port_data, pin);
+   if(isLowerPort(pin)){
+      _port1_data = port_data;
+   } else {
+      _port2_data = port_data;
+   }
+   return isPortActive(pin);
 }
 
 /**
- * write a single port - function requrired for wiringPi interface
+ * write a single port - function required for wiringPi interface
  * @param node link to port structure
  * @param pin - port relative to pinBase
  * @param value - value to port should be set to 0 - OFF, 1 - ON
@@ -352,9 +383,22 @@ void Max7312::writePort(int pin, bool state){
 void Max7312::configPort(int pin, bool mode){
    if (isLowerPort(pin)) {
       if(mode)
-      _port1_mode = mode;
+      {
+         SETBIT(_port1_mode, (GET_LOWER_PIN_ID(pin)));
+      }
+      else
+      {
+         CLEARBIT(_port1_mode, (GET_LOWER_PIN_ID(pin)));
+      }
    } else {
-      _port2_mode = mode;
+      if(mode)
+      {
+         SETBIT(_port2_mode, (GET_HIGHER_PIN_ID(pin)));
+      }
+      else
+      {
+         CLEARBIT(_port2_mode, (GET_HIGHER_PIN_ID(pin)));
+      }
    }
 }
 

@@ -1,16 +1,15 @@
-21:46:04 **** Incremental Build of configuration Debug for project Max7312_test ****
+23:05:45 **** Incremental Build of configuration Debug for project Max7312_test ****
 make all 
-Building file: ../test/main.cpp
+Building file: ../links/Max7312.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Max7312_test/links" -I"/home/micha/workspace/wiringPi_gmock/mocks" -I"/home/micha/workspace/Max7312/Interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -Wconversion-null -MMD -MP -MF"test/main.d" -MT"test/main.d" -o "test/main.o" "../test/main.cpp"
-In file included from /usr/include/gmock/gmock-generated-function-mockers.h:43:0,
-                 from /usr/include/gmock/gmock.h:61,
-                 from ../test/main.cpp:9:
-../test/main.cpp:21:1: error: expected ‘)’ before ‘.’ token
- ON_CALL(*WirePiMock, wiringPiNewNode(_, _)).WillByDefault(Return(0));
- ^
-test/subdir.mk:18: recipe for target 'test/main.o' failed
-make: *** [test/main.o] Error 1
+g++ -std=c++0x -I"/home/micha/workspace/Max7312_test/links" -I"/home/micha/workspace/wiringPi_gmock/mocks" -I"/home/micha/workspace/Max7312/Interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -Wconversion-null -MMD -MP -MF"links/Max7312.d" -MT"links/Max7312.d" -o "links/Max7312.o" "../links/Max7312.cpp"
+Finished building: ../links/Max7312.cpp
+ 
+Building target: Max7312_test
+Invoking: GCC C++ Linker
+g++  -o "Max7312_test"  ./test/main.o  ./links/Max7312.o  /home/micha/workspace/wiringPi_gmock/Debug/libwiringPi_gmock.a -lgtest -lgmock -lgtest_main -lpthread
+Finished building target: Max7312_test
+ 
 
-21:46:07 Build Finished (took 2s.707ms)
+23:05:49 Build Finished (took 3s.623ms)
 

@@ -1,15 +1,14 @@
-19:45:45 **** Incremental Build of configuration Debug for project Max7312 ****
+22:44:47 **** Incremental Build of configuration Debug for project Max7312 ****
 make all 
 Building file: ../src/Max7312.cpp
 Invoking: Cross G++ Compiler
 arm-linux-gnueabihf-g++ -std=c++0x -I/home/micha/mntpi/wiringPi/wiringPi/wiringPi -I/home/micha/git_repositories/wiringPi/wiringPi -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Max7312.d" -MT"src/Max7312.d" -o "src/Max7312.o" "../src/Max7312.cpp"
-In file included from ../src/Max7312.cpp:2:0:
-../src/Max7312.h:4:19: fatal error: INode.h: No such file or directory
- #include "INode.h"
-                   ^
+../src/Max7312.cpp:3:27: fatal error: wiringPi_Mock.h: No such file or directory
+ #include <wiringPi_Mock.h>
+                           ^
 compilation terminated.
 src/subdir.mk:18: recipe for target 'src/Max7312.o' failed
 make: *** [src/Max7312.o] Error 1
 
-19:45:46 Build Finished (took 306ms)
+22:44:47 Build Finished (took 260ms)
 

@@ -26,12 +26,10 @@
  */
 #define MAX7312_ADDRESS MAX7312_MIN_ADDRESS
 
-
 /**
  * defines the minimum possible pinBase for the device
  */
 #define MAX7312_MIN_PINBASE 64
-
 
 //Register address	
 
@@ -130,10 +128,10 @@ public:
   
   void readIntFlag();
   
-  virtual bool isLowerPort (int pin);
-  virtual bool isPortActive (int portValue, int pin);
-  virtual int  setPortActive(int portValue, int pin, bool newState);
-  virtual bool isPortInput (int pin);
+  virtual bool isLowerPort  (int pin);
+  virtual bool isPortActive (int pin);
+  virtual bool isPortInput  (int pin);
+  virtual int  setPort      (int pin, bool newState);
   virtual wiringPiNodeStruct* getNode(){return node;}
   virtual bool readPort  (int pin);
   virtual void writePort (int pin, bool state);

@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -lwiringPi -lwiringPiDev
+LIBS := -lwiringPi -lwiringPiDev -lboost_program_options
 

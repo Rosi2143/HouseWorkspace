@@ -17,8 +17,6 @@ MockWiringPi* MockWiringPi::Instance()
    return m_pInstance;
 }
 
-ON_CALL((*(MockWiringPi::Instance())), wiringPiNewNode(_, _)).WillByDefault(Return(0));
-
 
 // Core wiringPi functions
 

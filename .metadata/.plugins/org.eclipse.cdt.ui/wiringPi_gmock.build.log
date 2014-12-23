@@ -1,17 +1,6 @@
-22:06:40 **** Incremental Build of configuration Debug for project wiringPi_gmock ****
+23:05:45 **** Incremental Build of configuration Debug for project wiringPi_gmock ****
 make all 
-Building file: ../mocks/wiringPi_Mock.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"mocks/wiringPi_Mock.d" -MT"mocks/wiringPi_Mock.d" -o "mocks/wiringPi_Mock.o" "../mocks/wiringPi_Mock.cpp"
-In file included from /usr/include/gmock/gmock-generated-function-mockers.h:43:0,
-                 from /usr/include/gmock/gmock.h:61,
-                 from ../mocks/wiringPi_Mock.h:218,
-                 from ../mocks/wiringPi_Mock.cpp:8:
-../mocks/wiringPi_Mock.cpp:20:1: error: expected ‘)’ before ‘.’ token
- ON_CALL((*(MockWiringPi::Instance())), wiringPiNewNode(_, _)).WillByDefault(Return(0));
- ^
-mocks/subdir.mk:21: recipe for target 'mocks/wiringPi_Mock.o' failed
-make: *** [mocks/wiringPi_Mock.o] Error 1
+make: Nothing to be done for 'all'.
 
-22:06:41 Build Finished (took 1s.540ms)
+23:05:45 Build Finished (took 126ms)
 

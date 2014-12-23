@@ -236,6 +236,8 @@ class MockWiringPi{
    MOCK_METHOD2(pwmWrite, void(int pin, int value));
    MOCK_METHOD1(analogRead, int(int pin));
    MOCK_METHOD2(analogWrite, void(int pin, int value));
+
+   ~MockWiringPi(){delete m_pInstance;}
  private:
    MockWiringPi(){};
    MockWiringPi(MockWiringPi const&){};
