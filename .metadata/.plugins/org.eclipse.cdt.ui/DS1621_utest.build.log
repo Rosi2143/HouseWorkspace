@@ -1,4 +1,4 @@
-19:38:52 **** Incremental Build of configuration Debug for project DS1621_utest ****
+12:50:07 **** Incremental Build of configuration Debug for project DS1621_utest ****
 make all 
 Building file: ../test/main.cpp
 Invoking: GCC C++ Compiler
@@ -11,5 +11,5 @@ g++  -o "DS1621_utest"  ./test/main.o  ./links/Ds1621.o  /home/micha/workspace/w
 Finished building target: DS1621_utest
  
 
-19:38:55 Build Finished (took 3s.38ms)
+12:50:10 Build Finished (took 3s.315ms)
 

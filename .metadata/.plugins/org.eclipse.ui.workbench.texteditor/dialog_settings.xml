@@ -2,34 +2,34 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="isPortInput" key="selection"/>
+		<item value="ChipAddress" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="isPortInput"/>
-			<item value="setPort"/>
-			<item value="isPortActive"/>
-			<item value="pin - _pinBase"/>
-			<item value="GET_HIGHER_PIN_ID"/>
-			<item value="pin - _pinBase - 8"/>
-			<item value="- 8"/>
-			<item value="-8"/>
+			<item value="ChipAddress"/>
+			<item value="setChipAddress"/>
+			<item value="MAX7312_ADDRESS"/>
+			<item value="getPort2Data"/>
+			<item value="getPort1Data"/>
+			<item value="OUTPUT_PORT"/>
+			<item value="writePort"/>
+			<item value="INSTANTIATE_TEST_CASE_P"/>
 		</list>
 		<list key="replacehistory">
+			<item value="PinBase"/>
+			<item value="typedef struct {int address_in; int address_out;} ChipAddress;&#x0A;class TestFunctionsChipAddress : public TestFunctions,&#x0A;                                 public ::testing::WithParamInterface&lt;ChipAddress&gt; {&#x0A;};&#x0A;INSTANTIATE_TEST_CASE_P(TestFunctionsParamChipAddress,&#x0A;                        TestFunctionsChipAddress,&#x0A;                        ::testing::Values(&#x0A;                              ChipAddress({MAX7312_MIN_ADDRESS -1,  MAX7312_MIN_ADDRESS}),&#x0A;                              ChipAddress({MAX7312_MIN_ADDRESS,     MAX7312_MIN_ADDRESS}),&#x0A;                              ChipAddress({MAX7312_MIN_ADDRESS + 1, MAX7312_MIN_ADDRESS + 1}),&#x0A;                              ChipAddress({MAX7312_MAX_ADDRESS - 1, MAX7312_MAX_ADDRESS - 1}),&#x0A;                              ChipAddress({MAX7312_MAX_ADDRESS,     MAX7312_MAX_ADDRESS}),&#x0A;                              ChipAddress({MAX7312_MAX_ADDRESS + 1, MAX7312_MAX_ADDRESS}))&#x0A;                       );&#x0A;TEST_P(TestFunctionsChipAddress, setChipAddress_params)&#x0A;{&#x0A;   testMax-&gt;setChipAddress(GetParam().address_in);&#x0A;   ASSERT_EQ(testMax-&gt;getChipAddress(), GetParam().address_out);&#x0A;}&#x0A;"/>
+			<item value="getPort2Mode"/>
+			<item value="getPort1Mode"/>
+			<item value="CONFIGURATION_PORT"/>
+			<item value="configPort"/>
+			<item value="CONFIGURATION_PORT_2"/>
 			<item value="GET_LOWER_PIN_ID(pin)"/>
-			<item value="GET_HIGHER_PIN_ID(pin)"/>
-			<item value="GET_HIGHER_PIN_ID"/>
-			<item value="0xFF"/>
-			<item value="isPortInput"/>
-			<item value="testMax-&gt;"/>
-			<item value="Led"/>
-			<item value="rotate"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="287" key="DIALOG_WIDTH"/>
+		<item value="289" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="741" key="DIALOG_HEIGHT"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>

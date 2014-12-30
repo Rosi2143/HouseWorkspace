@@ -1,6 +1,6 @@
-23:05:45 **** Incremental Build of configuration Debug for project wiringPi_gmock ****
+19:30:29 **** Incremental Build of configuration Debug for project wiringPi_gmock ****
 make all 
 make: Nothing to be done for 'all'.
 
-23:05:45 Build Finished (took 126ms)
+19:30:29 Build Finished (took 128ms)
 

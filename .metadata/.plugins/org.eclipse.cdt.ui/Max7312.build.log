@@ -1,4 +1,4 @@
-22:44:47 **** Incremental Build of configuration Debug for project Max7312 ****
+12:50:11 **** Incremental Build of configuration Debug for project Max7312 ****
 make all 
 Building file: ../src/Max7312.cpp
 Invoking: Cross G++ Compiler
@@ -10,5 +10,5 @@ compilation terminated.
 src/subdir.mk:18: recipe for target 'src/Max7312.o' failed
 make: *** [src/Max7312.o] Error 1
 
-22:44:47 Build Finished (took 260ms)
+12:50:12 Build Finished (took 647ms)
 

@@ -2552,9 +2552,12 @@ gi.overrides.GLib|/usr/lib64/python2.7/site-packages/gi/overrides/GLib.py
 gi.overrides.GObject|/usr/lib64/python2.7/site-packages/gi/overrides/GObject.py
 gi.overrides.Gdk|/usr/lib64/python2.7/site-packages/gi/overrides/Gdk.py
 gi.overrides.Gio|/usr/lib64/python2.7/site-packages/gi/overrides/Gio.py
+gi.overrides.Gst|/usr/lib64/python2.7/site-packages/gi/overrides/Gst.py
+gi.overrides.GstPbutils|/usr/lib64/python2.7/site-packages/gi/overrides/GstPbutils.py
 gi.overrides.Gtk|/usr/lib64/python2.7/site-packages/gi/overrides/Gtk.py
 gi.overrides.Pango|/usr/lib64/python2.7/site-packages/gi/overrides/Pango.py
 gi.overrides.__init__|/usr/lib64/python2.7/site-packages/gi/overrides/__init__.py
+gi.overrides._gi_gst|/usr/lib64/python2.7/site-packages/gi/overrides/_gi_gst.so
 gi.overrides.keysyms|/usr/lib64/python2.7/site-packages/gi/overrides/keysyms.py
 gi.pygtkcompat|/usr/lib64/python2.7/site-packages/gi/pygtkcompat.py
 gi.repository.__init__|/usr/lib64/python2.7/site-packages/gi/repository/__init__.py

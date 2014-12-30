@@ -1,12 +1,12 @@
-23:05:45 **** Incremental Build of configuration Debug for project wiringPi_gmock ****
+19:30:29 **** Incremental Build of configuration Debug for project wiringPi_gmock ****
 make all 
 make: Nothing to be done for 'all'.
-23:05:45 **** Incremental Build of configuration Debug for project Max7312_test ****
+19:30:29 **** Incremental Build of configuration Debug for project Max7312_test ****
 make all 
-Building file: ../links/Max7312.cpp
+Building file: ../test/main.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Max7312_test/links" -I"/home/micha/workspace/wiringPi_gmock/mocks" -I"/home/micha/workspace/Max7312/Interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -Wconversion-null -MMD -MP -MF"links/Max7312.d" -MT"links/Max7312.d" -o "links/Max7312.o" "../links/Max7312.cpp"
-Finished building: ../links/Max7312.cpp
+g++ -std=c++0x -I"/home/micha/workspace/Max7312_test/links" -I"/home/micha/workspace/wiringPi_gmock/mocks" -I"/home/micha/workspace/Max7312/Interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -Wconversion-null -MMD -MP -MF"test/main.d" -MT"test/main.d" -o "test/main.o" "../test/main.cpp"
+Finished building: ../test/main.cpp
  
 Building target: Max7312_test
 Invoking: GCC C++ Linker

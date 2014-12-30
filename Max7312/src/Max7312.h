@@ -27,6 +27,10 @@
 #define MAX7312_ADDRESS MAX7312_MIN_ADDRESS
 
 /**
+ * defines the default pin for the interrupt pin of the I2C devices
+ */
+#define MAX7312_INTPIN  4
+/**
  * defines the minimum possible pinBase for the device
  */
 #define MAX7312_MIN_PINBASE 64
@@ -97,17 +101,20 @@
 
 class Max7312 : public INode{
 public:
-  Max7312();
-  Max7312(unsigned int pinBase, unsigned char chipAddress);
-  Max7312(unsigned int pinBase, unsigned char chipAddress, unsigned char portDirection1, unsigned char portDirection2);
-  Max7312(unsigned int pinBase, unsigned char chipAddress, unsigned char portDirection1, unsigned char portDirection2, unsigned char timeoutFlag);
+  Max7312(unsigned int  pinBase        = MAX7312_MIN_PINBASE,
+          unsigned char chipAddress    = MAX7312_ADDRESS,
+          unsigned char intPin         = MAX7312_INTPIN,
+          unsigned char portDirection1 = 0x00,
+          unsigned char portDirection2 = 0x00,
+          unsigned char timeoutFlag    = 0x01);
   virtual ~Max7312(){}
 
   void setChipAddress(unsigned char chipAddress);
   void setPinBase(unsigned int pinBase);
 
-  void init(unsigned char portDirection1, unsigned char portDirection2);
-  void init(unsigned char portDirection1, unsigned char portDirection2, unsigned char timeoutFlag);
+  void init(unsigned char portDirection1,
+            unsigned char portDirection2,
+            unsigned char timeoutFlag = 0x01);
   
 //  int readPort(struct wiringPiNodeStruct *node, int pin);
   unsigned char readPort1();
@@ -128,14 +135,22 @@ public:
   
   void readIntFlag();
   
+  // check functions
   virtual bool isLowerPort  (int pin);
   virtual bool isPortActive (int pin);
   virtual bool isPortInput  (int pin);
-  virtual int  setPort      (int pin, bool newState);
-  virtual wiringPiNodeStruct* getNode(){return node;}
   virtual bool readPort  (int pin);
-  virtual void writePort (int pin, bool state);
-  virtual void configPort(int pin, bool mode);
+  virtual int  writePort (int pin, bool newState);
+  virtual int  configPort(int pin, bool newMode);
+
+  // get functions
+  int getPort1Data()   const {return _port1_data;}
+  int getPort2Data()   const {return _port2_data;}
+  int getPort1Mode()   const {return _port1_mode;}
+  int getPort2Mode()   const {return _port2_mode;}
+  int getChipAddress() const {return _chipAddress;}
+  int getPinBase()     const {return _pinBase;}
+  virtual wiringPiNodeStruct* getNode(){return node;}
 private:
 
   void initDataBuffers();
@@ -148,7 +163,8 @@ private:
   unsigned char _port1_mode;
   unsigned char _port2_mode;
   unsigned char _chipAddress;
-  unsigned int  _pinBase;
+  unsigned char _pinBase;
+  unsigned char _intPin;
 };
 
 #endif

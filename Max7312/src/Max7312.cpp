@@ -79,42 +79,6 @@ void _configPortMax7312(struct wiringPiNodeStruct *node, int pin, int mode){
 // Comments
 //
 //...
-
-/**
- * default constructor uses address #MAX7312_ADDRESS
- */
-Max7312::Max7312(){
-setChipAddress(MAX7312_ADDRESS);
-setPinBase(MAX7312_MIN_PINBASE);
-init(0x00, 0x00);
-}
-
-/**
- *
- * constructor were the specific chip address can be set
- * @param pinBase pinBase can be any number you like above 64
- * @param chipAddress chip address between 0x20 and 0x5E
- */
-Max7312::Max7312(unsigned int pinBase, unsigned char chipAddress){
-setChipAddress(chipAddress);
-setPinBase(pinBase);
-init(0x00, 0x00);
-}
-
-/**
- * constructor were the specific chip address and the port directions can be set
- * @param pinBase pinBase can be any number you like above 64
- * @param chipAddress chip address between 0x20 and 0x5E
- * @param portDirection1 default values of ports 0-7 (1 - input; 0 - output)
- * @param portDirection2 default values of ports 8-15 (1 - input; 0 - output)
- */
-Max7312::Max7312(unsigned int pinBase, unsigned char chipAddress, unsigned char portDirection1, unsigned char portDirection2)
-{
-setChipAddress(chipAddress);
-setPinBase(pinBase);
-init(portDirection1, portDirection2);
-}
-
 /**
  * constructor were the specific chip address, the port directions and and the timeoutflag can be set
  * @param pinBase pinBase can be any number you like above 64
@@ -123,7 +87,13 @@ init(portDirection1, portDirection2);
  * @param portDirection2 default values of ports 8-15 (1 - input; 0 - output)
  * @param timeoutFlag 1 enable Bus timeout, 0 disable Bus timeout
  */
-Max7312::Max7312(unsigned int pinBase, unsigned char chipAddress, unsigned char portDirection1, unsigned char portDirection2, unsigned char timeoutFlag)
+Max7312::Max7312(unsigned int  pinBase,
+                 unsigned char chipAddress,
+                 unsigned char intPin,
+                 unsigned char portDirection1,
+                 unsigned char portDirection2,
+                 unsigned char timeoutFlag)
+: _intPin(intPin)
 {
 setChipAddress(chipAddress);
 setPinBase(pinBase);
@@ -136,15 +106,17 @@ init(portDirection1, portDirection2, timeoutFlag);
  */
 void Max7312::setChipAddress(unsigned char chipAddress)
 {
-   if( (MAX7312_MIN_ADDRESS <= chipAddress)
-   and (MAX7312_MAX_ADDRESS >= chipAddress)
-   )
+   if(MAX7312_MAX_ADDRESS <= chipAddress)
    {
-      _chipAddress=chipAddress;
+      _chipAddress=MAX7312_MAX_ADDRESS;
+   }
+   else if(MAX7312_MIN_ADDRESS >= chipAddress)
+   {
+      _chipAddress=MAX7312_MIN_ADDRESS;
    }
    else
    {
-      _chipAddress=MAX7312_MIN_ADDRESS;
+      _chipAddress=chipAddress;
    }
 }
 
@@ -168,19 +140,11 @@ void Max7312::setPinBase(unsigned int pinBase)
  * initialize the Max7311
  * @param portDirection1 default values of ports 0-7 (1 - input; 0 - output)
  * @param portDirection2 default values of ports 8-15 (1 - input; 0 - output)
- */
-void Max7312::init(unsigned char portDirection1, unsigned char portDirection2)
-{
-   init(portDirection1, portDirection2, 0x01);
-}
-
-/**
- * initialize the Max7311
- * @param portDirection1 default values of ports 0-7 (1 - input; 0 - output)
- * @param portDirection2 default values of ports 8-15 (1 - input; 0 - output)
  * @param timeoutFlag 1 enable Bus timeout, 0 disable Bus timeout
 */
-void Max7312::init(unsigned char portDirection1, unsigned char portDirection2, unsigned char timeoutFlag)
+void Max7312::init(unsigned char portDirection1,
+                   unsigned char portDirection2,
+                   unsigned char timeoutFlag)
 {
    initDataBuffers();
 
@@ -200,8 +164,6 @@ void Max7312::init(unsigned char portDirection1, unsigned char portDirection2, u
    configPort1(portDirection1);
    configPort2(portDirection2);
    configTimeout(timeoutFlag);
-   _port1_mode = portDirection1;
-   _port2_mode = portDirection2;
 }
 
 /**
@@ -237,10 +199,11 @@ return _port2_data;
 
 void Max7312::writePort1(unsigned char portData){
 wiringPiI2CWriteReg16(fd, OUTPUT_PORT_1, portData);
+_port1_data = portData;
 }
 void Max7312::writePort2(unsigned char portData){
 wiringPiI2CWriteReg16(fd, OUTPUT_PORT_2, portData);
-}
+_port2_data = portData;}
 
 void Max7312::polarityInversionPort1(unsigned char portInversion){
 wiringPiI2CWriteReg16(fd, POLARITY_INVERSION_PORT_1, portInversion);
@@ -251,10 +214,12 @@ wiringPiI2CWriteReg16(fd, POLARITY_INVERSION_PORT_2, portInversion);
 
 void Max7312::configPort1(unsigned char portDirection){
 wiringPiI2CWriteReg16(fd, CONFIGURATION_PORT_1, portDirection);
+_port1_mode = portDirection;
 }
 
 void Max7312::configPort2(unsigned char portDirection){
 wiringPiI2CWriteReg16(fd, CONFIGURATION_PORT_2, portDirection);
+_port2_mode = portDirection;
 }
 
 void Max7312::configTimeout(unsigned char timeoutFlag){
@@ -275,31 +240,6 @@ bool Max7312::isPortActive(int pin){
       return (CHECKBIT(_port1_data, (GET_LOWER_PIN_ID(pin))));
    } else {
       return (CHECKBIT(_port2_data, (GET_HIGHER_PIN_ID(pin))));
-   }
-}
-
-/**
- * sets one port pin to the new state
- * @param portValue old port value
- * @param pin port relative to pinBase
- * @param newState true - new port state is active, false new port state is inactive
- * @return new value of port
- */
-int Max7312::setPort(int pin, bool newState){
-   if(isLowerPort(pin)){
-      if(newState){
-         SETBIT(_port1_data, (GET_LOWER_PIN_ID(pin)));
-      } else {
-         CLEARBIT(_port1_data, (GET_LOWER_PIN_ID(pin)));
-      }
-      return _port1_data;
-   } else {
-      if(newState){
-         SETBIT(_port2_data, (GET_LOWER_PIN_ID(pin)));
-      } else {
-         CLEARBIT(_port2_data, (GET_LOWER_PIN_ID(pin)));
-      }
-      return _port2_data;
    }
 }
 
@@ -365,12 +305,25 @@ bool Max7312::readPort(int pin){
  * @param node link to port structure
  * @param pin - port relative to pinBase
  * @param value - value to port should be set to 0 - OFF, 1 - ON
+ * @return new value of complete port
  */
-void Max7312::writePort(int pin, bool state){
+int Max7312::writePort(int pin, bool newState){
    if(isLowerPort(pin)){
-      wiringPiI2CWrite(fd, OUTPUT_PORT_1);
-   } else  {
-      wiringPiI2CWrite(fd, INPUT_PORT_2);
+      if(newState){
+         SETBIT(_port1_data, (GET_LOWER_PIN_ID(pin)));
+      } else {
+         CLEARBIT(_port1_data, (GET_LOWER_PIN_ID(pin)));
+      }
+      writePort1(_port1_data);
+      return _port1_data;
+   } else {
+      if(newState){
+         SETBIT(_port2_data, (GET_HIGHER_PIN_ID(pin)));
+      } else {
+         CLEARBIT(_port2_data, (GET_HIGHER_PIN_ID(pin)));
+      }
+      writePort2(_port2_data);
+      return _port2_data;
    }
 }
 
@@ -379,10 +332,11 @@ void Max7312::writePort(int pin, bool state){
  * @param node link to port structure
  * @param pin - port relative to pinBase
  * @param mode - 0 - Output; 1 - Input
+ * @return new value of complete port
  */
-void Max7312::configPort(int pin, bool mode){
+int Max7312::configPort(int pin, bool newMode){
    if (isLowerPort(pin)) {
-      if(mode)
+      if(newMode)
       {
          SETBIT(_port1_mode, (GET_LOWER_PIN_ID(pin)));
       }
@@ -390,8 +344,10 @@ void Max7312::configPort(int pin, bool mode){
       {
          CLEARBIT(_port1_mode, (GET_LOWER_PIN_ID(pin)));
       }
+      configPort1(_port1_mode);
+      return _port1_mode;
    } else {
-      if(mode)
+      if(newMode)
       {
          SETBIT(_port2_mode, (GET_HIGHER_PIN_ID(pin)));
       }
@@ -399,6 +355,8 @@ void Max7312::configPort(int pin, bool mode){
       {
          CLEARBIT(_port2_mode, (GET_HIGHER_PIN_ID(pin)));
       }
+      configPort2(_port2_mode);
+      return _port2_mode;
    }
 }
 
