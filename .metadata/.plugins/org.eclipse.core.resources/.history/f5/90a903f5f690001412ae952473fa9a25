@@ -1,0 +1,24 @@
+/*
+ * PcfLcd.h
+ *
+ *  Created on: Dec 31, 2014
+ *      Author: micha
+ */
+
+#ifndef SRC_PCFLCD_H_
+#define SRC_PCFLCD_H_
+
+class PcfLcd : public INode{
+public:
+  PcfLcd(unsigned int  pinBase        = MAX7312_MIN_PINBASE,
+          unsigned char chipAddress    = MAX7312_ADDRESS,
+          unsigned char intPin         = MAX7312_INTPIN,
+          unsigned char portDirection1 = 0x00,
+          unsigned char portDirection2 = 0x00,
+          unsigned char timeoutFlag    = 0x01);
+  virtual ~PcfLcd(){}
+
+
+}
+
+#endif /* SRC_PCFLCD_H_ */

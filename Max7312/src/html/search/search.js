@@ -7,12 +7,12 @@
 
 var indexSectionsWithContent =
 {
-  0: "_cfimoprtw",
+  0: "_cfgimnoprstw~",
   1: "m",
   2: "m",
-  3: "cimprw",
-  4: "_",
-  5: "cfimopt"
+  3: "_cgimprsw~",
+  4: "_fn",
+  5: "cfgimopt"
 };
 
 var indexSectionNames =

@@ -1,4 +1,10 @@
 var searchData=
 [
-  ['max7312',['Max7312',['../classMax7312.html#ae927da401dbb3b69b3b194b095793750',1,'Max7312::Max7312()'],['../classMax7312.html#a6f217078af3ae80973ed61ae58819a48',1,'Max7312::Max7312(unsigned char chipAddress)'],['../classMax7312.html#a2977a2e665b39ed5101c0b95c15b937e',1,'Max7312::Max7312(unsigned char chipAddress, unsigned char portDirection1, unsigned char portDirection2)'],['../classMax7312.html#a319e2626d64855cf4593fe85c0e2dcc7',1,'Max7312::Max7312(unsigned char chipAddress, unsigned char portDirection1, unsigned char portDirection2, unsigned char timeoutFlag)']]]
+  ['getchipaddress',['getChipAddress',['../classMax7312.html#a69ba4ec0f2371dd7ef9311a0a9e39508',1,'Max7312']]],
+  ['getnode',['getNode',['../classMax7312.html#ab0c8cee176d3215fa79638c4e3c8076e',1,'Max7312']]],
+  ['getpinbase',['getPinBase',['../classMax7312.html#ae6171b15d07e9df91ba6c3e3b877a58e',1,'Max7312']]],
+  ['getport1data',['getPort1Data',['../classMax7312.html#a514c10c6e9491bb4ef2b2fed9f24506b',1,'Max7312']]],
+  ['getport1mode',['getPort1Mode',['../classMax7312.html#ace98d07f47fa35b7cb9009ff7fd07a18',1,'Max7312']]],
+  ['getport2data',['getPort2Data',['../classMax7312.html#a3329c86b09857f49c8872a8b2cd35a75',1,'Max7312']]],
+  ['getport2mode',['getPort2Mode',['../classMax7312.html#aa815b95a1e9f6e9443da29e5ba23a156',1,'Max7312']]]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['configport1',['configPort1',['../classMax7312.html#a6dcebc70c5bcfbf57924f6f39c9d3a4b',1,'Max7312']]],
-  ['configport2',['configPort2',['../classMax7312.html#aff7fe70500dd6111bc50112e66e4264c',1,'Max7312']]],
-  ['configtimeout',['configTimeout',['../classMax7312.html#a2f568cd432b3190565e07430043c2040',1,'Max7312']]]
+  ['_5fconfigportmax7312',['_configPortMax7312',['../Max7312_8cpp.html#a8d03d9f46f700e9e6cb64b715e2b00d3',1,'Max7312.cpp']]],
+  ['_5freadportmax7312',['_readPortMax7312',['../Max7312_8cpp.html#ad7fe42113bcfa69c0980612bc69265fd',1,'Max7312.cpp']]],
+  ['_5fwriteportmax7312',['_writePortMax7312',['../Max7312_8cpp.html#a2300c376f610d6446e17c3ecd938da75',1,'Max7312.cpp']]]
 ];

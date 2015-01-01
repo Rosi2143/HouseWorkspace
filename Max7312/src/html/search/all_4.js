@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['max7312',['Max7312',['../classMax7312.html',1,'Max7312'],['../classMax7312.html#ae927da401dbb3b69b3b194b095793750',1,'Max7312::Max7312()'],['../classMax7312.html#a6f217078af3ae80973ed61ae58819a48',1,'Max7312::Max7312(unsigned char chipAddress)'],['../classMax7312.html#a2977a2e665b39ed5101c0b95c15b937e',1,'Max7312::Max7312(unsigned char chipAddress, unsigned char portDirection1, unsigned char portDirection2)'],['../classMax7312.html#a319e2626d64855cf4593fe85c0e2dcc7',1,'Max7312::Max7312(unsigned char chipAddress, unsigned char portDirection1, unsigned char portDirection2, unsigned char timeoutFlag)']]],
-  ['max7312_2ecpp',['Max7312.cpp',['../Max7312_8cpp.html',1,'']]],
-  ['max7312_2eh',['Max7312.h',['../Max7312_8h.html',1,'']]],
-  ['max7312_5faddress',['MAX7312_ADDRESS',['../Max7312_8h.html#a694b7d2cb28ad46b0dd5d999406c0b78',1,'Max7312.h']]]
+  ['init',['init',['../classMax7312.html#ad72bd34683a6dd9c151fa1832d826a2c',1,'Max7312']]],
+  ['initdatabuffers',['initDataBuffers',['../classMax7312.html#a08283a42529dae642190b41909ebdaf0',1,'Max7312']]],
+  ['input_5fport_5f1',['INPUT_PORT_1',['../Max7312_8h.html#a762217a2ee80871217d29ed264bd1010',1,'Max7312.h']]],
+  ['input_5fport_5f2',['INPUT_PORT_2',['../Max7312_8h.html#ae09718d12ebef2bede051c69ef073635',1,'Max7312.h']]],
+  ['islowerport',['isLowerPort',['../classMax7312.html#aef766741dd9e450cdd23d1270302f4ee',1,'Max7312']]],
+  ['isportactive',['isPortActive',['../classMax7312.html#a72073ef8d713d3672b3693d0d583bcae',1,'Max7312']]],
+  ['isportinput',['isPortInput',['../classMax7312.html#ad1d770d2101313afdda5ea93c263fa34',1,'Max7312']]]
 ];

@@ -30,6 +30,7 @@
  * defines the default pin for the interrupt pin of the I2C devices
  */
 #define MAX7312_INTPIN  4
+
 /**
  * defines the minimum possible pinBase for the device
  */

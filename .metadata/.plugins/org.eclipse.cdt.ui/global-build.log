@@ -1,15 +1,12 @@
-19:30:29 **** Incremental Build of configuration Debug for project wiringPi_gmock ****
+17:03:05 **** Build of configuration Debug for project LcdDisplay ****
 make all 
-make: Nothing to be done for 'all'.
-19:30:29 **** Incremental Build of configuration Debug for project Max7312_test ****
-make all 
-Building file: ../test/main.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Max7312_test/links" -I"/home/micha/workspace/wiringPi_gmock/mocks" -I"/home/micha/workspace/Max7312/Interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -Wconversion-null -MMD -MP -MF"test/main.d" -MT"test/main.d" -o "test/main.o" "../test/main.cpp"
-Finished building: ../test/main.cpp
+Building file: ../src/LcdDisplay.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/home/micha/git_repositories/wiringPi/wiringPi -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/LcdDisplay.d" -MT"src/LcdDisplay.d" -o "src/LcdDisplay.o" "../src/LcdDisplay.cpp"
+Finished building: ../src/LcdDisplay.cpp
  
-Building target: Max7312_test
-Invoking: GCC C++ Linker
-g++  -o "Max7312_test"  ./test/main.o  ./links/Max7312.o  /home/micha/workspace/wiringPi_gmock/Debug/libwiringPi_gmock.a -lgtest -lgmock -lgtest_main -lpthread
-Finished building target: Max7312_test
+Building target: libLcdDisplay.so
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -shared -o "libLcdDisplay.so"  ./src/LcdDisplay.o   
+Finished building target: libLcdDisplay.so
  

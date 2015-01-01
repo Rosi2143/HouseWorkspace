@@ -83,6 +83,7 @@ void _configPortMax7312(struct wiringPiNodeStruct *node, int pin, int mode){
  * constructor were the specific chip address, the port directions and and the timeoutflag can be set
  * @param pinBase pinBase can be any number you like above 64
  * @param chipAddress chip address between 0x20 and 0x5E
+ * @param intPin pin where the interrupt is connected to
  * @param portDirection1 default values of ports 0-7 (1 - input; 0 - output)
  * @param portDirection2 default values of ports 8-15 (1 - input; 0 - output)
  * @param timeoutFlag 1 enable Bus timeout, 0 disable Bus timeout
@@ -197,42 +198,75 @@ _port2_data=wiringPiI2CRead(fd);
 return _port2_data;
 }
 
+/**
+ * write byte data to lower port
+ * @param portData
+ */
 void Max7312::writePort1(unsigned char portData){
 wiringPiI2CWriteReg16(fd, OUTPUT_PORT_1, portData);
 _port1_data = portData;
 }
+
+/**
+ * write byte data to higher port
+ * @param portData
+ */
 void Max7312::writePort2(unsigned char portData){
 wiringPiI2CWriteReg16(fd, OUTPUT_PORT_2, portData);
 _port2_data = portData;}
 
+/**
+ * set byte data to lower PolarityInversionRegister
+ * @param portInversion
+ */
 void Max7312::polarityInversionPort1(unsigned char portInversion){
 wiringPiI2CWriteReg16(fd, POLARITY_INVERSION_PORT_1, portInversion);
 }
+
+/**
+ * set byte data to lower PolarityInversionRegister
+ * @param portInversion
+ */
 void Max7312::polarityInversionPort2(unsigned char portInversion){
 wiringPiI2CWriteReg16(fd, POLARITY_INVERSION_PORT_2, portInversion);
 }
 
+/**
+ * set byte data to lower configuration register
+ * @param portDirection
+ */
 void Max7312::configPort1(unsigned char portDirection){
 wiringPiI2CWriteReg16(fd, CONFIGURATION_PORT_1, portDirection);
 _port1_mode = portDirection;
 }
 
+/**
+ * set byte data to higher configuration register
+ * @param portDirection
+ */
 void Max7312::configPort2(unsigned char portDirection){
 wiringPiI2CWriteReg16(fd, CONFIGURATION_PORT_2, portDirection);
 _port2_mode = portDirection;
 }
 
+/**
+ * (de-)activate I2C-timeout register
+ * @param timeoutFlag
+ */
 void Max7312::configTimeout(unsigned char timeoutFlag){
 wiringPiI2CWriteReg16(fd, TIMEOUT_REGISTER, timeoutFlag);
 }
 
+/**
+ * checks the interrupt flag and if set reads the new value
+ */
 void Max7312::readIntFlag(){}
 
 /*********** mid level commands, for sending data/cmds */
 
 /**
  * checks if the port pin is active
- * @param portValue
+ * @param pin - port relative to pinBase
  * @return true - port pin is active, false port pin is inactive
  */
 bool Max7312::isPortActive(int pin){
@@ -272,7 +306,6 @@ bool Max7312::isLowerPort(int pin){
 
 /**
  * read a single port - function required for wiringPi interface
- * @param node link to port structure
  * @param pin - port relative to pinBase
  * @return true - port is active, false - port is inactive
  */
@@ -302,9 +335,8 @@ bool Max7312::readPort(int pin){
 
 /**
  * write a single port - function required for wiringPi interface
- * @param node link to port structure
  * @param pin - port relative to pinBase
- * @param value - value to port should be set to 0 - OFF, 1 - ON
+ * @param newState - value to port should be set to 0 - OFF, 1 - ON
  * @return new value of complete port
  */
 int Max7312::writePort(int pin, bool newState){
@@ -329,9 +361,8 @@ int Max7312::writePort(int pin, bool newState){
 
 /**
  * set a single port to Output or Input - function requrired for wiringPi interface
- * @param node link to port structure
  * @param pin - port relative to pinBase
- * @param mode - 0 - Output; 1 - Input
+ * @param newMode - 0 - Output; 1 - Input
  * @return new value of complete port
  */
 int Max7312::configPort(int pin, bool newMode){
@@ -359,4 +390,3 @@ int Max7312::configPort(int pin, bool newMode){
       return _port2_mode;
    }
 }
-

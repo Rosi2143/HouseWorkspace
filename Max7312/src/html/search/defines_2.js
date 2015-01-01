@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['input_5fport_5f1',['INPUT_PORT_1',['../Max7312_8h.html#a762217a2ee80871217d29ed264bd1010',1,'Max7312.h']]],
-  ['input_5fport_5f2',['INPUT_PORT_2',['../Max7312_8h.html#ae09718d12ebef2bede051c69ef073635',1,'Max7312.h']]]
+  ['get_5fhigher_5fpin_5fid',['GET_HIGHER_PIN_ID',['../Max7312_8cpp.html#a6276c01e082d5c4bb14737170c7c41e6',1,'Max7312.cpp']]],
+  ['get_5flower_5fpin_5fid',['GET_LOWER_PIN_ID',['../Max7312_8cpp.html#ad22567b65d7d2d790a12d51be735cac6',1,'Max7312.cpp']]]
 ];

@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['init',['init',['../classMax7312.html#a8d823fe8208fea790864785b0794eeb6',1,'Max7312::init(unsigned char portDirection1, unsigned char portDirection2)'],['../classMax7312.html#a1f95bf4512cc000e208d76c960c4030b',1,'Max7312::init(unsigned char portDirection1, unsigned char portDirection2, unsigned char timeoutFlag)']]],
-  ['initdatabuffers',['initDataBuffers',['../classMax7312.html#a08283a42529dae642190b41909ebdaf0',1,'Max7312']]]
+  ['configport',['configPort',['../classMax7312.html#a58127815796977affd95188cfadf1fc4',1,'Max7312']]],
+  ['configport1',['configPort1',['../classMax7312.html#a6dcebc70c5bcfbf57924f6f39c9d3a4b',1,'Max7312']]],
+  ['configport2',['configPort2',['../classMax7312.html#aff7fe70500dd6111bc50112e66e4264c',1,'Max7312']]],
+  ['configtimeout',['configTimeout',['../classMax7312.html#a2f568cd432b3190565e07430043c2040',1,'Max7312']]]
 ];
