@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<House>
+  <version>2</version>
+  <Floor name="Basement">
+    <Room name="AA">
+      <Light>1</Light>
+      <Switch>2</Switch>
+      <Heat>3</Heat>
+    </Room>
+    <Room name="BB">
+      <Light>4</Light>
+      <Switch>5</Switch>
+      <Heat>6</Heat>
+    </Room>
+  </Floor name="Ground">
+  <Floor cancelled="true">
+    <Room name="CC">
+      <Light>10</Light>
+      <Switch>20</Switch>
+      <Heat>30</Heat>
+    </Room>
+    <Room name="DD">
+      <Light>40</Light>
+      <Switch>50</Switch>
+      <Heat>60</Heat>
+    </Room>
+  </Floor>
+</<House>>

@@ -2,30 +2,30 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="ls" key="selection"/>
+		<item value="xmlSubFloor" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
-			<item value="ls"/>
-			<item value="PCF"/>
-			<item value="void "/>
-			<item value="void"/>
-			<item value="CharsperLine"/>
-			<item value="_cLine"/>
-			<item value="Line"/>
-			<item value="Addr"/>
+			<item value="xmlSubFloor"/>
+			<item value="xmlItem"/>
+			<item value="xmlRoom"/>
+			<item value="xmlFloors"/>
+			<item value="xmlRoom-&gt;"/>
+			<item value="pRoom"/>
+			<item value="xmlpRoom"/>
+			<item value="Room."/>
 		</list>
 		<list key="replacehistory">
-			<item value="_pcfId"/>
-			<item value="void PcfLcd::"/>
-			<item value="_cCharsperLine"/>
-			<item value="_cLine"/>
-			<item value="_cAddr"/>
-			<item value="_lightOn"/>
-			<item value="PcfLcd"/>
-			<item value="&gt;&gt;"/>
+			<item value="xmlSubRoom"/>
+			<item value="xmlSubFloor"/>
+			<item value="xmlSubHouse"/>
+			<item value="xmlS"/>
+			<item value="xmlRoom."/>
+			<item value="xmlRoom"/>
+			<item value="pRoom-&gt;"/>
+			<item value="pFloor-&gt;"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

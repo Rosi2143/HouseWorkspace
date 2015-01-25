@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<House>
+  <version>2</version>
+  <Floor name="Basement">
+    <Room name="HH">
+      <Light>4001</Light>
+      <Switch>2011-07-21</Switch>
+    </Room>
+  </Floor name="Ground">
+  <Floor cancelled="true">
+    <carrier>BA</carrier>
+    <number>4002</number>
+    <date>2011-07-21</date>
+  </Floor>
+</<House>>

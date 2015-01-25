@@ -1,0 +1,37 @@
+/*
+ * XmlParser.cpp
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+#include "XmlParser.h"
+#include <boost/foreach.hpp>
+
+House readxml( const std::string &filename)
+{
+    // populate tree structure pt
+    using boost::property_tree::ptree;
+    ptree pt;
+    read_xml(filename, pt);
+
+    // traverse pt
+    House ans;
+    BOOST_FOREACH( ptree::value_type const& v1, pt.get_child("House") ) {
+        if( v1.first == "Floor" ) {
+            Floor f;
+            f.Name = v1.second.get<std::string>("<xmlattr>.Name", "NoName");
+            BOOST_FOREACH( ptree::value_type const& v2, v1.second.get_child("Floor") ) {
+                if( v.first == "Room" ) {
+                   Room R;
+                   R.Name   = v2.second.get<std::string>("<xmlattr>.Name", "NoName");
+                   R.Light  = v2.second.get<unsigned int>("Light");
+                   R.Switch = v2.second.get<unsigned int>("Switch");
+                   R.Heat   = v2.second.get<unsigned int>("Heat");
+                }
+            ans.push_back(f);
+        }
+    }
+
+    return ans;
+}
+

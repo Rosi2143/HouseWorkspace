@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<House>
+  <Name>Störtenberg 3</Name>
+  <Version>2</Version>
+  <Floor>
+    <Name>Basement</Name>
+    <Room Name="AA">
+      <Light>1</Light>
+      <Light>11</Light>
+      <Heater>2</Heater>
+      <Heater>22</Heater>
+      <Blind>3</Blind>
+      <Blind>33</Blind>
+      <Switch>
+         <ID>1</ID>
+         <Short     action="Light">1</Short>
+         <Long      action="Heater">2</Long>
+         <ExtraLong action="none">0</ExtraLong>
+      </Switch>
+    </Room>
+    <Room Name="BB">
+      <Light>4</Light>
+      <Heater>5</Heater>
+      <Blind>6</Blind>
+      <Switch>
+         <ID>0</ID>
+         <Short     action="Light">4</Short>
+         <Long      action="Heater">5</Long>
+         <ExtraLong action="BlindUp">6</ExtraLong>
+      </Switch>
+    </Room>
+  </Floor>
+  <Floor Name="Ground">
+    <Room Name="CC">
+      <Light>10</Light>
+      <Heater>20</Heater>
+      <Blind>30</Blind>
+      <Switch>
+         <ID>3</ID>
+         <Short     action="Light">10</Short>
+         <Long      action="Heater">20</Long>
+         <ExtraLong action="BlindDown">30</ExtraLong>
+      </Switch>
+    </Room>
+    <Room Name="DD">
+      <Light>40</Light>
+      <Heater>50</Heater>
+      <Blind>60</Blind>
+      <Switch>
+         <ID>4</ID>
+         <Short     action="Light">40</Short>
+         <Long      action="Heater">50</Long>
+         <ExtraLong action="none">0</ExtraLong>
+      </Switch>
+    </Room>
+  </Floor>
+</House>

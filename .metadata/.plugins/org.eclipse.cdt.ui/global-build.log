@@ -1,12 +1,12 @@
-17:03:05 **** Build of configuration Debug for project LcdDisplay ****
+21:14:03 **** Incremental Build of configuration Debug for project XmlParser_test ****
 make all 
-Building file: ../src/LcdDisplay.cpp
-Invoking: Cross G++ Compiler
-arm-linux-gnueabihf-g++ -I/home/micha/git_repositories/wiringPi/wiringPi -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/LcdDisplay.d" -MT"src/LcdDisplay.d" -o "src/LcdDisplay.o" "../src/LcdDisplay.cpp"
-Finished building: ../src/LcdDisplay.cpp
+Building file: ../src/XmlParser.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/XmlParser/src" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/XmlParser.d" -MT"src/XmlParser.d" -o "src/XmlParser.o" "../src/XmlParser.cpp"
+Finished building: ../src/XmlParser.cpp
  
-Building target: libLcdDisplay.so
-Invoking: Cross G++ Linker
-arm-linux-gnueabihf-g++ -shared -o "libLcdDisplay.so"  ./src/LcdDisplay.o   
-Finished building target: libLcdDisplay.so
+Building target: XmlParser_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "XmlParser_test"  ./src/XmlParser.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread
+Finished building target: XmlParser_test
  

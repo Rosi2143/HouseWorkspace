@@ -1,6 +1,6 @@
-12:50:07 **** Incremental Build of configuration Debug for project Ds1621 ****
+12:58:16 **** Incremental Build of configuration Debug for project Ds1621 ****
 make all 
 make: Nothing to be done for 'all'.
 
-12:50:07 Build Finished (took 166ms)
+12:58:16 Build Finished (took 219ms)
 
