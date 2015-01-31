@@ -3499,6 +3499,7 @@ pykickstart.commands.rootpw|/usr/lib/python2.7/site-packages/pykickstart/command
 pykickstart.commands.selinux|/usr/lib/python2.7/site-packages/pykickstart/commands/selinux.py
 pykickstart.commands.services|/usr/lib/python2.7/site-packages/pykickstart/commands/services.py
 pykickstart.commands.skipx|/usr/lib/python2.7/site-packages/pykickstart/commands/skipx.py
+pykickstart.commands.sshkey|/usr/lib/python2.7/site-packages/pykickstart/commands/sshkey.py
 pykickstart.commands.sshpw|/usr/lib/python2.7/site-packages/pykickstart/commands/sshpw.py
 pykickstart.commands.timezone|/usr/lib/python2.7/site-packages/pykickstart/commands/timezone.py
 pykickstart.commands.unsupported_hardware|/usr/lib/python2.7/site-packages/pykickstart/commands/unsupported_hardware.py

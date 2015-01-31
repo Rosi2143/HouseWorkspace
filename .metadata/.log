@@ -7374,3 +7374,268 @@ Caused by: java.lang.ArrayIndexOutOfBoundsException: Array index out of range: 2
 	at org.eclipse.jface.action.Action.runWithEvent(Action.java:519)
 	at org.eclipse.jface.commands.ActionHandler.execute(ActionHandler.java:122)
 	... 58 more
+!SESSION 2015-01-29 14:20:37.960 -----------------------------------------------
+eclipse.buildId=4.4.1.Z20150112-1528
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:20:52.146
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-modelbase.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:20:52.666
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dltk-core.index.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:20:52.838
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dltk-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:20:53.365
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/remote.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:20:53.548
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-enablement.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:20:55.112
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/gef.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:20:55.473
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/emf.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:20:56.118
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-sqldevtools.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:20:56.939
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-servertools-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:20:57.027
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-common-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:20:57.304
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-servertools.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:20:57.652
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:20:58.040
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-connectivity.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:20:58.364
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/rse.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:20:59.998
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pdt-tests.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:21:00.131
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/xsd.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:21:00.407
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-common.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:21:00.523
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-sourceediting.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:21:01.717
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pydev.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:21:01.992
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-doc.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:21:02.086
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/jdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:21:02.237
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/cdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:21:03.954
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/sdk.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:21:04.842
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/cvs.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:21:07.222
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/plugins/violetumleditor-2.0.1.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:21:07.249
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/plugins/violetumleditor-2.0.1.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:21:07.295
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/plugins/violetumleditor-2.0.1.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-29 14:21:07.359
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/plugins/violetumleditor-2.0.1.jar.
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2015-01-30 22:43:35.860
+!MESSAGE Connection to http://download.eclipse.org/releases/kepler/p2.index failed on download.eclipse.org: unknown error. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: download.eclipse.org: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:907)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1302)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1255)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:145)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:864)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2015-01-30 22:43:36.204
+!MESSAGE Connection to http://download.eclipse.org/releases/luna/p2.index failed on download.eclipse.org. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: download.eclipse.org
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1259)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:145)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:864)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2015-01-30 22:43:36.551
+!MESSAGE Connection to http://download.eclipse.org/eclipse/updates/4.4/p2.index failed on download.eclipse.org. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: download.eclipse.org
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1259)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:145)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:864)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2015-01-30 22:43:36.812
+!MESSAGE Connection to http://download.eclipse.org/eclipse/updates/4.3/p2.index failed on download.eclipse.org. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: download.eclipse.org
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1259)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1171)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1105)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:145)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:864)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1077)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1068)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1064)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:73)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-01-30 22:44:05.749 -----------------------------------------------
+eclipse.buildId=4.4.1.Z20150112-1528
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:11.177
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-modelbase.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:11.389
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dltk-core.index.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:11.491
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dltk-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:11.747
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/remote.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:11.818
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-enablement.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:12.064
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/gef.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:12.122
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/emf.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:12.284
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-sqldevtools.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:12.448
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-servertools-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:12.488
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-common-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:12.548
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-servertools.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:12.629
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:12.703
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-connectivity.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:12.780
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/rse.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:13.111
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pdt-tests.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:13.144
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/xsd.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:13.220
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-common.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:13.254
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-sourceediting.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:13.423
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pydev.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:13.486
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-doc.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:13.524
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/jdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:13.598
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/cdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:13.804
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/sdk.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:14.078
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/cvs.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:14.803
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/plugins/violetumleditor-2.0.1.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-01-30 22:44:14.845
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/plugins/violetumleditor-2.0.1.jar.
