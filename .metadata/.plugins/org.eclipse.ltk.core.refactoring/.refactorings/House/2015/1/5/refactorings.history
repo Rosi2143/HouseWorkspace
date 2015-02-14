@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;XmlParserHouse/src/XmlParser.cpp&apos; to &apos;XmlParserHouse.cpp&apos;" description="Rename resource &apos;XmlParser.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/XmlParser.cpp" name="XmlParserHouse.cpp" stamp="1422715438693" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;XmlParserHouse/src/XmlParser.h&apos; to &apos;XmlParserHouse.h&apos;" description="Rename resource &apos;XmlParser.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/XmlParser.h" name="XmlParserHouse.h" stamp="1422715444820" updateReferences="true"/>
+</session>

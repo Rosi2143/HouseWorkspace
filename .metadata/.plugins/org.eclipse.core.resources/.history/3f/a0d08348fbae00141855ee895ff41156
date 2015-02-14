@@ -1,0 +1,39 @@
+/*
+ * Switch.h
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#ifndef BLIND_H
+#define BLIND_H
+
+#include <string>
+#include <list>
+
+enum SwitchState
+{
+   SwitchUp,
+   SwitchMovingDown,
+   SwitchDown,
+   SwitchMovingUp,
+   SwitchSomeWhere
+}SwitchState;
+
+class Switch {
+public:
+      Switch();
+      ~Switch();
+
+      // access functions
+      std::string getName() const {return Name;}
+      SwitchState  getState() const {return State;}
+
+      // construction functions
+      void addFloor(const Floor& _Floor);
+protected:
+      SwitchState  State;
+      std::string Name;
+};
+
+#endif /* BLIND_H */

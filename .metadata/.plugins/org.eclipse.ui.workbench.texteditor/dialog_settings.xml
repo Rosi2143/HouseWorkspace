@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="408" key="DIALOG_X_ORIGIN"/>
+		<item value="246" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="xmlSubFloor" key="selection"/>
-		<item value="true" key="casesensitive"/>
+		<item value="Floors" key="selection"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
-		<item value="true" key="wholeword"/>
+		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="xmlSubFloor"/>
-			<item value="xmlItem"/>
-			<item value="xmlRoom"/>
-			<item value="xmlFloors"/>
-			<item value="xmlRoom-&gt;"/>
-			<item value="pRoom"/>
-			<item value="xmlpRoom"/>
-			<item value="Room."/>
+			<item value="Floors"/>
+			<item value="Room"/>
+			<item value="Floor"/>
+			<item value="Heater"/>
+			<item value="Light"/>
+			<item value="SwitchState"/>
+			<item value="HOUSE_H_"/>
+			<item value="Ex"/>
 		</list>
 		<list key="replacehistory">
+			<item value="FloorsPtr"/>
+			<item value="ROOM_H"/>
+			<item value=""/>
 			<item value="xmlSubRoom"/>
 			<item value="xmlSubFloor"/>
 			<item value="xmlSubHouse"/>
 			<item value="xmlS"/>
 			<item value="xmlRoom."/>
-			<item value="xmlRoom"/>
-			<item value="pRoom-&gt;"/>
-			<item value="pFloor-&gt;"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

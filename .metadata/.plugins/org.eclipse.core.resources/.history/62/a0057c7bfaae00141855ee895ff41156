@@ -1,0 +1,36 @@
+/*
+ * Heater.h
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#ifndef LIGHT_H_
+#define LIGHT_H_
+
+#include <string>
+#include <list>
+
+enum HeaterState
+{
+   HeaterOn,
+   HeaterOff
+}HeaterState;
+
+class Heater {
+public:
+      Heater();
+      ~Heater();
+
+      // access functions
+      std::string getName() const {return Name;}
+      HeaterState  getState() const {return State;}
+
+      // construction functions
+      void addFloor(const Floor& _Floor);
+protected:
+      HeaterState  State;
+      std::string Name;
+};
+
+#endif /* LIGHT_H_ */

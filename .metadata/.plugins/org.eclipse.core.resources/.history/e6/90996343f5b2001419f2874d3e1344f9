@@ -1,0 +1,15 @@
+/*
+ * Switch.cpp
+ *
+ *  Created on: Feb 7, 2015
+ *      Author: micha
+ */
+
+Switch::Switch(unsigned int _Id, std::string _Name, const Room* _pRoom) :
+      pRoom(_pRoom), Name(_Name), Id(_Id), State(Unknown) {
+   if (pRoom != nullptr) {
+      Name = _pRoom->getName() + Name;
+   }
+   switchActionMap.clear();
+}
+

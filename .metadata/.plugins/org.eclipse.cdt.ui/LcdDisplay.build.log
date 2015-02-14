@@ -1,15 +1,6 @@
-17:03:05 **** Build of configuration Debug for project LcdDisplay ****
+17:35:52 **** Build of configuration Debug for project LcdDisplay ****
 make all 
-Building file: ../src/LcdDisplay.cpp
-Invoking: Cross G++ Compiler
-arm-linux-gnueabihf-g++ -I/home/micha/git_repositories/wiringPi/wiringPi -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/LcdDisplay.d" -MT"src/LcdDisplay.d" -o "src/LcdDisplay.o" "../src/LcdDisplay.cpp"
-Finished building: ../src/LcdDisplay.cpp
- 
-Building target: libLcdDisplay.so
-Invoking: Cross G++ Linker
-arm-linux-gnueabihf-g++ -shared -o "libLcdDisplay.so"  ./src/LcdDisplay.o   
-Finished building target: libLcdDisplay.so
- 
+make: Nothing to be done for 'all'.
 
-17:03:06 Build Finished (took 1s.439ms)
+17:35:52 Build Finished (took 210ms)
 

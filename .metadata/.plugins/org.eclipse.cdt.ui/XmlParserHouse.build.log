@@ -1,0 +1,45 @@
+17:17:02 **** Incremental Build of configuration Debug for project XmlParserHouse ****
+make all 
+Building file: ../src/XmlParserHouse.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/XmlParserHouse.d" -MT"src/XmlParserHouse.d" -o "src/XmlParserHouse.o" "../src/XmlParserHouse.cpp"
+../src/XmlParserHouse.cpp:107:4: warning: identifier ‘nullptr’ is a keyword in C++11 [-Wc++0x-compat]
+    Floor* pFloor = nullptr;
+    ^
+../src/XmlParserHouse.cpp: In member function ‘const Room& Floor::getRoom(std::string) const’:
+../src/XmlParserHouse.cpp:66:27: error: range-based ‘for’ loops are not allowed in C++98 mode
+    for (const Room& room: RoomList)
+                           ^
+../src/XmlParserHouse.cpp: In member function ‘void House::readxml(const string&)’:
+../src/XmlParserHouse.cpp:107:20: error: ‘nullptr’ was not declared in this scope
+    Floor* pFloor = nullptr;
+                    ^
+../src/XmlParserHouse.cpp:118:20: error: ‘stoi’ is not a member of ‘std’
+          Version = std::stoi(xmlSubHouse.second.data().c_str());
+                    ^
+../src/XmlParserHouse.cpp:145:52: error: ‘stoi’ is not a member of ‘std’
+                            pRoom->Lights.push_back(std::stoi(xmlSubRoom.second.data()));
+                                                    ^
+../src/XmlParserHouse.cpp:148:53: error: ‘stoi’ is not a member of ‘std’
+                            pRoom->Heaters.push_back(std::stoi(xmlSubRoom.second.data()));
+                                                     ^
+../src/XmlParserHouse.cpp:151:52: error: ‘stoi’ is not a member of ‘std’
+                            pRoom->Blinds.push_back(std::stoi(xmlSubRoom.second.data()));
+                                                    ^
+../src/XmlParserHouse.cpp: In member function ‘const Floor& House::getFloor(std::string) const’:
+../src/XmlParserHouse.cpp:199:29: error: range-based ‘for’ loops are not allowed in C++98 mode
+    for (const Floor& floor: FloorList)
+                             ^
+../src/XmlParserHouse.cpp: In member function ‘unsigned int House::getNumberOfRooms() const’:
+../src/XmlParserHouse.cpp:229:29: error: range-based ‘for’ loops are not allowed in C++98 mode
+    for (const Floor& floor: FloorList)
+                             ^
+../src/XmlParserHouse.cpp: In member function ‘const Room& House::getRoom(std::string) const’:
+../src/XmlParserHouse.cpp:243:29: error: range-based ‘for’ loops are not allowed in C++98 mode
+    for (const Floor& floor: FloorList)
+                             ^
+src/subdir.mk:18: recipe for target 'src/XmlParserHouse.o' failed
+make: *** [src/XmlParserHouse.o] Error 1
+
+17:17:12 Build Finished (took 10s.126ms)
+

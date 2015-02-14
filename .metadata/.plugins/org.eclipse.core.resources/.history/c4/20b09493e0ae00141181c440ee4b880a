@@ -1,0 +1,101 @@
+/*
+ * XmlParser.h
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#ifndef XMLPARSERHOUSE_SRC_XMLPARSER_H_
+#define XMLPARSERHOUSE_SRC_XMLPARSER_H_
+
+#include <boost/property_tree/xml_parser.hpp>
+#include <boost/property_tree/ptree.hpp>
+#include <boost/date_time/gregorian/gregorian.hpp>
+#include <string>
+#include <list>
+#include <exception>
+
+class NoFloorException: public exception
+{
+  virtual const char* what() const throw()
+  {
+    return "No floor found";
+  }
+};
+
+typedef boost::gregorian::date Date;
+
+struct ptree {
+      std::string data;     // data associated with the node
+      std::list<std::pair<std::string, ptree> > children; // ordered list of named children
+};
+
+struct Switch {
+      unsigned int switchId;
+      std::string shortAction;
+      unsigned int shortId;
+      std::string longAction;
+      unsigned int longId;
+      std::string extraLongAction;
+      unsigned int extraLongId;
+};
+
+struct Room {
+      std::string Name;
+      std::vector<unsigned int> Lights;
+      std::vector<unsigned int> Heaters;
+      std::vector<unsigned int> Blinds;
+      std::vector<Switch>       Switches;
+};
+
+typedef std::vector<Room> Rooms;
+
+class Floor
+{
+   public:
+      Floor(std::string _name);
+      ~Floor();
+
+      // access functions
+      std::string  getName() const {return Name;}
+      unsigned int getNumberOfRooms() const;
+      const Room& getRoom(std::string name) const;
+
+      // construction functions
+      void addRoom(const Room& _Room);
+
+   protected:
+      Floor(){}
+      std::string Name;
+      Rooms RoomList;
+};
+
+typedef std::vector<Floor> Floors;
+
+class House {
+public:
+      House();
+      ~House();
+      void readxml(const std::string &filename);
+
+      // access functions
+      unsigned int getVersion() {return Version;}
+      std::string  getName() const {return Name;}
+
+      // handling floors
+      unsigned int getNumberOfFloors() const;
+      const Floor& getFloor(std::string name) const;
+
+      // handling rooms
+      unsigned int getNumberOfRooms() const;
+      const Room& getRoom(std::string name) const;
+
+      // construction functions
+      void addFloor(const Floor& _Floor);
+protected:
+      unsigned int Version;
+      std::string Name;
+      Floors FloorList;
+};
+
+#endif /* XMLPARSERHOUSE_SRC_XMLPARSER_H_ */

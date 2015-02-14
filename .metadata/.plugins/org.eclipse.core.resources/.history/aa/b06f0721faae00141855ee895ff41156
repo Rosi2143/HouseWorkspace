@@ -1,0 +1,44 @@
+/*
+ * Light.h
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#ifndef LIGHT_H_
+#define LIGHT_H_
+
+#include <string>
+#include <list>
+
+class Light {
+public:
+      House();
+      ~House();
+      void readHouseXml(const std::string &filename);
+
+      // access functions
+      unsigned int getVersion() {return Version;}
+      std::string  getName() const {return Name;}
+
+      // handling floors
+      unsigned int getNumberOfFloors() const;
+      const Floor& getFloor(std::string name) const;
+
+      // handling rooms
+      unsigned int getNumberOfRooms() const;
+      const Room& getRoom(std::string name) const;
+
+      // handling Switches
+      unsigned int getNumberOfSwitches() const;
+      const Switch& getSwitch(unsigned int ID) const;
+
+      // construction functions
+      void addFloor(const Floor& _Floor);
+protected:
+      unsigned int Version;
+      std::string Name;
+      Floors FloorList;
+};
+
+#endif /* LIGHT_H_ */

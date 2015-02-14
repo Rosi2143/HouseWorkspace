@@ -1,0 +1,41 @@
+/*
+ * Switch.h
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#ifndef SWITCH_H
+#define SWITCH_H
+
+#include <string>
+#include <list>
+
+enum SwitchState
+{
+   Released,
+   Pressed,
+   LongPressed,
+   VeryLongPressed,
+   Jammed
+}SwitchState;
+
+typedef int (*t_SwitchActionFunction)(int,int);
+
+class Switch {
+public:
+      Switch();
+      ~Switch();
+
+      // access functions
+      std::string getName() const {return Name;}
+      SwitchState getState() const {return State;}
+
+      // construction functions
+      void addAction(const SwitchState& state, t_SwitchActionFunction _function);
+protected:
+      SwitchState  State;
+      std::string Name;
+};
+
+#endif /* SWITCH_H */

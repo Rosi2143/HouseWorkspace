@@ -1,6 +1,6 @@
-12:50:06 **** Incremental Build of configuration Debug for project C-Blink ****
+17:35:51 **** Build of configuration Debug for project C-Blink ****
 make all 
 make: Nothing to be done for 'all'.
 
-12:50:06 Build Finished (took 213ms)
+17:35:51 Build Finished (took 186ms)
 

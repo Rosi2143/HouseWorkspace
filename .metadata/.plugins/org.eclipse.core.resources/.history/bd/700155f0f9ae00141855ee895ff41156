@@ -1,0 +1,61 @@
+/*
+ * Light.h
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#ifndef LIGHT_H_
+#define LIGHT_H_
+
+#include <string>
+#include <list>
+
+typedef boost::gregorian::date Date;
+
+struct ptree {
+      std::string data;     // data associated with the node
+      std::list<std::pair<std::string, ptree> > children; // ordered list of named children
+};
+
+struct Switch {
+      unsigned int switchId;
+      std::string shortAction;
+      unsigned int shortId;
+      std::string longAction;
+      unsigned int longId;
+      std::string extraLongAction;
+      unsigned int extraLongId;
+};
+
+class House {
+public:
+      House();
+      ~House();
+      void readHouseXml(const std::string &filename);
+
+      // access functions
+      unsigned int getVersion() {return Version;}
+      std::string  getName() const {return Name;}
+
+      // handling floors
+      unsigned int getNumberOfFloors() const;
+      const Floor& getFloor(std::string name) const;
+
+      // handling rooms
+      unsigned int getNumberOfRooms() const;
+      const Room& getRoom(std::string name) const;
+
+      // handling Switches
+      unsigned int getNumberOfSwitches() const;
+      const Switch& getSwitch(unsigned int ID) const;
+
+      // construction functions
+      void addFloor(const Floor& _Floor);
+protected:
+      unsigned int Version;
+      std::string Name;
+      Floors FloorList;
+};
+
+#endif /* LIGHT_H_ */

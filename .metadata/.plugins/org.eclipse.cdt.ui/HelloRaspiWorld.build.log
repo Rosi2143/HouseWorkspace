@@ -1,6 +1,6 @@
-12:50:11 **** Incremental Build of configuration Debug for project HelloRaspiWorld ****
+17:35:52 **** Build of configuration Debug for project HelloRaspiWorld ****
 make all 
 make: Nothing to be done for 'all'.
 
-12:50:11 Build Finished (took 153ms)
+17:35:52 Build Finished (took 169ms)
 

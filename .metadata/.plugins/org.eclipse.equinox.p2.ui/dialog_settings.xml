@@ -21,8 +21,8 @@
 	<section name="org.eclipse.equinox.internal.p2.ui.dialogs.UpdateWizard.WizardSettings">
 		<item value="868" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="684" key="DIALOG_HEIGHT"/>
-		<item value="34" key="DIALOG_Y_ORIGIN"/>
+		<item value="669" key="DIALOG_HEIGHT"/>
+		<item value="36" key="DIALOG_Y_ORIGIN"/>
 		<item value="249" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.equinox.internal.p2.ui.dialogs.InstallWizard.ResolutionResultsPage">

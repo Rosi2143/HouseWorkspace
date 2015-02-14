@@ -1,0 +1,24 @@
+/*
+ * Switch.cpp
+ *
+ *  Created on: Feb 7, 2015
+ *      Author: micha
+ */
+
+#include "Switch.h"
+#include "House.h"
+#include "Room.h"
+
+Switch::Switch(unsigned int _Id, std::string _Name, const Room* _pRoom) :
+   Base(_Name, _Id), State(Unknown), pRoom(_pRoom) {
+   if (pRoom != nullptr) {
+      Name = _pRoom->getName() + Name;
+   }
+   switchActionMap.clear();
+}
+
+Switch::Switch( const Switch &_switch):
+      Base(_switch.getName(), _switch.getId()), State(_switch.getState()), _pRoom(_switch.getRoom())
+{
+
+}

@@ -1,0 +1,20 @@
+19:17:44 **** Incremental Build of configuration Debug for project House ****
+make all 
+Building file: ../src/Floor.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.d" -o "src/Floor.o" "../src/Floor.cpp"
+Finished building: ../src/Floor.cpp
+ 
+Building file: ../src/House.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/House.d" -MT"src/House.d" -o "src/House.o" "../src/House.cpp"
+Finished building: ../src/House.cpp
+ 
+Building target: libHouse.so
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++ -shared -o "libHouse.so"  ./src/Floor.o ./src/House.o   
+Finished building target: libHouse.so
+ 
+
+19:18:00 Build Finished (took 15s.763ms)
+

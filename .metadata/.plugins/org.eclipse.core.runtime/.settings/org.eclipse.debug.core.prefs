@@ -4,4 +4,4 @@
 //org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.cdt.launch.remoteApplicationLaunchType=org.eclipse.cdt.dsf.gdb.launch.remoteCLaunch,debug,;
 //org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.cdt.testsrunner.launch.CTestsRunner=org.eclipse.cdt.testsrunner.launch.dsf.runTests,debug,;org.eclipse.cdt.testsrunner.launch.runTests,run,;
 eclipse.preferences.version=1
-prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<watchExpressions>\n<expression enabled\="true" text\="PIFACE + ((i-1)%8)"/>\n<expression enabled\="true" text\="PIFACE + 8 - ((i-1)%8)"/>\n<expression enabled\="true" text\="PIFACE + (i%8)"/>\n<expression enabled\="true" text\="PIFACE + 8 + (i%8)"/>\n</watchExpressions>\n
+prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<watchExpressions>\n<expression enabled\="true" text\="xmlSubRoom"/>\n<expression enabled\="true" text\="xmlSubFloor"/>\n<expression enabled\="true" text\="xmlSubRooms"/>\n</watchExpressions>\n

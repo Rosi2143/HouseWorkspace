@@ -1,6 +1,6 @@
-12:58:16 **** Incremental Build of configuration Debug for project DS1621_utest ****
+17:35:51 **** Build of configuration Debug for project DS1621_utest ****
 make all 
 make: Nothing to be done for 'all'.
 
-12:58:16 Build Finished (took 163ms)
+17:35:52 Build Finished (took 211ms)
 
