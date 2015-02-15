@@ -1,0 +1,47 @@
+/*
+ * Light.h
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#ifndef LIGHT_H_
+#define LIGHT_H_
+
+#include <string>
+#include <list>
+#include <iostream>
+
+#include "Base.h"
+
+typedef enum LightState {
+   LightOn, LightOff
+} LightState;
+
+class Room;
+
+class Light: public Base {
+   public:
+      Light(unsigned int _Id, std::string _Name, const Room* _pRoom);
+      Light(const Light& _light);  // copy constructor
+      ~Light() {
+      }
+      ;
+
+      // access functions
+      LightState getState() const {
+         return State;
+      }
+      LightState toggleState();
+
+      // construction functions
+   protected:
+      Light(): Base(0, ""),  {
+         std::cout << "Wrong default constructor Light"
+      }
+      ;
+      LightState _State;
+      Room* _pRoom;
+};
+
+#endif /* LIGHT_H_ */

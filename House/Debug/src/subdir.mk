@@ -5,15 +5,21 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/Floor.cpp \
-../src/House.cpp 
+../src/House.cpp \
+../src/Room.cpp \
+../src/Switch.cpp 
 
 OBJS += \
 ./src/Floor.o \
-./src/House.o 
+./src/House.o \
+./src/Room.o \
+./src/Switch.o 
 
 CPP_DEPS += \
 ./src/Floor.d \
-./src/House.d 
+./src/House.d \
+./src/Room.d \
+./src/Switch.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

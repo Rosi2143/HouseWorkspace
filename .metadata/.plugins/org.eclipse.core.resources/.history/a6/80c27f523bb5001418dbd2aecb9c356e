@@ -1,0 +1,52 @@
+/*
+ * Room.h
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#ifndef ROOM_H
+#define ROOM_H
+
+#include <string>
+#include <list>
+
+#include "Light.h"
+#include "Heater.h"
+#include "Blind.h"
+#include "Switch.h"
+#include "Floor.h"
+
+class Room: public Base
+{
+   public:
+      Room(unsigned int _Id, std::string _Name, const Floor* _Floor);
+      Room( const Room &_room);  // copy constructor
+      Room& operator=(Room other);
+      ~Room();
+
+      // access functions
+      std::string   getName() const {return Name;}
+      const Light&  getLight (std::string Name) const;
+      const Heater& getHeater(std::string Name) const;
+      const Blind&  getBlind (std::string Name) const;
+      const Switch& getSwitch(std::string Name) const;
+
+      // construction functions
+      void addLight (const Light&  _Light);
+      void addHeater(const Heater& _Heater);
+      void addBlind (const Blind&  _Blind);
+      void addSwitch(const Switch& _Switch);
+
+   protected:
+      Room():Base(0, ""), pFloor(nullptr){}
+      std::string _Name;
+      unsigned int Id;
+      std::vector<Light>  _Lights;
+      std::vector<Heater> _Heaters;
+      std::vector<Blind>  _Blinds;
+      std::vector<Switch> _Switches;
+      Floor*              _pFloor;
+};
+
+#endif /* ROOM_H */

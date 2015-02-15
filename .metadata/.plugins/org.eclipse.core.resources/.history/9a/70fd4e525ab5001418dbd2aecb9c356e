@@ -1,0 +1,52 @@
+/*
+ * iRoom.h
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#ifndef IROOM_H
+#define IROOM_H
+
+#include <string>
+#include <list>
+#include <iostream>
+
+#include "Base.h"
+
+class iFloor;
+class Light;
+class Heater;
+class Blind;
+class Switch;
+
+class iRoom: public Base {
+   public:
+      // Constructors
+      iRoom(unsigned int Id, std::string Name, const iFloor* pFloor);
+      iRoom(const iRoom &iRoom);  // copy constructor
+      virtual ~iRoom();
+
+      // Operators
+      iRoom& operator=(iRoom other);
+
+      // access functions
+      virtual const Light& getLight(std::string Name) const;
+      virtual const Heater& getHeater(std::string Name) const;
+      virtual const Blind& getBlind(std::string Name) const;
+      virtual const Switch& getSwitch(std::string Name) const;
+
+      // construction functions
+      virtual void addLight(const Light& Light);
+      virtual void addHeater(const Heater& Heater);
+      virtual void addBlind(const Blind& Blind);
+      virtual void addSwitch(const Switch& Switch);
+
+   protected:
+      iRoom() :
+            Base(0, "") {
+         std::cout << "Wrong default constructor iRoom";
+      }
+};
+
+#endif /* IROOM_H */

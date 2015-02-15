@@ -1,0 +1,57 @@
+/*
+ * House.h
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#ifndef IHOUSE_H_
+#define IHOUSE_H_
+
+#include <string>
+#include <list>
+#include <exception>
+
+class Floor;
+
+typedef boost::gregorian::date Date;
+typedef std::vector<Floor*> FloorsPtr;
+
+
+struct ptree {
+      std::string data;     // data associated with the node
+      std::list<std::pair<std::string, ptree> > children; // ordered list of named children
+};
+
+
+class iHouse: public Base {
+public:
+      iHouse();
+      ~iHouse();
+      virtual void readHouseXml(const std::string &filename) = 0;
+
+      // access functions
+      virtual unsigned int getVersion() const = 0;
+      virtual std::string  getName() const = 0;
+
+      // handling floors
+      unsigned int getNumberOfFloors() const = 0;
+      const Floor& getFloor(std::string name) const = 0;
+
+      // handling rooms
+      unsigned int getNumberOfRooms() const = 0;
+      const Room& getRoom(std::string name) const = 0;
+
+      // handling Switches
+      unsigned int getNumberOfSwitches() const = 0;
+      const Switch& getSwitch(unsigned int ID) const = 0;
+
+      // construction functions
+      void addFloor(const Floor& _Floor) = 0;
+protected:
+      unsigned int Version;
+      std::string Name;
+      FloorsPtr FloorList;
+};
+
+#endif /* IHOUSE_H_ */

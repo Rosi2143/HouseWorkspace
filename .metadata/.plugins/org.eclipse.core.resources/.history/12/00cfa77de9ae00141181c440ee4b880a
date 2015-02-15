@@ -1,3 +1,0 @@
-src/XmlParserHouse.d: ../src/XmlParserHouse.cpp ../src/XmlParserHouse.h
-
-../src/XmlParserHouse.h:

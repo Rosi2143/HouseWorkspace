@@ -1,0 +1,56 @@
+/*
+ * Switch.cpp
+ *
+ *  Created on: Feb 7, 2015
+ *      Author: micha
+ */
+
+#include "Switch.h"
+#include "House.h"
+#include "Room.h"
+
+Switch::Switch(unsigned int _Id, std::string _Name, const Room* _pRoom) :
+      Base(_Id, _Name), State(Unknown), pRoom(_pRoom) {
+   if (pRoom != nullptr) {
+      Name = _pRoom->getName() + Name;
+   }
+   switchActionMap.clear();
+}
+
+Switch::Switch(const Switch &_switch) :
+      Base(_switch.getId(), _switch.getName()), State(_switch.getState()), pRoom(
+            _switch.getRoom()), switchActionMap(_switch.getActionMap()) {
+
+}
+
+Switch& Switch::operator=(Switch other){
+   if(&other == this){
+      return *this;
+   }
+   State           = other.State;
+   switchActionMap = other.switchActionMap;
+   pRoom           = other.pRoom;
+   return *this;
+}
+/*!
+ * called from house construction to add actions to certain presses
+ * @param state: state of switch where action is added to
+ * @param _function: function pointer to actions
+ */
+void Switch::addAction(const SwitchState& state,
+            t_SwitchActionFunction _function) {
+
+}
+/*!
+ * called from Input unit when a press of a button was detected
+ */
+void Switch::OnPress() {
+
+}
+
+/*!
+ * called from Input unit when a release of a button was detected
+ */
+void Switch::OnRelease() {
+
+}

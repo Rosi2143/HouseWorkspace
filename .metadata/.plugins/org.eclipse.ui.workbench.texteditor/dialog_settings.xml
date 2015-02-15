@@ -6,30 +6,30 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Floors" key="selection"/>
+		<item value="Room" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="Floors"/>
 			<item value="Room"/>
+			<item value="Switch"/>
+			<item value="House"/>
+			<item value="_switch"/>
+			<item value="_Room"/>
 			<item value="Floor"/>
-			<item value="Heater"/>
-			<item value="Light"/>
-			<item value="SwitchState"/>
-			<item value="HOUSE_H_"/>
-			<item value="Ex"/>
+			<item value="RoomsPtr"/>
+			<item value="pRoom"/>
 		</list>
 		<list key="replacehistory">
+			<item value="iRoom"/>
+			<item value="iSwitch"/>
+			<item value="iHouse"/>
+			<item value="Switch"/>
+			<item value="other"/>
+			<item value="Room"/>
+			<item value="Floor"/>
 			<item value="FloorsPtr"/>
-			<item value="ROOM_H"/>
-			<item value=""/>
-			<item value="xmlSubRoom"/>
-			<item value="xmlSubFloor"/>
-			<item value="xmlSubHouse"/>
-			<item value="xmlS"/>
-			<item value="xmlRoom."/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

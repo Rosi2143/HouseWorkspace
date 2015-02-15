@@ -1,0 +1,22 @@
+#include "Room.h"
+#include "gmock/gmock.h"
+
+class MockRoom : public Room {
+ public:
+  MOCK_CONST_METHOD1(getLight,
+      const Light&(std::string Name));
+  MOCK_CONST_METHOD1(getHeater,
+      const Heater&(std::string Name));
+  MOCK_CONST_METHOD1(getBlind,
+      const Blind&(std::string Name));
+  MOCK_CONST_METHOD1(getSwitch,
+      const Switch&(std::string Name));
+  MOCK_METHOD1(addLight,
+      void(const Light& Light));
+  MOCK_METHOD1(addHeater,
+      void(const Heater& Heater));
+  MOCK_METHOD1(addBlind,
+      void(const Blind& Blind));
+  MOCK_METHOD1(addSwitch,
+      void(const Switch& Switch));
+};
