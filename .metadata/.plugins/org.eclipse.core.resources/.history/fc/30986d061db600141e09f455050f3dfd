@@ -1,0 +1,48 @@
+/*
+ * iHeater.h
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#ifndef IHEATER_H
+#define IHEATER_H
+
+#include <string>
+#include <list>
+#include <iostream>
+
+#include "Base.h"
+
+typedef enum HeaterState
+{
+   HeaterOn,
+   HeaterOff
+}HeaterState;
+
+class Room;
+
+class iHeater: public Base {
+public:
+      // Constructors
+      iHeater(unsigned int Id, std::string Name, const Room* pRoom);
+      iHeater(const iHeater& heater);  // copy constructor
+      virtual ~iHeater(){}
+
+      // Operators
+      iHeater& operator=(iHeater other);
+
+      // access functions
+      virtual HeaterState  getState() const {return _State;}
+      virtual HeaterState  toggleState();
+
+      // construction functions
+protected:
+      iHeater(): Base(0, ""), _State(HeaterOff), _pRoom(nullptr) {
+         std::cout << "Wrong default constructor iHeater";
+      }
+      HeaterState  _State;
+      Room*        _pRoom;
+};
+
+#endif /* IHEATER_H */

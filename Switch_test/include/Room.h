@@ -26,13 +26,15 @@ class Room: public iRoom {
       virtual ~Room();
 
       // Operators
-      Room& operator=(Room other);
+      Room& operator=(const Room& other);
 
       // access functions
       virtual const Light& getLight(std::string Name) const;
       virtual const Heater& getHeater(std::string Name) const;
       virtual const Blind& getBlind(std::string Name) const;
       virtual const Switch& getSwitch(std::string Name) const;
+
+      virtual const iTime* getTimeRef() const;
 
       // construction functions
       virtual void addLight(const Light& Light);

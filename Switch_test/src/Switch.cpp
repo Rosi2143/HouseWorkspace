@@ -5,13 +5,19 @@
  *      Author: micha
  */
 
+#include <iostream>
+
 #include "Switch.h"
+#include "Time.h"
 #include "iRoom.h"
+#include "boost/date_time/posix_time/posix_time.hpp"
+
+using namespace boost::posix_time;
 
 Switch::Switch(unsigned int Id, std::string Name, const iRoom* pRoom) :
       iSwitch(Id, Name), _State(Unknown), _pRoom(pRoom) {
    if (pRoom != nullptr) {
-      Name = _pRoom->getName() + Name;
+      _Name = _pRoom->getName() + "_" + Name;
    }
    _switchActionMap.clear();
 }
@@ -22,10 +28,11 @@ Switch::Switch(const Switch &Switch) :
 
 }
 
-Switch& Switch::operator=(Switch other) {
+Switch& Switch::operator=(const Switch& other) {
    if (&other == this) {
       return *this;
    }
+   iSwitch::operator =(other);
    _State = other._State;
    _switchActionMap = other._switchActionMap;
    _pRoom = other._pRoom;
@@ -45,12 +52,25 @@ void Switch::addAction(const SwitchState& state,
  * called from Input unit when a press of a button was detected
  */
 void Switch::OnPress() {
-
+   const iTime* _time = _pRoom->getTimeRef();
+   PressTime = _time->getCurrentTime();
+   std::string test = to_simple_string(PressTime);
+   std::cout << "Press at: " << test << std::endl;
 }
 
 /*!
  * called from Input unit when a release of a button was detected
  */
 void Switch::OnRelease() {
-
+   const iTime* _time = _pRoom->getTimeRef();
+   ReleaseTime = _time->getCurrentTime();
+   std::string test = to_simple_string(ReleaseTime);
+   std::cout << "Release at: " << test << std::endl;
+   if(ReleaseTime > PressTime){
+      PressDuration = ReleaseTime - PressTime;
+      std::string test1 = to_simple_string(PressDuration);
+      std::cout << "Duration is: " << test1 << std::endl;
+   } else {
+      // ignore release
+   }
 }

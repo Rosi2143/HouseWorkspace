@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -lgtest -lgmock -lgtest_main -lpthread
+LIBS := -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
 

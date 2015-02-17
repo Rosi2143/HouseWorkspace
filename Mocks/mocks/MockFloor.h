@@ -1,7 +1,7 @@
-#include "Floor.h"
+#include "iFloor.h"
 #include "gmock/gmock.h"
 
-class MockFloor : public Floor {
+class MockFloor : public iFloor {
  public:
   MOCK_CONST_METHOD0(getNumberOfRooms,
       unsigned int());

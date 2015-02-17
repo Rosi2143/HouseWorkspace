@@ -1,0 +1,55 @@
+/*
+ * Room.h
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#ifndef ROOM_H
+#define ROOM_H
+
+#include <string>
+#include <list>
+#include <iostream>
+
+#include "Light.h"
+#include "Heater.h"
+#include "Blind.h"
+#include "Switch.h"
+#include "Floor.h"
+
+class Room: public iRoom {
+   public:
+      // Constructors
+      Room(unsigned int Id, std::string Name, const Floor* pFloor);
+      Room(const Room &room);  // copy constructor
+      virtual ~Room();
+
+      // Operators
+      Room& operator=(Room other);
+
+      // access functions
+      virtual const Light& getLight(std::string Name) const;
+      virtual const Heater& getHeater(std::string Name) const;
+      virtual const Blind& getBlind(std::string Name) const;
+      virtual const Switch& getSwitch(std::string Name) const;
+
+      // construction functions
+      virtual void addLight(const Light& Light);
+      virtual void addHeater(const Heater& Heater);
+      virtual void addBlind(const Blind& Blind);
+      virtual void addSwitch(const Switch& Switch);
+
+   protected:
+      Room() :
+            Base(0, ""), _pFloor(nullptr) {
+         std::cout << "Wrong default constructor Room";
+      }
+      std::vector<Light> _Lights;
+      std::vector<Heater> _Heaters;
+      std::vector<Blind> _Blinds;
+      std::vector<Switch> _Switches;
+      const Floor* _pFloor;
+};
+
+#endif /* ROOM_H */

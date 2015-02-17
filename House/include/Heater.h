@@ -12,17 +12,9 @@
 #include <list>
 #include <iostream>
 
-#include "Base.h"
+#include "iHeater.h"
 
-typedef enum HeaterState
-{
-   HeaterOn,
-   HeaterOff
-}HeaterState;
-
-class Room;
-
-class Heater: public Base {
+class Heater: public iHeater {
 public:
       // Constructors
       Heater(unsigned int Id, std::string Name, const Room* pRoom);

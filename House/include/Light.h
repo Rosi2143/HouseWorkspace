@@ -12,15 +12,9 @@
 #include <list>
 #include <iostream>
 
-#include "Base.h"
+#include "iLight.h"
 
-typedef enum LightState {
-   LightOn, LightOff
-} LightState;
-
-class Room;
-
-class Light: public Base {
+class Light: public iLight {
    public:
       // Constructors
       Light(unsigned int Id, std::string Name, const Room* pRoom);
@@ -39,7 +33,7 @@ class Light: public Base {
 
       // construction functions
    protected:
-      Light(): Base(0, ""), _State(LightOff), _pRoom(nullptr) {
+      Light(): iLight(0, ""), _State(LightOff), _pRoom(nullptr) {
          std::cout << "Wrong default constructor Light";
       }
       LightState _State;

@@ -31,10 +31,16 @@ class iRoom;
 
 class IBaseSwitch {
    public:
+      // Constructors
       IBaseSwitch() {
       }
+      IBaseSwitch(const IBaseSwitch& baseSwitch);  // copy constructor
       virtual ~IBaseSwitch() {
       }
+
+     // Operators
+     //virtual IBaseSwitch& operator=(const IBaseSwitch& other)
+
       // Port interface functions
       virtual void OnPress() = 0;
       virtual void OnRelease() = 0;
@@ -54,33 +60,27 @@ class iSwitch: public IBaseSwitch, public Base {
       }
 
       // Operators
-      iSwitch& operator=(iSwitch other);    // assignment operator
+      virtual iSwitch& operator=(const iSwitch& other){    // assignment operator
+         Base::operator=(other);
+         return *this;
+      }
 
       // Port interface functions
-      virtual void OnPress();
-      virtual void OnRelease();
+      virtual void OnPress() = 0;
+      virtual void OnRelease() = 0;
 
       // access functions
-      virtual SwitchState getState() const {
-         return _State;
-      }
-      virtual const iRoom* getRoom() const {
-         return _pRoom;
-      }
-      virtual const ActionFunctionMap getActionMap() const {
-         return _switchActionMap;
-      }
+      virtual SwitchState getState() const = 0;
+      virtual const iRoom* getRoom() const = 0;
+      virtual const ActionFunctionMap getActionMap() const = 0;
 
       // construction functions
-      virtual void addAction(const SwitchState& state, t_SwitchActionFunction Function);
+      virtual void addAction(const SwitchState& state, t_SwitchActionFunction Function) = 0;
    protected:
       iSwitch() :
-            Base(0, ""), _State(Unknown), _pRoom(nullptr) {
+            Base(0, ""){
          std::cout << "Wrong default constructor iSwitch";
       }
-      SwitchState _State;
-      const iRoom* _pRoom;
-      ActionFunctionMap _switchActionMap;
 };
 
 #endif /* ISWITCH_H */

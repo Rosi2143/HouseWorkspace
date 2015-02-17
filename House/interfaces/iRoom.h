@@ -19,28 +19,31 @@ class iLight;
 class iHeater;
 class iBlind;
 class iSwitch;
+class iTime;
 
 class iRoom: public Base {
    public:
       // Constructors
-      iRoom(unsigned int Id, std::string Name, const iFloor* pFloor);
-      iRoom(const iRoom &iRoom);  // copy constructor
-      virtual ~iRoom();
+      iRoom(unsigned int Id, std::string Name, const iFloor* pFloor):Base(Id, Name){}
+      iRoom(const iRoom &iRoom){}  // copy constructor
+      virtual ~iRoom(){}
 
       // Operators
-      iRoom& operator=(iRoom other);
+      //iRoom& operator=(const iRoom& other);
 
       // access functions
-      virtual const iLight& getLight(std::string Name) const;
-      virtual const iHeater& getHeater(std::string Name) const;
-      virtual const iBlind& getBlind(std::string Name) const;
-      virtual const iSwitch& getSwitch(std::string Name) const;
+      virtual const iLight& getLight(std::string Name) const = 0;
+      virtual const iHeater& getHeater(std::string Name) const = 0;
+      virtual const iBlind& getBlind(std::string Name) const = 0;
+      virtual const iSwitch& getSwitch(std::string Name) const = 0;
+
+      virtual const iTime* getTimeRef() const = 0;
 
       // construction functions
-      virtual void addLight(const iLight& Light);
-      virtual void addHeater(const iHeater& Heater);
-      virtual void addBlind(const iBlind& Blind);
-      virtual void addSwitch(const iSwitch& Switch);
+      virtual void addLight(const iLight& Light) = 0;
+      virtual void addHeater(const iHeater& Heater) = 0;
+      virtual void addBlind(const iBlind& Blind) = 0;
+      virtual void addSwitch(const iSwitch& Switch) = 0;
 
    protected:
       iRoom() :

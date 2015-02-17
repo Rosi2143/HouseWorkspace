@@ -1,4 +1,4 @@
-22:11:10 **** Incremental Build of configuration Debug for project House ****
+21:56:25 **** Incremental Build of configuration Debug for project House ****
 make all 
 Building file: ../src/Floor.cpp
 Invoking: Cross G++ Compiler
@@ -10,5 +10,5 @@ compilation terminated.
 src/subdir.mk:27: recipe for target 'src/Floor.o' failed
 make: *** [src/Floor.o] Error 1
 
-22:11:10 Build Finished (took 211ms)
+21:56:26 Build Finished (took 796ms)
 

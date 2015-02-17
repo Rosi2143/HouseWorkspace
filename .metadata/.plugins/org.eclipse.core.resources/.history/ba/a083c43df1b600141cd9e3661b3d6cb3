@@ -1,0 +1,92 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
+
+#include "MockRoom.h"
+#include "Switch.h"
+
+using namespace std;
+using ::testing::_;
+using ::testing::Return;
+using ::testing::Invoke;
+using ::testing::TestWithParam;
+using ::testing::Values;
+using ::testing::StrCaseEq;
+
+TEST(SwitchTest, Constructor_OK) {
+   std::string testString("Test");
+   Switch _switch(0, testString, nullptr);
+   ASSERT_EQ(_switch.getId(), 0);
+   ASSERT_STREQ(testString.c_str(), _switch.getName().c_str());
+   ASSERT_EQ(_switch.getRoom(), nullptr);
+}
+
+TEST(SwitchTest, CopyConstructor_OK) {
+   std::string testString("Test");
+   Switch _switch(0, testString, nullptr);
+   Switch __switch(_switch);
+   ASSERT_EQ(__switch.getId(), 0);
+   ASSERT_STREQ(testString.c_str(),__switch.getName().c_str());
+   ASSERT_EQ(__switch.getRoom(), nullptr);
+}
+
+TEST(SwitchTest, Assignment_OK) {
+   std::string testString("Test");
+   Switch _switch(0, testString, nullptr);
+   Switch __switch(1, "g", nullptr);
+   __switch = _switch;
+   ASSERT_EQ(__switch.getId(), 0);
+   ASSERT_STREQ(testString.c_str(),__switch.getName().c_str());
+   ASSERT_EQ(__switch.getRoom(), nullptr);
+}
+
+TEST(SwitchTest, ConstructorWithRoom_OK) {
+   std::string testRoomString("Room");
+   std::string testString("Test");
+   std::string ResultString("Room_Test");
+   MockRoom _room(0, testRoomString, nullptr);
+   Switch _switch(0, testString, &_room);
+   ASSERT_EQ(_switch.getId(), 0);
+   ASSERT_STREQ(ResultString.c_str(), _switch.getName().c_str());
+   ASSERT_EQ(_switch.getRoom(), &_room);
+}
+
+TEST(SwitchTest, CopyConstructorWithRoom_OK) {
+   std::string testRoomString("Room");
+   std::string testString("Test");
+   std::string ResultString("Room_Test");
+   MockRoom _room(0, testRoomString, nullptr);
+   Switch _switch(0, testString, &_room);
+   Switch __switch(_switch);
+   ASSERT_EQ(__switch.getId(), 0);
+   ASSERT_STREQ(ResultString.c_str(), __switch.getName().c_str());
+   ASSERT_EQ(__switch.getRoom(), &_room);
+}
+
+TEST(SwitchTest, AssignmentWithRoom_OK) {
+   std::string testRoomString("Room");
+   std::string testString("Test");
+   std::string ResultString("Room_Test");
+   MockRoom _room(0, testRoomString, nullptr);
+   Switch _switch(0, testString, &_room);
+   Switch __switch(1, "z", nullptr);
+   __switch = _switch;
+   ASSERT_EQ(__switch.getId(), 0);
+   ASSERT_STREQ(ResultString.c_str(), __switch.getName().c_str());
+   ASSERT_EQ(__switch.getRoom(), &_room);
+}
+
+TEST(SwitchTest, SinglePress_OK) {
+   Time _time;
+   MockRoom _room(0, testRoomString, nullptr);
+   Switch _switch(1, "z", &_room);
+   EXPECT_CALL
+   _switch.OnPress();
+   _switch.OnRelease();
+}

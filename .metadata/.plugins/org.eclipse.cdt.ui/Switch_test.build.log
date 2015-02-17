@@ -1,70 +1,15 @@
-22:34:00 **** Incremental Build of configuration Debug for project Switch_test ****
+23:33:50 **** Incremental Build of configuration Debug for project Switch_test ****
 make all 
 Building file: ../src/main.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-In file included from /usr/include/gtest/gtest.h:58:0,
-                 from ../src/main.cpp:8:
-/usr/include/gtest/internal/gtest-internal.h: In instantiation of ‘const bool testing::internal::ImplicitlyConvertible<const iBlind&, long long int>::value’:
-/usr/include/gtest/gtest-printers.h:203:79:   required from ‘std::basic_ostream<_CharT, _Traits>& testing::internal2::operator<<(std::basic_ostream<_CharT, _Traits>&, const T&) [with Char = char; CharTraits = std::char_traits<char>; T = iBlind]’
-/usr/include/gtest/gtest-printers.h:245:7:   required from ‘void testing_internal::DefaultPrintNonContainerTo(const T&, std::ostream*) [with T = iBlind; std::ostream = std::basic_ostream<char>]’
-/usr/include/gtest/gtest-printers.h:338:59:   required from ‘void testing::internal::DefaultPrintTo(testing::internal::IsNotContainer, testing::internal::false_type, const T&, std::ostream*) [with T = iBlind; testing::internal::IsNotContainer = char; testing::internal::false_type = testing::internal::bool_constant<false>; std::ostream = std::basic_ostream<char>]’
-/usr/include/gtest/gtest-printers.h:376:67:   required from ‘void testing::internal::PrintTo(const T&, std::ostream*) [with T = iBlind; std::ostream = std::basic_ostream<char>]’
-/usr/include/gtest/gtest-printers.h:600:22:   required from ‘static void testing::internal::UniversalPrinter<T>::Print(const T&, std::ostream*) [with T = iBlind; std::ostream = std::basic_ostream<char>]’
-/usr/include/gtest/gtest-printers.h:756:40:   required from ‘void testing::internal::UniversalPrint(const T&, std::ostream*) [with T = iBlind; std::ostream = std::basic_ostream<char>]’
-/usr/include/gtest/gtest-printers.h:668:29:   required from ‘static void testing::internal::UniversalPrinter<T&>::Print(const T&, std::ostream*) [with T = const iBlind; std::ostream = std::basic_ostream<char>]’
-/usr/include/gmock/gmock-spec-builders.h:1339:42:   required from ‘void testing::internal::ActionResultHolder<T>::PrintAsActionResult(std::ostream*) const [with T = const iBlind&; std::ostream = std::basic_ostream<char>]’
-../src/main.cpp:52:1:   required from here
-/usr/include/gtest/internal/gtest-internal.h:822:54: error: invalid use of incomplete type ‘const class iBlind’
-       sizeof(Helper(ImplicitlyConvertible::MakeFrom())) == 1;
-                                                      ^
-In file included from /home/micha/workspace/Mocks/mocks/MockRoom.h:1:0,
-                 from ../src/main.cpp:11:
-/home/micha/workspace/House/interfaces/iRoom.h:20:7: error: forward declaration of ‘const class iBlind’
- class iBlind;
-       ^
-In file included from /usr/include/gtest/gtest.h:58:0,
-                 from ../src/main.cpp:8:
-/usr/include/gtest/internal/gtest-internal.h: In instantiation of ‘const bool testing::internal::ImplicitlyConvertible<const iHeater&, long long int>::value’:
-/usr/include/gtest/gtest-printers.h:203:79:   required from ‘std::basic_ostream<_CharT, _Traits>& testing::internal2::operator<<(std::basic_ostream<_CharT, _Traits>&, const T&) [with Char = char; CharTraits = std::char_traits<char>; T = iHeater]’
-/usr/include/gtest/gtest-printers.h:245:7:   required from ‘void testing_internal::DefaultPrintNonContainerTo(const T&, std::ostream*) [with T = iHeater; std::ostream = std::basic_ostream<char>]’
-/usr/include/gtest/gtest-printers.h:338:59:   required from ‘void testing::internal::DefaultPrintTo(testing::internal::IsNotContainer, testing::internal::false_type, const T&, std::ostream*) [with T = iHeater; testing::internal::IsNotContainer = char; testing::internal::false_type = testing::internal::bool_constant<false>; std::ostream = std::basic_ostream<char>]’
-/usr/include/gtest/gtest-printers.h:376:67:   required from ‘void testing::internal::PrintTo(const T&, std::ostream*) [with T = iHeater; std::ostream = std::basic_ostream<char>]’
-/usr/include/gtest/gtest-printers.h:600:22:   required from ‘static void testing::internal::UniversalPrinter<T>::Print(const T&, std::ostream*) [with T = iHeater; std::ostream = std::basic_ostream<char>]’
-/usr/include/gtest/gtest-printers.h:756:40:   required from ‘void testing::internal::UniversalPrint(const T&, std::ostream*) [with T = iHeater; std::ostream = std::basic_ostream<char>]’
-/usr/include/gtest/gtest-printers.h:668:29:   required from ‘static void testing::internal::UniversalPrinter<T&>::Print(const T&, std::ostream*) [with T = const iHeater; std::ostream = std::basic_ostream<char>]’
-/usr/include/gmock/gmock-spec-builders.h:1339:42:   required from ‘void testing::internal::ActionResultHolder<T>::PrintAsActionResult(std::ostream*) const [with T = const iHeater&; std::ostream = std::basic_ostream<char>]’
-../src/main.cpp:52:1:   required from here
-/usr/include/gtest/internal/gtest-internal.h:822:54: error: invalid use of incomplete type ‘const class iHeater’
-       sizeof(Helper(ImplicitlyConvertible::MakeFrom())) == 1;
-                                                      ^
-In file included from /home/micha/workspace/Mocks/mocks/MockRoom.h:1:0,
-                 from ../src/main.cpp:11:
-/home/micha/workspace/House/interfaces/iRoom.h:19:7: error: forward declaration of ‘const class iHeater’
- class iHeater;
-       ^
-In file included from /usr/include/gtest/gtest.h:58:0,
-                 from ../src/main.cpp:8:
-/usr/include/gtest/internal/gtest-internal.h: In instantiation of ‘const bool testing::internal::ImplicitlyConvertible<const iLight&, long long int>::value’:
-/usr/include/gtest/gtest-printers.h:203:79:   required from ‘std::basic_ostream<_CharT, _Traits>& testing::internal2::operator<<(std::basic_ostream<_CharT, _Traits>&, const T&) [with Char = char; CharTraits = std::char_traits<char>; T = iLight]’
-/usr/include/gtest/gtest-printers.h:245:7:   required from ‘void testing_internal::DefaultPrintNonContainerTo(const T&, std::ostream*) [with T = iLight; std::ostream = std::basic_ostream<char>]’
-/usr/include/gtest/gtest-printers.h:338:59:   required from ‘void testing::internal::DefaultPrintTo(testing::internal::IsNotContainer, testing::internal::false_type, const T&, std::ostream*) [with T = iLight; testing::internal::IsNotContainer = char; testing::internal::false_type = testing::internal::bool_constant<false>; std::ostream = std::basic_ostream<char>]’
-/usr/include/gtest/gtest-printers.h:376:67:   required from ‘void testing::internal::PrintTo(const T&, std::ostream*) [with T = iLight; std::ostream = std::basic_ostream<char>]’
-/usr/include/gtest/gtest-printers.h:600:22:   required from ‘static void testing::internal::UniversalPrinter<T>::Print(const T&, std::ostream*) [with T = iLight; std::ostream = std::basic_ostream<char>]’
-/usr/include/gtest/gtest-printers.h:756:40:   required from ‘void testing::internal::UniversalPrint(const T&, std::ostream*) [with T = iLight; std::ostream = std::basic_ostream<char>]’
-/usr/include/gtest/gtest-printers.h:668:29:   required from ‘static void testing::internal::UniversalPrinter<T&>::Print(const T&, std::ostream*) [with T = const iLight; std::ostream = std::basic_ostream<char>]’
-/usr/include/gmock/gmock-spec-builders.h:1339:42:   required from ‘void testing::internal::ActionResultHolder<T>::PrintAsActionResult(std::ostream*) const [with T = const iLight&; std::ostream = std::basic_ostream<char>]’
-../src/main.cpp:52:1:   required from here
-/usr/include/gtest/internal/gtest-internal.h:822:54: error: invalid use of incomplete type ‘const class iLight’
-       sizeof(Helper(ImplicitlyConvertible::MakeFrom())) == 1;
-                                                      ^
-In file included from /home/micha/workspace/Mocks/mocks/MockRoom.h:1:0,
-                 from ../src/main.cpp:11:
-/home/micha/workspace/House/interfaces/iRoom.h:18:7: error: forward declaration of ‘const class iLight’
- class iLight;
-       ^
-make: *** [src/main.o] Error 1
-src/subdir.mk:21: recipe for target 'src/main.o' failed
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Switch_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
+Finished building target: Switch_test
+ 
 
-22:34:04 Build Finished (took 3s.140ms)
+23:34:01 Build Finished (took 10s.668ms)
 

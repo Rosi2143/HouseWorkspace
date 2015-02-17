@@ -1,0 +1,53 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
+
+#include "MockRoom.h"
+#include "Switch.h"
+
+using namespace std;
+using ::testing::_;
+using ::testing::Return;
+using ::testing::Invoke;
+using ::testing::TestWithParam;
+using ::testing::Values;
+using ::testing::StrCaseEq;
+
+TEST(SwitchTest, Constructor_OK) {
+   std::string testString("Test");
+   Switch _switch(0, "Test", nullptr);
+   ASSERT_EQ(_switch.getId(), 0);
+   ASSERT_STREQ("Test", _switch.getName());
+   ASSERT_EQ(_switch.getRoom(), nullptr);
+}
+
+TEST(SwitchTest, CopyConstructor_OK) {
+   Switch _switch(0, "Test", nullptr);
+   Switch __switch(_switch);
+   ASSERT_EQ(__switch.getId(), 0);
+   ASSERT_STREQ("Test",__switch.getName());
+   ASSERT_EQ(__switch.getRoom(), nullptr);
+}
+
+TEST(SwitchTest, ConstructorWithRoom_OK) {
+   MockRoom _room(0, "Room", nullptr);
+   Switch _switch(0, "Test", &_room);
+   ASSERT_EQ(_switch.getId(), 0);
+   ASSERT_STREQ("Test", _switch.getName());
+   ASSERT_EQ(_switch.getRoom(), nullptr);
+}
+
+TEST(SwitchTest, CopyConstructorWithRoom_OK) {
+   MockRoom _room(0, "Room", nullptr);
+   Switch _switch(0, "Test", &_room);
+   Switch __switch(_switch);
+   ASSERT_EQ(__switch.getId(), 0);
+   ASSERT_STREQ("Test", __switch.getName());
+   ASSERT_EQ(__switch.getRoom(), nullptr);
+}

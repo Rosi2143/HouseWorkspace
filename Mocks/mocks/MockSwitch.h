@@ -1,30 +1,21 @@
-#include "Switch.h"
+#include "iSwitch.h"
 #include "gmock/gmock.h"
 
-class MockISwitch : public ISwitch {
- public:
-  MOCK_METHOD0(OnPress,
-      void());
-  MOCK_METHOD0(OnRelease,
-      void());
-  MOCK_CONST_METHOD0(getState,
-      SwitchState());
-  MOCK_METHOD2(addAction,
-      void(const SwitchState& state, t_SwitchActionFunction Function));
-};
+class MockIBaseSwitch: public IBaseSwitch {
+   public:
+      MOCK_METHOD0(OnPress, void());
+      MOCK_METHOD0(OnRelease, void());
+      MOCK_CONST_METHOD0(getState, SwitchState());
+      MOCK_METHOD2(addAction, void(const SwitchState& state, t_SwitchActionFunction Function));
+   };
 
-class MockSwitch : public Switch {
- public:
-  MOCK_METHOD0(OnPress,
-      void());
-  MOCK_METHOD0(OnRelease,
-      void());
-  MOCK_CONST_METHOD0(getState,
-      SwitchState());
-  MOCK_CONST_METHOD0(getRoom,
-      const Room*());
-  MOCK_CONST_METHOD0(getActionMap,
-      const ActionFunctionMap());
-  MOCK_METHOD2(addAction,
-      void(const SwitchState& state, t_SwitchActionFunction Function));
-};
+class MockiSwitch: public iSwitch {
+   public:
+      MOCK_METHOD1(=, operator iSwitch&(const iSwitch& other));
+      MOCK_METHOD0(OnPress, void());
+      MOCK_METHOD0(OnRelease, void());
+      MOCK_CONST_METHOD0(getState, SwitchState());
+      MOCK_CONST_METHOD0(getRoom, const iRoom*());
+      MOCK_CONST_METHOD0(getActionMap, const ActionFunctionMap());
+      MOCK_METHOD2(addAction, void(const SwitchState& state, t_SwitchActionFunction Function));
+   };

@@ -11,18 +11,9 @@
 #include <string>
 #include <list>
 
-typedef enum BlindState
-{
-   BlindUp,
-   BlindMovingDown,
-   BlindDown,
-   BlindMovingUp,
-   BlindSomeWhere
-}BlindState;
+#include "iBlind.h"
 
-class Room;
-
-class Blind {
+class Blind : public iBlind{
 public:
       Blind(unsigned int _Id, std::string _Name, const Room* _pRoom);
       ~Blind();

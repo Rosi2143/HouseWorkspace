@@ -12,6 +12,7 @@
 #include <list>
 #include <map>
 #include <iostream>
+#include "boost/date_time/posix_time/posix_time.hpp"
 #include "iSwitch.h"
 
 class iRoom;
@@ -25,7 +26,7 @@ class Switch: public iSwitch{
       }
 
       // Operators
-      Switch& operator=(Switch other);    // assignment operator
+      virtual Switch& operator=(const Switch& other);    // assignment operator
 
       // Port interface functions
       virtual void OnPress();
@@ -52,6 +53,10 @@ class Switch: public iSwitch{
       SwitchState _State;
       const iRoom* _pRoom;
       ActionFunctionMap _switchActionMap;
+
+      boost::posix_time::ptime PressTime;
+      boost::posix_time::ptime ReleaseTime;
+      boost::posix_time::time_duration PressDuration;
 };
 
 #endif /* SWITCH_H */

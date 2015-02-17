@@ -3442,6 +3442,7 @@ pyfros.froslogging|/usr/lib/python2.7/site-packages/pyfros/froslogging.py
 pyfros.i18n|/usr/lib/python2.7/site-packages/pyfros/i18n.py
 pyfros.plugins.__init__|/usr/lib/python2.7/site-packages/pyfros/plugins/__init__.py
 pyfros.plugins.const|/usr/lib/python2.7/site-packages/pyfros/plugins/const.py
+pyfros.plugins.screencastgnome|/usr/lib/python2.7/site-packages/pyfros/plugins/screencastgnome.py
 pyfros.screencastbase|/usr/lib/python2.7/site-packages/pyfros/screencastbase.py
 pygtk|/usr/lib64/python2.7/site-packages/pygtk.py
 pygtkcompat.__init__|/usr/lib64/python2.7/site-packages/pygtkcompat/__init__.py

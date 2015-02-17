@@ -1,0 +1,20 @@
+/*
+ * Time.h
+ *
+ *  Created on: Feb 17, 2015
+ *      Author: micha
+ */
+
+#ifndef TIME_H_
+#define TIME_H_
+
+#include "iTime.h"
+
+class Time {
+   public:
+      Time(){};
+      virtual ~Time(){}
+      virtual ptime getCurrentTime() {return microsec_clock::local_time();}
+};
+
+#endif /* TIME_H_ */
