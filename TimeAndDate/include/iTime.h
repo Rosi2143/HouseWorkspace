@@ -10,6 +10,13 @@
 
 #include "boost/date_time/posix_time/posix_time.hpp"
 
+typedef enum PressType {
+   ShortPressed,
+   LongPressed,
+   VeryLongPressed,
+   Jammed
+} PressType;
+
 using namespace boost::posix_time;
 
 class iTime {
@@ -17,6 +24,7 @@ class iTime {
       iTime(){};
       virtual ~iTime(){}
       virtual ptime getCurrentTime() const = 0;
+      virtual PressType evalPressType(boost::posix_time::time_duration duration) const = 0;
 };
 
 

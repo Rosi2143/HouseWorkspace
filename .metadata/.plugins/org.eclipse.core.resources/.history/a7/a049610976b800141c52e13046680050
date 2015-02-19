@@ -1,0 +1,31 @@
+/*
+ * iTime.h
+ *
+ *  Created on: Feb 17, 2015
+ *      Author: micha
+ */
+
+#ifndef ITIME_H_
+#define ITIME_H_
+
+#include "boost/date_time/posix_time/posix_time.hpp"
+
+typedef enum PressType {
+   ShortPressed,
+   LongPressed,
+   VeryLongPressed,
+   Jammed
+} PressType;
+
+using namespace boost::posix_time;
+
+class iTime {
+   public:
+      iTime(){};
+      virtual ~iTime(){}
+      virtual ptime getCurrentTime() const = 0;
+      virtual PressType evalPressType(boost::posix_time::time_duration duration) = 0;
+};
+
+
+#endif /* ITIME_H_ */

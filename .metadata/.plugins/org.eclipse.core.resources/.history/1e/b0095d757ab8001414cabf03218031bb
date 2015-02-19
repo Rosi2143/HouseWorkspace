@@ -1,0 +1,29 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
+
+#include "Time.h"
+
+using namespace std;
+using namespace boost::gregorian;
+using ::testing::_;
+using ::testing::Return;
+using ::testing::Invoke;
+using ::testing::TestWithParam;
+using ::testing::Values;
+using ::testing::StrCaseEq;
+
+TEST(TimeTest, Constructor_OK) {
+   std::string testString("Test");
+   Switch _switch(0, testString, nullptr);
+   ASSERT_EQ(_switch.getId(), 0);
+   ASSERT_STREQ(testString.c_str(), _switch.getName().c_str());
+   ASSERT_EQ(_switch.getRoom(), nullptr);
+}
+
