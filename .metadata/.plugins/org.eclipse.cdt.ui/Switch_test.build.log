@@ -1,4 +1,4 @@
-23:33:50 **** Incremental Build of configuration Debug for project Switch_test ****
+22:40:09 **** Incremental Build of configuration Debug for project Switch_test ****
 make all 
 Building file: ../src/main.cpp
 Invoking: GCC C++ Compiler
@@ -11,5 +11,5 @@ g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main
 Finished building target: Switch_test
  
 
-23:34:01 Build Finished (took 10s.668ms)
+22:40:21 Build Finished (took 12s.472ms)
 

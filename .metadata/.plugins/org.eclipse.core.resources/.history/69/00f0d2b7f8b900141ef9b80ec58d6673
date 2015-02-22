@@ -1,0 +1,11 @@
+#include "iFloor.h"
+#include "gmock/gmock.h"
+
+class MockiInputUser : public iInputUser {
+ public:
+  MOCK_METHOD0(OnPress,      void());
+  MOCK_METHOD0(OnRelease,      void());
+  MOCK_METHOD0(OnShortPress,      void());
+  MOCK_METHOD0(OnLongPress,      void());
+  MOCK_METHOD0(OnVeryLongPress,  void());
+};

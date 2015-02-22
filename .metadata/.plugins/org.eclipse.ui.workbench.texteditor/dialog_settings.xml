@@ -6,34 +6,34 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Room" key="selection"/>
-		<item value="false" key="casesensitive"/>
+		<item value="" key="selection"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="Room"/>
-			<item value="Switch"/>
-			<item value="House"/>
-			<item value="_switch"/>
-			<item value="_Room"/>
-			<item value="Floor"/>
-			<item value="RoomsPtr"/>
-			<item value="pRoom"/>
+			<item value="iInput"/>
+			<item value="std::bind"/>
+			<item value="boost::bind"/>
+			<item value="bind"/>
+			<item value="std::bin"/>
+			<item value="MockInputUser"/>
+			<item value="Switch _switch"/>
+			<item value="TEST_P"/>
 		</list>
 		<list key="replacehistory">
-			<item value="iRoom"/>
-			<item value="iSwitch"/>
-			<item value="iHouse"/>
-			<item value="Switch"/>
-			<item value="other"/>
-			<item value="Room"/>
-			<item value="Floor"/>
-			<item value="FloorsPtr"/>
+			<item value="boost::bind"/>
+			<item value="TEST_F"/>
+			<item value="TEST_P("/>
+			<item value="OnPress(_)"/>
+			<item value="IINPUTUSER"/>
+			<item value="iInputUser"/>
+			<item value="Blocked"/>
+			<item value=""/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="291" key="DIALOG_WIDTH"/>
+		<item value="293" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="741" key="DIALOG_HEIGHT"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>

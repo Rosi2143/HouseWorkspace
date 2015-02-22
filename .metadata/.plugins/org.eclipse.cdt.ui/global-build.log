@@ -1,30 +1,237 @@
-22:08:40 **** Incremental Build of configuration Debug for project TimeAndDate_test ****
+19:50:05 **** Build of configuration Debug for project Switch_test ****
 make all 
-make: Nothing to be done for 'all'.
-22:10:49 **** Incremental Build of configuration Debug for project TimeAndDate_test ****
+Building file: ../src/Switch.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Switch.d" -MT"src/Switch.d" -o "src/Switch.o" "../src/Switch.cpp"
+../src/Switch.cpp: In member function ‘virtual void Switch::OnPress()’:
+../src/Switch.cpp:74:36: warning: unused variable ‘switchActionFunction’ [-Wunused-variable]
+             t_SwitchActionFunction switchActionFunction = std::get < 1 > (sA);
+                                    ^
+Finished building: ../src/Switch.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Switch_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
+Finished building target: Switch_test
+ 
+19:51:28 **** Incremental Build of configuration Debug for project Switch_test ****
+make all 
+Building file: ../src/Switch.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Switch.d" -MT"src/Switch.d" -o "src/Switch.o" "../src/Switch.cpp"
+../src/Switch.cpp: In member function ‘virtual void Switch::OnPress()’:
+../src/Switch.cpp:75:50: error: must use ‘.*’ or ‘->*’ to call pointer-to-member function in ‘switchActionFunction (...)’, e.g. ‘(... ->* switchActionFunction) (...)’
+             inputUser->*switchActionFunction(0, 3);
+                                                  ^
+src/subdir.mk:21: recipe for target 'src/Switch.o' failed
+make: *** [src/Switch.o] Error 1
+19:56:42 **** Incremental Build of configuration Debug for project Switch_test ****
+make all 
+Building file: ../src/Switch.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Switch.d" -MT"src/Switch.d" -o "src/Switch.o" "../src/Switch.cpp"
+Finished building: ../src/Switch.cpp
+ 
+Building target: Switch_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
+Finished building target: Switch_test
+ 
+19:57:17 **** Incremental Build of configuration Debug for project Switch_test ****
 make all 
 Building file: ../src/main.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/TimeAndDate_test/include" -I"/home/micha/workspace/TimeAndDate_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
 Finished building: ../src/main.cpp
  
-Building target: TimeAndDate_test
+Building target: Switch_test
 Invoking: GCC C++ Linker
-g++ -Lworkspace_loc:/XmlParser/Debug -o "TimeAndDate_test"  ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
-Finished building target: TimeAndDate_test
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
+Finished building target: Switch_test
  
-22:14:59 **** Incremental Build of configuration Debug for project TimeAndDate_test ****
+19:59:23 **** Incremental Build of configuration Debug for project Switch_test ****
 make all 
 Building file: ../src/main.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/TimeAndDate_test/include" -I"/home/micha/workspace/TimeAndDate_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
 Finished building: ../src/main.cpp
  
-Building target: TimeAndDate_test
+Building target: Switch_test
 Invoking: GCC C++ Linker
-g++ -Lworkspace_loc:/XmlParser/Debug -o "TimeAndDate_test"  ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
-Finished building target: TimeAndDate_test
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
+Finished building target: Switch_test
  
-22:15:06 **** Incremental Build of configuration Debug for project TimeAndDate_test ****
+20:03:22 **** Incremental Build of configuration Debug for project Switch_test ****
+make all 
+Building file: ../src/Switch.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Switch.d" -MT"src/Switch.d" -o "src/Switch.o" "../src/Switch.cpp"
+Finished building: ../src/Switch.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Switch_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
+Finished building target: Switch_test
+ 
+20:04:48 **** Incremental Build of configuration Debug for project Switch_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Switch_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
+Finished building target: Switch_test
+ 
+20:05:08 **** Incremental Build of configuration Debug for project Switch_test ****
 make all 
 make: Nothing to be done for 'all'.
+20:06:17 **** Incremental Build of configuration Debug for project Switch_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Switch_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
+Finished building target: Switch_test
+ 
+21:17:12 **** Incremental Build of configuration Debug for project Switch_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Switch_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
+Finished building target: Switch_test
+ 
+21:38:02 **** Incremental Build of configuration Debug for project Switch_test ****
+make all 
+Building file: ../src/Switch.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Switch.d" -MT"src/Switch.d" -o "src/Switch.o" "../src/Switch.cpp"
+In file included from /usr/include/boost/date_time/posix_time/posix_time_system.hpp:13:0,
+                 from /usr/include/boost/date_time/posix_time/ptime.hpp:12,
+                 from /usr/include/boost/date_time/posix_time/posix_time.hpp:15,
+                 from /home/micha/workspace/Switch_test/include/Switch.h:15,
+                 from ../src/Switch.cpp:10:
+/usr/include/boost/date_time/posix_time/posix_time_config.hpp: In copy constructor ‘Switch::Switch(const Switch&)’:
+/usr/include/boost/date_time/posix_time/posix_time_config.hpp:85:14: error: ‘boost::posix_time::time_duration::time_duration(boost::posix_time::time_duration::impl_type)’ is protected
+     explicit time_duration(impl_type tick_count) :
+              ^
+../src/Switch.cpp:29:100: error: within this context
+             Switch._switchActionMap), PressTime(pos_infin), ReleaseTime(pos_infin), PressDuration(0) {
+                                                                                                    ^
+src/subdir.mk:21: recipe for target 'src/Switch.o' failed
+make: *** [src/Switch.o] Error 1
+21:39:25 **** Incremental Build of configuration Debug for project Switch_test ****
+make all 
+Building file: ../src/Switch.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Switch.d" -MT"src/Switch.d" -o "src/Switch.o" "../src/Switch.cpp"
+Finished building: ../src/Switch.cpp
+ 
+Building target: Switch_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
+Finished building target: Switch_test
+ 
+21:40:46 **** Incremental Build of configuration Debug for project Switch_test ****
+make all 
+Building file: ../src/Switch.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Switch.d" -MT"src/Switch.d" -o "src/Switch.o" "../src/Switch.cpp"
+Finished building: ../src/Switch.cpp
+ 
+Building target: Switch_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
+Finished building target: Switch_test
+ 
+22:25:08 **** Incremental Build of configuration Debug for project Switch_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Switch_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
+Finished building target: Switch_test
+ 
+22:27:22 **** Incremental Build of configuration Debug for project Switch_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Switch_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
+Finished building target: Switch_test
+ 
+22:28:48 **** Incremental Build of configuration Debug for project Switch_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Switch_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
+Finished building target: Switch_test
+ 
+22:39:22 **** Incremental Build of configuration Debug for project Switch_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In member function ‘virtual void SwitchTest_CheckActionReleased_NOK_Test::TestBody()’:
+../src/main.cpp:205:22: error: ‘OnShort’ was not declared in this scope
+    _switch.addAction(OnShort, sAf);
+                      ^
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+22:39:42 **** Incremental Build of configuration Debug for project Switch_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In member function ‘virtual void SwitchTest_CheckActionReleased_NOK_Test::TestBody()’:
+../src/main.cpp:205:22: error: ‘OnShortPressed’ was not declared in this scope
+    _switch.addAction(OnShortPressed, sAf);
+                      ^
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+22:40:09 **** Incremental Build of configuration Debug for project Switch_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Switch_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
+Finished building target: Switch_test
+ 

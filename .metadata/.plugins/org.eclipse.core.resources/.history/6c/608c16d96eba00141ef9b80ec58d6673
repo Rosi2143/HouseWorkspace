@@ -1,0 +1,13 @@
+#include "iInputUser.h"
+#include "gmock/gmock.h"
+
+class MockInputUser: public iInputUser {
+   public:
+      MockInputUser(unsigned int Id, std::string Name) : iInputUser(Id, Name){}
+      ~MockInputUser(){}
+      MOCK_METHOD0(OnPress, void());
+      MOCK_METHOD0(OnRelease, void());
+      MOCK_METHOD0(OnShortPress, void());
+      MOCK_METHOD0(OnLongPress, void());
+      MOCK_METHOD0(OnVeryLongPress, void());
+   };

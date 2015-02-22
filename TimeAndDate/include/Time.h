@@ -33,19 +33,19 @@ class Time: public iTime {
             boost::posix_time::time_duration duration) const {
          if (duration
                < boost::posix_time::milliseconds(_PressTime.ShortPressTimeMs)) {
-            return ShortPressed;
+            return Short;
          } else if (duration
                < boost::posix_time::milliseconds(_PressTime.LongPressTimeMs)) {
-            return LongPressed;
+            return Long;
          } else if (duration
                < boost::posix_time::milliseconds(
                      _PressTime.VeryLongPressTimeMs)) {
-            return VeryLongPressed;
+            return VeryLong;
          } else if (duration
                < boost::posix_time::milliseconds(_PressTime.JammedPressTimeMs)) {
-            return Jammed;
+            return Blocked;
          } else {
-            return Jammed;
+            return Blocked;
          }
       }
    protected:

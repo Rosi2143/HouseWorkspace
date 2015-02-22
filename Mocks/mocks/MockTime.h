@@ -14,6 +14,6 @@
 class MockTime : public iTime {
  public:
   MOCK_CONST_METHOD0(getCurrentTime,     ptime());
-};
+  MOCK_CONST_METHOD1(evalPressType,      PressType(boost::posix_time::time_duration duration));};
 
 #endif /* MOCKTIME_H_ */
