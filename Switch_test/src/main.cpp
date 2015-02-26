@@ -35,6 +35,7 @@ class SwitchTest: public ::testing::Test {
 
       virtual void SetUp() {
       }
+      PressTime _pressTime;
       MockTime _time;
       MockRoom _room;
       MockInputUser _inputUser;
@@ -99,7 +100,8 @@ TEST_F(SwitchTest, ShortPress_OK) {
    EXPECT_CALL(_time, getCurrentTime()).WillOnce(Return(second_clock::local_time()));
    _switch.OnPress();
    EXPECT_CALL(_time, getCurrentTime()).WillOnce(Return(second_clock::local_time()+millisec(500)));
-   _switch.OnRelease();
+   EXPECT_CALL(_time, evalPressType(_)).WillOnce(Return(Short));
+  _switch.OnRelease();
 }
 
 TEST_F(SwitchTest, NoPressRelease_OK) {
@@ -115,6 +117,7 @@ TEST_F(SwitchTest, PressDoubleRelease_OK) {
    EXPECT_CALL(_time, getCurrentTime()).WillOnce(Return(second_clock::local_time()));
    _switch.OnPress();
    EXPECT_CALL(_time, getCurrentTime()).WillOnce(Return(second_clock::local_time()+millisec(500)));
+   EXPECT_CALL(_time, evalPressType(_)).WillOnce(Return(Short));
    _switch.OnRelease();
    EXPECT_CALL(_time, getCurrentTime()).WillOnce(Return(second_clock::local_time()+millisec(500)));
    _switch.OnRelease();
@@ -196,18 +199,77 @@ TEST_F(SwitchTest, CheckActionReleased_OK) {
 
    EXPECT_CALL(_inputUser, OnRelease(_));
    EXPECT_CALL(_time, getCurrentTime()).WillOnce(Return(second_clock::local_time()+millisec(500)));
+   EXPECT_CALL(_time, evalPressType(_)).WillOnce(Return(Short));
    _switch.OnRelease();
 }
 
 TEST_F(SwitchTest, CheckActionReleased_NOK) {
    Switch _switch(1, "z", &_room, &_inputUser);
-   t_SwitchActionFunction sAf = &iInputUser::OnRelease;
+   t_SwitchActionFunction sAf = &iInputUser::OnShortPress;
    _switch.addAction(ShortPressed, sAf);
    EXPECT_CALL(_room, getTimeRef()).WillRepeatedly(Return(&_time));
    EXPECT_CALL(_inputUser, OnRelease(_)).Times(0);
    EXPECT_CALL(_time, getCurrentTime()).WillOnce(Return(second_clock::local_time()));
+   EXPECT_CALL(_time, evalPressType(_)).WillOnce(Return(Short));
    _switch.OnPress();
 
+   EXPECT_CALL(_inputUser, OnShortPress(_));
    EXPECT_CALL(_time, getCurrentTime()).WillOnce(Return(second_clock::local_time()+millisec(500)));
+   _switch.OnRelease();
+}
+
+TEST_F(SwitchTest, CheckActionShortPress_OK) {
+   Switch _switch(1, "z", &_room, &_inputUser);
+   t_SwitchActionFunction sAf = &iInputUser::OnShortPress;
+   _switch.addAction(ShortPressed, sAf);
+   EXPECT_CALL(_room, getTimeRef()).WillRepeatedly(Return(&_time));
+   EXPECT_CALL(_time, getCurrentTime()).WillOnce(Return(second_clock::local_time()));
+   _switch.OnPress();
+
+   EXPECT_CALL(_inputUser, OnShortPress(_));
+   EXPECT_CALL(_time, getCurrentTime()).WillOnce(Return(second_clock::local_time()+millisec(500)));
+   EXPECT_CALL(_time, evalPressType(_)).WillOnce(Return(Short));
+   _switch.OnRelease();
+}
+
+TEST_F(SwitchTest, CheckActionLongPress_OK) {
+   Switch _switch(1, "z", &_room, &_inputUser);
+   t_SwitchActionFunction sAf = &iInputUser::OnLongPress;
+   _switch.addAction(LongPressed, sAf);
+   EXPECT_CALL(_room, getTimeRef()).WillRepeatedly(Return(&_time));
+   EXPECT_CALL(_time, getCurrentTime()).WillOnce(Return(second_clock::local_time()));
+   _switch.OnPress();
+
+   EXPECT_CALL(_inputUser, OnLongPress(_));
+   EXPECT_CALL(_time, getCurrentTime()).WillOnce(Return(second_clock::local_time()+millisec(500)));
+   EXPECT_CALL(_time, evalPressType(_)).WillOnce(Return(Long));
+   _switch.OnRelease();
+}
+
+TEST_F(SwitchTest, CheckActionVeryLongPress_OK) {
+   Switch _switch(1, "z", &_room, &_inputUser);
+   t_SwitchActionFunction sAf = &iInputUser::OnVeryLongPress;
+   _switch.addAction(VeryLongPressed, sAf);
+   EXPECT_CALL(_room, getTimeRef()).WillRepeatedly(Return(&_time));
+   EXPECT_CALL(_time, getCurrentTime()).WillOnce(Return(second_clock::local_time()));
+   _switch.OnPress();
+
+   EXPECT_CALL(_inputUser, OnVeryLongPress(_));
+   EXPECT_CALL(_time, getCurrentTime()).WillOnce(Return(second_clock::local_time()+millisec(500)));
+   EXPECT_CALL(_time, evalPressType(_)).WillOnce(Return(VeryLong));
+   _switch.OnRelease();
+}
+
+TEST_F(SwitchTest, CheckActionBlocked_OK) {
+   Switch _switch(1, "z", &_room, &_inputUser);
+   t_SwitchActionFunction sAf = &iInputUser::OnBlocked;
+   _switch.addAction(Jammed, sAf);
+   EXPECT_CALL(_room, getTimeRef()).WillRepeatedly(Return(&_time));
+   EXPECT_CALL(_time, getCurrentTime()).WillOnce(Return(second_clock::local_time()));
+   _switch.OnPress();
+
+   EXPECT_CALL(_inputUser, OnBlocked(_));
+   EXPECT_CALL(_time, getCurrentTime()).WillOnce(Return(second_clock::local_time()+millisec(500)));
+   EXPECT_CALL(_time, evalPressType(_)).WillOnce(Return(Blocked));
    _switch.OnRelease();
 }

@@ -68,10 +68,10 @@ void Switch::OnPress() {
          PressTime = _time->getCurrentTime();
          std::string test = to_simple_string(PressTime);
          std::cout << "Press at: " << test << std::endl;
-         ActionFunctionMap::const_iterator iter = _switchActionMap.find(
+         ActionFunctionMap::const_iterator SwitchActionIterator = _switchActionMap.find(
                Pressed);
-         if (iter != _switchActionMap.end()) {
-            SwitchAction sA = iter->second;
+         if (SwitchActionIterator != _switchActionMap.end()) {
+            SwitchAction sA = SwitchActionIterator->second;
             iInputUser* inputUser = std::get < 0 > (sA);
             t_SwitchActionFunction switchActionFunction = std::get < 1 > (sA);
             (inputUser->*switchActionFunction)(0);
@@ -89,7 +89,7 @@ void Switch::OnPress() {
 void Switch::OnRelease() {
    if (_pRoom != nullptr) {
       const iTime* _time = _pRoom->getTimeRef();
-      if (_pRoom != nullptr) {
+      if (_time != nullptr) {
          ReleaseTime = _time->getCurrentTime();
          std::string test = to_simple_string(ReleaseTime);
          std::cout << "Release at: " << test << std::endl;
@@ -97,10 +97,45 @@ void Switch::OnRelease() {
             PressDuration = ReleaseTime - PressTime;
             std::string test1 = to_simple_string(PressDuration);
             std::cout << "Duration is: " << test1 << std::endl;
-            ActionFunctionMap::const_iterator iter = _switchActionMap.find(
+            ActionFunctionMap::const_iterator SwitchActionIterator = _switchActionMap.find(
                   Released);
-            if (iter != _switchActionMap.end()) {
-               SwitchAction sA = iter->second;
+            if (SwitchActionIterator != _switchActionMap.end()) {
+               SwitchAction sA = SwitchActionIterator->second;
+               iInputUser* inputUser = std::get < 0 > (sA);
+               t_SwitchActionFunction switchActionFunction = std::get < 1
+                     > (sA);
+               (inputUser->*switchActionFunction)(0);
+            }
+
+            PressType pressType = _time->evalPressType(PressDuration);
+            switch (pressType) {
+            case Short: {
+               SwitchActionIterator = _switchActionMap.find(
+                     ShortPressed);
+            }
+               break;
+            case Long: {
+               SwitchActionIterator = _switchActionMap.find(
+                     LongPressed);
+            }
+               break;
+            case VeryLong: {
+               SwitchActionIterator = _switchActionMap.find(
+                     VeryLongPressed);
+            }
+               break;
+            case Blocked: {
+               SwitchActionIterator = _switchActionMap.find(
+                     Jammed);
+            }
+               break;
+            default: {
+               std::cout << "invalid TimeSpan" << std::endl;
+               SwitchActionIterator = _switchActionMap.end();
+            }
+            }
+            if (SwitchActionIterator != _switchActionMap.end()) {
+               SwitchAction sA = SwitchActionIterator->second;
                iInputUser* inputUser = std::get < 0 > (sA);
                t_SwitchActionFunction switchActionFunction = std::get < 1
                      > (sA);

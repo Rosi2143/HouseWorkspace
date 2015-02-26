@@ -10,6 +10,13 @@
 
 #include "boost/date_time/posix_time/posix_time.hpp"
 
+typedef struct PressTime {
+      int ShortPressTimeMs;
+      int LongPressTimeMs;
+      int VeryLongPressTimeMs;
+      int JammedPressTimeMs;
+} PressTime;
+
 typedef enum PressType {
    Short,
    Long,

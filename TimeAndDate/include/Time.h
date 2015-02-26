@@ -11,13 +11,6 @@
 #include "boost/date_time/posix_time/posix_time.hpp"
 #include "iTime.h"
 
-typedef struct PressTime {
-      int ShortPressTimeMs;
-      int LongPressTimeMs;
-      int VeryLongPressTimeMs;
-      int JammedPressTimeMs;
-} PressTime;
-
 class Time: public iTime {
    public:
       Time(PressTime pressTime) :
