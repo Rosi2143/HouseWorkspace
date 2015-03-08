@@ -20,12 +20,12 @@ typedef enum HeaterState
    HeaterOff
 }HeaterState;
 
-class Room;
+class iRoom;
 
 class iHeater: public Base {
 public:
       // Constructors
-      iHeater(unsigned int Id, std::string Name, const Room* pRoom):Base(Id, Name){};
+      iHeater(unsigned int Id, std::string Name, iRoom* pRoom):Base(Id, Name, pRoom){};
       iHeater(const iHeater& heater);  // copy constructor
       virtual ~iHeater(){}
 
@@ -38,7 +38,7 @@ public:
 
       // construction functions
 protected:
-      iHeater(): Base(0, ""){
+      iHeater(): Base(0, "", nullptr){
          std::cout << "Wrong default constructor iHeater";
       }
 };

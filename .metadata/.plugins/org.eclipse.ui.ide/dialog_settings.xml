@@ -5,6 +5,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/home/micha/workspace/Light_test"/>
 			<item value="/home/micha/workspace/TimeAndDate_test"/>
 			<item value="/home/micha/workspace/Switch_test"/>
 		</list>
@@ -16,10 +17,10 @@
 		<item value="/home/micha/mntpi/wiringPi/wiringPi/examples/PiFace" key="OUTSIDE_LOCATION"/>
 	</section>
 	<section name="SaveAsDialogSettings">
-		<item value="613" key="DIALOG_WIDTH"/>
+		<item value="615" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="559" key="DIALOG_HEIGHT"/>
-		<item value="377" key="DIALOG_X_ORIGIN"/>
-		<item value="91" key="DIALOG_Y_ORIGIN"/>
+		<item value="545" key="DIALOG_HEIGHT"/>
+		<item value="376" key="DIALOG_X_ORIGIN"/>
+		<item value="98" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

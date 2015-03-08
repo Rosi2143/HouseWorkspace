@@ -12,6 +12,7 @@
 #include <list>
 #include <iostream>
 
+#include "iRoom.h"
 #include "Light.h"
 #include "Heater.h"
 #include "Blind.h"
@@ -44,7 +45,7 @@ class Room: public iRoom {
 
    protected:
       Room() :
-            Base(0, ""), _pFloor(nullptr) {
+            iRoom(0, "", nullptr) {
          std::cout << "Wrong default constructor Room";
       }
       std::vector<Light> _Lights;

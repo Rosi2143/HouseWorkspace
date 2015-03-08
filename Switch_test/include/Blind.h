@@ -15,11 +15,13 @@
 
 class Blind : public iBlind{
 public:
-      Blind(unsigned int _Id, std::string _Name, const Room* _pRoom);
+      Blind(unsigned int _Id, std::string _Name, iRoom* _pRoom);
       ~Blind();
 
+      // Operators
+      Blind& operator=(const Blind& other);    // assignment operator
+
       // access functions
-      std::string getName() const {return Name;}
       BlindState  getState() const {return State;}
       BlindState  moveUp();
       BlindState  moveDown();
@@ -27,9 +29,6 @@ public:
       // construction functions
 protected:
       BlindState  State;
-      std::string Name;
-      unsigned int Id;
-      Room*        pRoom;
 };
 
 #endif /* BLIND_H */

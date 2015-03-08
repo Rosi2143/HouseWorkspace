@@ -14,16 +14,18 @@
 
 #include "iLight.h"
 
+class iRoom;
+
 class Light: public iLight {
    public:
       // Constructors
-      Light(unsigned int Id, std::string Name, const Room* pRoom);
+      Light(unsigned int Id, std::string Name, iRoom* pRoom);
       Light(const Light& light);  // copy constructor
       virtual ~Light() {
       }
 
       // Operators
-      Light& operator=(Light other);
+      Light& operator=(const Light& other);
 
       // access functions
       LightState getState() const {
@@ -33,11 +35,10 @@ class Light: public iLight {
 
       // construction functions
    protected:
-      Light(): iLight(0, ""), _State(LightOff), _pRoom(nullptr) {
+      Light(): iLight(), _State(LightOff){
          std::cout << "Wrong default constructor Light";
       }
       LightState _State;
-      Room* _pRoom;
 };
 
 #endif /* LIGHT_H_ */

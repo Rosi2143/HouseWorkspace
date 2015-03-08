@@ -14,9 +14,9 @@
 
 using namespace boost::posix_time;
 
-Switch::Switch(unsigned int Id, std::string Name, const iRoom* pRoom,
+Switch::Switch(unsigned int Id, std::string Name, iRoom* pRoom,
       iInputUser* pInputUser) :
-      iSwitch(Id, Name), _State(Unknown), _pRoom(pRoom), _pInputUser(pInputUser) {
+      iSwitch(Id, Name, pRoom), _State(Unknown), _pInputUser(pInputUser) {
    if (pRoom != nullptr) {
       _Name = _pRoom->getName() + "_" + Name;
    }
@@ -24,10 +24,9 @@ Switch::Switch(unsigned int Id, std::string Name, const iRoom* pRoom,
 }
 
 Switch::Switch(const Switch &Switch) :
-      iSwitch(Switch._Id, Switch._Name), _State(Switch._State), _pRoom(
-            Switch._pRoom), _pInputUser(Switch._pInputUser), _switchActionMap(
-            Switch._switchActionMap), PressTime(pos_infin), ReleaseTime(
-            pos_infin), PressDuration(seconds(0)) {
+      iSwitch(Switch._Id, Switch._Name, Switch._pRoom), _State(Switch._State), _pInputUser(
+            Switch._pInputUser), _switchActionMap(Switch._switchActionMap), PressTime(
+            pos_infin), ReleaseTime(pos_infin), PressDuration(seconds(0)) {
 
 }
 
@@ -68,8 +67,8 @@ void Switch::OnPress() {
          PressTime = _time->getCurrentTime();
          std::string test = to_simple_string(PressTime);
          std::cout << "Press at: " << test << std::endl;
-         ActionFunctionMap::const_iterator SwitchActionIterator = _switchActionMap.find(
-               Pressed);
+         ActionFunctionMap::const_iterator SwitchActionIterator =
+               _switchActionMap.find(Pressed);
          if (SwitchActionIterator != _switchActionMap.end()) {
             SwitchAction sA = SwitchActionIterator->second;
             iInputUser* inputUser = std::get < 0 > (sA);
@@ -97,8 +96,8 @@ void Switch::OnRelease() {
             PressDuration = ReleaseTime - PressTime;
             std::string test1 = to_simple_string(PressDuration);
             std::cout << "Duration is: " << test1 << std::endl;
-            ActionFunctionMap::const_iterator SwitchActionIterator = _switchActionMap.find(
-                  Released);
+            ActionFunctionMap::const_iterator SwitchActionIterator =
+                  _switchActionMap.find(Released);
             if (SwitchActionIterator != _switchActionMap.end()) {
                SwitchAction sA = SwitchActionIterator->second;
                iInputUser* inputUser = std::get < 0 > (sA);
@@ -110,23 +109,19 @@ void Switch::OnRelease() {
             PressType pressType = _time->evalPressType(PressDuration);
             switch (pressType) {
             case Short: {
-               SwitchActionIterator = _switchActionMap.find(
-                     ShortPressed);
+               SwitchActionIterator = _switchActionMap.find(ShortPressed);
             }
                break;
             case Long: {
-               SwitchActionIterator = _switchActionMap.find(
-                     LongPressed);
+               SwitchActionIterator = _switchActionMap.find(LongPressed);
             }
                break;
             case VeryLong: {
-               SwitchActionIterator = _switchActionMap.find(
-                     VeryLongPressed);
+               SwitchActionIterator = _switchActionMap.find(VeryLongPressed);
             }
                break;
             case Blocked: {
-               SwitchActionIterator = _switchActionMap.find(
-                     Jammed);
+               SwitchActionIterator = _switchActionMap.find(Jammed);
             }
                break;
             default: {

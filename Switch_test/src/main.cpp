@@ -29,7 +29,7 @@ using ::testing::StrCaseEq;
 class SwitchTest: public ::testing::Test {
    protected:
       SwitchTest() :
-            _room(0, "TestRoom", nullptr), _inputUser(0, "Test"), testString(
+            _room(0, "TestRoom", nullptr), _inputUser(0, "Test", nullptr), testString(
                   "Test"), testRoomString("TestRoom") {
       }
 

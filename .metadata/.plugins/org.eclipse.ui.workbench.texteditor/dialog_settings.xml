@@ -6,30 +6,30 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="evalPressType" key="selection"/>
+		<item value="iFloor" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="iHouse"/>
+			<item value="IHOUSE_H_"/>
+			<item value="Switch"/>
 			<item value="evalPressType"/>
 			<item value="evalPressType()"/>
 			<item value="ShortPre"/>
 			<item value="iter"/>
 			<item value="get"/>
-			<item value="iInput"/>
-			<item value="std::bind"/>
-			<item value="boost::bind"/>
 		</list>
 		<list key="replacehistory">
+			<item value="iFloor"/>
+			<item value="IFLOOR_H"/>
+			<item value="Light"/>
 			<item value="evalPressType(_)"/>
 			<item value="SwitchActionIterator"/>
 			<item value="boost::bind"/>
 			<item value="TEST_F"/>
 			<item value="TEST_P("/>
-			<item value="OnPress(_)"/>
-			<item value="IINPUTUSER"/>
-			<item value="iInputUser"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

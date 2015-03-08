@@ -22,12 +22,12 @@ typedef enum BlindState
    BlindSomeWhere
 }BlindState;
 
-class Room;
+class iRoom;
 
 class iBlind : public Base{
 public:
       // Constructors
-      iBlind(unsigned int Id, std::string Name, const Room* pRoom):Base(Id, Name){};
+      iBlind(unsigned int Id, std::string Name, iRoom* pRoom):Base(Id, Name, pRoom){};
       iBlind(const iBlind& light);  // copy constructor
       virtual ~iBlind();
 
@@ -35,13 +35,15 @@ public:
       //virtual iBlind& operator=(const iBlind& other) = 0;
 
       // access functions
-      virtual std::string getName() const = 0;
       virtual BlindState  getState() const = 0;
       virtual BlindState  moveUp() = 0;
       virtual BlindState  moveDown() = 0;
 
       // construction functions
 protected:
+      iBlind(): Base(0, "", nullptr){
+         std::cout << "Wrong default constructor iLight";
+      }
 };
 
 #endif /* IBLIND_H */

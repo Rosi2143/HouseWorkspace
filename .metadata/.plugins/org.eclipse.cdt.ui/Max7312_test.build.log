@@ -1,4 +1,4 @@
-17:36:06 **** Build of configuration Debug for project Max7312_test ****
+23:09:44 **** Build of configuration Debug for project Max7312_test ****
 make all 
 Building file: ../test/main.cpp
 Invoking: GCC C++ Compiler
@@ -16,5 +16,5 @@ g++  -o "Max7312_test"  ./test/main.o  ./links/Max7312.o  /home/micha/workspace/
 Finished building target: Max7312_test
  
 
-17:36:18 Build Finished (took 12s.323ms)
+23:09:55 Build Finished (took 11s.383ms)
 

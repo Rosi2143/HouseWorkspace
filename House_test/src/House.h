@@ -35,6 +35,9 @@ public:
       ~House();
       void readHouseXml(const std::string &filename);
 
+      // Operators
+      House& operator=(const House& other);    // assignment operator
+
       // access functions
       unsigned int getVersion() {return Version;}
       std::string  getName() const {return Name;}

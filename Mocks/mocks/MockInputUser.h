@@ -3,11 +3,11 @@
 
 class MockInputUser: public iInputUser {
    public:
-      MockInputUser(unsigned int Id, std::string Name) :
-            iInputUser(Id, Name), test(23) {
+      MockInputUser(unsigned int Id, std::string Name, iRoom* pRoom) :
+            iInputUser(Id, Name, pRoom) {
       }
       MockInputUser(const MockInputUser& other) :
-            iInputUser(other._Id, other._Name), test(other.test) {
+            iInputUser(other._Id, other._Name, other._pRoom) {
       }
       ~MockInputUser() {
       }
@@ -17,5 +17,4 @@ class MockInputUser: public iInputUser {
       MOCK_METHOD1(OnLongPress, void(int time));
       MOCK_METHOD1(OnVeryLongPress, void(int time));
       MOCK_METHOD1(OnBlocked, void(int time));
-      int test;
    };

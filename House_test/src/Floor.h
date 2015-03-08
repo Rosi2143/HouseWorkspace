@@ -25,7 +25,7 @@ class Floor
       virtual ~Floor(){}
 
       // Operators
-      Floor& operator=(Floor other);    // assignment operator
+      Floor& operator=(const Floor& other);    // assignment operator
 
       // access functions
       virtual unsigned int getNumberOfRooms() const;

@@ -6,18 +6,21 @@
 CPP_SRCS += \
 ../src/Floor.cpp \
 ../src/House.cpp \
+../src/Light.cpp \
 ../src/Room.cpp \
 ../src/Switch.cpp 
 
 OBJS += \
 ./src/Floor.o \
 ./src/House.o \
+./src/Light.o \
 ./src/Room.o \
 ./src/Switch.o 
 
 CPP_DEPS += \
 ./src/Floor.d \
 ./src/House.d \
+./src/Light.d \
 ./src/Room.d \
 ./src/Switch.d 
 

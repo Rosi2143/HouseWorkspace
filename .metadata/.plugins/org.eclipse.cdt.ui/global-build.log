@@ -1,116 +1,12 @@
-20:54:54 **** Incremental Build of configuration Debug for project Switch_test ****
+00:02:41 **** Incremental Build of configuration Debug for project Light_test ****
 make all 
-Building file: ../src/main.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-Finished building: ../src/main.cpp
- 
-Building target: Switch_test
+Building target: Light_test
 Invoking: GCC C++ Linker
-g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
-Finished building target: Switch_test
- 
-20:58:22 **** Incremental Build of configuration Debug for project Switch_test ****
-make all 
-make: Nothing to be done for 'all'.
-20:59:50 **** Incremental Build of configuration Debug for project Switch_test ****
-make all 
-Building file: ../src/main.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-../src/main.cpp: In member function ‘virtual void SwitchTest_CheckActionReleased_NOK_Test::TestBody()’:
-../src/main.cpp:209:4: error: expected ‘,’ or ‘;’ before ‘_switch’
-    _switch.addAction(ShortPressed, sAf);
-    ^
-../src/main.cpp:208:27: warning: unused variable ‘sAf’ [-Wunused-variable]
-    t_SwitchActionFunction sAf = &iInputUser::OnShortPress
-                           ^
-src/subdir.mk:21: recipe for target 'src/main.o' failed
-make: *** [src/main.o] Error 1
-21:00:01 **** Incremental Build of configuration Debug for project Switch_test ****
-make all 
-Building file: ../src/main.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-Finished building: ../src/main.cpp
- 
-Building target: Switch_test
-Invoking: GCC C++ Linker
-g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
-Finished building target: Switch_test
- 
-21:00:15 **** Incremental Build of configuration Debug for project Switch_test ****
-make all 
-make: Nothing to be done for 'all'.
-21:00:42 **** Incremental Build of configuration Debug for project Switch_test ****
-make all 
-Building file: ../src/main.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-Finished building: ../src/main.cpp
- 
-Building target: Switch_test
-Invoking: GCC C++ Linker
-g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
-Finished building target: Switch_test
- 
-21:00:55 **** Incremental Build of configuration Debug for project Switch_test ****
-make all 
-make: Nothing to be done for 'all'.
-21:01:03 **** Incremental Build of configuration Debug for project Switch_test ****
-make all 
-make: Nothing to be done for 'all'.
-21:07:39 **** Incremental Build of configuration Debug for project Switch_test ****
-make all 
-Building file: ../src/main.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-In file included from /usr/include/gtest/gtest.h:58:0,
-                 from ../src/main.cpp:8:
-../src/main.cpp:276:8: error: redefinition of ‘class SwitchTest_CheckActionShortPress_OK_Test’
- TEST_F(SwitchTest, CheckActionShortPress_OK) {
-        ^
-../src/main.cpp:220:8: error: previous definition of ‘class SwitchTest_CheckActionShortPress_OK_Test’
- TEST_F(SwitchTest, CheckActionShortPress_OK) {
-        ^
-../src/main.cpp:276:1: error: redefinition of ‘testing::TestInfo* const SwitchTest_CheckActionShortPress_OK_Test::test_info_’
- TEST_F(SwitchTest, CheckActionShortPress_OK) {
- ^
-../src/main.cpp:220:8: note: ‘testing::TestInfo* const SwitchTest_CheckActionShortPress_OK_Test::test_info_’ previously declared here
- TEST_F(SwitchTest, CheckActionShortPress_OK) {
-        ^
-../src/main.cpp:276:8: error: redefinition of ‘void SwitchTest_CheckActionShortPress_OK_Test::TestBody()’
- TEST_F(SwitchTest, CheckActionShortPress_OK) {
-        ^
-../src/main.cpp:220:8: note: ‘virtual void SwitchTest_CheckActionShortPress_OK_Test::TestBody()’ previously defined here
- TEST_F(SwitchTest, CheckActionShortPress_OK) {
-        ^
-make: *** [src/main.o] Error 1
-src/subdir.mk:21: recipe for target 'src/main.o' failed
-21:08:07 **** Incremental Build of configuration Debug for project Switch_test ****
-make all 
-Building file: ../src/main.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-Finished building: ../src/main.cpp
- 
-Building target: Switch_test
-Invoking: GCC C++ Linker
-g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
-Finished building target: Switch_test
- 
-21:08:38 **** Incremental Build of configuration Debug for project Switch_test ****
-make all 
-make: Nothing to be done for 'all'.
-21:16:39 **** Incremental Build of configuration Debug for project Switch_test ****
-make all 
-Building file: ../src/main.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Switch_test/include" -I"/home/micha/workspace/Switch_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-Finished building: ../src/main.cpp
- 
-Building target: Switch_test
-Invoking: GCC C++ Linker
-g++ -Lworkspace_loc:/XmlParser/Debug -o "Switch_test"  ./src/Switch.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
-Finished building target: Switch_test
- 
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Light_test"  ./src/Light.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
+./src/Light.o: In function `Light::Light(unsigned int, std::string, iRoom*)':
+/home/micha/workspace/Light_test/Debug/../src/Light.cpp:20: undefined reference to `vtable for Light'
+./src/Light.o: In function `Light::Light(Light const&)':
+/home/micha/workspace/Light_test/Debug/../src/Light.cpp:32: undefined reference to `vtable for Light'
+collect2: error: ld returned 1 exit status
+make: *** [Light_test] Error 1
+makefile:45: recipe for target 'Light_test' failed

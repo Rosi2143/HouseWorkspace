@@ -17,7 +17,7 @@
 class iInputUser: public Base {
    public:
       // Constructors
-      iInputUser(unsigned int Id, std::string Name):Base(Id, Name){};
+      iInputUser(unsigned int Id, std::string Name, iRoom* pRoom):Base(Id, Name, pRoom){};
       iInputUser(const iInputUser& light);  // copy constructor
       virtual ~iInputUser() {}
 
@@ -34,7 +34,7 @@ class iInputUser: public Base {
 
       // construction functions
    protected:
-      iInputUser(): Base(0, ""){
+      iInputUser(): Base(0, "", nullptr){
          std::cout << "Wrong default constructor iInputUser";
       }
 };

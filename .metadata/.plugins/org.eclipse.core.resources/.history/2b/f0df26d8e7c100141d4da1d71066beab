@@ -1,0 +1,48 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
+#include <boost/bind.hpp>
+#include <functional>
+
+#include "MockRoom.h"
+#include "MockTime.h"
+#include "MockInputUser.h"
+#include "Light.h"
+
+using namespace std;
+using namespace boost::gregorian;
+
+using ::testing::_;
+using ::testing::Return;
+using ::testing::Invoke;
+using ::testing::InvokeWithoutArgs;
+using ::testing::TestWithParam;
+using ::testing::Values;
+using ::testing::StrCaseEq;
+
+class LightTest: public ::testing::Test {
+   protected:
+      LightTest() :
+            _room(0, "TestRoom", nullptr), _inputUser(0, "Test"), testString(
+                  "Test"), testRoomString("TestRoom") {
+      }
+
+      virtual void SetUp() {
+      }
+      PressTime _pressTime;
+      MockTime _time;
+      MockRoom _room;
+      MockInputUser _inputUser;
+      std::string testString;
+      std::string testRoomString;
+};
+
+TEST_F(LightTest, Constructor_OK) {
+   ASSERT_EQ(nullptr, nullptr);
+}

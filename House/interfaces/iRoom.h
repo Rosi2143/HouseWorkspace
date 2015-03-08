@@ -24,7 +24,7 @@ class iTime;
 class iRoom: public Base {
    public:
       // Constructors
-      iRoom(unsigned int Id, std::string Name, const iFloor* pFloor):Base(Id, Name){}
+      iRoom(unsigned int Id, std::string Name, const iFloor* pFloor):Base(Id, Name, nullptr){}
       iRoom(const iRoom &iRoom){}  // copy constructor
       virtual ~iRoom(){}
 
@@ -47,7 +47,7 @@ class iRoom: public Base {
 
    protected:
       iRoom() :
-            Base(0, "") {
+            Base(0, "", nullptr) {
          std::cout << "Wrong default constructor iRoom";
       }
 };

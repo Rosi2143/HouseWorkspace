@@ -1,0 +1,33 @@
+/*
+ * Light.cpp
+ *
+ *  Created on: Mar 3, 2015
+ *      Author: micha
+ */
+
+#include <iostream>
+
+#include "Light.h"
+
+/*!
+ *
+ * @param Id
+ * @param Name
+ * @param pRoom
+ */
+Light::Light(unsigned int Id, std::string Name, iRoom* pRoom):
+iLight(Id, Name, pRoom)
+{
+   if (pRoom != nullptr) {
+      _Name = _pRoom->getName() + "_" + Name;
+   }
+}
+
+/*!
+ *
+ * @param light
+ */
+Light::Light(const Light& light) :
+      iLight(Light), _pRoom(light._pRoom) {
+}
+

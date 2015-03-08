@@ -1,0 +1,51 @@
+/*
+ * iLight.h
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#ifndef ILIGHT_H_
+#define ILIGHT_H_
+
+#include <string>
+#include <list>
+#include <iostream>
+
+#include "Base.h"
+
+typedef enum LightState {
+   LightOn, LightOff
+} LightState;
+
+class iRoom;
+
+class iLight: public Base {
+   public:
+      // Constructors
+      iLight(unsigned int Id, std::string Name, iRoom* pRoom) :
+            Base(Id, Name, pRoom) {
+      }
+      ;
+      iLight(const iLight& light) :
+            _Id(light.getId()), _Name(light.getName(), _pRoom(light.getRoom())) {
+      }  // copy constructor
+      virtual ~iLight() {
+      }
+
+      // Operators
+      //virtual iLight& operator=(const iLight& other) = 0;
+
+      // access functions
+      virtual LightState getState() const = 0;
+      virtual LightState toggleState() = 0;
+
+      // construction functions
+   protected:
+      iLight() :
+            Base(0, "", nullptr) {
+         std::cout << "Wrong default constructor iLight";
+      }
+};
+
+#endif /* ILIGHT_H_ */

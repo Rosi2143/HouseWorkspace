@@ -1,0 +1,42 @@
+/*
+ * Light.h
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#ifndef LIGHT_H_
+#define LIGHT_H_
+
+#include <string>
+#include <list>
+#include <iostream>
+
+#include "iLight.h"
+
+class Light: public iLight {
+   public:
+      // Constructors
+      Light(unsigned int Id, std::string Name, const Room* pRoom);
+      Light(const Light& light);  // copy constructor
+      virtual ~Light() {
+      }
+
+      // Operators
+      Light& operator=(Light other);
+
+      // access functions
+      LightState getState() const {
+         return _State;
+      }
+      LightState toggleState();
+
+      // construction functions
+   protected:
+      Light(): iLight(), _State(LightOff){
+         std::cout << "Wrong default constructor Light";
+      }
+      LightState _State;
+};
+
+#endif /* LIGHT_H_ */

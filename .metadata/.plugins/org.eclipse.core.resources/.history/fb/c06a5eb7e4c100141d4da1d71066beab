@@ -1,0 +1,13 @@
+/*
+ * Light.cpp
+ *
+ *  Created on: Mar 3, 2015
+ *      Author: micha
+ */
+
+#include <iostream>
+
+#include "Light.h"
+
+
+

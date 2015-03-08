@@ -1,4 +1,4 @@
-19:04:56 **** Incremental Build of configuration Debug for project TimeAndDate_test ****
+23:10:09 **** Incremental Build of configuration Debug for project TimeAndDate_test ****
 make all 
 Building file: ../src/main.cpp
 Invoking: GCC C++ Compiler
@@ -11,5 +11,5 @@ g++ -Lworkspace_loc:/XmlParser/Debug -o "TimeAndDate_test"  ./src/main.o   -lgte
 Finished building target: TimeAndDate_test
  
 
-19:05:02 Build Finished (took 6s.646ms)
+23:10:16 Build Finished (took 6s.247ms)
 

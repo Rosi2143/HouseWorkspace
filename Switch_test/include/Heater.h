@@ -17,12 +17,12 @@
 class Heater: public iHeater {
 public:
       // Constructors
-      Heater(unsigned int Id, std::string Name, const Room* pRoom);
+      Heater(unsigned int Id, std::string Name, iRoom* pRoom);
       Heater(const Heater& heater);  // copy constructor
       virtual ~Heater(){}
 
       // Operators
-      Heater& operator=(Heater other);
+      Heater& operator=(const Heater& other);
 
       // access functions
       virtual HeaterState  getState() const {return _State;}
@@ -30,11 +30,10 @@ public:
 
       // construction functions
 protected:
-      Heater(): Base(0, ""), _State(HeaterOff), _pRoom(nullptr) {
+      Heater(): iHeater(0, "", nullptr), _State(HeaterOff) {
          std::cout << "Wrong default constructor Heater";
       }
       HeaterState  _State;
-      Room*        _pRoom;
 };
 
 #endif /* HEATER_H */

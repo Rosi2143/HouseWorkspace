@@ -44,8 +44,8 @@ class IBaseSwitch {
       virtual ~IBaseSwitch() {
       }
 
-     // Operators
-     //virtual IBaseSwitch& operator=(const IBaseSwitch& other)
+      // Operators
+      //virtual IBaseSwitch& operator=(const IBaseSwitch& other)
 
       // Port interface functions
       virtual void OnPress() = 0;
@@ -60,13 +60,15 @@ class IBaseSwitch {
 class iSwitch: public IBaseSwitch, public Base {
    public:
       // Constructors
-      iSwitch(unsigned int Id, std::string Name) : Base(Id, Name){}
+      iSwitch(unsigned int Id, std::string Name, iRoom* pRoom) :
+            Base(Id, Name, pRoom) {
+      }
       iSwitch(const iSwitch &obj);          // copy constructor
       virtual ~iSwitch() {
       }
 
       // Operators
-      virtual iSwitch& operator=(const iSwitch& other){    // assignment operator
+      virtual iSwitch& operator=(const iSwitch& other) {  // assignment operator
          Base::operator=(other);
          return *this;
       }
@@ -77,14 +79,14 @@ class iSwitch: public IBaseSwitch, public Base {
 
       // access functions
       virtual SwitchState getState() const = 0;
-      virtual const iRoom* getRoom() const = 0;
       virtual const ActionFunctionMap getActionMap() const = 0;
 
       // construction functions
-      virtual void addAction(const SwitchState& state, t_SwitchActionFunction Function) = 0;
+      virtual void addAction(const SwitchState& state,
+            t_SwitchActionFunction Function) = 0;
    protected:
       iSwitch() :
-            Base(0, ""){
+            Base(0, "", nullptr) {
          std::cout << "Wrong default constructor iSwitch";
       }
 };
