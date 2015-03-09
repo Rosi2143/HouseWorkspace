@@ -4,13 +4,13 @@
 <stringAttribute key="org.eclipse.cdt.launch.COREFILE_PATH" value=""/>
 <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_ARGUMENTS" value=""/>
 <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="/home/micha/workspace/Switch_test/Debug/Switch_test"/>
-<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="Switch_test"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="SwitchIn_test"/>
 <booleanAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_AUTO_ATTR" value="true"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="cdt.managedbuild.config.gnu.exe.debug.1660691200"/>
 <booleanAttribute key="org.eclipse.cdt.launch.use_terminal" value="true"/>
 <stringAttribute key="org.eclipse.cdt.testsrunner.launch.TESTS_RUNNER" value="org.eclipse.cdt.testsrunner.gtest"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/Switch_test"/>
+<listEntry value="/SwitchIn_test"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="4"/>

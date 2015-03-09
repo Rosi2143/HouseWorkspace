@@ -1,15 +1,15 @@
-00:02:41 **** Incremental Build of configuration Debug for project Light_test ****
+21:40:46 **** Incremental Build of configuration Debug for project Light_test ****
 make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Light_test/include" -I"/home/micha/workspace/Light_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
 Building target: Light_test
 Invoking: GCC C++ Linker
-g++ -Lworkspace_loc:/XmlParser/Debug -o "Light_test"  ./src/Light.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
-./src/Light.o: In function `Light::Light(unsigned int, std::string, iRoom*)':
-/home/micha/workspace/Light_test/Debug/../src/Light.cpp:20: undefined reference to `vtable for Light'
-./src/Light.o: In function `Light::Light(Light const&)':
-/home/micha/workspace/Light_test/Debug/../src/Light.cpp:32: undefined reference to `vtable for Light'
-collect2: error: ld returned 1 exit status
-make: *** [Light_test] Error 1
-makefile:45: recipe for target 'Light_test' failed
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Light_test"  ./src/LightSwitchIn.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
+Finished building target: Light_test
+ 
 
-00:02:41 Build Finished (took 356ms)
+21:40:54 Build Finished (took 7s.912ms)
 

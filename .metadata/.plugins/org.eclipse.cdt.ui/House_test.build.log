@@ -1,39 +1,45 @@
-19:34:47 **** Incremental Build of configuration Debug for project House_test ****
+19:18:03 **** Incremental Build of configuration Debug for project House_test ****
 make all 
-Building file: ../src/House.cpp
+Building file: ../src/Floor.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/House.d" -MT"src/House.d" -o "src/House.o" "../src/House.cpp"
-In file included from ../src/House.h:17:0,
-                 from ../src/House.cpp:7:
-../src/Floor.h:27:13: error: ‘Room’ does not name a type
-       const Room& getRoom(std::string name) const;
-             ^
-../src/Floor.h:30:26: error: ‘Room’ does not name a type
-       void addRoom(const Room& _Room);
-                          ^
-../src/Floor.h:35:7: error: ‘Rooms’ does not name a type
-       Rooms RoomList;
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.d" -o "src/Floor.o" "../src/Floor.cpp"
+../src/Floor.cpp: In constructor ‘Floor::Floor(std::string)’:
+../src/Floor.cpp:26:2: error: class ‘Floor’ does not have any field named ‘Name’
+ :Name(_name)
+  ^
+../src/Floor.cpp: At global scope:
+../src/Floor.cpp:31:1: error: redefinition of ‘Floor::~Floor()’
+ Floor::~Floor()
+ ^
+In file included from ../src/Floor.cpp:7:0:
+../src/Floor.h:25:15: note: ‘virtual Floor::~Floor()’ previously defined here
+       virtual ~Floor(){}
+               ^
+../src/Floor.cpp: In member function ‘virtual unsigned int Floor::getNumberOfRooms() const’:
+../src/Floor.cpp:42:11: error: ‘RoomList’ was not declared in this scope
+    return RoomList.size();
+           ^
+../src/Floor.cpp: In member function ‘virtual void Floor::addRoom(const Room&)’:
+../src/Floor.cpp:51:4: error: ‘RoomList’ was not declared in this scope
+    RoomList.push_back(_Room);
+    ^
+../src/Floor.cpp: In member function ‘virtual const Room& Floor::getRoom(std::string) const’:
+../src/Floor.cpp:56:27: error: ‘RoomList’ was not declared in this scope
+    for (const Room& room: RoomList)
+                           ^
+../src/Floor.cpp:58:40: error: invalid use of incomplete type ‘const class Room’
+       if(boost::algorithm::iequals(room.Name, name))
+                                        ^
+In file included from ../src/Floor.cpp:7:0:
+../src/Floor.h:15:7: error: forward declaration of ‘const class Room’
+ class Room;
        ^
-../src/House.cpp: In member function ‘void House::readHouseXml(const string&)’:
-../src/House.cpp:116:44: error: no matching function for call to ‘Floor::addRoom(Room&)’
-                      pFloor->addRoom(*pRoom);
-                                            ^
-../src/House.cpp:116:44: note: candidate is:
-In file included from ../src/House.h:17:0,
-                 from ../src/House.cpp:7:
-../src/Floor.h:30:12: note: void Floor::addRoom(const int&)
-       void addRoom(const Room& _Room);
-            ^
-../src/Floor.h:30:12: note:   no known conversion for argument 1 from ‘Room’ to ‘const int&’
-../src/House.cpp: In member function ‘const Room& House::getRoom(std::string) const’:
-../src/House.cpp:196:42: error: ‘const class Floor’ has no member named ‘getRoom’
-       if(boost::algorithm::iequals(floor.getRoom(name).Name, name))
-                                          ^
-../src/House.cpp:198:23: error: ‘const class Floor’ has no member named ‘getRoom’
-          return floor.getRoom(name);
-                       ^
-make: *** [src/House.o] Error 1
-src/subdir.mk:24: recipe for target 'src/House.o' failed
+../src/Floor.cpp: In member function ‘virtual unsigned int Floor::getNumberOfRooms() const’:
+../src/Floor.cpp:43:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+src/subdir.mk:24: recipe for target 'src/Floor.o' failed
+make: *** [src/Floor.o] Error 1
 
-19:34:54 Build Finished (took 6s.918ms)
+19:18:05 Build Finished (took 2s.556ms)
 

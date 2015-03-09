@@ -1,0 +1,10 @@
+21:41:07 **** Incremental Build of configuration Debug for project SwitchIn_test ****
+make all 
+Building target: SwitchIn_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "SwitchIn_test"  ./src/SwitchIn.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
+Finished building target: SwitchIn_test
+ 
+
+21:41:08 Build Finished (took 862ms)
+

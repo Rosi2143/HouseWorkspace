@@ -18,7 +18,7 @@ class iFloor;
 class iLight;
 class iHeater;
 class iBlind;
-class iSwitch;
+class iSwitchIn;
 class iTime;
 
 class iRoom: public Base {
@@ -32,18 +32,18 @@ class iRoom: public Base {
       //iRoom& operator=(const iRoom& other);
 
       // access functions
-      virtual const iLight& getLight(std::string Name) const = 0;
-      virtual const iHeater& getHeater(std::string Name) const = 0;
-      virtual const iBlind& getBlind(std::string Name) const = 0;
-      virtual const iSwitch& getSwitch(std::string Name) const = 0;
+//      virtual const iLight& getLight(std::string Name) const = 0;
+//      virtual const iHeater& getHeater(std::string Name) const = 0;
+//      virtual const iBlind& getBlind(std::string Name) const = 0;
+      virtual const iSwitchIn& getSwitchIn(std::string Name) const = 0;
 
       virtual const iTime* getTimeRef() const = 0;
 
       // construction functions
-      virtual void addLight(const iLight& Light) = 0;
-      virtual void addHeater(const iHeater& Heater) = 0;
-      virtual void addBlind(const iBlind& Blind) = 0;
-      virtual void addSwitch(const iSwitch& Switch) = 0;
+//      virtual void addLight(const iLight& Light) = 0;
+//      virtual void addHeater(const iHeater& Heater) = 0;
+//      virtual void addBlind(const iBlind& Blind) = 0;
+      virtual void addSwitchIn(const iSwitchIn& SwitchIn) = 0;
 
    protected:
       iRoom() :

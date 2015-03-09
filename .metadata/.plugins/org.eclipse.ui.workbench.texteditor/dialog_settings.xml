@@ -6,37 +6,37 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="iFloor" key="selection"/>
+		<item value="Light" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Light"/>
+			<item value="      virtual const Light&amp; getLight(std::string Name) const;"/>
+			<item value="Heater"/>
+			<item value="Blind"/>
+			<item value="Switch"/>
+			<item value="toggleState"/>
 			<item value="iHouse"/>
 			<item value="IHOUSE_H_"/>
-			<item value="Switch"/>
-			<item value="evalPressType"/>
-			<item value="evalPressType()"/>
-			<item value="ShortPre"/>
-			<item value="iter"/>
-			<item value="get"/>
 		</list>
 		<list key="replacehistory">
+			<item value="LightSwitchIn"/>
+			<item value="HeaterSwitchIn"/>
+			<item value="BlindSwitchIn"/>
+			<item value="SwitchIn"/>
 			<item value="iFloor"/>
 			<item value="IFLOOR_H"/>
 			<item value="Light"/>
 			<item value="evalPressType(_)"/>
-			<item value="SwitchActionIterator"/>
-			<item value="boost::bind"/>
-			<item value="TEST_F"/>
-			<item value="TEST_P("/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="295" key="DIALOG_WIDTH"/>
+		<item value="297" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="741" key="DIALOG_HEIGHT"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="916" key="DIALOG_X_ORIGIN"/>
+		<item value="1069" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>

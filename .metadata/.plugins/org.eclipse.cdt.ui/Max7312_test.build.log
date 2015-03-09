@@ -1,20 +1,6 @@
-23:09:44 **** Build of configuration Debug for project Max7312_test ****
+21:41:03 **** Incremental Build of configuration Debug for project Max7312_test ****
 make all 
-Building file: ../test/main.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Max7312_test/links" -I"/home/micha/workspace/wiringPi_gmock/mocks" -I"/home/micha/workspace/Max7312/Interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -Wconversion-null -MMD -MP -MF"test/main.d" -MT"test/main.d" -o "test/main.o" "../test/main.cpp"
-Finished building: ../test/main.cpp
- 
-Building file: ../links/Max7312.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Max7312_test/links" -I"/home/micha/workspace/wiringPi_gmock/mocks" -I"/home/micha/workspace/Max7312/Interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -Wconversion-null -MMD -MP -MF"links/Max7312.d" -MT"links/Max7312.d" -o "links/Max7312.o" "../links/Max7312.cpp"
-Finished building: ../links/Max7312.cpp
- 
-Building target: Max7312_test
-Invoking: GCC C++ Linker
-g++  -o "Max7312_test"  ./test/main.o  ./links/Max7312.o  /home/micha/workspace/wiringPi_gmock/Debug/libwiringPi_gmock.a -lgtest -lgmock -lgtest_main -lpthread
-Finished building target: Max7312_test
- 
+make: Nothing to be done for 'all'.
 
-23:09:55 Build Finished (took 11s.383ms)
+21:41:04 Build Finished (took 147ms)
 

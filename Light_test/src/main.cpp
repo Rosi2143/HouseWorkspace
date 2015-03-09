@@ -13,7 +13,7 @@
 #include "MockRoom.h"
 #include "MockTime.h"
 #include "MockInputUser.h"
-#include "Light.h"
+#include "LightSwitchIn.h"
 
 using namespace std;
 using namespace boost::gregorian;
@@ -28,11 +28,12 @@ using ::testing::StrCaseEq;
 
 class LightTest: public ::testing::Test {
    protected:
-      LightTest() {
+      LightTest(): _room(0, "TestRoom", nullptr) {
       }
 
       virtual void SetUp() {
       }
+      MockRoom _room;
 };
 
 TEST_F(LightTest, Constructor_OK) {

@@ -1,12 +1,3 @@
-00:02:41 **** Incremental Build of configuration Debug for project Light_test ****
+21:41:12 **** Incremental Build of configuration Debug for project TimeAndDate_test ****
 make all 
-Building target: Light_test
-Invoking: GCC C++ Linker
-g++ -Lworkspace_loc:/XmlParser/Debug -o "Light_test"  ./src/Light.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
-./src/Light.o: In function `Light::Light(unsigned int, std::string, iRoom*)':
-/home/micha/workspace/Light_test/Debug/../src/Light.cpp:20: undefined reference to `vtable for Light'
-./src/Light.o: In function `Light::Light(Light const&)':
-/home/micha/workspace/Light_test/Debug/../src/Light.cpp:32: undefined reference to `vtable for Light'
-collect2: error: ld returned 1 exit status
-make: *** [Light_test] Error 1
-makefile:45: recipe for target 'Light_test' failed
+make: Nothing to be done for 'all'.

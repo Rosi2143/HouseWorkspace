@@ -4,15 +4,15 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/Light.cpp \
+../src/LightSwitchIn.cpp \
 ../src/main.cpp 
 
 OBJS += \
-./src/Light.o \
+./src/LightSwitchIn.o \
 ./src/main.o 
 
 CPP_DEPS += \
-./src/Light.d \
+./src/LightSwitchIn.d \
 ./src/main.d 
 
 
