@@ -16,7 +16,8 @@ using namespace boost::posix_time;
 
 SwitchIn::SwitchIn(unsigned int Id, std::string Name, iRoom* pRoom,
       iInputUser* pInputUser) :
-      iSwitchIn(Id, Name, pRoom), _State(Unknown), _pInputUser(pInputUser) {
+      iSwitchIn(Id, Name, pRoom), _State(Unknown), _pInputUser(pInputUser), PressTime(
+            pos_infin), ReleaseTime(pos_infin), PressDuration(seconds(0)) {
    if (pRoom != nullptr) {
       _Name = _pRoom->getName() + "_" + Name;
    }
@@ -24,9 +25,10 @@ SwitchIn::SwitchIn(unsigned int Id, std::string Name, iRoom* pRoom,
 }
 
 SwitchIn::SwitchIn(const SwitchIn &SwitchIn) :
-      iSwitchIn(SwitchIn._Id, SwitchIn._Name, SwitchIn._pRoom), _State(SwitchIn._State), _pInputUser(
-            SwitchIn._pInputUser), _switchActionMap(SwitchIn._switchActionMap), PressTime(
-            pos_infin), ReleaseTime(pos_infin), PressDuration(seconds(0)) {
+      iSwitchIn(SwitchIn._Id, SwitchIn._Name, SwitchIn._pRoom), _State(
+            SwitchIn._State), _pInputUser(SwitchIn._pInputUser), _switchActionMap(
+            SwitchIn._switchActionMap), PressTime(pos_infin), ReleaseTime(
+            pos_infin), PressDuration(seconds(0)) {
 
 }
 
@@ -37,7 +39,6 @@ SwitchIn& SwitchIn::operator=(const SwitchIn& other) {
    iSwitchIn::operator =(other);
    _State = other._State;
    _switchActionMap = other._switchActionMap;
-   _pRoom = other._pRoom;
    _pInputUser = other._pInputUser;
    return *this;
 }

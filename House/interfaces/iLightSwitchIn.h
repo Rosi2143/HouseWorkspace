@@ -34,7 +34,10 @@ class iLightSwitchIn: public Base {
       }
 
       // Operators
-      //virtual iLightSwitchIn& operator=(const iLightSwitchIn& other) = 0;
+      virtual iLightSwitchIn& operator=(const iLightSwitchIn& other) { // assignment operator
+         Base::operator=(other);
+         return *this;
+      }
 
       // access functions
       virtual LightSwitchInState getState() const = 0;

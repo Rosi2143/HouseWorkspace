@@ -25,13 +25,25 @@ iLightSwitchIn(Id, Name, pRoom), _State(LightOff)
 }
 
 /*!
- *
+ * CopyConstructor
  * @param light
  */
 LightSwitchIn::LightSwitchIn(const LightSwitchIn& light) :
       iLightSwitchIn(light), _State(light.getState()){
 }
 
+LightSwitchIn& LightSwitchIn::operator=(const LightSwitchIn& other) {
+   if (&other == this) {
+      return *this;
+   }
+   Base::operator=(other);
+   _State = other._State;
+   return *this;
+}
+/*!
+ * toggle the state of the LightSwitch
+ * @return
+ */
 LightSwitchInState LightSwitchIn::toggleState(){
    if(LightOff == _State) {
       _State = LightOn;
@@ -43,3 +55,4 @@ LightSwitchInState LightSwitchIn::toggleState(){
    }
    return _State;
 }
+

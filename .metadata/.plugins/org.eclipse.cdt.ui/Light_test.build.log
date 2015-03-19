@@ -1,8 +1,8 @@
-21:40:46 **** Incremental Build of configuration Debug for project Light_test ****
+22:22:03 **** Incremental Build of configuration Debug for project Light_test ****
 make all 
 Building file: ../src/main.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Light_test/include" -I"/home/micha/workspace/Light_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Light_test/include" -I"/home/micha/workspace/Light_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
 Finished building: ../src/main.cpp
  
 Building target: Light_test
@@ -11,5 +11,5 @@ g++ -Lworkspace_loc:/XmlParser/Debug -o "Light_test"  ./src/LightSwitchIn.o ./sr
 Finished building target: Light_test
  
 
-21:40:54 Build Finished (took 7s.912ms)
+22:22:11 Build Finished (took 8s.187ms)
 
