@@ -18,16 +18,16 @@
 
 class iRoom;
 
-class SwitchIn: public iSwitchIn{
+class SwitchIn: public iSwitchIn {
    public:
       // Constructors
-      SwitchIn(unsigned int Id, std::string Name, iRoom* pRoom, iInputUser* pInputUser);
+      SwitchIn(unsigned int Id, std::string Name, iRoom* pRoom);
       SwitchIn(const SwitchIn &obj);          // copy constructor
       virtual ~SwitchIn() {
       }
 
       // Operators
-      virtual SwitchIn& operator=(const SwitchIn& other);    // assignment operator
+      virtual SwitchIn& operator=(const SwitchIn& other); // assignment operator
 
       // Port interface functions
       virtual void OnPress();
@@ -42,14 +42,14 @@ class SwitchIn: public iSwitchIn{
       }
 
       // construction functions
-      virtual void addAction(const SwitchInState& state, t_SwitchInActionFunction Function);
+      virtual void addAction(const SwitchInState& state, iInputUser* pInputUser,
+            t_SwitchInActionFunction Function);
    protected:
       SwitchIn() :
-            iSwitchIn(0, "", nullptr), _State(Unknown), _pInputUser(nullptr) {
+            iSwitchIn(0, "", nullptr), _State(Unknown) {
          std::cout << "Wrong default constructor SwitchIn";
       }
       SwitchInState _State;
-      iInputUser* _pInputUser;
       ActionFunctionMap _switchActionMap;
 
       boost::posix_time::ptime PressTime;

@@ -1,10 +1,5 @@
-22:03:26 **** Incremental Build of configuration Debug for project SwitchIn_test ****
+11:07:57 **** Incremental Build of configuration Debug for project SwitchIn_test ****
 make all 
-Building file: ../src/SwitchIn.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I../SwitchIn_test/include -I../Switch_test/src -I"/home/micha/workspace/TimeAndDate/include" -I"/home/micha/workspace/House/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SwitchIn.d" -MT"src/SwitchIn.d" -o "src/SwitchIn.o" "../src/SwitchIn.cpp"
-Finished building: ../src/SwitchIn.cpp
- 
 Building file: ../src/main.cpp
 Invoking: GCC C++ Compiler
 g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I../SwitchIn_test/include -I../Switch_test/src -I"/home/micha/workspace/TimeAndDate/include" -I"/home/micha/workspace/House/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
@@ -16,5 +11,5 @@ g++  -o "SwitchIn_test"  ./src/SwitchIn.o ./src/main.o   -lgtest -lboost_date_ti
 Finished building target: SwitchIn_test
  
 
-22:03:42 Build Finished (took 16s.627ms)
+11:08:09 Build Finished (took 12s.173ms)
 

@@ -14,31 +14,39 @@
 
 #include "Base.h"
 
-typedef enum HeaterSwitchInState
-{
-   HeaterOn,
-   HeaterOff
-}HeaterSwitchInState;
+typedef enum HeaterSwitchInState {
+   HeaterOn, HeaterOff
+} HeaterSwitchInState;
 
 class iRoom;
 
 class iHeaterSwitchIn: public Base {
-public:
+   public:
       // Constructors
-      iHeaterSwitchIn(unsigned int Id, std::string Name, iRoom* pRoom):Base(Id, Name, pRoom){};
-      iHeaterSwitchIn(const iHeaterSwitchIn& heater);  // copy constructor
-      virtual ~iHeaterSwitchIn(){}
+      iHeaterSwitchIn(unsigned int Id, std::string Name, iRoom* pRoom) :
+            Base(Id, Name, pRoom) {
+      }
+      ;
+      iHeaterSwitchIn(const iHeaterSwitchIn& heater) :
+            Base(heater) { // copy constructor
+      }
+      virtual ~iHeaterSwitchIn() {
+      }
 
       // Operators
-      virtual iHeaterSwitchIn& operator=(const iHeaterSwitchIn& other) = 0;
+      virtual iHeaterSwitchIn& operator=(const iHeaterSwitchIn& other) { // assignment operator
+         Base::operator=(other);
+         return *this;
+      }
 
       // access functions
-      virtual HeaterSwitchInState  getState() const = 0;
-      virtual HeaterSwitchInState  toggleState() = 0;
+      virtual HeaterSwitchInState getState() const = 0;
+      virtual HeaterSwitchInState toggleState() = 0;
 
       // construction functions
-protected:
-      iHeaterSwitchIn(): Base(0, "", nullptr){
+   protected:
+      iHeaterSwitchIn() :
+            Base(0, "", nullptr) {
          std::cout << "Wrong default constructor iHeaterSwitchIn";
       }
 };

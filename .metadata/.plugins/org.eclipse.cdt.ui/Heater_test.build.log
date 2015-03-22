@@ -1,0 +1,15 @@
+22:13:48 **** Incremental Build of configuration Debug for project Heater_test ****
+make all 
+Building file: ../src/HeaterSwitchIn.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I../Heater_test/include -I"/home/micha/workspace/Heater_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HeaterSwitchIn.d" -MT"src/HeaterSwitchIn.d" -o "src/HeaterSwitchIn.o" "../src/HeaterSwitchIn.cpp"
+Finished building: ../src/HeaterSwitchIn.cpp
+ 
+Building target: Heater_test
+Invoking: GCC C++ Linker
+g++  -o "Heater_test"  ./src/HeaterSwitchIn.o ./src/main.o   -lgmock -lpthread -lgtest_main -lgtest
+Finished building target: Heater_test
+ 
+
+22:13:54 Build Finished (took 5s.847ms)
+

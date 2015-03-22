@@ -44,7 +44,7 @@ all: Light_test
 Light_test: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++ -Lworkspace_loc:/XmlParser/Debug -o "Light_test" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++  -o "Light_test" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

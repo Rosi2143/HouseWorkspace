@@ -1,104 +1,137 @@
-21:58:18 **** Incremental Build of configuration Debug for project SwitchIn_test ****
+21:10:19 **** Build of configuration Debug for project Blind_test ****
 make all 
-Building target: SwitchIn_test
-Invoking: GCC C++ Linker
-g++  -o "SwitchIn_test"  ./src/SwitchIn.o ./src/main.o   -lgtest -lboost_date_time -lpthread -lgmock -lgtest_main
-Finished building target: SwitchIn_test
- 
-22:03:26 **** Incremental Build of configuration Debug for project SwitchIn_test ****
-make all 
-Building file: ../src/SwitchIn.cpp
+Building file: ../src/BlindSwitchIn.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I../SwitchIn_test/include -I../Switch_test/src -I"/home/micha/workspace/TimeAndDate/include" -I"/home/micha/workspace/House/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SwitchIn.d" -MT"src/SwitchIn.d" -o "src/SwitchIn.o" "../src/SwitchIn.cpp"
-Finished building: ../src/SwitchIn.cpp
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I../Blind_test/include -I"/home/micha/workspace/Blind_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BlindSwitchIn.d" -MT"src/BlindSwitchIn.d" -o "src/BlindSwitchIn.o" "../src/BlindSwitchIn.cpp"
+Finished building: ../src/BlindSwitchIn.cpp
  
 Building file: ../src/main.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/interfaces" -I../SwitchIn_test/include -I../Switch_test/src -I"/home/micha/workspace/TimeAndDate/include" -I"/home/micha/workspace/House/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I../Blind_test/include -I"/home/micha/workspace/Blind_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
 Finished building: ../src/main.cpp
  
-Building target: SwitchIn_test
+Building target: Blind_test
 Invoking: GCC C++ Linker
-g++  -o "SwitchIn_test"  ./src/SwitchIn.o ./src/main.o   -lgtest -lboost_date_time -lpthread -lgmock -lgtest_main
-Finished building target: SwitchIn_test
+g++  -o "Blind_test"  ./src/BlindSwitchIn.o ./src/main.o   -lgmock -lpthread -lgtest_main -lgtest
+Finished building target: Blind_test
  
-22:07:58 **** Incremental Build of configuration Debug for project Light_test ****
-make all 
-Building file: ../src/LightSwitchIn.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Light_test/include" -I"/home/micha/workspace/Light_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/LightSwitchIn.d" -MT"src/LightSwitchIn.d" -o "src/LightSwitchIn.o" "../src/LightSwitchIn.cpp"
-../src/LightSwitchIn.cpp:35:52: error: ‘LightSwitchIn& operator=(const LightSwitchIn&)’ must be a nonstatic member function
- LightSwitchIn& operator=(const LightSwitchIn& other) {
-                                                    ^
-src/subdir.mk:21: recipe for target 'src/LightSwitchIn.o' failed
-make: *** [src/LightSwitchIn.o] Error 1
-22:10:12 **** Incremental Build of configuration Debug for project Light_test ****
-make all 
-Building file: ../src/LightSwitchIn.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Light_test/include" -I"/home/micha/workspace/Light_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/LightSwitchIn.d" -MT"src/LightSwitchIn.d" -o "src/LightSwitchIn.o" "../src/LightSwitchIn.cpp"
-../src/LightSwitchIn.cpp:35:52: error: ‘LightSwitchIn& operator=(const LightSwitchIn&)’ must be a nonstatic member function
- LightSwitchIn& operator=(const LightSwitchIn& other) {
-                                                    ^
-src/subdir.mk:21: recipe for target 'src/LightSwitchIn.o' failed
-make: *** [src/LightSwitchIn.o] Error 1
-22:16:12 **** Incremental Build of configuration Debug for project Light_test ****
-make all 
-Building file: ../src/LightSwitchIn.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Light_test/include" -I"/home/micha/workspace/Light_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/LightSwitchIn.d" -MT"src/LightSwitchIn.d" -o "src/LightSwitchIn.o" "../src/LightSwitchIn.cpp"
-Finished building: ../src/LightSwitchIn.cpp
- 
-Building target: Light_test
-Invoking: GCC C++ Linker
-g++ -Lworkspace_loc:/XmlParser/Debug -o "Light_test"  ./src/LightSwitchIn.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
-Finished building target: Light_test
- 
-22:18:42 **** Incremental Build of configuration Debug for project Light_test ****
+21:16:20 **** Incremental Build of configuration Debug for project Blind_test ****
 make all 
 Building file: ../src/main.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Light_test/include" -I"/home/micha/workspace/Light_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-Finished building: ../src/main.cpp
- 
-Building target: Light_test
-Invoking: GCC C++ Linker
-g++ -Lworkspace_loc:/XmlParser/Debug -o "Light_test"  ./src/LightSwitchIn.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
-Finished building target: Light_test
- 
-22:19:35 **** Incremental Build of configuration Debug for project Light_test ****
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I../Blind_test/include -I"/home/micha/workspace/Blind_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In constructor ‘BlindTest::BlindTest()’:
+../src/main.cpp:31:50: error: expected ‘{’ before ‘:’ token
+       BlindTest(): _room(0, "TestRoom", nullptr) : TestSring("Jalousie"){
+                                                  ^
+In file included from /usr/include/gtest/gtest.h:1929:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp: In member function ‘virtual void BlindTest_ConstructorNoRoom_Name_Same_Test::TestBody()’:
+../src/main.cpp:67:4: error: cannot convert ‘std::string {aka std::basic_string<char>}’ to ‘const char*’ for argument ‘3’ to ‘testing::AssertionResult testing::internal::CmpHelperSTRCASEEQ(const char*, const char*, const char*, const char*)’
+    ASSERT_STRCASEEQ(TestString, BlindSwitch.getName().c_str());
+    ^
+../src/main.cpp: In member function ‘virtual void BlindTest_CopyConstructorNoRoom_Name_Same_Test::TestBody()’:
+../src/main.cpp:73:4: error: cannot convert ‘std::string {aka std::basic_string<char>}’ to ‘const char*’ for argument ‘3’ to ‘testing::AssertionResult testing::internal::CmpHelperSTRCASEEQ(const char*, const char*, const char*, const char*)’
+    ASSERT_STRCASEEQ(TestString, BlindSwitch2.getName().c_str());
+    ^
+../src/main.cpp: In member function ‘virtual void BlindTest_AssignmentNoRoom_Name_Same_Test::TestBody()’:
+../src/main.cpp:80:4: error: cannot convert ‘std::string {aka std::basic_string<char>}’ to ‘const char*’ for argument ‘3’ to ‘testing::AssertionResult testing::internal::CmpHelperSTRCASEEQ(const char*, const char*, const char*, const char*)’
+    ASSERT_STRCASEEQ(TestString, BlindSwitch2.getName().c_str());
+    ^
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+21:16:35 **** Incremental Build of configuration Debug for project Blind_test ****
 make all 
 Building file: ../src/main.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Light_test/include" -I"/home/micha/workspace/Light_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-Finished building: ../src/main.cpp
- 
-Building target: Light_test
-Invoking: GCC C++ Linker
-g++ -Lworkspace_loc:/XmlParser/Debug -o "Light_test"  ./src/LightSwitchIn.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
-Finished building target: Light_test
- 
-22:21:14 **** Incremental Build of configuration Debug for project Light_test ****
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I../Blind_test/include -I"/home/micha/workspace/Blind_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In constructor ‘BlindTest::BlindTest()’:
+../src/main.cpp:31:51: error: class ‘BlindTest’ does not have any field named ‘TestSring’
+       BlindTest(): _room(0, "TestRoom", nullptr), TestSring("Jalousie"){
+                                                   ^
+In file included from /usr/include/gtest/gtest.h:1929:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp: In member function ‘virtual void BlindTest_ConstructorNoRoom_Name_Same_Test::TestBody()’:
+../src/main.cpp:67:4: error: cannot convert ‘std::string {aka std::basic_string<char>}’ to ‘const char*’ for argument ‘3’ to ‘testing::AssertionResult testing::internal::CmpHelperSTRCASEEQ(const char*, const char*, const char*, const char*)’
+    ASSERT_STRCASEEQ(TestString, BlindSwitch.getName().c_str());
+    ^
+../src/main.cpp: In member function ‘virtual void BlindTest_CopyConstructorNoRoom_Name_Same_Test::TestBody()’:
+../src/main.cpp:73:4: error: cannot convert ‘std::string {aka std::basic_string<char>}’ to ‘const char*’ for argument ‘3’ to ‘testing::AssertionResult testing::internal::CmpHelperSTRCASEEQ(const char*, const char*, const char*, const char*)’
+    ASSERT_STRCASEEQ(TestString, BlindSwitch2.getName().c_str());
+    ^
+../src/main.cpp: In member function ‘virtual void BlindTest_AssignmentNoRoom_Name_Same_Test::TestBody()’:
+../src/main.cpp:80:4: error: cannot convert ‘std::string {aka std::basic_string<char>}’ to ‘const char*’ for argument ‘3’ to ‘testing::AssertionResult testing::internal::CmpHelperSTRCASEEQ(const char*, const char*, const char*, const char*)’
+    ASSERT_STRCASEEQ(TestString, BlindSwitch2.getName().c_str());
+    ^
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+21:17:04 **** Incremental Build of configuration Debug for project Blind_test ****
 make all 
 Building file: ../src/main.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Light_test/include" -I"/home/micha/workspace/Light_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
-Finished building: ../src/main.cpp
- 
-Building target: Light_test
-Invoking: GCC C++ Linker
-g++ -Lworkspace_loc:/XmlParser/Debug -o "Light_test"  ./src/LightSwitchIn.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
-Finished building target: Light_test
- 
-22:22:03 **** Incremental Build of configuration Debug for project Light_test ****
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I../Blind_test/include -I"/home/micha/workspace/Blind_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+In file included from /usr/include/gtest/gtest.h:1929:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp: In member function ‘virtual void BlindTest_ConstructorNoRoom_Name_Same_Test::TestBody()’:
+../src/main.cpp:67:4: error: cannot convert ‘std::string {aka std::basic_string<char>}’ to ‘const char*’ for argument ‘3’ to ‘testing::AssertionResult testing::internal::CmpHelperSTRCASEEQ(const char*, const char*, const char*, const char*)’
+    ASSERT_STRCASEEQ(TestString, BlindSwitch.getName().c_str());
+    ^
+../src/main.cpp: In member function ‘virtual void BlindTest_CopyConstructorNoRoom_Name_Same_Test::TestBody()’:
+../src/main.cpp:73:4: error: cannot convert ‘std::string {aka std::basic_string<char>}’ to ‘const char*’ for argument ‘3’ to ‘testing::AssertionResult testing::internal::CmpHelperSTRCASEEQ(const char*, const char*, const char*, const char*)’
+    ASSERT_STRCASEEQ(TestString, BlindSwitch2.getName().c_str());
+    ^
+../src/main.cpp: In member function ‘virtual void BlindTest_AssignmentNoRoom_Name_Same_Test::TestBody()’:
+../src/main.cpp:80:4: error: cannot convert ‘std::string {aka std::basic_string<char>}’ to ‘const char*’ for argument ‘3’ to ‘testing::AssertionResult testing::internal::CmpHelperSTRCASEEQ(const char*, const char*, const char*, const char*)’
+    ASSERT_STRCASEEQ(TestString, BlindSwitch2.getName().c_str());
+    ^
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+21:17:38 **** Incremental Build of configuration Debug for project Blind_test ****
 make all 
 Building file: ../src/main.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/Light_test/include" -I"/home/micha/workspace/Light_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I../Blind_test/include -I"/home/micha/workspace/Blind_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+In file included from /usr/include/gtest/gtest.h:1929:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp: In member function ‘virtual void BlindTest_ConstructorNoRoom_Name_Same_Test::TestBody()’:
+../src/main.cpp:67:4: error: cannot convert ‘std::string {aka std::basic_string<char>}’ to ‘const char*’ for argument ‘3’ to ‘testing::AssertionResult testing::internal::CmpHelperSTRCASEEQ(const char*, const char*, const char*, const char*)’
+    ASSERT_STRCASEEQ(TestString, BlindSwitch.getName().c_str());
+    ^
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+21:17:52 **** Incremental Build of configuration Debug for project Blind_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I../Blind_test/include -I"/home/micha/workspace/Blind_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
 Finished building: ../src/main.cpp
  
-Building target: Light_test
+Building target: Blind_test
 Invoking: GCC C++ Linker
-g++ -Lworkspace_loc:/XmlParser/Debug -o "Light_test"  ./src/LightSwitchIn.o ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread -lboost_date_time
-Finished building target: Light_test
+g++  -o "Blind_test"  ./src/BlindSwitchIn.o ./src/main.o   -lgmock -lpthread -lgtest_main -lgtest
+Finished building target: Blind_test
+ 
+21:21:41 **** Incremental Build of configuration Debug for project Blind_test ****
+make all 
+Building file: ../src/BlindSwitchIn.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I../Blind_test/include -I"/home/micha/workspace/Blind_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BlindSwitchIn.d" -MT"src/BlindSwitchIn.d" -o "src/BlindSwitchIn.o" "../src/BlindSwitchIn.cpp"
+Finished building: ../src/BlindSwitchIn.cpp
+ 
+Building target: Blind_test
+Invoking: GCC C++ Linker
+g++  -o "Blind_test"  ./src/BlindSwitchIn.o ./src/main.o   -lgmock -lpthread -lgtest_main -lgtest
+Finished building target: Blind_test
+ 
+21:21:52 **** Incremental Build of configuration Debug for project Blind_test ****
+make all 
+Building file: ../src/BlindSwitchIn.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I../Blind_test/include -I"/home/micha/workspace/Blind_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BlindSwitchIn.d" -MT"src/BlindSwitchIn.d" -o "src/BlindSwitchIn.o" "../src/BlindSwitchIn.cpp"
+Finished building: ../src/BlindSwitchIn.cpp
+ 
+Building target: Blind_test
+Invoking: GCC C++ Linker
+g++  -o "Blind_test"  ./src/BlindSwitchIn.o ./src/main.o   -lgmock -lpthread -lgtest_main -lgtest
+Finished building target: Blind_test
  

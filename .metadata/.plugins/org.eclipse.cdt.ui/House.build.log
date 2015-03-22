@@ -1,4 +1,4 @@
-23:02:15 **** Incremental Build of configuration Debug for project House ****
+09:49:26 **** Build of configuration Debug for project House ****
 make all 
 Building file: ../src/Floor.cpp
 Invoking: Cross G++ Compiler
@@ -7,8 +7,8 @@ arm-linux-gnueabihf-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP 
  #include "Floor.h"
                    ^
 compilation terminated.
-src/subdir.mk:30: recipe for target 'src/Floor.o' failed
 make: *** [src/Floor.o] Error 1
+src/subdir.mk:30: recipe for target 'src/Floor.o' failed
 
-23:02:16 Build Finished (took 196ms)
+09:49:26 Build Finished (took 680ms)
 

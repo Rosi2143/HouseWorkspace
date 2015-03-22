@@ -1,5 +1,5 @@
 /*
- * Blind.h
+ * BlindSwitchIn.h
  *
  *  Created on: Jan 25, 2015
  *      Author: micha
@@ -13,22 +13,36 @@
 #include <list>
 
 
-class Blind : public iBlindSwitchIn{
+class BlindSwitchIn : public iBlindSwitchIn{
 public:
-      Blind(unsigned int _Id, std::string _Name, iRoom* _pRoom);
-      ~Blind();
+      BlindSwitchIn(unsigned int _Id, std::string _Name, iRoom* _pRoom);
+      BlindSwitchIn(const BlindSwitchIn& Blind);  // copy constructor
+      ~BlindSwitchIn(){
+      }
 
       // Operators
-      Blind& operator=(const Blind& other);    // assignment operator
+      BlindSwitchIn& operator=(const BlindSwitchIn& other);    // assignment operator
 
       // access functions
-      BlindSwitchInState  getState() const {return State;}
-      BlindSwitchInState  moveUp();
-      BlindSwitchInState  moveDown();
+      BlindSwitchInState  getState() const {return _State;}
+      // up
+      virtual void  OnPressUp();
+      virtual void  OnShortPressUp();
+      virtual void  OnLongPressUp();
+      virtual void  OnVeryLongPressUp();
+      // down
+      virtual void  OnPressDown();
+      virtual void  OnShortPressDown();
+      virtual void  OnLongPressDown();
+      virtual void  OnVeryLongPressDown();
 
       // construction functions
 protected:
-      BlindSwitchInState  State;
+      BlindSwitchInState  _State;
+
+      BlindSwitchInState  moveUp();
+      BlindSwitchInState  moveDown();
+      BlindSwitchInState  moveStop();
 };
 
 #endif /* BLINDSWITCHIN_H */

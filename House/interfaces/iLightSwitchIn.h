@@ -28,8 +28,8 @@ class iLightSwitchIn: public Base {
       }
       ;
       iLightSwitchIn(const iLightSwitchIn& light) :
-            Base(light) {
-      }  // copy constructor
+            Base(light) { // copy constructor
+      }
       virtual ~iLightSwitchIn() {
       }
 

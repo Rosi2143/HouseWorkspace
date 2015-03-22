@@ -18,6 +18,20 @@
 		<item value="525" key="AvailableNameColumnWidth"/>
 		<item value="false" key="FilterOnEnv"/>
 	</section>
+	<section name="org.eclipse.equinox.internal.p2.ui.sdk.scheduler.migration.MigrationWizard.SelectableIUsPage">
+		<item value="200" key="DetailsSashWeight"/>
+		<item value="420" key="NameColumnWidth"/>
+		<item value="140" key="VersionColumnWidth"/>
+		<item value="315" key="IDColumnWidth"/>
+		<item value="800" key="ListSashWeight"/>
+	</section>
+	<section name="org.eclipse.equinox.internal.p2.ui.sdk.scheduler.migration.MigrationWizard.ResolutionResultsPage">
+		<item value="200" key="DetailsSashWeight"/>
+		<item value="400" key="NameColumnWidth"/>
+		<item value="200" key="VersionColumnWidth"/>
+		<item value="275" key="IDColumnWidth"/>
+		<item value="800" key="ListSashWeight"/>
+	</section>
 	<section name="org.eclipse.equinox.internal.p2.ui.dialogs.UpdateWizard.WizardSettings">
 		<item value="868" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>

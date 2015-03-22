@@ -31,7 +31,8 @@ typedef enum SwitchInState {
 
 typedef void (iInputUser::*t_SwitchInActionFunction)(int);
 typedef std::pair<iInputUser*, t_SwitchInActionFunction> SwitchInAction;
-typedef std::map<SwitchInState, SwitchInAction> ActionFunctionMap;
+typedef std::list<SwitchInAction> SwitchInActionList;
+typedef std::map<SwitchInState, SwitchInActionList> ActionFunctionMap;
 
 class iRoom;
 
@@ -53,7 +54,7 @@ class IBaseSwitchIn {
 
       // access functions
       virtual SwitchInState getState() const = 0;
-      virtual void addAction(const SwitchInState& state,
+      virtual void addAction(const SwitchInState& state, iInputUser* pInputUser,
             t_SwitchInActionFunction Function) = 0;
 };
 
@@ -82,7 +83,7 @@ class iSwitchIn: public IBaseSwitchIn, public Base {
       virtual const ActionFunctionMap getActionMap() const = 0;
 
       // construction functions
-      virtual void addAction(const SwitchInState& state,
+      virtual void addAction(const SwitchInState& state, iInputUser* pInputUser,
             t_SwitchInActionFunction Function) = 0;
    protected:
       iSwitchIn() :

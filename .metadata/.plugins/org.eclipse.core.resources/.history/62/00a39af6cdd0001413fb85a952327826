@@ -1,0 +1,114 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
+#include <boost/bind.hpp>
+#include <functional>
+
+#include "MockRoom.h"
+#include "MockTime.h"
+#include "MockInputUser.h"
+#include "BlindSwitchIn.h"
+
+using namespace std;
+using namespace boost::gregorian;
+
+using ::testing::_;
+using ::testing::Return;
+using ::testing::Invoke;
+using ::testing::InvokeWithoutArgs;
+using ::testing::TestWithParam;
+using ::testing::Values;
+using ::testing::StrCaseEq;
+
+class BlindTest: public ::testing::Test {
+   protected:
+      BlindTest(): _room(0, "TestRoom", nullptr) {
+      }
+
+      virtual void SetUp() {
+      }
+      MockRoom _room;
+};
+
+TEST_F(BlindTest, ConstructorNoRoom_State_Off) {
+   BlindSwitchIn BlindSwitch(1, "Licht", nullptr);
+   ASSERT_EQ(BlindSomeWhere, BlindSwitch.getState());
+   ASSERT_EQ(1, BlindSwitch.getId());
+}
+
+TEST_F(BlindTest, CopyConstructorNoRoom_State_Off) {
+   BlindSwitchIn BlindSwitch(1, "Licht", nullptr);
+   BlindSwitchIn BlindSwitch2(BlindSwitch);
+   ASSERT_EQ(BlindSomeWhere, BlindSwitch2.getState());
+}
+
+TEST_F(BlindTest, AssignmentNoRoom_State_Off) {
+   BlindSwitchIn BlindSwitch(1, "Licht", nullptr);
+   BlindSwitchIn BlindSwitch2(2, "---", nullptr);
+   BlindSwitch2 = BlindSwitch;
+   ASSERT_EQ(BlindSomeWhere, BlindSwitch2.getState());
+   ASSERT_EQ(1, BlindSwitch2.getId());
+}
+
+TEST_F(BlindTest, Constructor_State_Off) {
+   BlindSwitchIn BlindSwitch(1, "Licht", &_room);
+   ASSERT_EQ(BlindSomeWhere, BlindSwitch.getState());
+}
+
+TEST_F(BlindTest, ConstructorNoRoom_Name_Same) {
+   BlindSwitchIn BlindSwitch(1, "Licht", nullptr);
+   ASSERT_STRCASEEQ("Licht", BlindSwitch.getName().c_str());
+}
+
+TEST_F(BlindTest, CopyConstructorNoRoom_Name_Same) {
+   BlindSwitchIn BlindSwitch(1, "Licht", nullptr);
+   BlindSwitchIn BlindSwitch2(BlindSwitch);
+   ASSERT_STRCASEEQ("Licht", BlindSwitch2.getName().c_str());
+}
+
+TEST_F(BlindTest, AssignmentNoRoom_Name_Same) {
+   BlindSwitchIn BlindSwitch(1, "Licht", nullptr);
+   BlindSwitchIn BlindSwitch2(1, "----", nullptr);
+   BlindSwitch2 = BlindSwitch;
+   ASSERT_STRCASEEQ("Licht", BlindSwitch2.getName().c_str());
+}
+
+TEST_F(BlindTest, Constructor_Name_added) {
+   BlindSwitchIn BlindSwitch(1, "Licht", &_room);
+   ASSERT_STRCASEEQ("TestRoom_Licht", BlindSwitch.getName().c_str());
+}
+
+TEST_F(BlindTest, Constructor_Toggle_State_On) {
+   BlindSwitchIn BlindSwitch(1, "Licht", &_room);
+   BlindSwitch.OnPress();
+   ASSERT_EQ(BlindOn, BlindSwitch.getState());
+}
+
+TEST_F(BlindTest, CopyConstructor_Toggle_State_On) {
+   BlindSwitchIn BlindSwitch(1, "Licht", &_room);
+   BlindSwitch.toggleState();
+   BlindSwitchIn BlindSwitch2(BlindSwitch);
+   ASSERT_EQ(BlindOn, BlindSwitch2.getState());
+}
+
+TEST_F(BlindTest, Assignment_Toggle_State_On) {
+   BlindSwitchIn BlindSwitch(1, "Licht", &_room);
+   BlindSwitchIn BlindSwitch2(2, "Licht", &_room);
+   BlindSwitch.toggleState();
+   BlindSwitch2 = BlindSwitch;
+   ASSERT_EQ(BlindOn, BlindSwitch2.getState());
+}
+
+TEST_F(BlindTest, Constructor_ToggleTwice_State_Off) {
+   BlindSwitchIn BlindSwitch(1, "Licht", &_room);
+   BlindSwitch.toggleState();
+   BlindSwitch.toggleState();
+   ASSERT_EQ(BlindSomeWhere, BlindSwitch.getState());
+}
+
