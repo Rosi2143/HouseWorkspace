@@ -13,6 +13,7 @@
 			<item value="org.eclipse.php.ui.PHPSearchPage"/>
 			<item value="org.eclipse.pde.internal.ui.search.SearchPage"/>
 			<item value="com.python.pydev.ui.search.pySearchPage"/>
+			<item value="org.eclipse.mylyn.tasks.ui.search.page"/>
 		</list>
 		<list key="Search.enabledPageIds">
 			<item value="org.eclipse.rse.internal.files.ui.search.searchPage"/>
@@ -23,6 +24,7 @@
 			<item value="org.eclipse.php.ui.PHPSearchPage"/>
 			<item value="org.eclipse.pde.internal.ui.search.SearchPage"/>
 			<item value="com.python.pydev.ui.search.pySearchPage"/>
+			<item value="org.eclipse.mylyn.tasks.ui.search.page"/>
 		</list>
 	</section>
 	<section name="org.eclipse.cdt.ui.pdomSearchViewPage">
@@ -32,10 +34,10 @@
 		<item value="org.eclipse.cdt.ui.pdomSearchPage" key="PREVIOUS_PAGE"/>
 	</section>
 	<section name="DialogBounds_SearchDialog">
-		<item value="996" key="DIALOG_WIDTH"/>
+		<item value="1366" key="DIALOG_WIDTH"/>
 		<item value="1|Cantarell|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="558" key="DIALOG_HEIGHT"/>
-		<item value="185" key="DIALOG_X_ORIGIN"/>
-		<item value="91" key="DIALOG_Y_ORIGIN"/>
+		<item value="544" key="DIALOG_HEIGHT"/>
+		<item value="3" key="DIALOG_X_ORIGIN"/>
+		<item value="98" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

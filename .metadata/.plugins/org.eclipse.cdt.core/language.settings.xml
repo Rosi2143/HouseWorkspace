@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <plugin>
 	<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
-		<provider class="org.eclipse.cdt.managedbuilder.language.settings.providers.GCCBuiltinSpecsDetector" console="false" env-hash="-179473965462532415" id="org.eclipse.cdt.managedbuilder.core.GCCBuiltinSpecsDetector" keep-relative-paths="false" name="CDT GCC Built-in Compiler Settings" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot;">
+		<provider class="org.eclipse.cdt.managedbuilder.language.settings.providers.GCCBuiltinSpecsDetector" console="false" env-hash="-179410131454980415" id="org.eclipse.cdt.managedbuilder.core.GCCBuiltinSpecsDetector" keep-relative-paths="false" name="CDT GCC Built-in Compiler Settings" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot;">
 			<language-scope id="org.eclipse.cdt.core.gcc"/>
 			<language-scope id="org.eclipse.cdt.core.g++"/>
 			<language id="org.eclipse.cdt.core.gcc">
-				<entry kind="includePath" name="/usr/lib/gcc/x86_64-redhat-linux/5.0.0/include">
+				<entry kind="includePath" name="/usr/lib/gcc/x86_64-redhat-linux/5.0.1/include">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
 				<entry kind="includePath" name="/usr/local/include">
@@ -290,7 +290,7 @@
 				<entry kind="macro" name="__GNUC_MINOR__" value="0">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="macro" name="__GNUC_PATCHLEVEL__" value="0">
+				<entry kind="macro" name="__GNUC_PATCHLEVEL__" value="1">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
 				<entry kind="macro" name="__GNUC_RH_RELEASE__" value="0">
@@ -689,7 +689,7 @@
 				<entry kind="macro" name="__USER_LABEL_PREFIX__" value="">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="macro" name="__VERSION__" value="&quot;5.0.0 20150319 (Red Hat 5.0.0-0.21)&quot;">
+				<entry kind="macro" name="__VERSION__" value="&quot;5.0.1 20150413 (Red Hat 5.0.1-0.1)&quot;">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
 				<entry kind="macro" name="__WCHAR_MAX__" value="0x7fffffff">
@@ -760,16 +760,16 @@
 				</entry>
 			</language>
 			<language id="org.eclipse.cdt.core.g++">
-				<entry kind="includePath" name="/usr/include/c++/5.0.0">
+				<entry kind="includePath" name="/usr/include/c++/5.0.1">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="includePath" name="/usr/include/c++/5.0.0/x86_64-redhat-linux">
+				<entry kind="includePath" name="/usr/include/c++/5.0.1/x86_64-redhat-linux">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="includePath" name="/usr/include/c++/5.0.0/backward">
+				<entry kind="includePath" name="/usr/include/c++/5.0.1/backward">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="includePath" name="/usr/lib/gcc/x86_64-redhat-linux/5.0.0/include">
+				<entry kind="includePath" name="/usr/lib/gcc/x86_64-redhat-linux/5.0.1/include">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
 				<entry kind="includePath" name="/usr/local/include">
@@ -1072,7 +1072,7 @@
 				<entry kind="macro" name="__GNUC_MINOR__" value="0">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="macro" name="__GNUC_PATCHLEVEL__" value="0">
+				<entry kind="macro" name="__GNUC_PATCHLEVEL__" value="1">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
 				<entry kind="macro" name="__GNUC_RH_RELEASE__" value="0">
@@ -1468,7 +1468,7 @@
 				<entry kind="macro" name="__USER_LABEL_PREFIX__" value="">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
-				<entry kind="macro" name="__VERSION__" value="&quot;5.0.0 20150319 (Red Hat 5.0.0-0.21)&quot;">
+				<entry kind="macro" name="__VERSION__" value="&quot;5.0.1 20150413 (Red Hat 5.0.1-0.1)&quot;">
 					<flag value="BUILTIN|READONLY"/>
 				</entry>
 				<entry kind="macro" name="__WCHAR_MAX__" value="0x7fffffff">

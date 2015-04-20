@@ -730,6 +730,9 @@ block.maps|/usr/lib64/python2.7/site-packages/block/maps.py
 boto.__init__|/usr/lib/python2.7/site-packages/boto/__init__.py
 boto.auth|/usr/lib/python2.7/site-packages/boto/auth.py
 boto.auth_handler|/usr/lib/python2.7/site-packages/boto/auth_handler.py
+boto.awslambda.__init__|/usr/lib/python2.7/site-packages/boto/awslambda/__init__.py
+boto.awslambda.exceptions|/usr/lib/python2.7/site-packages/boto/awslambda/exceptions.py
+boto.awslambda.layer1|/usr/lib/python2.7/site-packages/boto/awslambda/layer1.py
 boto.beanstalk.__init__|/usr/lib/python2.7/site-packages/boto/beanstalk/__init__.py
 boto.beanstalk.exception|/usr/lib/python2.7/site-packages/boto/beanstalk/exception.py
 boto.beanstalk.layer1|/usr/lib/python2.7/site-packages/boto/beanstalk/layer1.py
@@ -749,6 +752,9 @@ boto.cloudfront.logging|/usr/lib/python2.7/site-packages/boto/cloudfront/logging
 boto.cloudfront.object|/usr/lib/python2.7/site-packages/boto/cloudfront/object.py
 boto.cloudfront.origin|/usr/lib/python2.7/site-packages/boto/cloudfront/origin.py
 boto.cloudfront.signers|/usr/lib/python2.7/site-packages/boto/cloudfront/signers.py
+boto.cloudhsm.__init__|/usr/lib/python2.7/site-packages/boto/cloudhsm/__init__.py
+boto.cloudhsm.exceptions|/usr/lib/python2.7/site-packages/boto/cloudhsm/exceptions.py
+boto.cloudhsm.layer1|/usr/lib/python2.7/site-packages/boto/cloudhsm/layer1.py
 boto.cloudsearch.__init__|/usr/lib/python2.7/site-packages/boto/cloudsearch/__init__.py
 boto.cloudsearch.document|/usr/lib/python2.7/site-packages/boto/cloudsearch/document.py
 boto.cloudsearch.domain|/usr/lib/python2.7/site-packages/boto/cloudsearch/domain.py
@@ -765,9 +771,15 @@ boto.cloudsearch2.layer1|/usr/lib/python2.7/site-packages/boto/cloudsearch2/laye
 boto.cloudsearch2.layer2|/usr/lib/python2.7/site-packages/boto/cloudsearch2/layer2.py
 boto.cloudsearch2.optionstatus|/usr/lib/python2.7/site-packages/boto/cloudsearch2/optionstatus.py
 boto.cloudsearch2.search|/usr/lib/python2.7/site-packages/boto/cloudsearch2/search.py
+boto.cloudsearchdomain.__init__|/usr/lib/python2.7/site-packages/boto/cloudsearchdomain/__init__.py
+boto.cloudsearchdomain.exceptions|/usr/lib/python2.7/site-packages/boto/cloudsearchdomain/exceptions.py
+boto.cloudsearchdomain.layer1|/usr/lib/python2.7/site-packages/boto/cloudsearchdomain/layer1.py
 boto.cloudtrail.__init__|/usr/lib/python2.7/site-packages/boto/cloudtrail/__init__.py
 boto.cloudtrail.exceptions|/usr/lib/python2.7/site-packages/boto/cloudtrail/exceptions.py
 boto.cloudtrail.layer1|/usr/lib/python2.7/site-packages/boto/cloudtrail/layer1.py
+boto.codedeploy.__init__|/usr/lib/python2.7/site-packages/boto/codedeploy/__init__.py
+boto.codedeploy.exceptions|/usr/lib/python2.7/site-packages/boto/codedeploy/exceptions.py
+boto.codedeploy.layer1|/usr/lib/python2.7/site-packages/boto/codedeploy/layer1.py
 boto.cognito.__init__|/usr/lib/python2.7/site-packages/boto/cognito/__init__.py
 boto.cognito.identity.__init__|/usr/lib/python2.7/site-packages/boto/cognito/identity/__init__.py
 boto.cognito.identity.exceptions|/usr/lib/python2.7/site-packages/boto/cognito/identity/exceptions.py
@@ -776,6 +788,9 @@ boto.cognito.sync.__init__|/usr/lib/python2.7/site-packages/boto/cognito/sync/__
 boto.cognito.sync.exceptions|/usr/lib/python2.7/site-packages/boto/cognito/sync/exceptions.py
 boto.cognito.sync.layer1|/usr/lib/python2.7/site-packages/boto/cognito/sync/layer1.py
 boto.compat|/usr/lib/python2.7/site-packages/boto/compat.py
+boto.configservice.__init__|/usr/lib/python2.7/site-packages/boto/configservice/__init__.py
+boto.configservice.exceptions|/usr/lib/python2.7/site-packages/boto/configservice/exceptions.py
+boto.configservice.layer1|/usr/lib/python2.7/site-packages/boto/configservice/layer1.py
 boto.connection|/usr/lib/python2.7/site-packages/boto/connection.py
 boto.contrib.__init__|/usr/lib/python2.7/site-packages/boto/contrib/__init__.py
 boto.contrib.ymlmessage|/usr/lib/python2.7/site-packages/boto/contrib/ymlmessage.py
@@ -857,6 +872,9 @@ boto.ec2.tag|/usr/lib/python2.7/site-packages/boto/ec2/tag.py
 boto.ec2.volume|/usr/lib/python2.7/site-packages/boto/ec2/volume.py
 boto.ec2.volumestatus|/usr/lib/python2.7/site-packages/boto/ec2/volumestatus.py
 boto.ec2.zone|/usr/lib/python2.7/site-packages/boto/ec2/zone.py
+boto.ec2containerservice.__init__|/usr/lib/python2.7/site-packages/boto/ec2containerservice/__init__.py
+boto.ec2containerservice.exceptions|/usr/lib/python2.7/site-packages/boto/ec2containerservice/exceptions.py
+boto.ec2containerservice.layer1|/usr/lib/python2.7/site-packages/boto/ec2containerservice/layer1.py
 boto.ecs.__init__|/usr/lib/python2.7/site-packages/boto/ecs/__init__.py
 boto.ecs.item|/usr/lib/python2.7/site-packages/boto/ecs/item.py
 boto.elasticache.__init__|/usr/lib/python2.7/site-packages/boto/elasticache/__init__.py
@@ -909,9 +927,15 @@ boto.jsonresponse|/usr/lib/python2.7/site-packages/boto/jsonresponse.py
 boto.kinesis.__init__|/usr/lib/python2.7/site-packages/boto/kinesis/__init__.py
 boto.kinesis.exceptions|/usr/lib/python2.7/site-packages/boto/kinesis/exceptions.py
 boto.kinesis.layer1|/usr/lib/python2.7/site-packages/boto/kinesis/layer1.py
+boto.kms.__init__|/usr/lib/python2.7/site-packages/boto/kms/__init__.py
+boto.kms.exceptions|/usr/lib/python2.7/site-packages/boto/kms/exceptions.py
+boto.kms.layer1|/usr/lib/python2.7/site-packages/boto/kms/layer1.py
 boto.logs.__init__|/usr/lib/python2.7/site-packages/boto/logs/__init__.py
 boto.logs.exceptions|/usr/lib/python2.7/site-packages/boto/logs/exceptions.py
 boto.logs.layer1|/usr/lib/python2.7/site-packages/boto/logs/layer1.py
+boto.machinelearning.__init__|/usr/lib/python2.7/site-packages/boto/machinelearning/__init__.py
+boto.machinelearning.exceptions|/usr/lib/python2.7/site-packages/boto/machinelearning/exceptions.py
+boto.machinelearning.layer1|/usr/lib/python2.7/site-packages/boto/machinelearning/layer1.py
 boto.manage.__init__|/usr/lib/python2.7/site-packages/boto/manage/__init__.py
 boto.manage.cmdshell|/usr/lib/python2.7/site-packages/boto/manage/cmdshell.py
 boto.manage.propget|/usr/lib/python2.7/site-packages/boto/manage/propget.py
@@ -1062,8 +1086,6 @@ boto.swf.layer1|/usr/lib/python2.7/site-packages/boto/swf/layer1.py
 boto.swf.layer1_decisions|/usr/lib/python2.7/site-packages/boto/swf/layer1_decisions.py
 boto.swf.layer2|/usr/lib/python2.7/site-packages/boto/swf/layer2.py
 boto.utils|/usr/lib/python2.7/site-packages/boto/utils.py
-boto.vendored.__init__|/usr/lib/python2.7/site-packages/boto/vendored/__init__.py
-boto.vendored.six|/usr/lib/python2.7/site-packages/boto/vendored/six.py
 boto.vpc.__init__|/usr/lib/python2.7/site-packages/boto/vpc/__init__.py
 boto.vpc.customergateway|/usr/lib/python2.7/site-packages/boto/vpc/customergateway.py
 boto.vpc.dhcpoptions|/usr/lib/python2.7/site-packages/boto/vpc/dhcpoptions.py
@@ -1194,6 +1216,7 @@ coverage.execfile|/usr/lib64/python2.7/site-packages/coverage/execfile.py
 coverage.files|/usr/lib64/python2.7/site-packages/coverage/files.py
 coverage.html|/usr/lib64/python2.7/site-packages/coverage/html.py
 coverage.misc|/usr/lib64/python2.7/site-packages/coverage/misc.py
+coverage.monkey|/usr/lib64/python2.7/site-packages/coverage/monkey.py
 coverage.parser|/usr/lib64/python2.7/site-packages/coverage/parser.py
 coverage.phystokens|/usr/lib64/python2.7/site-packages/coverage/phystokens.py
 coverage.plugin|/usr/lib64/python2.7/site-packages/coverage/plugin.py
@@ -2213,6 +2236,7 @@ dnf.yum.rpmsack|/usr/lib/python2.7/site-packages/dnf/yum/rpmsack.py
 dnf.yum.rpmtrans|/usr/lib/python2.7/site-packages/dnf/yum/rpmtrans.py
 dnf.yum.sqlutils|/usr/lib/python2.7/site-packages/dnf/yum/sqlutils.py
 dnfpluginscore.__init__|/usr/lib/python2.7/site-packages/dnfpluginscore/__init__.py
+dnfpluginscore.lib|/usr/lib/python2.7/site-packages/dnfpluginscore/lib.py
 dnfpluginsextras.__init__|/usr/lib/python2.7/site-packages/dnfpluginsextras/__init__.py
 doctest|/usr/lib64/python2.7/doctest.py
 dropbox.__init__|/usr/lib/python2.7/site-packages/dropbox/__init__.py

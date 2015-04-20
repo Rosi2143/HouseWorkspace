@@ -2141,3 +2141,775 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 
 !ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:16:08.105
 !MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/plugins/violetumleditor-2.0.1.jar.
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2015-04-19 19:16:57.879
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2015-04-19 19:16:57.879
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-04-19 19:17:41.136
+!MESSAGE Error:  is not a member of __is_pointer
+!STACK 0
+java.lang.IllegalArgumentException:  is not a member of __is_pointer
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassType.getVisibility(PDOMCPPClassType.java:434)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassTemplate.getVisibility(PDOMCPPClassTemplate.java:1)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.getVisibility(PDOMCPPLinkage.java:608)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addChild(PDOMCPPLinkage.java:619)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.createBinding(PDOMCPPLinkage.java:570)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:424)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:370)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.createPDOMName(PDOMFile.java:515)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.addNames(PDOMFile.java:482)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.addFileContent(WritablePDOM.java:154)
+	at org.eclipse.cdt.internal.core.index.WritableCIndex.setFileContent(WritableCIndex.java:87)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeFileInIndex(PDOMWriter.java:616)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeSymbolsInIndex(PDOMWriter.java:316)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.addSymbols(PDOMWriter.java:273)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.writeToIndex(AbstractIndexerTask.java:1279)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseFile(AbstractIndexerTask.java:1094)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:898)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:554)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:161)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMUpdateTask.run(PDOMUpdateTask.java:94)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-04-19 19:17:41.207
+!MESSAGE Error:  is not a member of __is_pointer
+!STACK 0
+java.lang.IllegalArgumentException:  is not a member of __is_pointer
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassType.getVisibility(PDOMCPPClassType.java:434)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassTemplate.getVisibility(PDOMCPPClassTemplate.java:1)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.getVisibility(PDOMCPPLinkage.java:608)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addChild(PDOMCPPLinkage.java:619)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.createBinding(PDOMCPPLinkage.java:572)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:424)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:370)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.createPDOMName(PDOMFile.java:515)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.addNames(PDOMFile.java:482)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.addFileContent(WritablePDOM.java:154)
+	at org.eclipse.cdt.internal.core.index.WritableCIndex.setFileContent(WritableCIndex.java:87)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeFileInIndex(PDOMWriter.java:616)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeSymbolsInIndex(PDOMWriter.java:316)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.addSymbols(PDOMWriter.java:273)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.writeToIndex(AbstractIndexerTask.java:1279)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseFile(AbstractIndexerTask.java:1094)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:898)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:554)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:161)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMUpdateTask.run(PDOMUpdateTask.java:94)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-04-19 19:17:41.210
+!MESSAGE Error:  is not a member of __is_normal_iterator
+!STACK 0
+java.lang.IllegalArgumentException:  is not a member of __is_normal_iterator
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassType.getVisibility(PDOMCPPClassType.java:434)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassTemplate.getVisibility(PDOMCPPClassTemplate.java:1)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.getVisibility(PDOMCPPLinkage.java:608)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addChild(PDOMCPPLinkage.java:619)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.createBinding(PDOMCPPLinkage.java:570)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:424)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:370)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.createPDOMName(PDOMFile.java:515)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.addNames(PDOMFile.java:482)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.addFileContent(WritablePDOM.java:154)
+	at org.eclipse.cdt.internal.core.index.WritableCIndex.setFileContent(WritableCIndex.java:87)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeFileInIndex(PDOMWriter.java:616)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeSymbolsInIndex(PDOMWriter.java:316)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.addSymbols(PDOMWriter.java:273)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.writeToIndex(AbstractIndexerTask.java:1279)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseFile(AbstractIndexerTask.java:1094)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:898)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:554)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:161)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMUpdateTask.run(PDOMUpdateTask.java:94)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-04-19 19:17:41.211
+!MESSAGE Error:  is not a member of __is_normal_iterator
+!STACK 0
+java.lang.IllegalArgumentException:  is not a member of __is_normal_iterator
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassType.getVisibility(PDOMCPPClassType.java:434)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassTemplate.getVisibility(PDOMCPPClassTemplate.java:1)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.getVisibility(PDOMCPPLinkage.java:608)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addChild(PDOMCPPLinkage.java:619)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.createBinding(PDOMCPPLinkage.java:572)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:424)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:370)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.createPDOMName(PDOMFile.java:515)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.addNames(PDOMFile.java:482)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.addFileContent(WritablePDOM.java:154)
+	at org.eclipse.cdt.internal.core.index.WritableCIndex.setFileContent(WritableCIndex.java:87)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeFileInIndex(PDOMWriter.java:616)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeSymbolsInIndex(PDOMWriter.java:316)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.addSymbols(PDOMWriter.java:273)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.writeToIndex(AbstractIndexerTask.java:1279)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseFile(AbstractIndexerTask.java:1094)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:898)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:554)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:161)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMUpdateTask.run(PDOMUpdateTask.java:94)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-04-19 19:17:54.414
+!MESSAGE Error:  is not a member of __is_pointer
+!STACK 0
+java.lang.IllegalArgumentException:  is not a member of __is_pointer
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassType.getVisibility(PDOMCPPClassType.java:434)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassTemplate.getVisibility(PDOMCPPClassTemplate.java:1)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.getVisibility(PDOMCPPLinkage.java:608)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addChild(PDOMCPPLinkage.java:619)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.createBinding(PDOMCPPLinkage.java:570)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:424)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:370)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.createPDOMName(PDOMFile.java:515)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.addNames(PDOMFile.java:482)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.addFileContent(WritablePDOM.java:154)
+	at org.eclipse.cdt.internal.core.index.WritableCIndex.setFileContent(WritableCIndex.java:87)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeFileInIndex(PDOMWriter.java:616)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeSymbolsInIndex(PDOMWriter.java:316)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.addSymbols(PDOMWriter.java:273)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.writeToIndex(AbstractIndexerTask.java:1279)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseFile(AbstractIndexerTask.java:1094)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:898)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:554)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:161)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMUpdateTask.run(PDOMUpdateTask.java:94)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-04-19 19:17:54.416
+!MESSAGE Error:  is not a member of __is_pointer
+!STACK 0
+java.lang.IllegalArgumentException:  is not a member of __is_pointer
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassType.getVisibility(PDOMCPPClassType.java:434)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassTemplate.getVisibility(PDOMCPPClassTemplate.java:1)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.getVisibility(PDOMCPPLinkage.java:608)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addChild(PDOMCPPLinkage.java:619)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.createBinding(PDOMCPPLinkage.java:572)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:424)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:370)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.createPDOMName(PDOMFile.java:515)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.addNames(PDOMFile.java:482)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.addFileContent(WritablePDOM.java:154)
+	at org.eclipse.cdt.internal.core.index.WritableCIndex.setFileContent(WritableCIndex.java:87)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeFileInIndex(PDOMWriter.java:616)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeSymbolsInIndex(PDOMWriter.java:316)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.addSymbols(PDOMWriter.java:273)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.writeToIndex(AbstractIndexerTask.java:1279)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseFile(AbstractIndexerTask.java:1094)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:898)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:554)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:161)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMUpdateTask.run(PDOMUpdateTask.java:94)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-04-19 19:17:54.421
+!MESSAGE Error:  is not a member of __is_normal_iterator
+!STACK 0
+java.lang.IllegalArgumentException:  is not a member of __is_normal_iterator
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassType.getVisibility(PDOMCPPClassType.java:434)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassTemplate.getVisibility(PDOMCPPClassTemplate.java:1)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.getVisibility(PDOMCPPLinkage.java:608)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addChild(PDOMCPPLinkage.java:619)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.createBinding(PDOMCPPLinkage.java:570)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:424)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:370)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.createPDOMName(PDOMFile.java:515)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.addNames(PDOMFile.java:482)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.addFileContent(WritablePDOM.java:154)
+	at org.eclipse.cdt.internal.core.index.WritableCIndex.setFileContent(WritableCIndex.java:87)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeFileInIndex(PDOMWriter.java:616)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeSymbolsInIndex(PDOMWriter.java:316)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.addSymbols(PDOMWriter.java:273)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.writeToIndex(AbstractIndexerTask.java:1279)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseFile(AbstractIndexerTask.java:1094)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:898)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:554)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:161)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMUpdateTask.run(PDOMUpdateTask.java:94)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-04-19 19:17:54.424
+!MESSAGE Error:  is not a member of __is_normal_iterator
+!STACK 0
+java.lang.IllegalArgumentException:  is not a member of __is_normal_iterator
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassType.getVisibility(PDOMCPPClassType.java:434)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassTemplate.getVisibility(PDOMCPPClassTemplate.java:1)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.getVisibility(PDOMCPPLinkage.java:608)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addChild(PDOMCPPLinkage.java:619)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.createBinding(PDOMCPPLinkage.java:572)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:424)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:370)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.createPDOMName(PDOMFile.java:515)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.addNames(PDOMFile.java:482)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.addFileContent(WritablePDOM.java:154)
+	at org.eclipse.cdt.internal.core.index.WritableCIndex.setFileContent(WritableCIndex.java:87)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeFileInIndex(PDOMWriter.java:616)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeSymbolsInIndex(PDOMWriter.java:316)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.addSymbols(PDOMWriter.java:273)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.writeToIndex(AbstractIndexerTask.java:1279)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseFile(AbstractIndexerTask.java:1094)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:898)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:554)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:161)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMUpdateTask.run(PDOMUpdateTask.java:94)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-04-19 19:18:00.769
+!MESSAGE Error:  is not a member of __is_pointer
+!STACK 0
+java.lang.IllegalArgumentException:  is not a member of __is_pointer
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassType.getVisibility(PDOMCPPClassType.java:434)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassTemplate.getVisibility(PDOMCPPClassTemplate.java:1)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.getVisibility(PDOMCPPLinkage.java:608)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addChild(PDOMCPPLinkage.java:619)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.createBinding(PDOMCPPLinkage.java:570)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:424)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:370)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.createPDOMName(PDOMFile.java:515)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.addNames(PDOMFile.java:482)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.addFileContent(WritablePDOM.java:154)
+	at org.eclipse.cdt.internal.core.index.WritableCIndex.setFileContent(WritableCIndex.java:87)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeFileInIndex(PDOMWriter.java:616)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeSymbolsInIndex(PDOMWriter.java:316)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.addSymbols(PDOMWriter.java:273)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.writeToIndex(AbstractIndexerTask.java:1279)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseFile(AbstractIndexerTask.java:1094)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:898)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:554)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:161)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMUpdateTask.run(PDOMUpdateTask.java:94)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-04-19 19:18:00.770
+!MESSAGE Error:  is not a member of __is_pointer
+!STACK 0
+java.lang.IllegalArgumentException:  is not a member of __is_pointer
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassType.getVisibility(PDOMCPPClassType.java:434)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassTemplate.getVisibility(PDOMCPPClassTemplate.java:1)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.getVisibility(PDOMCPPLinkage.java:608)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addChild(PDOMCPPLinkage.java:619)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.createBinding(PDOMCPPLinkage.java:572)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:424)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:370)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.createPDOMName(PDOMFile.java:515)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.addNames(PDOMFile.java:482)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.addFileContent(WritablePDOM.java:154)
+	at org.eclipse.cdt.internal.core.index.WritableCIndex.setFileContent(WritableCIndex.java:87)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeFileInIndex(PDOMWriter.java:616)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeSymbolsInIndex(PDOMWriter.java:316)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.addSymbols(PDOMWriter.java:273)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.writeToIndex(AbstractIndexerTask.java:1279)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseFile(AbstractIndexerTask.java:1094)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:898)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:554)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:161)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMUpdateTask.run(PDOMUpdateTask.java:94)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-04-19 19:18:00.779
+!MESSAGE Error:  is not a member of __is_normal_iterator
+!STACK 0
+java.lang.IllegalArgumentException:  is not a member of __is_normal_iterator
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassType.getVisibility(PDOMCPPClassType.java:434)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassTemplate.getVisibility(PDOMCPPClassTemplate.java:1)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.getVisibility(PDOMCPPLinkage.java:608)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addChild(PDOMCPPLinkage.java:619)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.createBinding(PDOMCPPLinkage.java:570)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:424)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:370)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.createPDOMName(PDOMFile.java:515)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.addNames(PDOMFile.java:482)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.addFileContent(WritablePDOM.java:154)
+	at org.eclipse.cdt.internal.core.index.WritableCIndex.setFileContent(WritableCIndex.java:87)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeFileInIndex(PDOMWriter.java:616)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeSymbolsInIndex(PDOMWriter.java:316)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.addSymbols(PDOMWriter.java:273)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.writeToIndex(AbstractIndexerTask.java:1279)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseFile(AbstractIndexerTask.java:1094)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:898)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:554)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:161)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMUpdateTask.run(PDOMUpdateTask.java:94)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-04-19 19:18:00.780
+!MESSAGE Error:  is not a member of __is_normal_iterator
+!STACK 0
+java.lang.IllegalArgumentException:  is not a member of __is_normal_iterator
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassType.getVisibility(PDOMCPPClassType.java:434)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassTemplate.getVisibility(PDOMCPPClassTemplate.java:1)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.getVisibility(PDOMCPPLinkage.java:608)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addChild(PDOMCPPLinkage.java:619)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.createBinding(PDOMCPPLinkage.java:572)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:424)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:370)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.createPDOMName(PDOMFile.java:515)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.addNames(PDOMFile.java:482)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.addFileContent(WritablePDOM.java:154)
+	at org.eclipse.cdt.internal.core.index.WritableCIndex.setFileContent(WritableCIndex.java:87)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeFileInIndex(PDOMWriter.java:616)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeSymbolsInIndex(PDOMWriter.java:316)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.addSymbols(PDOMWriter.java:273)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.writeToIndex(AbstractIndexerTask.java:1279)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseFile(AbstractIndexerTask.java:1094)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:898)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:554)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:161)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMUpdateTask.run(PDOMUpdateTask.java:94)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-04-19 19:18:17.600
+!MESSAGE Error:  is not a member of __is_pointer
+!STACK 0
+java.lang.IllegalArgumentException:  is not a member of __is_pointer
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassType.getVisibility(PDOMCPPClassType.java:434)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassTemplate.getVisibility(PDOMCPPClassTemplate.java:1)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.getVisibility(PDOMCPPLinkage.java:608)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addChild(PDOMCPPLinkage.java:619)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.createBinding(PDOMCPPLinkage.java:570)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:424)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:370)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.createPDOMName(PDOMFile.java:515)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.addNames(PDOMFile.java:482)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.addFileContent(WritablePDOM.java:154)
+	at org.eclipse.cdt.internal.core.index.WritableCIndex.setFileContent(WritableCIndex.java:87)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeFileInIndex(PDOMWriter.java:616)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeSymbolsInIndex(PDOMWriter.java:316)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.addSymbols(PDOMWriter.java:273)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.writeToIndex(AbstractIndexerTask.java:1279)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseFile(AbstractIndexerTask.java:1094)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:898)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:554)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:161)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMUpdateTask.run(PDOMUpdateTask.java:94)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-04-19 19:18:17.602
+!MESSAGE Error:  is not a member of __is_pointer
+!STACK 0
+java.lang.IllegalArgumentException:  is not a member of __is_pointer
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassType.getVisibility(PDOMCPPClassType.java:434)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassTemplate.getVisibility(PDOMCPPClassTemplate.java:1)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.getVisibility(PDOMCPPLinkage.java:608)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addChild(PDOMCPPLinkage.java:619)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.createBinding(PDOMCPPLinkage.java:572)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:424)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:370)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.createPDOMName(PDOMFile.java:515)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.addNames(PDOMFile.java:482)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.addFileContent(WritablePDOM.java:154)
+	at org.eclipse.cdt.internal.core.index.WritableCIndex.setFileContent(WritableCIndex.java:87)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeFileInIndex(PDOMWriter.java:616)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeSymbolsInIndex(PDOMWriter.java:316)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.addSymbols(PDOMWriter.java:273)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.writeToIndex(AbstractIndexerTask.java:1279)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseFile(AbstractIndexerTask.java:1094)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:898)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:554)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:161)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMUpdateTask.run(PDOMUpdateTask.java:94)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-04-19 19:18:17.603
+!MESSAGE Error:  is not a member of __is_normal_iterator
+!STACK 0
+java.lang.IllegalArgumentException:  is not a member of __is_normal_iterator
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassType.getVisibility(PDOMCPPClassType.java:434)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassTemplate.getVisibility(PDOMCPPClassTemplate.java:1)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.getVisibility(PDOMCPPLinkage.java:608)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addChild(PDOMCPPLinkage.java:619)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.createBinding(PDOMCPPLinkage.java:570)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:424)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:370)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.createPDOMName(PDOMFile.java:515)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.addNames(PDOMFile.java:482)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.addFileContent(WritablePDOM.java:154)
+	at org.eclipse.cdt.internal.core.index.WritableCIndex.setFileContent(WritableCIndex.java:87)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeFileInIndex(PDOMWriter.java:616)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeSymbolsInIndex(PDOMWriter.java:316)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.addSymbols(PDOMWriter.java:273)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.writeToIndex(AbstractIndexerTask.java:1279)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseFile(AbstractIndexerTask.java:1094)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:898)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:554)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:161)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMUpdateTask.run(PDOMUpdateTask.java:94)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2015-04-19 19:18:17.604
+!MESSAGE Error:  is not a member of __is_normal_iterator
+!STACK 0
+java.lang.IllegalArgumentException:  is not a member of __is_normal_iterator
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassType.getVisibility(PDOMCPPClassType.java:434)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassTemplate.getVisibility(PDOMCPPClassTemplate.java:1)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.getVisibility(PDOMCPPLinkage.java:608)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addChild(PDOMCPPLinkage.java:619)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.createBinding(PDOMCPPLinkage.java:572)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:424)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:370)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.createPDOMName(PDOMFile.java:515)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.addNames(PDOMFile.java:482)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.addFileContent(WritablePDOM.java:154)
+	at org.eclipse.cdt.internal.core.index.WritableCIndex.setFileContent(WritableCIndex.java:87)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeFileInIndex(PDOMWriter.java:616)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeSymbolsInIndex(PDOMWriter.java:316)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.addSymbols(PDOMWriter.java:273)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.writeToIndex(AbstractIndexerTask.java:1279)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseFile(AbstractIndexerTask.java:1094)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:898)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:554)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:161)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMUpdateTask.run(PDOMUpdateTask.java:94)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:149)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.equinox.p2.touchpoint.natives 4 0 2015-04-19 19:19:52.607
+!MESSAGE org.eclipse.equinox.internal.p2.touchpoint.natives.actions.UnzipAction error unzipping zipfile: /home/micha/.eclipse/org.eclipse.platform_793567567_linux_gtk_x86_64/p2/org.eclipse.equinox.p2.core/cache/binary/org.eclipse.dltk.core_root_5.1.1.201502050504destination: /usr/lib64/eclipse
+
+!ENTRY org.eclipse.equinox.p2.touchpoint.natives 4 0 2015-04-19 19:19:52.620
+!MESSAGE org.eclipse.equinox.internal.p2.touchpoint.natives.actions.UnzipAction error unzipping zipfile: /home/micha/.eclipse/org.eclipse.platform_793567567_linux_gtk_x86_64/p2/org.eclipse.equinox.p2.core/cache/binary/org.eclipse.dltk.mylyn_root_5.1.1.201502050504destination: /usr/lib64/eclipse
+!SESSION 2015-04-19 19:20:14.598 -----------------------------------------------
+eclipse.buildId=4.4.2.Z20150401-1032
+java.version=1.8.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.wst.server.preview 4 0 2015-04-19 19:20:29.823
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.wst.server.preview [3730]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.server.preview [osgi.identity; osgi.identity="org.eclipse.wst.server.preview"; type="osgi.bundle"; version:Version="1.1.300.v201309182039"; singleton:="true"] because it is exposed to package 'javax.servlet' from resources javax.servlet [osgi.identity; osgi.identity="javax.servlet"; type="osgi.bundle"; version:Version="3.0.0.v201112011016"] and javax.servlet-api [osgi.identity; osgi.identity="javax.servlet-api"; type="osgi.bundle"; version:Version="3.1.0"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.server.preview [osgi.identity; osgi.identity="org.eclipse.wst.server.preview"; type="osgi.bundle"; version:Version="1.1.300.v201309182039"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.servlet)(&(bundle-version>=2.6.0)(!(bundle-version>=3.1.0))))
+     |
+    provide: osgi.wiring.bundle: javax.servlet
+  javax.servlet [osgi.identity; osgi.identity="javax.servlet"; type="osgi.bundle"; version:Version="3.0.0.v201112011016"]
+
+Chain 2:
+  org.eclipse.wst.server.preview [osgi.identity; osgi.identity="org.eclipse.wst.server.preview"; type="osgi.bundle"; version:Version="1.1.300.v201309182039"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jetty.server)(&(bundle-version>=8.0.4)(!(bundle-version>=9.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="8.1.16.v20140903"; osgi.wiring.bundle="org.eclipse.jetty.server"
+  org.eclipse.jetty.server [osgi.identity; osgi.identity="org.eclipse.jetty.server"; type="osgi.bundle"; version:Version="8.1.16.v20140903"]
+    import: (&(osgi.wiring.package=org.eclipse.jetty.io)(&(version>=8.1.0)(!(version>=9.0.0))))
+     |
+    export: osgi.wiring.package=org.eclipse.jetty.io; uses:=org.eclipse.jetty.util.log
+  org.eclipse.jetty.io [osgi.identity; osgi.identity="org.eclipse.jetty.io"; type="osgi.bundle"; version:Version="8.1.16.v20140903"]
+    import: (&(osgi.wiring.package=org.eclipse.jetty.util.log)(&(version>=8.1.0)(!(version>=9.0.0))))
+     |
+    export: osgi.wiring.package=org.eclipse.jetty.util.log; uses:=javax.servlet
+  org.eclipse.jetty.util [osgi.identity; osgi.identity="org.eclipse.jetty.util"; type="osgi.bundle"; version:Version="8.1.16.v20140903"]
+    import: (&(osgi.wiring.package=javax.servlet)(version>=2.6.0))
+     |
+    export: osgi.wiring.package: javax.servlet
+  javax.servlet-api [osgi.identity; osgi.identity="javax.servlet-api"; type="osgi.bundle"; version:Version="3.1.0"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:30.578
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/emf-runtime.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:31.286
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-modelbase.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:31.420
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dltk-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:31.549
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dltk-core/eclipse/plugins/org.jboss.spec.javax.transaction.jboss-transaction-api_1.1_spec_1.0.1.Final.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:31.599
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dltk-core/eclipse/plugins/org.jboss.spec.javax.transaction.jboss-transaction-api_1.1_spec_1.0.1.Final.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:31.605
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/remote.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:31.686
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-enablement.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:32.015
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-commons.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:32.286
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-commons/eclipse/plugins/org.jdom_1.1.2.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:32.288
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-commons/eclipse/plugins/org.apache.james.apache-mime4j-benchmark_0.7.2.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:32.336
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-commons/eclipse/plugins/org.jdom_1.1.2.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:32.337
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-commons/eclipse/plugins/org.apache.james.apache-mime4j-benchmark_0.7.2.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:32.343
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/xsd-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:32.409
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dltk-mylyn.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:32.450
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-sqldevtools.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:32.598
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/gef-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:32.649
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-servertools-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:32.704
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-common-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:32.763
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-servertools.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:32.809
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-servertools/eclipse/plugins/tomcat-servlet-3.0-api.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:32.836
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-servertools/eclipse/plugins/tomcat-servlet-3.0-api.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:32.840
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-connectivity.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:32.967
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/rse.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:33.244
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pdt-tests.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:33.291
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pdt-tests/eclipse/plugins/org.eclipse.test.performance_3.9.100.v20140916-1119.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:33.308
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pdt-tests/eclipse/plugins/org.eclipse.test.performance_3.9.100.v20140916-1119.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:33.311
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-common.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:33.356
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-sourceediting.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:33.517
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pdt-pdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:33.609
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-doc.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:33.690
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pydev-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:33.783
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/jdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:33.879
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/cdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:34.140
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/sdk.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:34.525
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/cvs.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:35.808
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/plugins/violetumleditor-2.0.1.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:20:35.897
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/plugins/violetumleditor-2.0.1.jar.
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2015-04-19 19:20:49.129
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2015-04-19 19:20:49.129
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+!SESSION 2015-04-19 19:23:07.913 -----------------------------------------------
+eclipse.buildId=4.4.2.Z20150401-1032
+java.version=1.8.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.wst.server.preview 4 0 2015-04-19 19:23:10.615
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.wst.server.preview [3730]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.wst.server.preview [osgi.identity; osgi.identity="org.eclipse.wst.server.preview"; type="osgi.bundle"; version:Version="1.1.300.v201309182039"; singleton:="true"] because it is exposed to package 'javax.servlet' from resources javax.servlet [osgi.identity; osgi.identity="javax.servlet"; type="osgi.bundle"; version:Version="3.0.0.v201112011016"] and javax.servlet-api [osgi.identity; osgi.identity="javax.servlet-api"; type="osgi.bundle"; version:Version="3.1.0"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.wst.server.preview [osgi.identity; osgi.identity="org.eclipse.wst.server.preview"; type="osgi.bundle"; version:Version="1.1.300.v201309182039"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=javax.servlet)(&(bundle-version>=2.6.0)(!(bundle-version>=3.1.0))))
+     |
+    provide: osgi.wiring.bundle: javax.servlet
+  javax.servlet [osgi.identity; osgi.identity="javax.servlet"; type="osgi.bundle"; version:Version="3.0.0.v201112011016"]
+
+Chain 2:
+  org.eclipse.wst.server.preview [osgi.identity; osgi.identity="org.eclipse.wst.server.preview"; type="osgi.bundle"; version:Version="1.1.300.v201309182039"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.jetty.server)(&(bundle-version>=8.0.4)(!(bundle-version>=9.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="8.1.16.v20140903"; osgi.wiring.bundle="org.eclipse.jetty.server"
+  org.eclipse.jetty.server [osgi.identity; osgi.identity="org.eclipse.jetty.server"; type="osgi.bundle"; version:Version="8.1.16.v20140903"]
+    import: (&(osgi.wiring.package=org.eclipse.jetty.io)(&(version>=8.1.0)(!(version>=9.0.0))))
+     |
+    export: osgi.wiring.package=org.eclipse.jetty.io; uses:=org.eclipse.jetty.util.log
+  org.eclipse.jetty.io [osgi.identity; osgi.identity="org.eclipse.jetty.io"; type="osgi.bundle"; version:Version="8.1.16.v20140903"]
+    import: (&(osgi.wiring.package=org.eclipse.jetty.util.log)(&(version>=8.1.0)(!(version>=9.0.0))))
+     |
+    export: osgi.wiring.package=org.eclipse.jetty.util.log; uses:=javax.servlet
+  org.eclipse.jetty.util [osgi.identity; osgi.identity="org.eclipse.jetty.util"; type="osgi.bundle"; version:Version="8.1.16.v20140903"]
+    import: (&(osgi.wiring.package=javax.servlet)(version>=2.6.0))
+     |
+    export: osgi.wiring.package: javax.servlet
+  javax.servlet-api [osgi.identity; osgi.identity="javax.servlet-api"; type="osgi.bundle"; version:Version="3.1.0"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:10.960
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/emf-runtime.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:11.609
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-modelbase.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:11.706
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dltk-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:11.822
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dltk-core/eclipse/plugins/org.jboss.spec.javax.transaction.jboss-transaction-api_1.1_spec_1.0.1.Final.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:11.882
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dltk-core/eclipse/plugins/org.jboss.spec.javax.transaction.jboss-transaction-api_1.1_spec_1.0.1.Final.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:11.887
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/remote.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:11.971
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-enablement.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:12.334
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-commons.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:12.473
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-commons/eclipse/plugins/org.jdom_1.1.2.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:12.474
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-commons/eclipse/plugins/org.apache.james.apache-mime4j-benchmark_0.7.2.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:12.574
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-commons/eclipse/plugins/org.jdom_1.1.2.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:12.575
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/mylyn-commons/eclipse/plugins/org.apache.james.apache-mime4j-benchmark_0.7.2.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:12.583
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/xsd-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:12.641
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dltk-mylyn.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:12.696
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-sqldevtools.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:12.865
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/gef-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:12.909
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-servertools-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:12.940
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-common-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:12.990
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-servertools.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:13.036
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-servertools/eclipse/plugins/tomcat-servlet-3.0-api.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:13.079
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-servertools/eclipse/plugins/tomcat-servlet-3.0-api.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:13.087
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-connectivity.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:13.163
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/rse.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:13.497
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pdt-tests.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:13.548
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pdt-tests/eclipse/plugins/org.eclipse.test.performance_3.9.100.v20140916-1119.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:13.590
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pdt-tests/eclipse/plugins/org.eclipse.test.performance_3.9.100.v20140916-1119.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:13.592
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-common.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:13.635
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/webtools-sourceediting.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:13.791
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pdt-pdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:13.852
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/dtp-doc.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:13.886
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/share/eclipse/dropins/pydev-core.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:14.032
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/jdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:14.127
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/cdt.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:14.453
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/sdk.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:14.767
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/dropins/cvs.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:15.754
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/plugins/violetumleditor-2.0.1.jar.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-04-19 19:23:15.833
+!MESSAGE Unable to acquire PluginConverter service during generation for: /usr/lib64/eclipse/plugins/violetumleditor-2.0.1.jar.
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2015-04-19 19:23:25.775
+!MESSAGE Unexpected error while loading repository template extensions
+!SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2015-04-19 19:23:25.775
+!MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-04-20 22:06:13.704
+!MESSAGE Indexed 'BlindStates_test' (2 sources, 1,311 headers) in 60.8 sec: 98,255 declarations; 447,825 references; 0 unresolved inclusions; 5 syntax errors; 21 unresolved names (0.0038%)

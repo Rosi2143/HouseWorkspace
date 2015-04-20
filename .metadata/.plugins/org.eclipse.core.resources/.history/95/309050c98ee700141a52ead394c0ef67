@@ -1,0 +1,34 @@
+/*
+ * BlindStates.cpp
+ *
+ *  Created on: Apr 20, 2015
+ *      Author: micha
+ *
+ *  Description see: http://www.boost.org/doc/libs/1_51_0/libs/statechart/doc/tutorial.html
+ */
+
+#include <boost/statechart/state_machine.hpp>
+#include <boost/statechart/simple_state.hpp>
+#include <iostream>
+
+namespace sc = boost::statechart;
+
+// events
+struct EvUpPressed: sc::event<EvUpPressed> {
+};
+struct EvDownPressed: sc::event<EvDownPressed> {
+};
+struct EvReleased: sc::event<EvReleased> {
+};
+
+struct BlindSomewhere;
+
+struct BlindMachine: sc::state_machine<Machine, BlindSomewhere> {
+};
+
+struct BlindSomewhere: sc::simple_state<BlindSomewhere, Machine> {
+      BlindSomewhere() {
+      } // entry
+      ~BlindSomewhere() {
+      } // exit
+};
