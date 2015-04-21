@@ -1,0 +1,15 @@
+22:47:02 **** Incremental Build of configuration Debug for project BlindStates_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I../BlindStates_test/include -I"/home/micha/workspace/BlindStates_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: BlindStates_test
+Invoking: GCC C++ Linker
+g++  -o "BlindStates_test"  ./src/BlindStates.o ./src/main.o   -lgmock -lpthread -lgtest_main -lgtest
+Finished building target: BlindStates_test
+ 
+
+22:47:08 Build Finished (took 6s.533ms)
+

@@ -1,3 +1,387 @@
-19:24:04 **** Incremental Build of configuration Debug for project Blind_test ****
+22:38:07 **** Clean-only build of configuration Debug for project BlindStates_test ****
+make clean 
+rm -rf  ./src/BlindStates.o ./src/main.o  ./src/BlindStates.d ./src/main.d  BlindStates_test
+ 
+22:38:11 **** Build of configuration Debug for project BlindStates_test ****
+make all 
+Building file: ../src/BlindStates.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I../BlindStates_test/include -I"/home/micha/workspace/BlindStates_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BlindStates.d" -MT"src/BlindStates.d" -o "src/BlindStates.o" "../src/BlindStates.cpp"
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp: In instantiation of ‘boost::statechart::result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::transit_impl(const TransitionAction&) [with DestinationState = BlindMovingUp; TransitionContext = BlindMachine; TransitionAction = boost::statechart::detail::no_transition_function; MostDerived = BlindUp; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::result = boost::statechart::detail::safe_reaction_result]’:
+/usr/include/boost/statechart/simple_state.hpp:313:70:   required from ‘boost::statechart::result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::transit() [with DestinationState = BlindMovingUp; MostDerived = BlindUp; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::result = boost::statechart::detail::safe_reaction_result]’
+/usr/include/boost/statechart/transition.hpp:38:52:   required from ‘static boost::statechart::result boost::statechart::transition<Event, Destination, TransitionContext, pTransitionAction>::reactions<State>::react_without_action(State&) [with State = BlindUp; Event = EvUpPressed; Destination = BlindMovingUp; TransitionContext = boost::statechart::detail::no_context<EvUpPressed>; void (TransitionContext::* pTransitionAction)(const Event&) = &boost::statechart::detail::no_context<EvUpPressed>::no_function; boost::statechart::result = boost::statechart::detail::safe_reaction_result]’
+/usr/include/boost/statechart/detail/reaction_dispatcher.hpp:47:47:   required from ‘static boost::statechart::result boost::statechart::detail::reaction_dispatcher<Reactions, State, EventBase, Event, ActionContext, IdType>::without_action::react(State&, const EventBase&) [with Reactions = boost::statechart::transition<EvUpPressed, BlindMovingUp>::reactions<BlindUp>; State = BlindUp; EventBase = boost::statechart::event_base; Event = EvUpPressed; ActionContext = boost::statechart::detail::no_context<EvUpPressed>; IdType = const void*; boost::statechart::result = boost::statechart::detail::safe_reaction_result]’
+/usr/include/boost/statechart/detail/reaction_dispatcher.hpp:92:33:   required from ‘static boost::statechart::result boost::statechart::detail::reaction_dispatcher<Reactions, State, EventBase, Event, ActionContext, IdType>::derived::react(State&, const EventBase&, const IdType&) [with Reactions = boost::statechart::transition<EvUpPressed, BlindMovingUp>::reactions<BlindUp>; State = BlindUp; EventBase = boost::statechart::event_base; Event = EvUpPressed; ActionContext = boost::statechart::detail::no_context<EvUpPressed>; IdType = const void*; boost::statechart::result = boost::statechart::detail::safe_reaction_result]’
+/usr/include/boost/statechart/detail/reaction_dispatcher.hpp:109:24:   required from ‘static boost::statechart::detail::reaction_result boost::statechart::detail::reaction_dispatcher<Reactions, State, EventBase, Event, ActionContext, IdType>::react(State&, const EventBase&, const IdType&) [with Reactions = boost::statechart::transition<EvUpPressed, BlindMovingUp>::reactions<BlindUp>; State = BlindUp; EventBase = boost::statechart::event_base; Event = EvUpPressed; ActionContext = boost::statechart::detail::no_context<EvUpPressed>; IdType = const void*]’
+/usr/include/boost/statechart/transition.hpp:59:31:   required from ‘static boost::statechart::detail::reaction_result boost::statechart::transition<Event, Destination, TransitionContext, pTransitionAction>::react(State&, const EventBase&, const IdType&) [with State = BlindUp; EventBase = boost::statechart::event_base; IdType = const void*; Event = EvUpPressed; Destination = BlindMovingUp; TransitionContext = boost::statechart::detail::no_context<EvUpPressed>; void (TransitionContext::* pTransitionAction)(const Event&) = &boost::statechart::detail::no_context<EvUpPressed>::no_function]’
+/usr/include/boost/statechart/simple_state.hpp:814:50:   required from ‘static boost::statechart::detail::reaction_result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::local_react_impl_non_empty::local_react_impl(State&, const event_base_type&, typename Context::inner_context_type::rtti_policy_type::id_type) [with ReactionList = boost::mpl::list<boost::statechart::transition<EvUpPressed, BlindMovingUp>, boost::statechart::transition<EvDownPressed, BlindMovingDown> >; State = boost::statechart::simple_state<BlindUp, BlindMachine>; MostDerived = BlindUp; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::event_base_type = boost::statechart::event_base; typename Context::inner_context_type::rtti_policy_type::id_type = const void*]’
+/usr/include/boost/statechart/simple_state.hpp:850:61:   required from ‘boost::statechart::detail::reaction_result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::local_react(const event_base_type&, typename Context::inner_context_type::rtti_policy_type::id_type) [with ReactionList = boost::mpl::list<boost::statechart::transition<EvUpPressed, BlindMovingUp>, boost::statechart::transition<EvDownPressed, BlindMovingDown> >; MostDerived = BlindUp; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::event_base_type = boost::statechart::event_base; typename Context::inner_context_type::rtti_policy_type::id_type = const void*]’
+/usr/include/boost/statechart/simple_state.hpp:489:37:   required from ‘boost::statechart::detail::reaction_result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::react_impl(const event_base_type&, typename Context::inner_context_type::rtti_policy_type::id_type) [with MostDerived = BlindUp; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::event_base_type = boost::statechart::event_base; typename Context::inner_context_type::rtti_policy_type::id_type = const void*]’
+/home/micha/workspace/House/include/BlindStates.h:62:2:   required from here
+/usr/include/boost/statechart/simple_state.hpp:707:42: error: invalid use of incomplete type ‘struct BlindMovingUp’
+           mpl::placeholders::_ > >::type common_context_iter;
+                                          ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:34:8: note: forward declaration of ‘struct BlindMovingUp’
+ struct BlindMovingUp;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:709:9: error: invalid use of incomplete type ‘struct BlindMovingUp’
+         common_context_type;
+         ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:34:8: note: forward declaration of ‘struct BlindMovingUp’
+ struct BlindMovingUp;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:712:37: error: invalid use of incomplete type ‘struct BlindMovingUp’
+         common_context_iter >::type termination_state_position;
+                                     ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:34:8: note: forward declaration of ‘struct BlindMovingUp’
+ struct BlindMovingUp;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:717:44: error: invalid use of incomplete type ‘struct BlindMovingUp’
+         termination_state_position >::type termination_state_type;
+                                            ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:34:8: note: forward declaration of ‘struct BlindMovingUp’
+ struct BlindMovingUp;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:787:55: error: invalid use of incomplete type ‘struct BlindMovingUp’
+         common_context_type, DestinationState >::type context_list_type;
+                                                       ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:34:8: note: forward declaration of ‘struct BlindMovingUp’
+ struct BlindMovingUp;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:802:77: error: invalid use of incomplete type ‘struct BlindMovingUp’
+       return detail::result_utility::make_result( detail::do_discard_event );
+                                                                             ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:34:8: note: forward declaration of ‘struct BlindMovingUp’
+ struct BlindMovingUp;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:799:68: error: invalid use of incomplete type ‘struct BlindMovingUp’
+         context_list_type, outermost_context_base_type >::construct(
+                                                                    ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:34:8: note: forward declaration of ‘struct BlindMovingUp’
+ struct BlindMovingUp;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp: In instantiation of ‘boost::statechart::result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::transit_impl(const TransitionAction&) [with DestinationState = BlindMovingUp; TransitionContext = BlindMachine; TransitionAction = boost::statechart::detail::no_transition_function; MostDerived = BlindSomewhere; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::result = boost::statechart::detail::safe_reaction_result]’:
+/usr/include/boost/statechart/simple_state.hpp:313:70:   required from ‘boost::statechart::result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::transit() [with DestinationState = BlindMovingUp; MostDerived = BlindSomewhere; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::result = boost::statechart::detail::safe_reaction_result]’
+/usr/include/boost/statechart/transition.hpp:38:52:   required from ‘static boost::statechart::result boost::statechart::transition<Event, Destination, TransitionContext, pTransitionAction>::reactions<State>::react_without_action(State&) [with State = BlindSomewhere; Event = EvUpPressed; Destination = BlindMovingUp; TransitionContext = boost::statechart::detail::no_context<EvUpPressed>; void (TransitionContext::* pTransitionAction)(const Event&) = &boost::statechart::detail::no_context<EvUpPressed>::no_function; boost::statechart::result = boost::statechart::detail::safe_reaction_result]’
+/usr/include/boost/statechart/detail/reaction_dispatcher.hpp:47:47:   required from ‘static boost::statechart::result boost::statechart::detail::reaction_dispatcher<Reactions, State, EventBase, Event, ActionContext, IdType>::without_action::react(State&, const EventBase&) [with Reactions = boost::statechart::transition<EvUpPressed, BlindMovingUp>::reactions<BlindSomewhere>; State = BlindSomewhere; EventBase = boost::statechart::event_base; Event = EvUpPressed; ActionContext = boost::statechart::detail::no_context<EvUpPressed>; IdType = const void*; boost::statechart::result = boost::statechart::detail::safe_reaction_result]’
+/usr/include/boost/statechart/detail/reaction_dispatcher.hpp:92:33:   required from ‘static boost::statechart::result boost::statechart::detail::reaction_dispatcher<Reactions, State, EventBase, Event, ActionContext, IdType>::derived::react(State&, const EventBase&, const IdType&) [with Reactions = boost::statechart::transition<EvUpPressed, BlindMovingUp>::reactions<BlindSomewhere>; State = BlindSomewhere; EventBase = boost::statechart::event_base; Event = EvUpPressed; ActionContext = boost::statechart::detail::no_context<EvUpPressed>; IdType = const void*; boost::statechart::result = boost::statechart::detail::safe_reaction_result]’
+/usr/include/boost/statechart/detail/reaction_dispatcher.hpp:109:24:   required from ‘static boost::statechart::detail::reaction_result boost::statechart::detail::reaction_dispatcher<Reactions, State, EventBase, Event, ActionContext, IdType>::react(State&, const EventBase&, const IdType&) [with Reactions = boost::statechart::transition<EvUpPressed, BlindMovingUp>::reactions<BlindSomewhere>; State = BlindSomewhere; EventBase = boost::statechart::event_base; Event = EvUpPressed; ActionContext = boost::statechart::detail::no_context<EvUpPressed>; IdType = const void*]’
+/usr/include/boost/statechart/transition.hpp:59:31:   required from ‘static boost::statechart::detail::reaction_result boost::statechart::transition<Event, Destination, TransitionContext, pTransitionAction>::react(State&, const EventBase&, const IdType&) [with State = BlindSomewhere; EventBase = boost::statechart::event_base; IdType = const void*; Event = EvUpPressed; Destination = BlindMovingUp; TransitionContext = boost::statechart::detail::no_context<EvUpPressed>; void (TransitionContext::* pTransitionAction)(const Event&) = &boost::statechart::detail::no_context<EvUpPressed>::no_function]’
+/usr/include/boost/statechart/simple_state.hpp:814:50:   required from ‘static boost::statechart::detail::reaction_result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::local_react_impl_non_empty::local_react_impl(State&, const event_base_type&, typename Context::inner_context_type::rtti_policy_type::id_type) [with ReactionList = boost::mpl::list<boost::statechart::transition<EvUpPressed, BlindMovingUp>, boost::statechart::transition<EvDownPressed, BlindMovingDown> >; State = boost::statechart::simple_state<BlindSomewhere, BlindMachine>; MostDerived = BlindSomewhere; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::event_base_type = boost::statechart::event_base; typename Context::inner_context_type::rtti_policy_type::id_type = const void*]’
+/usr/include/boost/statechart/simple_state.hpp:850:61:   required from ‘boost::statechart::detail::reaction_result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::local_react(const event_base_type&, typename Context::inner_context_type::rtti_policy_type::id_type) [with ReactionList = boost::mpl::list<boost::statechart::transition<EvUpPressed, BlindMovingUp>, boost::statechart::transition<EvDownPressed, BlindMovingDown> >; MostDerived = BlindSomewhere; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::event_base_type = boost::statechart::event_base; typename Context::inner_context_type::rtti_policy_type::id_type = const void*]’
+/usr/include/boost/statechart/simple_state.hpp:489:37:   required from ‘boost::statechart::detail::reaction_result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::react_impl(const event_base_type&, typename Context::inner_context_type::rtti_policy_type::id_type) [with MostDerived = BlindSomewhere; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::event_base_type = boost::statechart::event_base; typename Context::inner_context_type::rtti_policy_type::id_type = const void*]’
+/home/micha/workspace/House/include/BlindStates.h:62:2:   required from here
+/usr/include/boost/statechart/simple_state.hpp:707:42: error: invalid use of incomplete type ‘struct BlindMovingUp’
+           mpl::placeholders::_ > >::type common_context_iter;
+                                          ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:34:8: note: forward declaration of ‘struct BlindMovingUp’
+ struct BlindMovingUp;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:709:9: error: invalid use of incomplete type ‘struct BlindMovingUp’
+         common_context_type;
+         ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:34:8: note: forward declaration of ‘struct BlindMovingUp’
+ struct BlindMovingUp;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:712:37: error: invalid use of incomplete type ‘struct BlindMovingUp’
+         common_context_iter >::type termination_state_position;
+                                     ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:34:8: note: forward declaration of ‘struct BlindMovingUp’
+ struct BlindMovingUp;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:717:44: error: invalid use of incomplete type ‘struct BlindMovingUp’
+         termination_state_position >::type termination_state_type;
+                                            ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:34:8: note: forward declaration of ‘struct BlindMovingUp’
+ struct BlindMovingUp;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:787:55: error: invalid use of incomplete type ‘struct BlindMovingUp’
+         common_context_type, DestinationState >::type context_list_type;
+                                                       ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:34:8: note: forward declaration of ‘struct BlindMovingUp’
+ struct BlindMovingUp;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:802:77: error: invalid use of incomplete type ‘struct BlindMovingUp’
+       return detail::result_utility::make_result( detail::do_discard_event );
+                                                                             ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:34:8: note: forward declaration of ‘struct BlindMovingUp’
+ struct BlindMovingUp;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:799:68: error: invalid use of incomplete type ‘struct BlindMovingUp’
+         context_list_type, outermost_context_base_type >::construct(
+                                                                    ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:34:8: note: forward declaration of ‘struct BlindMovingUp’
+ struct BlindMovingUp;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp: In instantiation of ‘boost::statechart::result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::transit_impl(const TransitionAction&) [with DestinationState = BlindMovingDown; TransitionContext = BlindMachine; TransitionAction = boost::statechart::detail::no_transition_function; MostDerived = BlindUp; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::result = boost::statechart::detail::safe_reaction_result]’:
+/usr/include/boost/statechart/simple_state.hpp:313:70:   required from ‘boost::statechart::result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::transit() [with DestinationState = BlindMovingDown; MostDerived = BlindUp; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::result = boost::statechart::detail::safe_reaction_result]’
+/usr/include/boost/statechart/transition.hpp:38:52:   required from ‘static boost::statechart::result boost::statechart::transition<Event, Destination, TransitionContext, pTransitionAction>::reactions<State>::react_without_action(State&) [with State = BlindUp; Event = EvDownPressed; Destination = BlindMovingDown; TransitionContext = boost::statechart::detail::no_context<EvDownPressed>; void (TransitionContext::* pTransitionAction)(const Event&) = &boost::statechart::detail::no_context<EvDownPressed>::no_function; boost::statechart::result = boost::statechart::detail::safe_reaction_result]’
+/usr/include/boost/statechart/detail/reaction_dispatcher.hpp:47:47:   required from ‘static boost::statechart::result boost::statechart::detail::reaction_dispatcher<Reactions, State, EventBase, Event, ActionContext, IdType>::without_action::react(State&, const EventBase&) [with Reactions = boost::statechart::transition<EvDownPressed, BlindMovingDown>::reactions<BlindUp>; State = BlindUp; EventBase = boost::statechart::event_base; Event = EvDownPressed; ActionContext = boost::statechart::detail::no_context<EvDownPressed>; IdType = const void*; boost::statechart::result = boost::statechart::detail::safe_reaction_result]’
+/usr/include/boost/statechart/detail/reaction_dispatcher.hpp:92:33:   required from ‘static boost::statechart::result boost::statechart::detail::reaction_dispatcher<Reactions, State, EventBase, Event, ActionContext, IdType>::derived::react(State&, const EventBase&, const IdType&) [with Reactions = boost::statechart::transition<EvDownPressed, BlindMovingDown>::reactions<BlindUp>; State = BlindUp; EventBase = boost::statechart::event_base; Event = EvDownPressed; ActionContext = boost::statechart::detail::no_context<EvDownPressed>; IdType = const void*; boost::statechart::result = boost::statechart::detail::safe_reaction_result]’
+/usr/include/boost/statechart/detail/reaction_dispatcher.hpp:109:24:   [ skipping 2 instantiation contexts, use -ftemplate-backtrace-limit=0 to disable ]
+/usr/include/boost/statechart/simple_state.hpp:814:50:   required from ‘static boost::statechart::detail::reaction_result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::local_react_impl_non_empty::local_react_impl(State&, const event_base_type&, typename Context::inner_context_type::rtti_policy_type::id_type) [with ReactionList = boost::mpl::list1<boost::statechart::transition<EvDownPressed, BlindMovingDown> >; State = boost::statechart::simple_state<BlindUp, BlindMachine>; MostDerived = BlindUp; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::event_base_type = boost::statechart::event_base; typename Context::inner_context_type::rtti_policy_type::id_type = const void*]’
+/usr/include/boost/statechart/simple_state.hpp:850:61:   required from ‘boost::statechart::detail::reaction_result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::local_react(const event_base_type&, typename Context::inner_context_type::rtti_policy_type::id_type) [with ReactionList = boost::mpl::list1<boost::statechart::transition<EvDownPressed, BlindMovingDown> >; MostDerived = BlindUp; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::event_base_type = boost::statechart::event_base; typename Context::inner_context_type::rtti_policy_type::id_type = const void*]’
+/usr/include/boost/statechart/simple_state.hpp:820:26:   required from ‘static boost::statechart::detail::reaction_result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::local_react_impl_non_empty::local_react_impl(State&, const event_base_type&, typename Context::inner_context_type::rtti_policy_type::id_type) [with ReactionList = boost::mpl::list<boost::statechart::transition<EvUpPressed, BlindMovingUp>, boost::statechart::transition<EvDownPressed, BlindMovingDown> >; State = boost::statechart::simple_state<BlindUp, BlindMachine>; MostDerived = BlindUp; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::event_base_type = boost::statechart::event_base; typename Context::inner_context_type::rtti_policy_type::id_type = const void*]’
+/usr/include/boost/statechart/simple_state.hpp:850:61:   required from ‘boost::statechart::detail::reaction_result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::local_react(const event_base_type&, typename Context::inner_context_type::rtti_policy_type::id_type) [with ReactionList = boost::mpl::list<boost::statechart::transition<EvUpPressed, BlindMovingUp>, boost::statechart::transition<EvDownPressed, BlindMovingDown> >; MostDerived = BlindUp; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::event_base_type = boost::statechart::event_base; typename Context::inner_context_type::rtti_policy_type::id_type = const void*]’
+/usr/include/boost/statechart/simple_state.hpp:489:37:   required from ‘boost::statechart::detail::reaction_result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::react_impl(const event_base_type&, typename Context::inner_context_type::rtti_policy_type::id_type) [with MostDerived = BlindUp; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::event_base_type = boost::statechart::event_base; typename Context::inner_context_type::rtti_policy_type::id_type = const void*]’
+/home/micha/workspace/House/include/BlindStates.h:62:2:   required from here
+/usr/include/boost/statechart/simple_state.hpp:707:42: error: invalid use of incomplete type ‘struct BlindMovingDown’
+           mpl::placeholders::_ > >::type common_context_iter;
+                                          ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:35:8: note: forward declaration of ‘struct BlindMovingDown’
+ struct BlindMovingDown;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:709:9: error: invalid use of incomplete type ‘struct BlindMovingDown’
+         common_context_type;
+         ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:35:8: note: forward declaration of ‘struct BlindMovingDown’
+ struct BlindMovingDown;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:712:37: error: invalid use of incomplete type ‘struct BlindMovingDown’
+         common_context_iter >::type termination_state_position;
+                                     ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:35:8: note: forward declaration of ‘struct BlindMovingDown’
+ struct BlindMovingDown;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:717:44: error: invalid use of incomplete type ‘struct BlindMovingDown’
+         termination_state_position >::type termination_state_type;
+                                            ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:35:8: note: forward declaration of ‘struct BlindMovingDown’
+ struct BlindMovingDown;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:787:55: error: invalid use of incomplete type ‘struct BlindMovingDown’
+         common_context_type, DestinationState >::type context_list_type;
+                                                       ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:35:8: note: forward declaration of ‘struct BlindMovingDown’
+ struct BlindMovingDown;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:802:77: error: invalid use of incomplete type ‘struct BlindMovingDown’
+       return detail::result_utility::make_result( detail::do_discard_event );
+                                                                             ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:35:8: note: forward declaration of ‘struct BlindMovingDown’
+ struct BlindMovingDown;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:799:68: error: invalid use of incomplete type ‘struct BlindMovingDown’
+         context_list_type, outermost_context_base_type >::construct(
+                                                                    ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:35:8: note: forward declaration of ‘struct BlindMovingDown’
+ struct BlindMovingDown;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp: In instantiation of ‘boost::statechart::result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::transit_impl(const TransitionAction&) [with DestinationState = BlindMovingDown; TransitionContext = BlindMachine; TransitionAction = boost::statechart::detail::no_transition_function; MostDerived = BlindSomewhere; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::result = boost::statechart::detail::safe_reaction_result]’:
+/usr/include/boost/statechart/simple_state.hpp:313:70:   required from ‘boost::statechart::result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::transit() [with DestinationState = BlindMovingDown; MostDerived = BlindSomewhere; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::result = boost::statechart::detail::safe_reaction_result]’
+/usr/include/boost/statechart/transition.hpp:38:52:   required from ‘static boost::statechart::result boost::statechart::transition<Event, Destination, TransitionContext, pTransitionAction>::reactions<State>::react_without_action(State&) [with State = BlindSomewhere; Event = EvDownPressed; Destination = BlindMovingDown; TransitionContext = boost::statechart::detail::no_context<EvDownPressed>; void (TransitionContext::* pTransitionAction)(const Event&) = &boost::statechart::detail::no_context<EvDownPressed>::no_function; boost::statechart::result = boost::statechart::detail::safe_reaction_result]’
+/usr/include/boost/statechart/detail/reaction_dispatcher.hpp:47:47:   required from ‘static boost::statechart::result boost::statechart::detail::reaction_dispatcher<Reactions, State, EventBase, Event, ActionContext, IdType>::without_action::react(State&, const EventBase&) [with Reactions = boost::statechart::transition<EvDownPressed, BlindMovingDown>::reactions<BlindSomewhere>; State = BlindSomewhere; EventBase = boost::statechart::event_base; Event = EvDownPressed; ActionContext = boost::statechart::detail::no_context<EvDownPressed>; IdType = const void*; boost::statechart::result = boost::statechart::detail::safe_reaction_result]’
+src/subdir.mk:21: recipe for target 'src/BlindStates.o' failed
+/usr/include/boost/statechart/detail/reaction_dispatcher.hpp:92:33:   required from ‘static boost::statechart::result boost::statechart::detail::reaction_dispatcher<Reactions, State, EventBase, Event, ActionContext, IdType>::derived::react(State&, const EventBase&, const IdType&) [with Reactions = boost::statechart::transition<EvDownPressed, BlindMovingDown>::reactions<BlindSomewhere>; State = BlindSomewhere; EventBase = boost::statechart::event_base; Event = EvDownPressed; ActionContext = boost::statechart::detail::no_context<EvDownPressed>; IdType = const void*; boost::statechart::result = boost::statechart::detail::safe_reaction_result]’
+/usr/include/boost/statechart/detail/reaction_dispatcher.hpp:109:24:   [ skipping 2 instantiation contexts, use -ftemplate-backtrace-limit=0 to disable ]
+/usr/include/boost/statechart/simple_state.hpp:814:50:   required from ‘static boost::statechart::detail::reaction_result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::local_react_impl_non_empty::local_react_impl(State&, const event_base_type&, typename Context::inner_context_type::rtti_policy_type::id_type) [with ReactionList = boost::mpl::list1<boost::statechart::transition<EvDownPressed, BlindMovingDown> >; State = boost::statechart::simple_state<BlindSomewhere, BlindMachine>; MostDerived = BlindSomewhere; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::event_base_type = boost::statechart::event_base; typename Context::inner_context_type::rtti_policy_type::id_type = const void*]’
+/usr/include/boost/statechart/simple_state.hpp:850:61:   required from ‘boost::statechart::detail::reaction_result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::local_react(const event_base_type&, typename Context::inner_context_type::rtti_policy_type::id_type) [with ReactionList = boost::mpl::list1<boost::statechart::transition<EvDownPressed, BlindMovingDown> >; MostDerived = BlindSomewhere; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::event_base_type = boost::statechart::event_base; typename Context::inner_context_type::rtti_policy_type::id_type = const void*]’
+/usr/include/boost/statechart/simple_state.hpp:820:26:   required from ‘static boost::statechart::detail::reaction_result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::local_react_impl_non_empty::local_react_impl(State&, const event_base_type&, typename Context::inner_context_type::rtti_policy_type::id_type) [with ReactionList = boost::mpl::list<boost::statechart::transition<EvUpPressed, BlindMovingUp>, boost::statechart::transition<EvDownPressed, BlindMovingDown> >; State = boost::statechart::simple_state<BlindSomewhere, BlindMachine>; MostDerived = BlindSomewhere; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::event_base_type = boost::statechart::event_base; typename Context::inner_context_type::rtti_policy_type::id_type = const void*]’
+/usr/include/boost/statechart/simple_state.hpp:850:61:   required from ‘boost::statechart::detail::reaction_result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::local_react(const event_base_type&, typename Context::inner_context_type::rtti_policy_type::id_type) [with ReactionList = boost::mpl::list<boost::statechart::transition<EvUpPressed, BlindMovingUp>, boost::statechart::transition<EvDownPressed, BlindMovingDown> >; MostDerived = BlindSomewhere; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::event_base_type = boost::statechart::event_base; typename Context::inner_context_type::rtti_policy_type::id_type = const void*]’
+/usr/include/boost/statechart/simple_state.hpp:489:37:   required from ‘boost::statechart::detail::reaction_result boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::react_impl(const event_base_type&, typename Context::inner_context_type::rtti_policy_type::id_type) [with MostDerived = BlindSomewhere; Context = BlindMachine; InnerInitial = boost::mpl::list<mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na, mpl_::na>; boost::statechart::history_mode historyMode = (boost::statechart::history_mode)0u; boost::statechart::simple_state<MostDerived, Context, InnerInitial, historyMode>::event_base_type = boost::statechart::event_base; typename Context::inner_context_type::rtti_policy_type::id_type = const void*]’
+/home/micha/workspace/House/include/BlindStates.h:62:2:   required from here
+/usr/include/boost/statechart/simple_state.hpp:707:42: error: invalid use of incomplete type ‘struct BlindMovingDown’
+           mpl::placeholders::_ > >::type common_context_iter;
+                                          ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:35:8: note: forward declaration of ‘struct BlindMovingDown’
+ struct BlindMovingDown;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:709:9: error: invalid use of incomplete type ‘struct BlindMovingDown’
+         common_context_type;
+         ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:35:8: note: forward declaration of ‘struct BlindMovingDown’
+ struct BlindMovingDown;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:712:37: error: invalid use of incomplete type ‘struct BlindMovingDown’
+         common_context_iter >::type termination_state_position;
+                                     ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:35:8: note: forward declaration of ‘struct BlindMovingDown’
+ struct BlindMovingDown;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:717:44: error: invalid use of incomplete type ‘struct BlindMovingDown’
+         termination_state_position >::type termination_state_type;
+                                            ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:35:8: note: forward declaration of ‘struct BlindMovingDown’
+ struct BlindMovingDown;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:787:55: error: invalid use of incomplete type ‘struct BlindMovingDown’
+         common_context_type, DestinationState >::type context_list_type;
+                                                       ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:35:8: note: forward declaration of ‘struct BlindMovingDown’
+ struct BlindMovingDown;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:802:77: error: invalid use of incomplete type ‘struct BlindMovingDown’
+       return detail::result_utility::make_result( detail::do_discard_event );
+                                                                             ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:35:8: note: forward declaration of ‘struct BlindMovingDown’
+ struct BlindMovingDown;
+        ^
+In file included from /home/micha/workspace/House/include/BlindStates.h:12:0,
+                 from ../src/BlindStates.cpp:10:
+/usr/include/boost/statechart/simple_state.hpp:799:68: error: invalid use of incomplete type ‘struct BlindMovingDown’
+         context_list_type, outermost_context_base_type >::construct(
+                                                                    ^
+In file included from ../src/BlindStates.cpp:10:0:
+/home/micha/workspace/House/include/BlindStates.h:35:8: note: forward declaration of ‘struct BlindMovingDown’
+ struct BlindMovingDown;
+        ^
+make: *** [src/BlindStates.o] Error 1
+22:38:43 **** Incremental Build of configuration Debug for project BlindStates_test ****
+make all 
+Building file: ../src/BlindStates.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I../BlindStates_test/include -I"/home/micha/workspace/BlindStates_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BlindStates.d" -MT"src/BlindStates.d" -o "src/BlindStates.o" "../src/BlindStates.cpp"
+Finished building: ../src/BlindStates.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I../BlindStates_test/include -I"/home/micha/workspace/BlindStates_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: BlindStates_test
+Invoking: GCC C++ Linker
+g++  -o "BlindStates_test"  ./src/BlindStates.o ./src/main.o   -lgmock -lpthread -lgtest_main -lgtest
+Finished building target: BlindStates_test
+ 
+22:41:43 **** Incremental Build of configuration Debug for project House ****
+make all 
+Building file: ../src/BlindStates.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BlindStates.d" -MT"src/BlindStates.d" -o "src/BlindStates.o" "../src/BlindStates.cpp"
+../src/BlindStates.cpp:10:25: fatal error: BlindStates.h: No such file or directory
+ #include "BlindStates.h"
+                         ^
+compilation terminated.
+src/subdir.mk:39: recipe for target 'src/BlindStates.o' failed
+make: *** [src/BlindStates.o] Error 1
+22:42:02 **** Incremental Build of configuration Debug for project BlindStates_test ****
 make all 
 make: Nothing to be done for 'all'.
+22:44:43 **** Incremental Build of configuration Debug for project House ****
+make all 
+Building file: ../src/BlindStates.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BlindStates.d" -MT"src/BlindStates.d" -o "src/BlindStates.o" "../src/BlindStates.cpp"
+../src/BlindStates.cpp:10:25: fatal error: BlindStates.h: No such file or directory
+ #include "BlindStates.h"
+                         ^
+compilation terminated.
+make: *** [src/BlindStates.o] Error 1
+src/subdir.mk:39: recipe for target 'src/BlindStates.o' failed
+22:44:47 **** Incremental Build of configuration Debug for project BlindStates_test ****
+make all 
+make: Nothing to be done for 'all'.
+22:44:50 **** Incremental Build of configuration Debug for project BlindStates_test ****
+make all 
+make: Nothing to be done for 'all'.
+22:44:57 **** Incremental Build of configuration Debug for project BlindStates_test ****
+make all 
+make: Nothing to be done for 'all'.
+22:45:02 **** Incremental Build of configuration Debug for project BlindStates_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I../BlindStates_test/include -I"/home/micha/workspace/BlindStates_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: BlindStates_test
+Invoking: GCC C++ Linker
+g++  -o "BlindStates_test"  ./src/BlindStates.o ./src/main.o   -lgmock -lpthread -lgtest_main -lgtest
+Finished building target: BlindStates_test
+ 
+22:46:43 **** Incremental Build of configuration Debug for project BlindStates_test ****
+make all 
+make: Nothing to be done for 'all'.
+22:47:02 **** Incremental Build of configuration Debug for project BlindStates_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I../BlindStates_test/include -I"/home/micha/workspace/BlindStates_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: BlindStates_test
+Invoking: GCC C++ Linker
+g++  -o "BlindStates_test"  ./src/BlindStates.o ./src/main.o   -lgmock -lpthread -lgtest_main -lgtest
+Finished building target: BlindStates_test
+ 

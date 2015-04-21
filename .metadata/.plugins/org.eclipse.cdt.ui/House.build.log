@@ -1,14 +1,14 @@
-09:49:26 **** Build of configuration Debug for project House ****
+22:44:43 **** Incremental Build of configuration Debug for project House ****
 make all 
-Building file: ../src/Floor.cpp
+Building file: ../src/BlindStates.cpp
 Invoking: Cross G++ Compiler
-arm-linux-gnueabihf-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.d" -o "src/Floor.o" "../src/Floor.cpp"
-../src/Floor.cpp:7:19: fatal error: Floor.h: No such file or directory
- #include "Floor.h"
-                   ^
+arm-linux-gnueabihf-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BlindStates.d" -MT"src/BlindStates.d" -o "src/BlindStates.o" "../src/BlindStates.cpp"
+../src/BlindStates.cpp:10:25: fatal error: BlindStates.h: No such file or directory
+ #include "BlindStates.h"
+                         ^
 compilation terminated.
-make: *** [src/Floor.o] Error 1
-src/subdir.mk:30: recipe for target 'src/Floor.o' failed
+make: *** [src/BlindStates.o] Error 1
+src/subdir.mk:39: recipe for target 'src/BlindStates.o' failed
 
-09:49:26 Build Finished (took 680ms)
+22:44:43 Build Finished (took 232ms)
 

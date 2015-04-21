@@ -6,12 +6,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="FullTimerExpired" key="selection"/>
+		<item value="sc::state" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="sc::simple_state"/>
 			<item value="FullTimerExpired"/>
 			<item value="BlindSomewhere"/>
 			<item value="Greeting"/>
@@ -19,9 +20,9 @@
 			<item value="MultipleUser"/>
 			<item value="multip"/>
 			<item value="addAc"/>
-			<item value=", &amp;_inputUser"/>
 		</list>
 		<list key="replacehistory">
+			<item value="sc::state"/>
 			<item value="BlindMovingDown"/>
 			<item value="BlindMovingUp"/>
 			<item value="BlindDown"/>
@@ -29,7 +30,6 @@
 			<item value="BlindSomewhere"/>
 			<item value=""/>
 			<item value="SwitchInActionList"/>
-			<item value="LightSwitchIn"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

@@ -1,0 +1,68 @@
+/*
+ * BlindStates.cpp
+ *
+ *  Created on: Apr 20, 2015
+ *      Author: micha
+ *
+ *  Description see: http://www.boost.org/doc/libs/1_51_0/libs/statechart/doc/tutorial.html
+ */
+
+#include "BlindStates.h"
+
+struct BlindSomewhere: sc::simple_state<BlindSomewhere, BlindMachine> {
+      BlindSomewhere() {
+      } // entry
+      ~BlindSomewhere() {
+      } // exit
+
+      typdef mpl::list<
+         typedef sc::transition< EvUpPressed, BlindMovingUp>,
+         typedef sc::transition< EvDownPressed, BlindMovingDown>
+      > reactions;
+};
+
+struct BlindUp: sc::simple_state<BlindUp, BlindMachine> {
+      BlindUp() {
+      } // entry
+      ~BlindUp() {
+      } // exit
+      typdef mpl::list<
+         typedef sc::transition< EvUpPressed, BlindMovingUp>,
+         typedef sc::transition< EvDownPressed, BlindMovingDown>
+      > reactions;
+};
+
+struct BlindDown: sc::simple_state<BlindDown, BlindMachine> {
+      BlindDown() {
+      } // entry
+      ~BlindDown() {
+      } // exit
+      typdef mpl::list<
+         typedef sc::transition< EvUpPressed, BlindMovingUp>,
+         typedef sc::transition< EvDownPressed, BlindMovingDown>
+      > reactions;
+};
+
+struct BlindMovingUp: sc::simple_state<BlindMovingUp, BlindMachine> {
+      BlindMovingUp() {
+      } // entry
+      ~BlindMovingUp() {
+      } // exit
+      typdef mpl::list<
+         typedef sc::transition< EvDownPressed, BlindSomewhere>,
+         typedef sc::transition< EvReleased, BlindSomewhere>,
+         typedef sc::transition< EvFullTimerExpired, BlindUp>
+      > reactions;
+};
+
+struct BlindMovingDown: sc::simple_state<BlindMovingDown, BlindMachine> {
+      BlindMovingDown() {
+      } // entry
+      ~BlindMovingDown() {
+      } // exit
+      typdef mpl::list<
+         typedef sc::transition< EvUpPressed, BlindSomewhere>,
+         typedef sc::transition< EvReleased, BlindSomewhere>,
+         typedef sc::transition< EvFullTimerExpired, BlindDown>
+      > reactions;
+};
