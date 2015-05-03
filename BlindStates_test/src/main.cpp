@@ -8,6 +8,7 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 #include <boost/bind.hpp>
+#include <algorithm>
 #include <functional>
 
 #include "BlindStates.h"
@@ -32,29 +33,67 @@ class BlindStatesTest: public ::testing::Test {
       }
 
       BlindMachine blindMachine;
+      std::string StateName;
+
+      std::string strGetStateName(){
+         BlindMachine::state_iterator itState = blindMachine.state_begin();
+         std::string _StateName;
+         _StateName  = typeid( *itState ).name();
+         _StateName.erase(std::remove_if(_StateName.begin(), _StateName.end(), &::isdigit),
+                         _StateName.end());
+         std::cout << _StateName << "\n";
+         return _StateName;
+      }
 };
 
-TEST_F(BlindStatesTest, ConstructorNoRoom_State_Off) {
-   ASSERT_EQ(1, 1);
-   for (BlindMachine::state_iterator itState = blindMachine.state_begin();
-         itState != blindMachine.state_end();
-         ++itState){
-      std::string StateName  = typeid( *itState ).name();
-      std::cout << StateName << "\n";
-   }
+TEST_F(BlindStatesTest, CheckDefaultState) {
+   StateName  = strGetStateName();
+   EXPECT_EQ("BlindSomewhere", StateName);
+   EXPECT_EQ(50, blindMachine.RunTimer());
+}
+
+// #######################
+// BlindSomewhere
+// #######################
+TEST_F(BlindStatesTest, BlindSomewhere_UpPressed_BlindMovingUp) {
    blindMachine.process_event(EvUpPressed());
-   for (BlindMachine::state_iterator itState = blindMachine.state_begin();
-         itState != blindMachine.state_end();
-         ++itState){
-      std::string StateName  = typeid( *itState ).name();
-      std::cout << StateName << "\n";
-   }
-   blindMachine.process_event(EvFullTimerExpired());
-   for (BlindMachine::state_iterator itState = blindMachine.state_begin();
-         itState != blindMachine.state_end();
-         ++itState){
-      std::string StateName  = typeid( *itState ).name();
-      std::cout << StateName << "\n";
-   }
+   StateName  = strGetStateName();
+   EXPECT_EQ("BlindMovingUp", StateName);
+}
+
+TEST_F(BlindStatesTest, BlindSomewhere_DownPressed_BlindMovingDown) {
+   blindMachine.process_event(EvDownPressed());
+   StateName  = strGetStateName();
+   EXPECT_EQ("BlindMovingDown", StateName);
+}
+
+TEST_F(BlindStatesTest, BlindSomewhere_Released_BlindSomewhere) {
+   blindMachine.process_event(EvReleased());
+   StateName  = strGetStateName();
+   EXPECT_EQ("BlindSomewhere", StateName);
+}
+
+// #######################
+// BlindMovingUp
+// #######################
+TEST_F(BlindStatesTest, BlindMovingUp_Release_BlindSomewhere) {
+   blindMachine.process_event(EvUpPressed());
+   blindMachine.process_event(EvReleased());
+   StateName  = strGetStateName();
+   EXPECT_EQ("BlindSomewhere", StateName);
+}
+
+TEST_F(BlindStatesTest, BlindMovingUp_DownPressed_BlindSomewhere) {
+   blindMachine.process_event(EvUpPressed());
+   blindMachine.process_event(EvDownPressed());
+   StateName  = strGetStateName();
+   EXPECT_EQ("BlindSomewhere", StateName);
+}
+
+TEST_F(BlindStatesTest, BlindMovingUp_RunTimer_BlindUp) {
+   blindMachine.process_event(EvUpPressed());
+   blindMachine.process_event(EvDownPressed());
+   StateName  = strGetStateName();
+   EXPECT_EQ("BlindSomewhere", StateName);
 }
 

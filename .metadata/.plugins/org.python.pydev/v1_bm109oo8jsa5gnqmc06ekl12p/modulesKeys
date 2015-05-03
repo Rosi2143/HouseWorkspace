@@ -606,6 +606,7 @@ ast|/usr/lib64/python2.7/ast.py
 astroid.__init__|/usr/lib/python2.7/site-packages/astroid/__init__.py
 astroid.__pkginfo__|/usr/lib/python2.7/site-packages/astroid/__pkginfo__.py
 astroid.as_string|/usr/lib/python2.7/site-packages/astroid/as_string.py
+astroid.astpeephole|/usr/lib/python2.7/site-packages/astroid/astpeephole.py
 astroid.bases|/usr/lib/python2.7/site-packages/astroid/bases.py
 astroid.builder|/usr/lib/python2.7/site-packages/astroid/builder.py
 astroid.exceptions|/usr/lib/python2.7/site-packages/astroid/exceptions.py
@@ -2648,7 +2649,6 @@ glib.__init__|/usr/lib64/python2.7/site-packages/glib/__init__.py
 glib._glib|/usr/lib64/python2.7/site-packages/glib/_glib.so
 glib.option|/usr/lib64/python2.7/site-packages/glib/option.py
 glob|/usr/lib64/python2.7/glob.py
-gluster.__init__|/usr/lib/python2.7/site-packages/gluster/__init__.py
 gobject.__init__|/usr/lib64/python2.7/site-packages/gobject/__init__.py
 gobject._gobject|/usr/lib64/python2.7/site-packages/gobject/_gobject.so
 gobject.constants|/usr/lib64/python2.7/site-packages/gobject/constants.py

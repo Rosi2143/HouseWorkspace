@@ -1,0 +1,15 @@
+17:00:51 **** Incremental Build of configuration Debug for project Timer ****
+make all 
+Building file: ../src/Timer.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -std=c++0x -I"/home/micha/workspace/Timer/include" -I"/home/micha/workspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Timer.d" -MT"src/Timer.d" -o "src/Timer.o" "../src/Timer.cpp"
+Finished building: ../src/Timer.cpp
+ 
+Building target: Timer
+Invoking: Cross G++ Linker
+arm-linux-gnueabihf-g++  -o "Timer"  ./src/Timer.o ./src/main.o   
+Finished building target: Timer
+ 
+
+17:00:58 Build Finished (took 6s.499ms)
+

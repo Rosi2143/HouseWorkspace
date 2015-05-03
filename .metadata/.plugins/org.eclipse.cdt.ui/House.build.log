@@ -1,4 +1,4 @@
-22:44:43 **** Incremental Build of configuration Debug for project House ****
+20:10:53 **** Incremental Build of configuration Debug for project House ****
 make all 
 Building file: ../src/BlindStates.cpp
 Invoking: Cross G++ Compiler
@@ -7,8 +7,8 @@ arm-linux-gnueabihf-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP 
  #include "BlindStates.h"
                          ^
 compilation terminated.
-make: *** [src/BlindStates.o] Error 1
 src/subdir.mk:39: recipe for target 'src/BlindStates.o' failed
+make: *** [src/BlindStates.o] Error 1
 
-22:44:43 Build Finished (took 232ms)
+20:10:53 Build Finished (took 531ms)
 

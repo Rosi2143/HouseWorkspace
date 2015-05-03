@@ -19,38 +19,75 @@ namespace sc = boost::statechart;
 
 // events
 struct EvUpPressed: sc::event<EvUpPressed> {
-   EvUpPressed() {
-      std::cout << "Button Up pressed!" << std::endl;
-   }
+      EvUpPressed() {
+         std::cout << "Button Up pressed!" << std::endl;
+      }
 };
 struct EvDownPressed: sc::event<EvDownPressed> {
-   EvDownPressed() {
-      std::cout << "Button Down pressed!" << std::endl;
-   }
+      EvDownPressed() {
+         std::cout << "Button Down pressed!" << std::endl;
+      }
 };
 struct EvReleased: sc::event<EvReleased> {
-   EvReleased() {
-      std::cout << "Button released!" << std::endl;
-   }
+      EvReleased() {
+         std::cout << "Button released!" << std::endl;
+      }
 };
 struct EvFullTimerExpired: sc::event<EvFullTimerExpired> {
-   EvFullTimerExpired() {
-      std::cout << "Timer Full expired!" << std::endl;
-   }
+      EvFullTimerExpired() {
+         std::cout << "Timer Full expired!" << std::endl;
+      }
+};
+struct EvRunTimer: sc::event<EvRunTimer> {
+      EvRunTimer() {
+         std::cout << "RunTimer ended!" << std::endl;
+      }
 };
 
 // states
+struct Blinds;
 struct BlindSomewhere;
 struct BlindUp;
 struct BlindDown;
 struct BlindMovingUp;
 struct BlindMovingDown;
 
-// machine
-struct BlindMachine: sc::state_machine<BlindMachine, BlindSomewhere> {
+// interface to get state values
+struct IRunTimer {
+      virtual int RunTimer() const = 0;
 };
 
-struct BlindSomewhere: sc::simple_state<BlindSomewhere, BlindMachine> {
+// machine
+struct BlindMachine: IRunTimer, sc::state_machine<BlindMachine, Blinds> {
+      int RunTimer() const {
+         return state_cast<const IRunTimer &>().RunTimer();
+      }
+};
+
+struct Blinds: IRunTimer, sc::simple_state<Blinds, BlindMachine, BlindSomewhere> {
+   public:
+      Blinds() :
+            _RunTimer(50) {
+         std::cout << "entry: Blinds" << std::endl;
+      } // entry
+      ~Blinds() {
+         std::cout << "exit: Blinds" << std::endl;
+      } // exit
+/*      virtual int RunTimer() const {
+         return context<Blinds>().RunTimer();
+      }*/
+      int RunTimer() const {
+         return _RunTimer;
+      }
+      int& RunTimer() {
+         return _RunTimer;
+      }
+
+   private:
+      int _RunTimer;
+};
+
+struct BlindSomewhere: sc::simple_state<BlindSomewhere, Blinds> {
       BlindSomewhere() {
          std::cout << "entry: BlindSomewhere" << std::endl;
       } // entry
@@ -58,63 +95,56 @@ struct BlindSomewhere: sc::simple_state<BlindSomewhere, BlindMachine> {
          std::cout << "exit: BlindSomewhere" << std::endl;
       } // exit
 
-      typedef mpl::list<
-         sc::transition< EvUpPressed, BlindMovingUp>,
-         sc::transition< EvDownPressed, BlindMovingDown>
-      > reactions;
+      typedef mpl::list<sc::transition<EvUpPressed, BlindMovingUp>,
+            sc::transition<EvDownPressed, BlindMovingDown> > reactions;
 };
 
-struct BlindUp: sc::simple_state<BlindUp, BlindMachine> {
+struct BlindUp: sc::simple_state<BlindUp, Blinds> {
       BlindUp() {
          std::cout << "entry: BlindUp" << std::endl;
       } // entry
       ~BlindUp() {
          std::cout << "exit: BlindUp" << std::endl;
       } // exit
-      typedef mpl::list<
-         sc::transition< EvUpPressed, BlindMovingUp>,
-         sc::transition< EvDownPressed, BlindMovingDown>
-      > reactions;
-};
+      typedef mpl::list<sc::transition<EvUpPressed, BlindMovingUp>,
+            sc::transition<EvDownPressed, BlindMovingDown> > reactions;
+      int Do() {
+         return context<Blinds>().RunTimer()++;}
+      }
+;
 
-struct BlindDown: sc::simple_state<BlindDown, BlindMachine> {
+struct BlindDown: sc::simple_state<BlindDown, Blinds> {
       BlindDown() {
          std::cout << "entry: BlindDown" << std::endl;
       } // entry
       ~BlindDown() {
          std::cout << "exit: BlindDown" << std::endl;
       } // exit
-      typedef mpl::list<
-         sc::transition< EvUpPressed, BlindMovingUp>,
-         sc::transition< EvDownPressed, BlindMovingDown>
-      > reactions;
+      typedef mpl::list<sc::transition<EvUpPressed, BlindMovingUp>,
+            sc::transition<EvDownPressed, BlindMovingDown> > reactions;
 };
 
-struct BlindMovingUp: sc::simple_state<BlindMovingUp, BlindMachine> {
+struct BlindMovingUp: sc::simple_state<BlindMovingUp, Blinds> {
       BlindMovingUp() {
          std::cout << "entry: BlindMovingUp" << std::endl;
       } // entry
       ~BlindMovingUp() {
          std::cout << "exit: BlindMovingUp" << std::endl;
       } // exit
-      typedef mpl::list<
-         sc::transition< EvDownPressed, BlindSomewhere>,
-         sc::transition< EvReleased, BlindSomewhere>,
-         sc::transition< EvFullTimerExpired, BlindUp>
-      > reactions;
+      typedef mpl::list<sc::transition<EvDownPressed, BlindSomewhere>,
+            sc::transition<EvReleased, BlindSomewhere>,
+            sc::transition<EvFullTimerExpired, BlindUp> > reactions;
 };
 
-struct BlindMovingDown: sc::simple_state<BlindMovingDown, BlindMachine> {
+struct BlindMovingDown: sc::simple_state<BlindMovingDown, Blinds> {
       BlindMovingDown() {
          std::cout << "entry: BlindMovingDown" << std::endl;
       } // entry
       ~BlindMovingDown() {
          std::cout << "exit: BlindMovingDown" << std::endl;
       } // exit
-      typedef mpl::list<
-         sc::transition< EvUpPressed, BlindSomewhere>,
-         sc::transition< EvReleased, BlindSomewhere>,
-         sc::transition< EvFullTimerExpired, BlindDown>
-      > reactions;
+      typedef mpl::list<sc::transition<EvUpPressed, BlindSomewhere>,
+            sc::transition<EvReleased, BlindSomewhere>,
+            sc::transition<EvFullTimerExpired, BlindDown> > reactions;
 };
 #endif /* BLINDSTATES_H_ */

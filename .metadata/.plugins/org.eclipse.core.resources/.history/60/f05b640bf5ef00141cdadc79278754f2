@@ -1,0 +1,40 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
+
+#include "Timer.h"
+
+using namespace std;
+using namespace boost::gregorian;
+using ::testing::_;
+using ::testing::Return;
+using ::testing::Invoke;
+using ::testing::TestWithParam;
+using ::testing::Values;
+using ::testing::StrCaseEq;
+
+int var;
+void timer_handler(int){var++;}
+
+class TimerTest: public ::testing::Test {
+   protected:
+      TimerTest(){
+      }
+
+      virtual void SetUp() {
+         var=0;
+      }
+      Timer timer;
+};
+
+TEST_F(TimerTest, StartTimer_OK) {
+   EXPECT_EQ(0, timer.start_timer(1000 /*time in ms */,
+                                 1 /* TimerId */,
+                                 &timer_handler /* HandlerFunction */));
+}

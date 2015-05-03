@@ -1,4 +1,4 @@
-22:47:02 **** Incremental Build of configuration Debug for project BlindStates_test ****
+21:00:51 **** Incremental Build of configuration Debug for project BlindStates_test ****
 make all 
 Building file: ../src/main.cpp
 Invoking: GCC C++ Compiler
@@ -11,5 +11,5 @@ g++  -o "BlindStates_test"  ./src/BlindStates.o ./src/main.o   -lgmock -lpthread
 Finished building target: BlindStates_test
  
 
-22:47:08 Build Finished (took 6s.533ms)
+21:00:59 Build Finished (took 8s.660ms)
 

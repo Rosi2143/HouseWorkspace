@@ -1,0 +1,45 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Jan 25, 2015
+ *      Author: micha
+ */
+
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
+
+#include "Timer.h"
+
+using namespace std;
+using namespace boost::gregorian;
+using ::testing::_;
+using ::testing::Return;
+using ::testing::Invoke;
+using ::testing::TestWithParam;
+using ::testing::Values;
+using ::testing::StrCaseEq;
+
+class TimerTest: public ::testing::Test {
+   protected:
+      SwitchInTest() :
+            _room(0, "TestRoom", nullptr), _inputUser(1, "Test", nullptr), _inputUser2(
+                  2, "Test2", nullptr), testString("Test"), testRoomString(
+                  "TestRoom") {
+         ResultString = testRoomString + "_" + testString;
+      }
+
+      virtual void SetUp() {
+      }
+      PressTime _pressTime;
+      MockTime _time;
+      MockRoom _room;
+      MockInputUser _inputUser;
+      MockInputUser _inputUser2;
+      std::string testString;
+      std::string testRoomString;
+      std::string ResultString;
+};
+
+TEST(TimerTest, Presses_OK) {
+   EXPECT_TRUE(true);
+}

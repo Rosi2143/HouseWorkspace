@@ -1,6 +1,15 @@
-21:41:12 **** Incremental Build of configuration Debug for project TimeAndDate_test ****
+21:14:49 **** Build of configuration Debug for project TimeAndDate_test ****
 make all 
-make: Nothing to be done for 'all'.
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/House/interfaces" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: TimeAndDate_test
+Invoking: GCC C++ Linker
+g++  -o "TimeAndDate_test"  ./src/main.o   -lgtest -lgmock -lgtest_main -lpthread
+Finished building target: TimeAndDate_test
+ 
 
-21:41:12 Build Finished (took 153ms)
+21:15:03 Build Finished (took 14s.2ms)
 
