@@ -33,8 +33,6 @@
 
 using namespace boost::posix_time;
 
-TimerCallBack timer_func_handler_pntr;
-
 void timer_sig_handler(int);
 
 bool operator==(const TimerStruct& struct1, const TimerStruct& struct2) {
@@ -60,19 +58,22 @@ int Timer::start_timer(int mSec, int TimerId,  TimerCallBack timer_func_handler)
    int pos = add_timer(timerStruct);
    if(pos == -1)
    {
-      return -1;
+      return 1;
    }
 
-   int32_t NextTimer = getNextTimerDelay();
+   int NextTimer = getNextTimerDelay();
    timer_func_handler_pntr = _TimerList.front()._TimerCallback;
 
    struct itimerval timervalue;
-
    timervalue.it_interval.tv_sec = NextTimer / 1000;
    timervalue.it_interval.tv_usec = (NextTimer % 1000) * 1000;
    timervalue.it_value.tv_sec = NextTimer / 1000;
    timervalue.it_value.tv_usec = (NextTimer % 1000) * 1000;
-   set_timer(timervalue);
+   if(set_timer(timervalue))
+   {
+     printf("\nsetitimer() error\n");
+     return(1);
+   }
 
    new_handler.sa_handler = &timer_sig_handler;
    new_handler.sa_flags = SA_NOMASK;
@@ -92,12 +93,27 @@ int Timer::start_timer(int mSec, int TimerId,  TimerCallBack timer_func_handler)
  */
 int Timer::set_timer(const itimerval& _timervalue)
 {
+   /*
+   printf("timervalue.it_interval.tv_sec = %i\n", (int)_timervalue.it_interval.tv_sec);
+   printf("timervalue.it_interval.tv_usec = %i\n", (int)_timervalue.it_interval.tv_usec);
+   printf("timervalue.it_value.tv_sec = %i\n", (int)_timervalue.it_value.tv_sec);
+   printf("timervalue.it_value.tv_usec = %i\n", (int)_timervalue.it_value.tv_usec);
+   */
    if(-1 == setitimer(ITIMER_REAL, &_timervalue, NULL))
    {
      printf("\nsetitimer() error: %s\n", strerror(errno));
      return(1);
    }
    return 0;
+}
+
+/*!
+ *
+ * @param arg
+ */
+void Timer::TimerCallBackFkt(int arg)
+{
+
 }
 
 /*!
@@ -160,13 +176,15 @@ int Timer::add_timer(const TimerStruct _timerStruct)
  */
 int32_t Timer::getNextTimerDelay()
 {
-   boost::posix_time::time_duration NextTimer = microsec_clock::local_time() - _TimerList.front()._TimerTime;
+   boost::posix_time::time_duration NextTimer = _TimerList.front()._TimerTime - microsec_clock::local_time();
+   // printf("NextTimer.total_milliseconds = %i\n", (int)NextTimer.total_milliseconds());
+
    return NextTimer.total_milliseconds();
 
 }
 
 void timer_sig_handler(int arg)
 {
-  timer_func_handler_pntr(arg);
+   Timer::TimerCallBackFkt(arg);
 }
 

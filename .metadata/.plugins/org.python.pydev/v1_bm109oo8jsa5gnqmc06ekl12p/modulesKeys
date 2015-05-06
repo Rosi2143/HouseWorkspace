@@ -2188,6 +2188,7 @@ dnf.cli.commands.search|/usr/lib/python2.7/site-packages/dnf/cli/commands/search
 dnf.cli.commands.updateinfo|/usr/lib/python2.7/site-packages/dnf/cli/commands/updateinfo.py
 dnf.cli.commands.upgrade|/usr/lib/python2.7/site-packages/dnf/cli/commands/upgrade.py
 dnf.cli.commands.upgradeto|/usr/lib/python2.7/site-packages/dnf/cli/commands/upgradeto.py
+dnf.cli.completion_helper|/usr/lib/python2.7/site-packages/dnf/cli/completion_helper.py
 dnf.cli.demand|/usr/lib/python2.7/site-packages/dnf/cli/demand.py
 dnf.cli.format|/usr/lib/python2.7/site-packages/dnf/cli/format.py
 dnf.cli.main|/usr/lib/python2.7/site-packages/dnf/cli/main.py

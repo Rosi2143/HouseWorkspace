@@ -1,7 +1,7 @@
-17:43:22 **** Incremental Build of configuration Debug for project Timer_test ****
+22:10:17 **** Incremental Build of configuration Debug for project Timer_test ****
 Info: Internal Builder is used for build
 g++ -std=c++0x -I/home/micha/workspace/House/interfaces -I/home/micha/workspace/Timer/include -O0 -g3 -Wall -c -fmessage-length=0 -o src/Timer.o ../src/Timer.cpp 
 g++ -o Timer_test src/main.o src/Timer.o -lgtest -lgmock -lgtest_main -lpthread 
 
-17:43:27 Build Finished (took 5s.900ms)
+22:10:23 Build Finished (took 6s.247ms)
 

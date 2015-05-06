@@ -18,9 +18,9 @@ Timer timer;
 
 int main(void)
 {
-  if(timer.start_timer(1000 /*time in ms */,
-                       1 /* TimerId */,
-                       &timer_handler /* HandlerFunction */))
+  if(0 != timer.start_timer(1000 /*time in ms */,
+                            1 /* TimerId */,
+                            &timer_handler /* HandlerFunction */))
   {
     printf("\n timer error\n");
     return(1);

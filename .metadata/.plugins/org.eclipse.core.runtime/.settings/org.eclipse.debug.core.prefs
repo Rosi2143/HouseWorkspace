@@ -4,4 +4,4 @@
 //org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.cdt.launch.remoteApplicationLaunchType=org.eclipse.cdt.dsf.gdb.launch.remoteCLaunch,debug,;
 //org.eclipse.debug.core.PREFERRED_DELEGATES/org.eclipse.cdt.testsrunner.launch.CTestsRunner=org.eclipse.cdt.testsrunner.launch.dsf.runTests,debug,;org.eclipse.cdt.testsrunner.launch.runTests,run,;
 eclipse.preferences.version=1
-prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<watchExpressions/>\n
+prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<watchExpressions>\n<expression enabled\="true" text\="timervalue"/>\n<expression enabled\="true" text\="timerStruct"/>\n<expression enabled\="true" text\="NextTimer"/>\n</watchExpressions>\n

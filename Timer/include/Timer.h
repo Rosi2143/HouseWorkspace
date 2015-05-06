@@ -58,6 +58,8 @@ class Timer: public iTimer {
       virtual int start_timer(int, int, TimerCallBack);
       virtual void stop_timer(void);
       virtual int32_t getNextTimerDelay();
+
+      static void TimerCallBackFkt(int arg);
    protected:
       int set_timer(const itimerval&);
       int add_timer(const TimerStruct);
@@ -65,5 +67,7 @@ class Timer: public iTimer {
       struct sigaction new_handler, old_handler;
 
       std::list<TimerStruct> _TimerList;
+      TimerCallBack timer_func_handler_pntr;
+
 };
 
