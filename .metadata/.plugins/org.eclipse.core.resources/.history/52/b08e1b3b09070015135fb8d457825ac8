@@ -1,0 +1,91 @@
+/**************************************************
+
+ file: main.c
+ purpose: simple demo that demonstrates the timer-function
+
+ **************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "Timer.h"
+
+void timer_handler(int);
+void timer_handler2(int);
+
+int var = 0;
+
+int main(void) {
+   // Declare the supported options.
+   po::options_description desc("Allowed options");
+   desc.add_options()("help", "produce help message")("verbose",
+         po::value<int>(), "set verbose level");
+
+   boost::mutex io_mutex;
+   boost::asio::io_service io_service;
+   int verbose = 0;
+
+   po::variables_map vm;
+   po::store(po::parse_command_line(ac, av, desc), vm);
+   po::notify(vm);
+
+   if (vm.count("help")) {
+      std::cout << "tests the timer and command line option boost library\n";
+      return 1;
+   }
+
+   if (vm.count("verbose")) {
+      cout << "verbose level was set to " << verbose << ".\n";
+      verbose = vm["verbose"].as<int>();
+   } else {
+      cout << "verbose level was not set.\n";
+   }
+
+   Timer timer(io_service, io_mutex);
+   std::vector<int> times;
+   times.push_back(1000);
+   times.push_back(5000);
+   times.push_back(4000);
+   times.push_back(20000);
+   times.push_back(50000);
+   times.push_back(500);
+
+   int timerid = 100;
+   for (int time : times) {
+      if (0
+            != timer.start_timer(time /*time in ms */, timerid++ /* TimerId */,
+                  &timer_handler /* HandlerFunction */)) {
+         printf("\n timer error\n");
+         return (1);
+      }
+      if (0
+            != timer.start_timer(time + 1000 /*time in ms */,
+                  timerid++ /* TimerId */,
+                  &timer_handler2 /* HandlerFunction */)) {
+         printf("\n timer error\n");
+         return (1);
+      }
+   }
+
+   printf("\npress ctl-c to quit.\n");
+
+   while (1) {
+      if (var > 2 * times.size() - 1) {
+         break;
+      }
+   }
+
+   printf("\ndone. Quitting.\n");
+
+   timer.stop_timer();
+
+   return (0);
+}
+
+void timer_handler(int arg) {
+   printf("timer: var is %i\n       arg is %i\n", var++, arg);
+}
+
+void timer_handler2(int arg) {
+   printf("timer2: var2 is %i\n        arg2 is %i\n", var++, arg);
+}

@@ -1,15 +1,27 @@
-19:43:18 **** Incremental Build of configuration Debug for project Timer ****
+21:36:02 **** Incremental Build of configuration Debug for project Timer ****
 make all 
 Building file: ../src/Timer.cpp
 Invoking: Cross G++ Compiler
 arm-linux-gnueabihf-g++ -std=c++0x -I"/home/micha/workspace/Timer/include" -I"/home/micha/workspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Timer.d" -MT"src/Timer.d" -o "src/Timer.o" "../src/Timer.cpp"
-Finished building: ../src/Timer.cpp
- 
-Building target: Timer
-Invoking: Cross G++ Linker
-arm-linux-gnueabihf-g++  -o "Timer"  ./src/Timer.o ./src/main.o   
-Finished building target: Timer
- 
+In file included from ../src/Timer.cpp:31:0:
+/home/micha/workspace/Timer/include/Timer.h:69:37: error: ‘ptime’ does not name a type
+       virtual int start_timer(const ptime&, int, TimerCallBack);
+                                     ^
+/home/micha/workspace/Timer/include/Timer.h:69:42: error: ISO C++ forbids declaration of ‘parameter’ with no type [-fpermissive]
+       virtual int start_timer(const ptime&, int, TimerCallBack);
+                                          ^
+../src/Timer.cpp:49:5: error: prototype for ‘int Timer::start_timer(const boost::posix_time::ptime&, int, TimerCallBack)’ does not match any in class ‘Timer’
+ int Timer::start_timer(const ptime& time, int TimerId,
+     ^
+In file included from ../src/Timer.cpp:31:0:
+/home/micha/workspace/Timer/include/Timer.h:69:19: error: candidates are: virtual int Timer::start_timer(const int&, int, TimerCallBack)
+       virtual int start_timer(const ptime&, int, TimerCallBack);
+                   ^
+/home/micha/workspace/Timer/include/Timer.h:68:19: error:                 virtual int Timer::start_timer(int, int, TimerCallBack)
+       virtual int start_timer(int, int, TimerCallBack);
+                   ^
+src/subdir.mk:21: recipe for target 'src/Timer.o' failed
+make: *** [src/Timer.o] Error 1
 
-19:43:24 Build Finished (took 6s.497ms)
+21:36:19 Build Finished (took 17s.109ms)
 

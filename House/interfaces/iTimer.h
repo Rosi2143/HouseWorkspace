@@ -16,6 +16,7 @@ class iTimer {
       iTimer(){};
       virtual ~iTimer(){}
       virtual int start_timer(int, int, TimerCallBack) = 0;
+      virtual int start_timer(const boost::posix_time::ptime&, int, TimerCallBack) = 0;
       virtual void stop_timer(void) = 0;
       virtual int32_t getNextTimerDelay() = 0;
 };

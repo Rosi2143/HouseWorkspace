@@ -1,0 +1,57 @@
+/**************************************************
+
+ file: main.c
+ purpose: simple demo that demonstrates the timer-function
+
+ **************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "Timer.h"
+
+void timer_handler(int);
+
+int var = 0;
+
+int main(void) {
+   boost::mutex io_mutex;
+   boost::asio::io_service io_service;
+
+   Timer timer(io_service, io_mutex);
+   std::vector<int> times;
+   times.push_back(1000);
+   times.push_back(5000);
+   times.push_back(4000);
+   times.push_back(20000);
+   times.push_back(50000);
+   times.push_back(500);
+
+   int timerid = 100;
+   for (int time : times) {
+      if (0
+            != timer.start_timer(time /*time in ms */, timerid++ /* TimerId */,
+                  &timer_handler /* HandlerFunction */)) {
+         printf("\n timer error\n");
+         return (1);
+      }
+   }
+
+   printf("\npress ctl-c to quit.\n");
+
+   while (1) {
+      if (var > 3) {
+         break;
+      }
+   }
+
+   printf("\ndone. Quitting.\n");
+
+   timer.stop_timer();
+
+   return (0);
+}
+
+void timer_handler(int arg) {
+   printf("timer: var is %i\n       arg is %i\n", var++, arg);
+}
