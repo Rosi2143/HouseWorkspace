@@ -11001,3 +11001,12 @@ Chain 2:
 !MESSAGE Unexpected error while loading repository template extensions
 !SUBENTRY 1 org.eclipse.mylyn.tasks.core 4 0 2015-06-01 21:12:13.804
 !MESSAGE Could not load repository template extension contributed by 'org.eclipse.mylyn.bugzilla.ide' with connectorKind 'bugzilla'
+
+!ENTRY org.python.pydev.shared_core 4 4 2015-06-08 20:49:43.029
+!MESSAGE No message gotten (null message).
+!STACK 0
+java.lang.NullPointerException
+	at sun.nio.fs.UnixPath.toUnixPath(UnixPath.java:198)
+	at sun.nio.fs.UnixPath.resolve(UnixPath.java:397)
+	at sun.nio.fs.UnixPath.resolve(UnixPath.java:43)
+	at org.python.pydev.shared_core.path_watch.PathWatch$PollThread.run(PathWatch.java:154)

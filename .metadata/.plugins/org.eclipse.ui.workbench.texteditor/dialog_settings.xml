@@ -6,12 +6,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="io_service_" key="selection"/>
+		<item value="IRunTimer" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="IRunTimer"/>
 			<item value="io_service_"/>
 			<item value="itimerval"/>
 			<item value="TimerCallBack"/>
@@ -19,7 +20,6 @@
 			<item value="timer_sig_handler"/>
 			<item value="printf"/>
 			<item value="timervalue"/>
-			<item value="timer_func_handler_pntr"/>
 		</list>
 		<list key="replacehistory">
 			<item value="sc::state"/>

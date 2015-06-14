@@ -1,32 +1,3 @@
-22:40:18 **** Incremental Build of configuration Debug for project Timer_test ****
-Info: Internal Builder is used for build
-g++ -std=c++0x -I/home/micha/workspace/House/interfaces -I/home/micha/workspace/Timer/include -O0 -g3 -Wall -c -fmessage-length=0 -o src/main.o ../src/main.cpp 
-../src/main.cpp:198:46: error: macro "EXPECT_FALSE" passed 2 arguments, but takes just 1
-    EXPECT_FALSE(timerStruct1 ==, timerStruct2);
-                                              ^
-../src/main.cpp: In member function ‘virtual void TimerTest_TimerStruct_Compare_DifferentId_Test::TestBody()’:
-../src/main.cpp:198:4: error: ‘EXPECT_FALSE’ was not declared in this scope
-    EXPECT_FALSE(timerStruct1 ==, timerStruct2);
-    ^
-In file included from ../src/main.cpp:8:0:
-/usr/include/gtest/gtest.h: In instantiation of ‘testing::AssertionResult testing::internal::CmpHelperNE(const char*, const char*, const T1&, const T2&) [with T1 = TimerStruct; T2 = TimerStruct]’:
-../src/main.cpp:207:4:   required from here
-/usr/include/gtest/gtest.h:1577:1: error: no match for ‘operator!=’ (operand types are ‘const TimerStruct’ and ‘const TimerStruct’)
- GTEST_IMPL_CMP_HELPER_(NE, !=);
- ^
-In file included from /usr/include/gtest/internal/gtest-param-util.h:45:0,
-                 from /usr/include/gtest/gtest-param-test.h:192,
-                 from /usr/include/gtest/gtest.h:62,
-                 from ../src/main.cpp:8:
-/usr/include/gtest/internal/gtest-linked_ptr.h:218:6: note: candidate: template<class T> bool testing::internal::operator!=(T*, const testing::internal::linked_ptr<T>&)
- bool operator!=(T* ptr, const linked_ptr<T>& x) {
-      ^
-/usr/include/gtest/internal/gtest-linked_ptr.h:218:6: note:   template argument deduction/substitution failed:
-In file included from ../src/main.cpp:8:0:
-/usr/include/gtest/gtest.h:1577:1: note:   mismatched types ‘T*’ and ‘TimerStruct’
- GTEST_IMPL_CMP_HELPER_(NE, !=);
- ^
-22:40:53 **** Incremental Build of configuration Debug for project Timer_test ****
-Info: Internal Builder is used for build
-g++ -std=c++0x -I/home/micha/workspace/House/interfaces -I/home/micha/workspace/Timer/include -O0 -g3 -Wall -c -fmessage-length=0 -o src/main.o ../src/main.cpp 
-g++ -o Timer_test src/main.o src/Timer.o -lgtest -lgmock -lgtest_main -lpthread -lboost_thread -lboost_system 
+21:48:51 **** Build of configuration Debug for project BlindStates_test ****
+make all 
+make: Nothing to be done for 'all'.
