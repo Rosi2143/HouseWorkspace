@@ -1,4 +1,4 @@
-17:35:52 **** Build of configuration Debug for project LcdOnPcf8574 ****
+19:13:11 **** Build of configuration Debug for project LcdOnPcf8574 ****
 make all 
 Building file: ../src/PcfLcd.cpp
 Invoking: Cross G++ Compiler
@@ -230,6 +230,7 @@ In file included from ../src/PcfLcd.cpp:35:0:
 ../src/PcfLcd.cpp: In member function ‘void PcfLcd::date(unsigned char)’:
 ../src/PcfLcd.cpp:759:8: error: ‘system’ was not declared in this scope
     x = system.day();
+src/subdir.mk:18: recipe for target 'src/PcfLcd.o' failed
         ^
 ../src/PcfLcd.cpp:760:4: error: ‘i2c’ was not declared in this scope
     i2c.cstart(_pcfId);
@@ -251,8 +252,7 @@ In file included from ../src/PcfLcd.cpp:35:0:
 ../src/PcfLcd.cpp:820:21: warning: unused variable ‘j’ [-Wunused-variable]
     unsigned char i, j, En, Md;
                      ^
-src/subdir.mk:18: recipe for target 'src/PcfLcd.o' failed
 make: *** [src/PcfLcd.o] Error 1
 
-17:35:53 Build Finished (took 1s.84ms)
+19:13:12 Build Finished (took 744ms)
 

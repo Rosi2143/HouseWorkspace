@@ -1,3 +1,2323 @@
-21:48:51 **** Build of configuration Debug for project BlindStates_test ****
+18:21:33 **** Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+18:31:39 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+18:33:23 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h: In instantiation of ‘testing::AssertionResult testing::internal::CmpHelperEQ(const char*, const char*, const T1&, const T2&) [with T1 = std::unique_ptr<FunctionTracer>; T2 = long int]’:
+/usr/include/gtest/gtest.h:1484:23:   required from ‘static testing::AssertionResult testing::internal::EqHelper<lhs_is_null_literal>::Compare(const char*, const char*, const T1&, const T2&) [with T1 = std::unique_ptr<FunctionTracer>; T2 = long int; bool lhs_is_null_literal = false]’
+../src/main.cpp:24:4:   required from here
+/usr/include/gtest/gtest.h:1448:16: error: no match for ‘operator==’ (operand types are ‘const std::unique_ptr<FunctionTracer>’ and ‘const long int’)
+   if (expected == actual) {
+                ^
+/usr/include/gtest/gtest.h:1448:16: note: candidate: operator==(int, long int) <built-in>
+/usr/include/gtest/gtest.h:1448:16: note:   no known conversion for argument 1 from ‘const std::unique_ptr<FunctionTracer>’ to ‘int’
+In file included from /usr/include/gtest/internal/gtest-param-util.h:45:0,
+                 from /usr/include/gtest/gtest-param-test.h:192,
+                 from /usr/include/gtest/gtest.h:62,
+                 from ../src/main.cpp:8:
+/usr/include/gtest/internal/gtest-linked_ptr.h:213:6: note: candidate: template<class T> bool testing::internal::operator==(T*, const testing::internal::linked_ptr<T>&)
+ bool operator==(T* ptr, const linked_ptr<T>& x) {
+      ^
+/usr/include/gtest/internal/gtest-linked_ptr.h:213:6: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘T*’ and ‘std::unique_ptr<FunctionTracer>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/memory:82:0,
+                 from ../src/FunctionTracer.h:13,
+                 from ../src/main.cpp:13:
+/usr/include/c++/5.3.1/bits/shared_ptr.h:347:5: note: candidate: template<class _Tp> bool std::operator==(std::nullptr_t, const std::shared_ptr<_Tp1>&)
+     operator==(nullptr_t, const shared_ptr<_Tp>& __a) noexcept
+     ^
+/usr/include/c++/5.3.1/bits/shared_ptr.h:347:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   cannot convert ‘expected’ (type ‘const std::unique_ptr<FunctionTracer>’) to type ‘std::nullptr_t’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/memory:82:0,
+                 from ../src/FunctionTracer.h:13,
+                 from ../src/main.cpp:13:
+/usr/include/c++/5.3.1/bits/shared_ptr.h:342:5: note: candidate: template<class _Tp> bool std::operator==(const std::shared_ptr<_Tp1>&, std::nullptr_t)
+     operator==(const shared_ptr<_Tp>& __a, nullptr_t) noexcept
+     ^
+/usr/include/c++/5.3.1/bits/shared_ptr.h:342:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::shared_ptr<_Tp1>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/memory:82:0,
+                 from ../src/FunctionTracer.h:13,
+                 from ../src/main.cpp:13:
+/usr/include/c++/5.3.1/bits/shared_ptr.h:336:5: note: candidate: template<class _Tp1, class _Tp2> bool std::operator==(const std::shared_ptr<_Tp1>&, const std::shared_ptr<_Tp2>&)
+     operator==(const shared_ptr<_Tp1>& __a,
+     ^
+/usr/include/c++/5.3.1/bits/shared_ptr.h:336:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::shared_ptr<_Tp1>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/5.3.1/memory:82,
+                 from ../src/FunctionTracer.h:13,
+                 from ../src/main.cpp:13:
+/usr/include/c++/5.3.1/bits/shared_ptr_base.h:1194:5: note: candidate: template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator==(std::nullptr_t, const std::__shared_ptr<_Tp, _Lp>&)
+     operator==(nullptr_t, const __shared_ptr<_Tp, _Lp>& __a) noexcept
+     ^
+/usr/include/c++/5.3.1/bits/shared_ptr_base.h:1194:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   cannot convert ‘expected’ (type ‘const std::unique_ptr<FunctionTracer>’) to type ‘std::nullptr_t’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/5.3.1/memory:82,
+                 from ../src/FunctionTracer.h:13,
+                 from ../src/main.cpp:13:
+/usr/include/c++/5.3.1/bits/shared_ptr_base.h:1189:5: note: candidate: template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator==(const std::__shared_ptr<_Tp, _Lp>&, std::nullptr_t)
+     operator==(const __shared_ptr<_Tp, _Lp>& __a, nullptr_t) noexcept
+     ^
+/usr/include/c++/5.3.1/bits/shared_ptr_base.h:1189:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::__shared_ptr<_Tp, _Lp>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/5.3.1/memory:82,
+                 from ../src/FunctionTracer.h:13,
+                 from ../src/main.cpp:13:
+/usr/include/c++/5.3.1/bits/shared_ptr_base.h:1183:5: note: candidate: template<class _Tp1, class _Tp2, __gnu_cxx::_Lock_policy _Lp> bool std::operator==(const std::__shared_ptr<_Tp1, _Lp>&, const std::__shared_ptr<_Tp2, _Lp>&)
+     operator==(const __shared_ptr<_Tp1, _Lp>& __a,
+     ^
+/usr/include/c++/5.3.1/bits/shared_ptr_base.h:1183:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::__shared_ptr<_Tp1, _Lp>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/memory:79:0,
+                 from ../src/FunctionTracer.h:13,
+                 from ../src/main.cpp:13:
+/usr/include/c++/5.3.1/functional:2339:5: note: candidate: template<class _Res, class ... _Args> bool std::operator==(std::nullptr_t, const std::function<_Res(_ArgTypes ...)>&)
+     operator==(nullptr_t, const function<_Res(_Args...)>& __f) noexcept
+     ^
+/usr/include/c++/5.3.1/functional:2339:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   cannot convert ‘expected’ (type ‘const std::unique_ptr<FunctionTracer>’) to type ‘std::nullptr_t’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/memory:79:0,
+                 from ../src/FunctionTracer.h:13,
+                 from ../src/main.cpp:13:
+/usr/include/c++/5.3.1/functional:2333:5: note: candidate: template<class _Res, class ... _Args> bool std::operator==(const std::function<_Res(_ArgTypes ...)>&, std::nullptr_t)
+     operator==(const function<_Res(_Args...)>& __f, nullptr_t) noexcept
+     ^
+/usr/include/c++/5.3.1/functional:2333:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::function<_Res(_ArgTypes ...)>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/map:62:0,
+                 from /usr/include/gmock/gmock-spec-builders.h:63,
+                 from /usr/include/gmock/gmock-generated-function-mockers.h:43,
+                 from /usr/include/gmock/gmock.h:61,
+                 from ../src/main.cpp:9:
+/usr/include/c++/5.3.1/bits/stl_multimap.h:974:5: note: candidate: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator==(const std::multimap<_Key, _Tp, _Compare, _Alloc>&, const std::multimap<_Key, _Tp, _Compare, _Alloc>&)
+     operator==(const multimap<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stl_multimap.h:974:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::multimap<_Key, _Tp, _Compare, _Alloc>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/map:61:0,
+                 from /usr/include/gmock/gmock-spec-builders.h:63,
+                 from /usr/include/gmock/gmock-generated-function-mockers.h:43,
+                 from /usr/include/gmock/gmock.h:61,
+                 from ../src/main.cpp:9:
+/usr/include/c++/5.3.1/bits/stl_map.h:1073:5: note: candidate: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator==(const std::map<_Key, _Tp, _Compare, _Alloc>&, const std::map<_Key, _Tp, _Compare, _Alloc>&)
+     operator==(const map<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stl_map.h:1073:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::map<_Key, _Tp, _Compare, _Alloc>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/random:51:0,
+                 from /usr/include/c++/5.3.1/bits/stl_algo.h:66,
+                 from /usr/include/c++/5.3.1/algorithm:62,
+                 from /usr/include/gmock/gmock-actions.h:43,
+                 from /usr/include/gmock/gmock.h:58,
+                 from ../src/main.cpp:9:
+/usr/include/c++/5.3.1/bits/random.tcc:2030:5: note: candidate: template<class _RealType1> bool std::operator==(const std::normal_distribution<_RealType>&, const std::normal_distribution<_RealType>&)
+     operator==(const std::normal_distribution<_RealType>& __d1,
+     ^
+/usr/include/c++/5.3.1/bits/random.tcc:2030:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::normal_distribution<_RealType>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/iterator:66:0,
+                 from /usr/include/gtest/internal/gtest-param-util.h:37,
+                 from /usr/include/gtest/gtest-param-test.h:192,
+                 from /usr/include/gtest/gtest.h:62,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stream_iterator.h:130:5: note: candidate: template<class _Tp, class _CharT, class _Traits, class _Dist> bool std::operator==(const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>&, const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>&)
+     operator==(const istream_iterator<_Tp, _CharT, _Traits, _Dist>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stream_iterator.h:130:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/set:62:0,
+                 from /usr/include/gtest/internal/gtest-internal.h:58,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stl_multiset.h:825:5: note: candidate: template<class _Key, class _Compare, class _Alloc> bool std::operator==(const std::multiset<_Key, _Compare, _Alloc>&, const std::multiset<_Key, _Compare, _Alloc>&)
+     operator==(const multiset<_Key, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stl_multiset.h:825:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::multiset<_Key, _Compare, _Alloc>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/set:61:0,
+                 from /usr/include/gtest/internal/gtest-internal.h:58,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stl_set.h:842:5: note: candidate: template<class _Key, class _Compare, class _Alloc> bool std::operator==(const std::set<_Key, _Compare, _Alloc>&, const std::set<_Key, _Compare, _Alloc>&)
+     operator==(const set<_Key, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stl_set.h:842:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::set<_Key, _Compare, _Alloc>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/set:60:0,
+                 from /usr/include/gtest/internal/gtest-internal.h:58,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stl_tree.h:1273:5: note: candidate: template<class _Key, class _Val, class _KeyOfValue, class _Compare, class _Alloc> bool std::operator==(const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&, const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&)
+     operator==(const _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stl_tree.h:1273:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/set:60:0,
+                 from /usr/include/gtest/internal/gtest-internal.h:58,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stl_tree.h:324:5: note: candidate: template<class _Val> bool std::operator==(const std::_Rb_tree_iterator<_Tp>&, const std::_Rb_tree_const_iterator<_Val>&)
+     operator==(const _Rb_tree_iterator<_Val>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stl_tree.h:324:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::_Rb_tree_iterator<_Tp>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/locale_conv.h:41:0,
+                 from /usr/include/c++/5.3.1/locale:43,
+                 from /usr/include/c++/5.3.1/iomanip:43,
+                 from /usr/include/gtest/internal/gtest-internal.h:56,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/unique_ptr.h:635:5: note: candidate: template<class _Tp, class _Dp> bool std::operator==(std::nullptr_t, const std::unique_ptr<_Tp, _Dp>&)
+     operator==(nullptr_t, const unique_ptr<_Tp, _Dp>& __x) noexcept
+     ^
+/usr/include/c++/5.3.1/bits/unique_ptr.h:635:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   cannot convert ‘expected’ (type ‘const std::unique_ptr<FunctionTracer>’) to type ‘std::nullptr_t’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/locale_conv.h:41:0,
+                 from /usr/include/c++/5.3.1/locale:43,
+                 from /usr/include/c++/5.3.1/iomanip:43,
+                 from /usr/include/gtest/internal/gtest-internal.h:56,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/unique_ptr.h:630:5: note: candidate: template<class _Tp, class _Dp> bool std::operator==(const std::unique_ptr<_Tp, _Dp>&, std::nullptr_t)
+     operator==(const unique_ptr<_Tp, _Dp>& __x, nullptr_t) noexcept
+     ^
+/usr/include/c++/5.3.1/bits/unique_ptr.h:630:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   cannot convert ‘actual’ (type ‘const long int’) to type ‘std::nullptr_t’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/locale_conv.h:41:0,
+                 from /usr/include/c++/5.3.1/locale:43,
+                 from /usr/include/c++/5.3.1/iomanip:43,
+                 from /usr/include/gtest/internal/gtest-internal.h:56,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/unique_ptr.h:624:5: note: candidate: template<class _Tp, class _Dp, class _Up, class _Ep> bool std::operator==(const std::unique_ptr<_Tp, _Dp>&, const std::unique_ptr<_Up, _Ep>&)
+     operator==(const unique_ptr<_Tp, _Dp>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/unique_ptr.h:624:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::unique_ptr<_Up, _Ep>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/gtest/internal/gtest-port.h:548:0,
+                 from /usr/include/gtest/internal/gtest-internal.h:40,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/tuple:915:5: note: candidate: template<class ... _TElements, class ... _UElements> constexpr bool std::operator==(const std::tuple<_Elements ...>&, const std::tuple<_Elements ...>&)
+     operator==(const tuple<_TElements...>& __t,
+     ^
+/usr/include/c++/5.3.1/tuple:915:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::tuple<_Elements ...>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/tuple:39:0,
+                 from /usr/include/gtest/internal/gtest-port.h:548,
+                 from /usr/include/gtest/internal/gtest-internal.h:40,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/array:240:5: note: candidate: template<class _Tp, long unsigned int _Nm> bool std::operator==(const std::array<_Tp, _Nm>&, const std::array<_Tp, _Nm>&)
+     operator==(const array<_Tp, _Nm>& __one, const array<_Tp, _Nm>& __two)
+     ^
+/usr/include/c++/5.3.1/array:240:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::array<_Tp, _Nm>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/vector:64:0,
+                 from /usr/include/gtest/gtest.h:56,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stl_vector.h:1511:5: note: candidate: template<class _Tp, class _Alloc> bool std::operator==(const std::vector<_Tp, _Alloc>&, const std::vector<_Tp, _Alloc>&)
+     operator==(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+     ^
+/usr/include/c++/5.3.1/bits/stl_vector.h:1511:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::vector<_Tp, _Alloc>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/locale_facets.h:48:0,
+                 from /usr/include/c++/5.3.1/bits/basic_ios.h:37,
+                 from /usr/include/c++/5.3.1/ios:44,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/streambuf_iterator.h:204:5: note: candidate: template<class _CharT, class _Traits> bool std::operator==(const std::istreambuf_iterator<_CharT, _Traits>&, const std::istreambuf_iterator<_CharT, _Traits>&)
+     operator==(const istreambuf_iterator<_CharT, _Traits>& __a,
+     ^
+/usr/include/c++/5.3.1/bits/streambuf_iterator.h:204:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::istreambuf_iterator<_CharT, _Traits>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/ios_base.h:46:0,
+                 from /usr/include/c++/5.3.1/ios:42,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/system_error:303:3: note: candidate: bool std::operator==(const std::error_condition&, const std::error_condition&)
+   operator==(const error_condition& __lhs,
+   ^
+/usr/include/c++/5.3.1/system_error:303:3: note:   no known conversion for argument 1 from ‘const std::unique_ptr<FunctionTracer>’ to ‘const std::error_condition&’
+/usr/include/c++/5.3.1/system_error:296:3: note: candidate: bool std::operator==(const std::error_condition&, const std::error_code&)
+   operator==(const error_condition& __lhs, const error_code& __rhs) noexcept
+   ^
+/usr/include/c++/5.3.1/system_error:296:3: note:   no known conversion for argument 1 from ‘const std::unique_ptr<FunctionTracer>’ to ‘const std::error_condition&’
+/usr/include/c++/5.3.1/system_error:289:3: note: candidate: bool std::operator==(const std::error_code&, const std::error_condition&)
+   operator==(const error_code& __lhs, const error_condition& __rhs) noexcept
+   ^
+/usr/include/c++/5.3.1/system_error:289:3: note:   no known conversion for argument 1 from ‘const std::unique_ptr<FunctionTracer>’ to ‘const std::error_code&’
+/usr/include/c++/5.3.1/system_error:284:3: note: candidate: bool std::operator==(const std::error_code&, const std::error_code&)
+   operator==(const error_code& __lhs, const error_code& __rhs) noexcept
+   ^
+/usr/include/c++/5.3.1/system_error:284:3: note:   no known conversion for argument 1 from ‘const std::unique_ptr<FunctionTracer>’ to ‘const std::error_code&’
+In file included from /usr/include/c++/5.3.1/string:52:0,
+                 from /usr/include/c++/5.3.1/bits/locale_classes.h:40,
+                 from /usr/include/c++/5.3.1/bits/ios_base.h:41,
+                 from /usr/include/c++/5.3.1/ios:42,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/basic_string.h:4937:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator==(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/5.3.1/bits/basic_string.h:4937:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/string:52:0,
+                 from /usr/include/c++/5.3.1/bits/locale_classes.h:40,
+                 from /usr/include/c++/5.3.1/bits/ios_base.h:41,
+                 from /usr/include/c++/5.3.1/ios:42,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/basic_string.h:4925:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator==(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator==(const _CharT* __lhs,
+     ^
+/usr/include/c++/5.3.1/bits/basic_string.h:4925:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const _CharT*’ and ‘std::unique_ptr<FunctionTracer>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/string:52:0,
+                 from /usr/include/c++/5.3.1/bits/locale_classes.h:40,
+                 from /usr/include/c++/5.3.1/bits/ios_base.h:41,
+                 from /usr/include/c++/5.3.1/ios:42,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/basic_string.h:4911:5: note: candidate: template<class _CharT> typename __gnu_cxx::__enable_if<std::__is_char<_Tp>::__value, bool>::__type std::operator==(const std::__cxx11::basic_string<_CharT>&, const std::__cxx11::basic_string<_CharT>&)
+     operator==(const basic_string<_CharT>& __lhs,
+     ^
+/usr/include/c++/5.3.1/bits/basic_string.h:4911:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::__cxx11::basic_string<_CharT>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/string:52:0,
+                 from /usr/include/c++/5.3.1/bits/locale_classes.h:40,
+                 from /usr/include/c++/5.3.1/bits/ios_base.h:41,
+                 from /usr/include/c++/5.3.1/ios:42,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/basic_string.h:4904:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator==(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/5.3.1/bits/basic_string.h:4904:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/string:41:0,
+                 from /usr/include/c++/5.3.1/bits/locale_classes.h:40,
+                 from /usr/include/c++/5.3.1/bits/ios_base.h:41,
+                 from /usr/include/c++/5.3.1/ios:42,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/allocator.h:134:5: note: candidate: template<class _Tp> bool std::operator==(const std::allocator<_CharT>&, const std::allocator<_CharT>&)
+     operator==(const allocator<_Tp>&, const allocator<_Tp>&)
+     ^
+/usr/include/c++/5.3.1/bits/allocator.h:134:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::allocator<_CharT>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/string:41:0,
+                 from /usr/include/c++/5.3.1/bits/locale_classes.h:40,
+                 from /usr/include/c++/5.3.1/bits/ios_base.h:41,
+                 from /usr/include/c++/5.3.1/ios:42,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/allocator.h:128:5: note: candidate: template<class _T1, class _T2> bool std::operator==(const std::allocator<_CharT>&, const std::allocator<_T2>&)
+     operator==(const allocator<_T1>&, const allocator<_T2>&)
+     ^
+/usr/include/c++/5.3.1/bits/allocator.h:128:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::allocator<_CharT>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/5.3.1/bits/char_traits.h:39,
+                 from /usr/include/c++/5.3.1/ios:40,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stl_iterator.h:1071:5: note: candidate: template<class _Iterator> bool std::operator==(const std::move_iterator<_Iterator>&, const std::move_iterator<_Iterator>&)
+     operator==(const move_iterator<_Iterator>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stl_iterator.h:1071:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::move_iterator<_Iterator>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/5.3.1/bits/char_traits.h:39,
+                 from /usr/include/c++/5.3.1/ios:40,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stl_iterator.h:1065:5: note: candidate: template<class _IteratorL, class _IteratorR> bool std::operator==(const std::move_iterator<_Iterator>&, const std::move_iterator<_IteratorR>&)
+     operator==(const move_iterator<_IteratorL>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stl_iterator.h:1065:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::move_iterator<_Iterator>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/5.3.1/bits/char_traits.h:39,
+                 from /usr/include/c++/5.3.1/ios:40,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stl_iterator.h:342:5: note: candidate: template<class _IteratorL, class _IteratorR> bool std::operator==(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator==(const reverse_iterator<_IteratorL>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stl_iterator.h:342:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/5.3.1/bits/char_traits.h:39,
+                 from /usr/include/c++/5.3.1/ios:40,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stl_iterator.h:292:5: note: candidate: template<class _Iterator> bool std::operator==(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)
+     operator==(const reverse_iterator<_Iterator>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stl_iterator.h:292:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/5.3.1/bits/char_traits.h:39,
+                 from /usr/include/c++/5.3.1/ios:40,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stl_pair.h:214:5: note: candidate: template<class _T1, class _T2> constexpr bool std::operator==(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)
+     operator==(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+     ^
+/usr/include/c++/5.3.1/bits/stl_pair.h:214:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::pair<_T1, _T2>’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/iosfwd:40:0,
+                 from /usr/include/c++/5.3.1/ios:38,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/postypes.h:216:5: note: candidate: template<class _StateT> bool std::operator==(const std::fpos<_StateT>&, const std::fpos<_StateT>&)
+     operator==(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+     ^
+/usr/include/c++/5.3.1/bits/postypes.h:216:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   ‘const std::unique_ptr<FunctionTracer>’ is not derived from ‘const std::fpos<_StateT>’
+   if (expected == actual) {
+                ^
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+18:33:43 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h: In instantiation of ‘testing::AssertionResult testing::internal::CmpHelperEQ(const char*, const char*, const T1&, const T2&) [with T1 = long int; T2 = std::unique_ptr<FunctionTracer>]’:
+/usr/include/gtest/gtest.h:1524:23:   required from ‘static testing::AssertionResult testing::internal::EqHelper<true>::Compare(const char*, const char*, const T1&, const T2&, typename testing::internal::EnableIf<(! testing::internal::is_pointer<T2>::value)>::type*) [with T1 = long int; T2 = std::unique_ptr<FunctionTracer>; typename testing::internal::EnableIf<(! testing::internal::is_pointer<T2>::value)>::type = void]’
+../src/main.cpp:24:4:   required from here
+/usr/include/gtest/gtest.h:1448:16: error: no match for ‘operator==’ (operand types are ‘const long int’ and ‘const std::unique_ptr<FunctionTracer>’)
+   if (expected == actual) {
+                ^
+/usr/include/gtest/gtest.h:1448:16: note: candidate: operator==(long int, int) <built-in>
+/usr/include/gtest/gtest.h:1448:16: note:   no known conversion for argument 2 from ‘const std::unique_ptr<FunctionTracer>’ to ‘int’
+In file included from /usr/include/gtest/internal/gtest-param-util.h:45:0,
+                 from /usr/include/gtest/gtest-param-test.h:192,
+                 from /usr/include/gtest/gtest.h:62,
+                 from ../src/main.cpp:8:
+/usr/include/gtest/internal/gtest-linked_ptr.h:213:6: note: candidate: template<class T> bool testing::internal::operator==(T*, const testing::internal::linked_ptr<T>&)
+ bool operator==(T* ptr, const linked_ptr<T>& x) {
+      ^
+/usr/include/gtest/internal/gtest-linked_ptr.h:213:6: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘T*’ and ‘long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/memory:82:0,
+                 from ../src/FunctionTracer.h:13,
+                 from ../src/main.cpp:13:
+/usr/include/c++/5.3.1/bits/shared_ptr.h:347:5: note: candidate: template<class _Tp> bool std::operator==(std::nullptr_t, const std::shared_ptr<_Tp1>&)
+     operator==(nullptr_t, const shared_ptr<_Tp>& __a) noexcept
+     ^
+/usr/include/c++/5.3.1/bits/shared_ptr.h:347:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   cannot convert ‘expected’ (type ‘const long int’) to type ‘std::nullptr_t’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/memory:82:0,
+                 from ../src/FunctionTracer.h:13,
+                 from ../src/main.cpp:13:
+/usr/include/c++/5.3.1/bits/shared_ptr.h:342:5: note: candidate: template<class _Tp> bool std::operator==(const std::shared_ptr<_Tp1>&, std::nullptr_t)
+     operator==(const shared_ptr<_Tp>& __a, nullptr_t) noexcept
+     ^
+/usr/include/c++/5.3.1/bits/shared_ptr.h:342:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::shared_ptr<_Tp1>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/memory:82:0,
+                 from ../src/FunctionTracer.h:13,
+                 from ../src/main.cpp:13:
+/usr/include/c++/5.3.1/bits/shared_ptr.h:336:5: note: candidate: template<class _Tp1, class _Tp2> bool std::operator==(const std::shared_ptr<_Tp1>&, const std::shared_ptr<_Tp2>&)
+     operator==(const shared_ptr<_Tp1>& __a,
+     ^
+/usr/include/c++/5.3.1/bits/shared_ptr.h:336:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::shared_ptr<_Tp1>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/5.3.1/memory:82,
+                 from ../src/FunctionTracer.h:13,
+                 from ../src/main.cpp:13:
+/usr/include/c++/5.3.1/bits/shared_ptr_base.h:1194:5: note: candidate: template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator==(std::nullptr_t, const std::__shared_ptr<_Tp, _Lp>&)
+     operator==(nullptr_t, const __shared_ptr<_Tp, _Lp>& __a) noexcept
+     ^
+/usr/include/c++/5.3.1/bits/shared_ptr_base.h:1194:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   cannot convert ‘expected’ (type ‘const long int’) to type ‘std::nullptr_t’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/5.3.1/memory:82,
+                 from ../src/FunctionTracer.h:13,
+                 from ../src/main.cpp:13:
+/usr/include/c++/5.3.1/bits/shared_ptr_base.h:1189:5: note: candidate: template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator==(const std::__shared_ptr<_Tp, _Lp>&, std::nullptr_t)
+     operator==(const __shared_ptr<_Tp, _Lp>& __a, nullptr_t) noexcept
+     ^
+/usr/include/c++/5.3.1/bits/shared_ptr_base.h:1189:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::__shared_ptr<_Tp, _Lp>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/5.3.1/memory:82,
+                 from ../src/FunctionTracer.h:13,
+                 from ../src/main.cpp:13:
+/usr/include/c++/5.3.1/bits/shared_ptr_base.h:1183:5: note: candidate: template<class _Tp1, class _Tp2, __gnu_cxx::_Lock_policy _Lp> bool std::operator==(const std::__shared_ptr<_Tp1, _Lp>&, const std::__shared_ptr<_Tp2, _Lp>&)
+     operator==(const __shared_ptr<_Tp1, _Lp>& __a,
+     ^
+/usr/include/c++/5.3.1/bits/shared_ptr_base.h:1183:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::__shared_ptr<_Tp1, _Lp>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/memory:79:0,
+                 from ../src/FunctionTracer.h:13,
+                 from ../src/main.cpp:13:
+/usr/include/c++/5.3.1/functional:2339:5: note: candidate: template<class _Res, class ... _Args> bool std::operator==(std::nullptr_t, const std::function<_Res(_ArgTypes ...)>&)
+     operator==(nullptr_t, const function<_Res(_Args...)>& __f) noexcept
+     ^
+/usr/include/c++/5.3.1/functional:2339:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   cannot convert ‘expected’ (type ‘const long int’) to type ‘std::nullptr_t’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/memory:79:0,
+                 from ../src/FunctionTracer.h:13,
+                 from ../src/main.cpp:13:
+/usr/include/c++/5.3.1/functional:2333:5: note: candidate: template<class _Res, class ... _Args> bool std::operator==(const std::function<_Res(_ArgTypes ...)>&, std::nullptr_t)
+     operator==(const function<_Res(_Args...)>& __f, nullptr_t) noexcept
+     ^
+/usr/include/c++/5.3.1/functional:2333:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::function<_Res(_ArgTypes ...)>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/map:62:0,
+                 from /usr/include/gmock/gmock-spec-builders.h:63,
+                 from /usr/include/gmock/gmock-generated-function-mockers.h:43,
+                 from /usr/include/gmock/gmock.h:61,
+                 from ../src/main.cpp:9:
+/usr/include/c++/5.3.1/bits/stl_multimap.h:974:5: note: candidate: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator==(const std::multimap<_Key, _Tp, _Compare, _Alloc>&, const std::multimap<_Key, _Tp, _Compare, _Alloc>&)
+     operator==(const multimap<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stl_multimap.h:974:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::multimap<_Key, _Tp, _Compare, _Alloc>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/map:61:0,
+                 from /usr/include/gmock/gmock-spec-builders.h:63,
+                 from /usr/include/gmock/gmock-generated-function-mockers.h:43,
+                 from /usr/include/gmock/gmock.h:61,
+                 from ../src/main.cpp:9:
+/usr/include/c++/5.3.1/bits/stl_map.h:1073:5: note: candidate: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator==(const std::map<_Key, _Tp, _Compare, _Alloc>&, const std::map<_Key, _Tp, _Compare, _Alloc>&)
+     operator==(const map<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stl_map.h:1073:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::map<_Key, _Tp, _Compare, _Alloc>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/random:51:0,
+                 from /usr/include/c++/5.3.1/bits/stl_algo.h:66,
+                 from /usr/include/c++/5.3.1/algorithm:62,
+                 from /usr/include/gmock/gmock-actions.h:43,
+                 from /usr/include/gmock/gmock.h:58,
+                 from ../src/main.cpp:9:
+/usr/include/c++/5.3.1/bits/random.tcc:2030:5: note: candidate: template<class _RealType1> bool std::operator==(const std::normal_distribution<_RealType>&, const std::normal_distribution<_RealType>&)
+     operator==(const std::normal_distribution<_RealType>& __d1,
+     ^
+/usr/include/c++/5.3.1/bits/random.tcc:2030:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::normal_distribution<_RealType>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/iterator:66:0,
+                 from /usr/include/gtest/internal/gtest-param-util.h:37,
+                 from /usr/include/gtest/gtest-param-test.h:192,
+                 from /usr/include/gtest/gtest.h:62,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stream_iterator.h:130:5: note: candidate: template<class _Tp, class _CharT, class _Traits, class _Dist> bool std::operator==(const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>&, const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>&)
+     operator==(const istream_iterator<_Tp, _CharT, _Traits, _Dist>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stream_iterator.h:130:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/set:62:0,
+                 from /usr/include/gtest/internal/gtest-internal.h:58,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stl_multiset.h:825:5: note: candidate: template<class _Key, class _Compare, class _Alloc> bool std::operator==(const std::multiset<_Key, _Compare, _Alloc>&, const std::multiset<_Key, _Compare, _Alloc>&)
+     operator==(const multiset<_Key, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stl_multiset.h:825:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::multiset<_Key, _Compare, _Alloc>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/set:61:0,
+                 from /usr/include/gtest/internal/gtest-internal.h:58,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stl_set.h:842:5: note: candidate: template<class _Key, class _Compare, class _Alloc> bool std::operator==(const std::set<_Key, _Compare, _Alloc>&, const std::set<_Key, _Compare, _Alloc>&)
+     operator==(const set<_Key, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stl_set.h:842:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::set<_Key, _Compare, _Alloc>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/set:60:0,
+                 from /usr/include/gtest/internal/gtest-internal.h:58,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stl_tree.h:1273:5: note: candidate: template<class _Key, class _Val, class _KeyOfValue, class _Compare, class _Alloc> bool std::operator==(const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&, const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&)
+     operator==(const _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stl_tree.h:1273:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/set:60:0,
+                 from /usr/include/gtest/internal/gtest-internal.h:58,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stl_tree.h:324:5: note: candidate: template<class _Val> bool std::operator==(const std::_Rb_tree_iterator<_Tp>&, const std::_Rb_tree_const_iterator<_Val>&)
+     operator==(const _Rb_tree_iterator<_Val>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stl_tree.h:324:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::_Rb_tree_iterator<_Tp>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/locale_conv.h:41:0,
+                 from /usr/include/c++/5.3.1/locale:43,
+                 from /usr/include/c++/5.3.1/iomanip:43,
+                 from /usr/include/gtest/internal/gtest-internal.h:56,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/unique_ptr.h:635:5: note: candidate: template<class _Tp, class _Dp> bool std::operator==(std::nullptr_t, const std::unique_ptr<_Tp, _Dp>&)
+     operator==(nullptr_t, const unique_ptr<_Tp, _Dp>& __x) noexcept
+     ^
+/usr/include/c++/5.3.1/bits/unique_ptr.h:635:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   cannot convert ‘expected’ (type ‘const long int’) to type ‘std::nullptr_t’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/locale_conv.h:41:0,
+                 from /usr/include/c++/5.3.1/locale:43,
+                 from /usr/include/c++/5.3.1/iomanip:43,
+                 from /usr/include/gtest/internal/gtest-internal.h:56,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/unique_ptr.h:630:5: note: candidate: template<class _Tp, class _Dp> bool std::operator==(const std::unique_ptr<_Tp, _Dp>&, std::nullptr_t)
+     operator==(const unique_ptr<_Tp, _Dp>& __x, nullptr_t) noexcept
+     ^
+/usr/include/c++/5.3.1/bits/unique_ptr.h:630:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::unique_ptr<_Tp, _Dp>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/locale_conv.h:41:0,
+                 from /usr/include/c++/5.3.1/locale:43,
+                 from /usr/include/c++/5.3.1/iomanip:43,
+                 from /usr/include/gtest/internal/gtest-internal.h:56,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/unique_ptr.h:624:5: note: candidate: template<class _Tp, class _Dp, class _Up, class _Ep> bool std::operator==(const std::unique_ptr<_Tp, _Dp>&, const std::unique_ptr<_Up, _Ep>&)
+     operator==(const unique_ptr<_Tp, _Dp>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/unique_ptr.h:624:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::unique_ptr<_Tp, _Dp>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/gtest/internal/gtest-port.h:548:0,
+                 from /usr/include/gtest/internal/gtest-internal.h:40,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/tuple:915:5: note: candidate: template<class ... _TElements, class ... _UElements> constexpr bool std::operator==(const std::tuple<_Elements ...>&, const std::tuple<_Elements ...>&)
+     operator==(const tuple<_TElements...>& __t,
+     ^
+/usr/include/c++/5.3.1/tuple:915:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::tuple<_Elements ...>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/tuple:39:0,
+                 from /usr/include/gtest/internal/gtest-port.h:548,
+                 from /usr/include/gtest/internal/gtest-internal.h:40,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/array:240:5: note: candidate: template<class _Tp, long unsigned int _Nm> bool std::operator==(const std::array<_Tp, _Nm>&, const std::array<_Tp, _Nm>&)
+     operator==(const array<_Tp, _Nm>& __one, const array<_Tp, _Nm>& __two)
+     ^
+/usr/include/c++/5.3.1/array:240:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::array<_Tp, _Nm>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/vector:64:0,
+                 from /usr/include/gtest/gtest.h:56,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stl_vector.h:1511:5: note: candidate: template<class _Tp, class _Alloc> bool std::operator==(const std::vector<_Tp, _Alloc>&, const std::vector<_Tp, _Alloc>&)
+     operator==(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+     ^
+/usr/include/c++/5.3.1/bits/stl_vector.h:1511:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::vector<_Tp, _Alloc>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/locale_facets.h:48:0,
+                 from /usr/include/c++/5.3.1/bits/basic_ios.h:37,
+                 from /usr/include/c++/5.3.1/ios:44,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/streambuf_iterator.h:204:5: note: candidate: template<class _CharT, class _Traits> bool std::operator==(const std::istreambuf_iterator<_CharT, _Traits>&, const std::istreambuf_iterator<_CharT, _Traits>&)
+     operator==(const istreambuf_iterator<_CharT, _Traits>& __a,
+     ^
+/usr/include/c++/5.3.1/bits/streambuf_iterator.h:204:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::istreambuf_iterator<_CharT, _Traits>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/ios_base.h:46:0,
+                 from /usr/include/c++/5.3.1/ios:42,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/system_error:303:3: note: candidate: bool std::operator==(const std::error_condition&, const std::error_condition&)
+   operator==(const error_condition& __lhs,
+   ^
+/usr/include/c++/5.3.1/system_error:303:3: note:   no known conversion for argument 1 from ‘const long int’ to ‘const std::error_condition&’
+/usr/include/c++/5.3.1/system_error:296:3: note: candidate: bool std::operator==(const std::error_condition&, const std::error_code&)
+   operator==(const error_condition& __lhs, const error_code& __rhs) noexcept
+   ^
+/usr/include/c++/5.3.1/system_error:296:3: note:   no known conversion for argument 1 from ‘const long int’ to ‘const std::error_condition&’
+/usr/include/c++/5.3.1/system_error:289:3: note: candidate: bool std::operator==(const std::error_code&, const std::error_condition&)
+   operator==(const error_code& __lhs, const error_condition& __rhs) noexcept
+   ^
+/usr/include/c++/5.3.1/system_error:289:3: note:   no known conversion for argument 1 from ‘const long int’ to ‘const std::error_code&’
+/usr/include/c++/5.3.1/system_error:284:3: note: candidate: bool std::operator==(const std::error_code&, const std::error_code&)
+   operator==(const error_code& __lhs, const error_code& __rhs) noexcept
+   ^
+/usr/include/c++/5.3.1/system_error:284:3: note:   no known conversion for argument 1 from ‘const long int’ to ‘const std::error_code&’
+In file included from /usr/include/c++/5.3.1/string:52:0,
+                 from /usr/include/c++/5.3.1/bits/locale_classes.h:40,
+                 from /usr/include/c++/5.3.1/bits/ios_base.h:41,
+                 from /usr/include/c++/5.3.1/ios:42,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/basic_string.h:4937:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator==(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/5.3.1/bits/basic_string.h:4937:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/string:52:0,
+                 from /usr/include/c++/5.3.1/bits/locale_classes.h:40,
+                 from /usr/include/c++/5.3.1/bits/ios_base.h:41,
+                 from /usr/include/c++/5.3.1/ios:42,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/basic_string.h:4925:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator==(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator==(const _CharT* __lhs,
+     ^
+/usr/include/c++/5.3.1/bits/basic_string.h:4925:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const _CharT*’ and ‘long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/string:52:0,
+                 from /usr/include/c++/5.3.1/bits/locale_classes.h:40,
+                 from /usr/include/c++/5.3.1/bits/ios_base.h:41,
+                 from /usr/include/c++/5.3.1/ios:42,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/basic_string.h:4911:5: note: candidate: template<class _CharT> typename __gnu_cxx::__enable_if<std::__is_char<_Tp>::__value, bool>::__type std::operator==(const std::__cxx11::basic_string<_CharT>&, const std::__cxx11::basic_string<_CharT>&)
+     operator==(const basic_string<_CharT>& __lhs,
+     ^
+/usr/include/c++/5.3.1/bits/basic_string.h:4911:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/string:52:0,
+                 from /usr/include/c++/5.3.1/bits/locale_classes.h:40,
+                 from /usr/include/c++/5.3.1/bits/ios_base.h:41,
+                 from /usr/include/c++/5.3.1/ios:42,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/basic_string.h:4904:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator==(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/5.3.1/bits/basic_string.h:4904:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/string:41:0,
+                 from /usr/include/c++/5.3.1/bits/locale_classes.h:40,
+                 from /usr/include/c++/5.3.1/bits/ios_base.h:41,
+                 from /usr/include/c++/5.3.1/ios:42,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/allocator.h:134:5: note: candidate: template<class _Tp> bool std::operator==(const std::allocator<_CharT>&, const std::allocator<_CharT>&)
+     operator==(const allocator<_Tp>&, const allocator<_Tp>&)
+     ^
+/usr/include/c++/5.3.1/bits/allocator.h:134:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::allocator<_CharT>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/string:41:0,
+                 from /usr/include/c++/5.3.1/bits/locale_classes.h:40,
+                 from /usr/include/c++/5.3.1/bits/ios_base.h:41,
+                 from /usr/include/c++/5.3.1/ios:42,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/allocator.h:128:5: note: candidate: template<class _T1, class _T2> bool std::operator==(const std::allocator<_CharT>&, const std::allocator<_T2>&)
+     operator==(const allocator<_T1>&, const allocator<_T2>&)
+     ^
+/usr/include/c++/5.3.1/bits/allocator.h:128:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::allocator<_CharT>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/5.3.1/bits/char_traits.h:39,
+                 from /usr/include/c++/5.3.1/ios:40,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stl_iterator.h:1071:5: note: candidate: template<class _Iterator> bool std::operator==(const std::move_iterator<_Iterator>&, const std::move_iterator<_Iterator>&)
+     operator==(const move_iterator<_Iterator>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stl_iterator.h:1071:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::move_iterator<_Iterator>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/5.3.1/bits/char_traits.h:39,
+                 from /usr/include/c++/5.3.1/ios:40,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stl_iterator.h:1065:5: note: candidate: template<class _IteratorL, class _IteratorR> bool std::operator==(const std::move_iterator<_Iterator>&, const std::move_iterator<_IteratorR>&)
+     operator==(const move_iterator<_IteratorL>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stl_iterator.h:1065:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::move_iterator<_Iterator>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/5.3.1/bits/char_traits.h:39,
+                 from /usr/include/c++/5.3.1/ios:40,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stl_iterator.h:342:5: note: candidate: template<class _IteratorL, class _IteratorR> bool std::operator==(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator==(const reverse_iterator<_IteratorL>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stl_iterator.h:342:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/5.3.1/bits/char_traits.h:39,
+                 from /usr/include/c++/5.3.1/ios:40,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stl_iterator.h:292:5: note: candidate: template<class _Iterator> bool std::operator==(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)
+     operator==(const reverse_iterator<_Iterator>& __x,
+     ^
+/usr/include/c++/5.3.1/bits/stl_iterator.h:292:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/5.3.1/bits/char_traits.h:39,
+                 from /usr/include/c++/5.3.1/ios:40,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/stl_pair.h:214:5: note: candidate: template<class _T1, class _T2> constexpr bool std::operator==(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)
+     operator==(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+     ^
+/usr/include/c++/5.3.1/bits/stl_pair.h:214:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::pair<_T1, _T2>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+In file included from /usr/include/c++/5.3.1/iosfwd:40:0,
+                 from /usr/include/c++/5.3.1/ios:38,
+                 from /usr/include/c++/5.3.1/ostream:38,
+                 from /usr/include/gtest/gtest.h:55,
+                 from ../src/main.cpp:8:
+/usr/include/c++/5.3.1/bits/postypes.h:216:5: note: candidate: template<class _StateT> bool std::operator==(const std::fpos<_StateT>&, const std::fpos<_StateT>&)
+     operator==(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+     ^
+/usr/include/c++/5.3.1/bits/postypes.h:216:5: note:   template argument deduction/substitution failed:
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h:1448:16: note:   mismatched types ‘const std::fpos<_StateT>’ and ‘const long int’
+   if (expected == actual) {
+                ^
+make: *** [src/main.o] Error 1
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+18:35:28 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+18:36:52 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
 make all 
 make: Nothing to be done for 'all'.
+18:37:34 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_active_Test::TestBody()’:
+../src/main.cpp:30:28: error: ‘ASSERT_NEQ’ was not declared in this scope
+    ASSERT_NEQ(NULL, p.get());
+                            ^
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+18:37:52 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h: In instantiation of ‘testing::AssertionResult testing::internal::CmpHelperNE(const char*, const char*, const T1&, const T2&) [with T1 = long int; T2 = FunctionTracer*]’:
+../src/main.cpp:30:4:   required from here
+/usr/include/gtest/gtest.h:1577:1: error: ISO C++ forbids comparison between pointer and integer [-fpermissive]
+ GTEST_IMPL_CMP_HELPER_(NE, !=);
+ ^
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+18:39:42 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+18:52:59 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+Finished building: ../src/FunctionTracer.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+18:53:19 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:13:0:
+../src/main.cpp: In member function ‘virtual void House_TraceLevel2_secondIsInactive_Test::TestBody()’:
+../src/FunctionTracer.h:90:29: error: redeclaration of ‘int ThreadId’
+                         int ThreadId = getpid(); \
+                             ^
+../src/main.cpp:36:4: note: in expansion of macro ‘FUNCTION_TRACE_TEST’
+    FUNCTION_TRACE_TEST(2)
+    ^
+../src/FunctionTracer.h:83:29: note: ‘int ThreadId’ previously declared here
+                         int ThreadId = getpid(); \
+                             ^
+../src/main.cpp:35:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:91:29: error: redeclaration of ‘int Counter’
+                         int Counter = FunctionTraceCounter.get(ThreadId); \
+                             ^
+../src/main.cpp:36:4: note: in expansion of macro ‘FUNCTION_TRACE_TEST’
+    FUNCTION_TRACE_TEST(2)
+    ^
+../src/FunctionTracer.h:84:29: note: ‘int Counter’ previously declared here
+                         int Counter = FunctionTraceCounter.get(ThreadId); \
+                             ^
+../src/main.cpp:35:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+18:53:47 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+Finished building: ../src/FunctionTracer.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:13:0:
+../src/main.cpp: In member function ‘virtual void House_TraceLevel2_secondIsInactive_Test::TestBody()’:
+../src/FunctionTracer.h:90:29: warning: unused variable ‘ThreadId2’ [-Wunused-variable]
+                         int ThreadId ## ARG = getpid(); \
+                             ^
+../src/main.cpp:36:4: note: in expansion of macro ‘FUNCTION_TRACE_TEST’
+    FUNCTION_TRACE_TEST(2)
+    ^
+../src/FunctionTracer.h:91:29: warning: unused variable ‘Counter2’ [-Wunused-variable]
+                         int Counter ## ARG = FunctionTraceCounter.get(ThreadId); \
+                             ^
+../src/main.cpp:36:4: note: in expansion of macro ‘FUNCTION_TRACE_TEST’
+    FUNCTION_TRACE_TEST(2)
+    ^
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+18:54:25 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+Finished building: ../src/FunctionTracer.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+18:54:49 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+19:00:10 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+19:03:35 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+19:16:55 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+19:18:07 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+19:19:51 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+19:25:25 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+../src/FunctionTracer.cpp: In member function ‘void FunctionTracer::Constructor()’:
+../src/FunctionTracer.cpp:18:35: error: ‘Counter’ was not declared in this scope
+    sIndent = std::string((size_t)(Counter*2), '-');
+                                   ^
+make: *** [src/FunctionTracer.o] Error 1
+src/subdir.mk:21: recipe for target 'src/FunctionTracer.o' failed
+19:34:08 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+In file included from ../src/FunctionTracer.cpp:9:0:
+../src/FunctionTracer.h: In constructor ‘FunctionTracer::FunctionTracer(std::__cxx11::string, int, int)’:
+../src/FunctionTracer.h:76:11: warning: ‘FunctionTracer::_Counter’ will be initialized after [-Wreorder]
+       int _Counter;
+           ^
+../src/FunctionTracer.h:75:11: warning:   ‘int FunctionTracer::_ThreadId’ [-Wreorder]
+       int _ThreadId;
+           ^
+../src/FunctionTracer.h:58:7: warning:   when initialized here [-Wreorder]
+       FunctionTracer(std::string name, int ThreadId, int Counter) :
+       ^
+../src/FunctionTracer.cpp: In member function ‘void FunctionTracer::Constructor()’:
+../src/FunctionTracer.cpp:19:128: error: ‘Counter’ was not declared in this scope
+    std::cout << _sIndent << "FunctionTracer Entry:" << _sFunctionName << " - ThreadId = " << _ThreadId << " - CallDepth = " << Counter << std::endl;
+                                                                                                                                ^
+../src/FunctionTracer.cpp: In member function ‘void FunctionTracer::Destructor()’:
+../src/FunctionTracer.cpp:42:20: error: ‘sIndent’ was not declared in this scope
+       std::cout << sIndent << "FunctionTracer Exit :" << _sFunctionName << " - ThreadId = " << _ThreadId << " - CallDepth = " << Counter << std::endl;
+                    ^
+../src/FunctionTracer.cpp:48:29: error: ‘ThreadId’ was not declared in this scope
+    FunctionTraceCounter.set(ThreadId, Counter);
+                             ^
+src/subdir.mk:21: recipe for target 'src/FunctionTracer.o' failed
+make: *** [src/FunctionTracer.o] Error 1
+19:36:13 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+../src/FunctionTracer.cpp: In member function ‘void FunctionTracer::Constructor()’:
+../src/FunctionTracer.cpp:19:128: error: ‘Counter’ was not declared in this scope
+    std::cout << _sIndent << "FunctionTracer Entry:" << _sFunctionName << " - ThreadId = " << _ThreadId << " - CallDepth = " << Counter << std::endl;
+                                                                                                                                ^
+../src/FunctionTracer.cpp: In member function ‘void FunctionTracer::Destructor()’:
+../src/FunctionTracer.cpp:42:20: error: ‘sIndent’ was not declared in this scope
+       std::cout << sIndent << "FunctionTracer Exit :" << _sFunctionName << " - ThreadId = " << _ThreadId << " - CallDepth = " << Counter << std::endl;
+                    ^
+../src/FunctionTracer.cpp:48:29: error: ‘ThreadId’ was not declared in this scope
+    FunctionTraceCounter.set(ThreadId, Counter);
+                             ^
+src/subdir.mk:21: recipe for target 'src/FunctionTracer.o' failed
+make: *** [src/FunctionTracer.o] Error 1
+19:36:32 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+../src/FunctionTracer.cpp: In member function ‘void FunctionTracer::Destructor()’:
+../src/FunctionTracer.cpp:42:20: error: ‘sIndent’ was not declared in this scope
+       std::cout << sIndent << "FunctionTracer Exit :" << _sFunctionName << " - ThreadId = " << _ThreadId << " - CallDepth = " << Counter << std::endl;
+                    ^
+../src/FunctionTracer.cpp:48:29: error: ‘ThreadId’ was not declared in this scope
+    FunctionTraceCounter.set(ThreadId, Counter);
+                             ^
+src/subdir.mk:21: recipe for target 'src/FunctionTracer.o' failed
+make: *** [src/FunctionTracer.o] Error 1
+19:36:45 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+../src/FunctionTracer.cpp: In member function ‘void FunctionTracer::Destructor()’:
+../src/FunctionTracer.cpp:48:29: error: ‘ThreadId’ was not declared in this scope
+    FunctionTraceCounter.set(ThreadId, Counter);
+                             ^
+src/subdir.mk:21: recipe for target 'src/FunctionTracer.o' failed
+make: *** [src/FunctionTracer.o] Error 1
+19:37:08 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+Finished building: ../src/FunctionTracer.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+19:37:35 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+../src/FunctionTracer.cpp: In member function ‘void FunctionTracer::Destructor()’:
+../src/FunctionTracer.cpp:40:8: error: redeclaration of ‘int Counter’
+    int Counter = FunctionTraceCounter.get(_ThreadId);
+        ^
+../src/FunctionTracer.cpp:30:8: note: ‘int Counter’ previously declared here
+    int Counter = FunctionTraceCounter.get(_ThreadId);
+        ^
+src/subdir.mk:21: recipe for target 'src/FunctionTracer.o' failed
+make: *** [src/FunctionTracer.o] Error 1
+19:37:57 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+../src/FunctionTracer.cpp: In member function ‘void FunctionTracer::Destructor()’:
+../src/FunctionTracer.cpp:39:128: error: ‘Counter’ was not declared in this scope
+    std::cout << _sIndent << "FunctionTracer Exit :" << _sFunctionName << " - ThreadId = " << _ThreadId << " - CallDepth = " << Counter << std::endl;
+                                                                                                                                ^
+src/subdir.mk:21: recipe for target 'src/FunctionTracer.o' failed
+make: *** [src/FunctionTracer.o] Error 1
+19:38:14 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+../src/FunctionTracer.cpp: In member function ‘void FunctionTracer::Destructor()’:
+../src/FunctionTracer.cpp:43:4: error: ‘Counter’ was not declared in this scope
+    Counter--;
+    ^
+make: *** [src/FunctionTracer.o] Error 1
+src/subdir.mk:21: recipe for target 'src/FunctionTracer.o' failed
+19:38:30 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+../src/FunctionTracer.cpp: In member function ‘void FunctionTracer::Destructor()’:
+../src/FunctionTracer.cpp:43:4: error: ‘Counter’ was not declared in this scope
+    Counter--;
+    ^
+../src/FunctionTracer.cpp:44:40: error: ‘__Counter’ was not declared in this scope
+    FunctionTraceCounter.set(_ThreadId, __Counter);
+                                        ^
+src/subdir.mk:21: recipe for target 'src/FunctionTracer.o' failed
+make: *** [src/FunctionTracer.o] Error 1
+19:38:40 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+../src/FunctionTracer.cpp: In member function ‘void FunctionTracer::Destructor()’:
+../src/FunctionTracer.cpp:44:40: error: ‘__Counter’ was not declared in this scope
+    FunctionTraceCounter.set(_ThreadId, __Counter);
+                                        ^
+src/subdir.mk:21: recipe for target 'src/FunctionTracer.o' failed
+make: *** [src/FunctionTracer.o] Error 1
+19:38:49 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+Finished building: ../src/FunctionTracer.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+22:11:45 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+../src/FunctionTracer.cpp: In member function ‘void FunctionTracer::Constructor()’:
+../src/FunctionTracer.cpp:19:29: error: ‘ThreadId’ was not declared in this scope
+    FunctionTraceCounter.set(ThreadId, _Counter);
+                             ^
+src/subdir.mk:21: recipe for target 'src/FunctionTracer.o' failed
+make: *** [src/FunctionTracer.o] Error 1
+22:12:02 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+Finished building: ../src/FunctionTracer.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+22:17:15 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+Finished building: ../src/FunctionTracer.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+22:21:38 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+22:24:14 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+22:26:19 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+Finished building: ../src/FunctionTracer.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+22:27:47 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+Finished building: ../src/FunctionTracer.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from /usr/include/gtest/gtest.h:58:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_CpuConsumption_CpuTime_Test::TestBody()’:
+../src/main.cpp:73:20: error: ‘_Cpu_Time_Used_ms’ was not declared in this scope
+    ASSERT_TRUE(1 < _Cpu_Time_Used_ms);
+                    ^
+../src/main.cpp:74:21: error: ‘_Clock_Time_Used_ms’ was not declared in this scope
+    ASSERT_TRUE(5 >= _Clock_Time_Used_ms);
+                     ^
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+22:28:19 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+22:29:58 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+22:31:16 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+../src/FunctionTracer.cpp: In member function ‘void FunctionTracer::Destructor()’:
+../src/FunctionTracer.cpp:39:87: error: expected ‘;’ before ‘)’ token
+    _Cpu_Time_Used_ms = ( Clock_Time.tv_nsec - _Entry_Clock_Time.tv_nsec) / 1000 / 1000);
+                                                                                       ^
+../src/FunctionTracer.cpp:40:85: error: expected ‘;’ before ‘)’ token
+    _Clock_Time_Used_ms = ( Cpu_Time.tv_nsec - _Entry_Cpu_Time.tv_nsec) / 1000 / 1000);
+                                                                                     ^
+src/subdir.mk:21: recipe for target 'src/FunctionTracer.o' failed
+make: *** [src/FunctionTracer.o] Error 1
+22:31:26 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+Finished building: ../src/FunctionTracer.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+22:32:15 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+Finished building: ../src/FunctionTracer.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+22:33:48 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_CpuConsumption_CpuTime_Test::TestBody()’:
+../src/main.cpp:81:36: warning: unused variable ‘u’ [-Wunused-variable]
+    for(i = 0; i<1000000; i++) {int u = i*i;}
+                                    ^
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+22:34:07 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+22:34:23 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+22:38:23 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from /usr/include/gtest/gtest.h:58:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_UpDown_Counter0_Test::TestBody()’:
+../src/main.cpp:67:46: error: ‘ThreadId’ was not declared in this scope
+    ASSERT_TRUE(0 == FunctionTraceCounter.get(ThreadId));
+                                              ^
+In file included from /usr/include/gtest/gtest.h:1929:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_Delay_ClockTime_Test::TestBody()’:
+../src/main.cpp:77:14: error: ‘p’ was not declared in this scope
+    ASSERT_LE(p->_Cpu_Time_Used_ms, 1);
+              ^
+../src/main.cpp:78:14: error: ‘p’ was not declared in this scope
+    ASSERT_GE(p->_Clock_Time_Used_ms, 5);
+              ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_CpuConsumption_CpuTime_Test::TestBody()’:
+../src/main.cpp:89:14: error: ‘p’ was not declared in this scope
+    ASSERT_GE(p->_Cpu_Time_Used_ms, 1);
+              ^
+../src/main.cpp:90:14: error: ‘p’ was not declared in this scope
+    ASSERT_GE(p->_Clock_Time_Used_ms, 5);
+              ^
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+22:39:31 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from /usr/include/gtest/gtest.h:1929:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_Delay_ClockTime_Test::TestBody()’:
+../src/main.cpp:77:14: error: ‘p’ was not declared in this scope
+    ASSERT_LE(p->_Cpu_Time_Used_ms, 1);
+              ^
+../src/main.cpp:78:14: error: ‘p’ was not declared in this scope
+    ASSERT_GE(p->_Clock_Time_Used_ms, 5);
+              ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_CpuConsumption_CpuTime_Test::TestBody()’:
+../src/main.cpp:89:14: error: ‘p’ was not declared in this scope
+    ASSERT_GE(p->_Cpu_Time_Used_ms, 1);
+              ^
+../src/main.cpp:90:14: error: ‘p’ was not declared in this scope
+    ASSERT_GE(p->_Clock_Time_Used_ms, 5);
+              ^
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+22:42:01 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+Finished building: ../src/FunctionTracer.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+22:42:39 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+22:43:06 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+22:52:18 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+In file included from ../src/FunctionTracer.cpp:9:0:
+../src/FunctionTracer.h: In constructor ‘Counter::Counter()’:
+../src/FunctionTracer.h:88:21: error: ‘FunctionTraceCounter’ was not declared in this scope
+          _Counter = FunctionTraceCounter.get(ThreadId);
+                     ^
+../src/FunctionTracer.h:88:46: error: ‘ThreadId’ was not declared in this scope
+          _Counter = FunctionTraceCounter.get(ThreadId);
+                                              ^
+../src/FunctionTracer.h:90:35: error: ‘_ThreadId’ was not declared in this scope
+          FunctionTraceCounter.set(_ThreadId, _Counter);
+                                   ^
+../src/FunctionTracer.h: In destructor ‘Counter::~Counter()’:
+../src/FunctionTracer.h:94:10: error: ‘FunctionTraceCounter’ was not declared in this scope
+          FunctionTraceCounter.set(_ThreadId, _Counter);
+          ^
+../src/FunctionTracer.h:94:35: error: ‘_ThreadId’ was not declared in this scope
+          FunctionTraceCounter.set(_ThreadId, _Counter);
+                                   ^
+make: *** [src/FunctionTracer.o] Error 1
+src/subdir.mk:21: recipe for target 'src/FunctionTracer.o' failed
+22:53:29 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+../src/FunctionTracer.cpp: In constructor ‘Counter::Counter()’:
+../src/FunctionTracer.cpp:46:40: error: ‘ThreadId’ was not declared in this scope
+    _Counter = FunctionTraceCounter.get(ThreadId);
+                                        ^
+../src/FunctionTracer.cpp:48:29: error: ‘_ThreadId’ was not declared in this scope
+    FunctionTraceCounter.set(_ThreadId, _Counter);
+                             ^
+../src/FunctionTracer.cpp: In destructor ‘Counter::~Counter()’:
+../src/FunctionTracer.cpp:53:29: error: ‘_ThreadId’ was not declared in this scope
+    FunctionTraceCounter.set(_ThreadId, _Counter);
+                             ^
+src/subdir.mk:21: recipe for target 'src/FunctionTracer.o' failed
+make: *** [src/FunctionTracer.o] Error 1
+21:35:14 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+Finished building: ../src/FunctionTracer.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:13:0:
+../src/main.cpp: In member function ‘virtual void House_TraceLevel0_inactive_Test::TestBody()’:
+../src/FunctionTracer.h:102:37: error: ‘class Counter’ has no member named ‘GetCounter’
+                         if (counter.GetCounter() < FunctionTrace_TraceLevel){ \
+                                     ^
+../src/main.cpp:23:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:59: error: expected primary-expression before ‘(’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                           ^
+../src/main.cpp:23:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:110: error: expected primary-expression before ‘)’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                                                                              ^
+../src/main.cpp:23:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_active_Test::TestBody()’:
+../src/FunctionTracer.h:102:37: error: ‘class Counter’ has no member named ‘GetCounter’
+                         if (counter.GetCounter() < FunctionTrace_TraceLevel){ \
+                                     ^
+../src/main.cpp:29:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:59: error: expected primary-expression before ‘(’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                           ^
+../src/main.cpp:29:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:110: error: expected primary-expression before ‘)’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                                                                              ^
+../src/main.cpp:29:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_Up_Counter1_Test::TestBody()’:
+../src/FunctionTracer.h:102:37: error: ‘class Counter’ has no member named ‘GetCounter’
+                         if (counter.GetCounter() < FunctionTrace_TraceLevel){ \
+                                     ^
+../src/main.cpp:35:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:59: error: expected primary-expression before ‘(’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                           ^
+../src/main.cpp:35:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:110: error: expected primary-expression before ‘)’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                                                                              ^
+../src/main.cpp:35:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_secondIsInactive_Test::TestBody()’:
+../src/FunctionTracer.h:102:37: error: ‘class Counter’ has no member named ‘GetCounter’
+                         if (counter.GetCounter() < FunctionTrace_TraceLevel){ \
+                                     ^
+../src/main.cpp:41:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:59: error: expected primary-expression before ‘(’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                           ^
+../src/main.cpp:41:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:110: error: expected primary-expression before ‘)’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                                                                              ^
+../src/main.cpp:41:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_UpUp_Counter1_Test::TestBody()’:
+../src/FunctionTracer.h:102:37: error: ‘class Counter’ has no member named ‘GetCounter’
+                         if (counter.GetCounter() < FunctionTrace_TraceLevel){ \
+                                     ^
+../src/main.cpp:49:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:59: error: expected primary-expression before ‘(’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                           ^
+../src/main.cpp:49:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:110: error: expected primary-expression before ‘)’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                                                                              ^
+../src/main.cpp:49:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel2_UpUp_Counter2_Test::TestBody()’:
+../src/FunctionTracer.h:102:37: error: ‘class Counter’ has no member named ‘GetCounter’
+                         if (counter.GetCounter() < FunctionTrace_TraceLevel){ \
+                                     ^
+../src/main.cpp:56:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:59: error: expected primary-expression before ‘(’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                           ^
+../src/main.cpp:56:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:110: error: expected primary-expression before ‘)’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                                                                              ^
+../src/main.cpp:56:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_UpDown_Counter0_Test::TestBody()’:
+../src/FunctionTracer.h:102:37: error: ‘class Counter’ has no member named ‘GetCounter’
+                         if (counter.GetCounter() < FunctionTrace_TraceLevel){ \
+                                     ^
+../src/main.cpp:64:7: note: in expansion of macro ‘FUNCTION_TRACE’
+       FUNCTION_TRACE
+       ^
+../src/FunctionTracer.h:103:59: error: expected primary-expression before ‘(’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                           ^
+../src/main.cpp:64:7: note: in expansion of macro ‘FUNCTION_TRACE’
+       FUNCTION_TRACE
+       ^
+../src/FunctionTracer.h:103:110: error: expected primary-expression before ‘)’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                                                                              ^
+../src/main.cpp:64:7: note: in expansion of macro ‘FUNCTION_TRACE’
+       FUNCTION_TRACE
+       ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_Delay_ClockTime_Test::TestBody()’:
+../src/FunctionTracer.h:102:37: error: ‘class Counter’ has no member named ‘GetCounter’
+                         if (counter.GetCounter() < FunctionTrace_TraceLevel){ \
+                                     ^
+../src/main.cpp:72:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:59: error: expected primary-expression before ‘(’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                           ^
+../src/main.cpp:72:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:110: error: expected primary-expression before ‘)’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                                                                              ^
+../src/main.cpp:72:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_CpuConsumption_CpuTime_Test::TestBody()’:
+../src/FunctionTracer.h:102:37: error: ‘class Counter’ has no member named ‘GetCounter’
+                         if (counter.GetCounter() < FunctionTrace_TraceLevel){ \
+                                     ^
+../src/main.cpp:81:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:59: error: expected primary-expression before ‘(’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                           ^
+../src/main.cpp:81:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:110: error: expected primary-expression before ‘)’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                                                                              ^
+../src/main.cpp:81:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+make: *** [src/main.o] Error 1
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+21:36:01 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+Finished building: ../src/FunctionTracer.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:13:0:
+../src/main.cpp: In member function ‘virtual void House_TraceLevel0_inactive_Test::TestBody()’:
+../src/FunctionTracer.h:103:59: error: expected primary-expression before ‘(’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                           ^
+../src/main.cpp:23:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:110: error: expected primary-expression before ‘)’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                                                                              ^
+../src/main.cpp:23:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_active_Test::TestBody()’:
+../src/FunctionTracer.h:103:59: error: expected primary-expression before ‘(’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                           ^
+../src/main.cpp:29:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:110: error: expected primary-expression before ‘)’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                                                                              ^
+../src/main.cpp:29:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_Up_Counter1_Test::TestBody()’:
+../src/FunctionTracer.h:103:59: error: expected primary-expression before ‘(’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                           ^
+../src/main.cpp:35:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:110: error: expected primary-expression before ‘)’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                                                                              ^
+../src/main.cpp:35:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_secondIsInactive_Test::TestBody()’:
+../src/FunctionTracer.h:103:59: error: expected primary-expression before ‘(’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                           ^
+../src/main.cpp:41:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:110: error: expected primary-expression before ‘)’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                                                                              ^
+../src/main.cpp:41:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_UpUp_Counter1_Test::TestBody()’:
+../src/FunctionTracer.h:103:59: error: expected primary-expression before ‘(’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                           ^
+../src/main.cpp:49:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:110: error: expected primary-expression before ‘)’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                                                                              ^
+../src/main.cpp:49:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel2_UpUp_Counter2_Test::TestBody()’:
+../src/FunctionTracer.h:103:59: error: expected primary-expression before ‘(’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                           ^
+../src/main.cpp:56:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:110: error: expected primary-expression before ‘)’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                                                                              ^
+../src/main.cpp:56:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_UpDown_Counter0_Test::TestBody()’:
+../src/FunctionTracer.h:103:59: error: expected primary-expression before ‘(’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                           ^
+../src/main.cpp:64:7: note: in expansion of macro ‘FUNCTION_TRACE’
+       FUNCTION_TRACE
+       ^
+../src/FunctionTracer.h:103:110: error: expected primary-expression before ‘)’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                                                                              ^
+../src/main.cpp:64:7: note: in expansion of macro ‘FUNCTION_TRACE’
+       FUNCTION_TRACE
+       ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_Delay_ClockTime_Test::TestBody()’:
+../src/FunctionTracer.h:103:59: error: expected primary-expression before ‘(’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                           ^
+../src/main.cpp:72:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:110: error: expected primary-expression before ‘)’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                                                                              ^
+../src/main.cpp:72:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_CpuConsumption_CpuTime_Test::TestBody()’:
+../src/FunctionTracer.h:103:59: error: expected primary-expression before ‘(’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                           ^
+../src/main.cpp:81:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+../src/FunctionTracer.h:103:110: error: expected primary-expression before ‘)’ token
+                            p = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, ThreadId, Counter)); \
+                                                                                                              ^
+../src/main.cpp:81:4: note: in expansion of macro ‘FUNCTION_TRACE’
+    FUNCTION_TRACE
+    ^
+make: *** [src/main.o] Error 1
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+21:38:34 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+In file included from ../src/FunctionTracer.cpp:9:0:
+../src/FunctionTracer.h:103:25: error: expected unqualified-id before ‘if’
+                         if (CounterValue < FunctionTrace_TraceLevel){ \
+                         ^
+src/subdir.mk:21: recipe for target 'src/FunctionTracer.o' failed
+make: *** [src/FunctionTracer.o] Error 1
+21:38:52 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+Finished building: ../src/FunctionTracer.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+21:44:38 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+Finished building: ../src/FunctionTracer.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from /usr/include/gtest/gtest.h:1929:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_Up_Counter1_Test::TestBody()’:
+../src/main.cpp:36:42: error: ‘ThreadId’ was not declared in this scope
+    ASSERT_EQ(1, FunctionTraceCounter.get(ThreadId));
+                                          ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_UpUp_Counter1_Test::TestBody()’:
+../src/main.cpp:51:42: error: ‘ThreadId’ was not declared in this scope
+    ASSERT_EQ(1, FunctionTraceCounter.get(ThreadId));
+                                          ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel2_UpUp_Counter2_Test::TestBody()’:
+../src/main.cpp:58:42: error: ‘ThreadId’ was not declared in this scope
+    ASSERT_EQ(2, FunctionTraceCounter.get(ThreadId));
+                                          ^
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+21:47:07 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+21:54:19 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+Finished building: ../src/FunctionTracer.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+21:56:18 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+21:58:04 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+Finished building: ../src/FunctionTracer.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+21:59:47 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+22:00:37 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+22:01:24 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+21:20:41 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_SmallCpuConsumption_CpuTime_Test::TestBody()’:
+../src/main.cpp:93:30: error: expected ‘)’ before ‘;’ token
+    for(i = 0; i<(1000*1000*10; i++) {int u = i*i; u=u;}
+                              ^
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+21:22:19 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+21:25:22 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+21:27:00 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: FunctionTracer_Test
+Invoking: GCC C++ Linker
+g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lgtest_main -lgmock
+Finished building target: FunctionTracer_Test
+ 
+21:37:39 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+make all 
+Building file: ../src/FunctionTracer.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/FunctionTracer.d" -MT"src/FunctionTracer.o" -o "src/FunctionTracer.o" "../src/FunctionTracer.cpp"
+Finished building: ../src/FunctionTracer.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from /usr/include/gtest/gtest.h:1929:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp: In member function ‘virtual void House_TraceLevel0_inactive_Test::TestBody()’:
+../src/main.cpp:24:20: error: ‘p’ was not declared in this scope
+    ASSERT_EQ(NULL, p.get());
+                    ^
+In file included from /usr/include/gtest/gtest.h:58:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_active_Test::TestBody()’:
+../src/main.cpp:30:24: error: ‘p’ was not declared in this scope
+    ASSERT_TRUE(NULL != p.get());
+                        ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_secondIsInactive_Test::TestBody()’:
+../src/main.cpp:43:24: error: ‘p’ was not declared in this scope
+    ASSERT_TRUE(NULL != p.get());
+                        ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_SmallDelay_ClockTime_Test::TestBody()’:
+../src/main.cpp:75:4: error: ‘p’ was not declared in this scope
+    p->Destructor();
+    ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_LargeDelay_ClockTime_Test::TestBody()’:
+../src/main.cpp:84:4: error: ‘p’ was not declared in this scope
+    p->Destructor();
+    ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_SmallCpuConsumption_CpuTime_Test::TestBody()’:
+../src/main.cpp:94:4: error: ‘p’ was not declared in this scope
+    p->Destructor();
+    ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel1_LargeCpuConsumption_CpuTime_Test::TestBody()’:
+../src/main.cpp:104:4: error: ‘p’ was not declared in this scope
+    p->Destructor();
+    ^
+../src/main.cpp: In member function ‘virtual void House_TraceLevel2_TwoFunction_InnerShorterThanOuter_Test::TestBody()’:
+../src/main.cpp:117:4: error: ‘p’ was not declared in this scope
+    p->Destructor();
+    ^
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               

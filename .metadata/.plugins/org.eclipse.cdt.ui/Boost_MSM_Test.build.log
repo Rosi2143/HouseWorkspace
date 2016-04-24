@@ -1,0 +1,15 @@
+11:00:13 **** Incremental Build of configuration Debug for project Boost_MSM_Test ****
+make all 
+Building file: ../src/Boost_MSM_Test.cpp
+Invoking: GCC C++ Compiler
+g++ -I/usr/include/boost -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Boost_MSM_Test.d" -MT"src/Boost_MSM_Test.o" -o "src/Boost_MSM_Test.o" "../src/Boost_MSM_Test.cpp"
+Finished building: ../src/Boost_MSM_Test.cpp
+ 
+Building target: Boost_MSM_Test
+Invoking: GCC C++ Linker
+g++  -o "Boost_MSM_Test"  ./src/Boost_MSM_Test.o   
+Finished building target: Boost_MSM_Test
+ 
+
+11:04:13 Build Finished (took 4m:817ms)
+

@@ -1,0 +1,13 @@
+//============================================================================
+// Name        : FunctionTracer.cpp
+// Author      : Michael Rossner
+// Version     :
+// Copyright   : LGPL2
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include "FunctionTace.h"
+
+guarded_map<int, int> FunctionTraceCounter;
+int FunctionTrace_TraceLevel = 10;
+

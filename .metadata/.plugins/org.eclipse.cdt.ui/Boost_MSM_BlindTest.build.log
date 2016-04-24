@@ -1,0 +1,37 @@
+18:19:58 **** Incremental Build of configuration Debug for project Boost_MSM_BlindTest ****
+make all 
+Building file: ../src/Boost_MSM_BlindTest.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Boost_MSM_BlindTest.d" -MT"src/Boost_MSM_BlindTest.o" -o "src/Boost_MSM_BlindTest.o" "../src/Boost_MSM_BlindTest.cpp"
+In file included from /usr/include/boost/msm/front/euml/guard_grammar.hpp:16:0,
+                 from /usr/include/boost/msm/front/euml/euml.hpp:16,
+                 from ../src/Boost_MSM_Blinds.h:19,
+                 from ../src/Boost_MSM_BlindTest.cpp:12:
+../src/Boost_MSM_Blinds.h:47:34: error: ‘mpl’ was not declared in this scope
+ BOOST_MSM_EUML_DECLARE_ATTRIBUTE(mpl::string,m_name)
+                                  ^
+../src/Boost_MSM_Blinds.h:47:34: note: suggested alternative:
+In file included from /usr/include/boost/mpl/long_fwd.hpp:17:0,
+                 from /usr/include/boost/mpl/long.hpp:17,
+                 from /usr/include/boost/proto/proto_fwd.hpp:24,
+                 from /usr/include/boost/phoenix/core/limits.hpp:26,
+                 from /usr/include/boost/phoenix/core.hpp:11,
+                 from /usr/include/boost/phoenix/phoenix.hpp:11,
+                 from ../src/Boost_MSM_Blinds.h:14,
+                 from ../src/Boost_MSM_BlindTest.cpp:12:
+/usr/include/boost/mpl/aux_/adl_barrier.hpp:34:33: note:   ‘boost::mpl’
+ namespace boost { namespace mpl { using namespace BOOST_MPL_AUX_ADL_BARRIER_NAMESPACE; 
+                                 ^
+In file included from /usr/include/boost/msm/front/euml/guard_grammar.hpp:16:0,
+                 from /usr/include/boost/msm/front/euml/euml.hpp:16,
+                 from ../src/Boost_MSM_Blinds.h:19,
+                 from ../src/Boost_MSM_BlindTest.cpp:12:
+../src/Boost_MSM_Blinds.h:47:1: error: template argument 2 is invalid
+ BOOST_MSM_EUML_DECLARE_ATTRIBUTE(mpl::string,m_name)
+ ^
+src/subdir.mk:18: recipe for target 'src/Boost_MSM_BlindTest.o' failed
+make: *** [src/Boost_MSM_BlindTest.o] Terminated
+Command canceled
+
+18:20:59 Build Cancelled (took 1m:905ms)
+

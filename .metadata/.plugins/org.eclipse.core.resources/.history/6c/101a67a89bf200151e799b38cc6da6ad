@@ -1,0 +1,57 @@
+// Copyright 2010 Christophe Henry
+// henry UNDERSCORE christophe AT hotmail DOT com
+// This is an extended version of the state machine available in the boost::mpl library
+// Distributed under the same license as the original.
+// Copyright for the original version:
+// Copyright 2005 David Abrahams and Aleksey Gurtovoy. Distributed
+// under the Boost Software License, Version 1.0. (See accompanying
+// file LICENSE_1_0.txt or copy at
+// http://www.boost.org/LICENSE_1_0.txt)
+
+// statechart: http://www.boost.org/doc/libs/1_60_0/libs/msm/doc/images/SimpleTutorial.jpg
+#include "Boost_MSM_SM.h"
+
+using namespace PlayerSm;
+
+void test()
+{
+   // statechart: http://www.boost.org/doc/libs/1_60_0/libs/msm/doc/images/SimpleTutorial.jpg
+   player p;
+   // needed to start the highest-level SM. This will call on_entry and mark the start of the SM
+   p.start();
+   // go to Open, call on_exit on Empty, then action, then on_entry on Open
+   p.process_event(open_close);
+   pstate(p);
+   p.process_event(open_close);
+   pstate(p);
+   // will be rejected, wrong disk type
+   p.process_event(cd_detected_event("louie, louie", PlayerSm::DISK_DVD));
+   pstate(p);
+   p.process_event(cd_detected_event("louie, louie", PlayerSm::DISK_CD));
+   pstate(p);
+   // no need to call play as the previous event does it in its action method
+   //p.process_event(play);
+
+   // at this point, Play is active
+   p.process_event(PlayerSm::pause);
+   pstate(p);
+   // go back to Playing
+   p.process_event(end_pause);
+   pstate(p);
+   p.process_event(PlayerSm::pause);
+   pstate(p);
+   p.process_event(stop);
+   pstate(p);
+   // event leading to the same state
+   // no action method called as none is defined in the transition table
+   p.process_event(stop);
+   pstate(p);
+   // test call to no_transition
+   p.process_event(PlayerSm::pause);
+   pstate(p);
+}
+
+int main() {
+test();
+return 0;
+}

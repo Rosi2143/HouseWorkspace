@@ -9,3 +9,18 @@
 
 #include "BlindStates.h"
 
+sc::result BlindMovingUp::react( const EvRunTimer & )
+{
+//  int& re = context< Blinds >().RunTimer();
+  context< Blinds >().IncreaseRunTimer();
+//  int& re2 = context< Blinds >().RunTimer();
+  return discard_event();
+}
+
+sc::result BlindMovingDown::react( const EvRunTimer & )
+{
+//  int& re = context< Blinds >().RunTimer();
+  context< Blinds >().DecreaseRunTimer();
+//  int& re2 = context< Blinds >().RunTimer();
+  return discard_event();
+}

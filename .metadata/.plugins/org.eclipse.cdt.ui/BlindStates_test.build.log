@@ -1,6 +1,15 @@
-21:48:51 **** Build of configuration Debug for project BlindStates_test ****
+21:41:23 **** Incremental Build of configuration Debug for project BlindStates_test ****
 make all 
-make: Nothing to be done for 'all'.
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I../BlindStates_test/include -I"/home/micha/workspace/BlindStates_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:14:0:
+/home/micha/workspace/House/include/BlindStates.h: In member function ‘virtual int Blinds::IncreaseRunTimer() const’:
+/home/micha/workspace/House/include/BlindStates.h:118:26: error: increment of member ‘Blinds::_RunTimer’ in read-only object
+          return _RunTimer++;
+                          ^
+src/subdir.mk:21: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
 
-21:48:51 Build Finished (took 151ms)
+21:41:27 Build Finished (took 4s.295ms)
 

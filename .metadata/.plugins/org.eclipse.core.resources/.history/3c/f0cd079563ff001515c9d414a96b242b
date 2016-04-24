@@ -1,0 +1,95 @@
+/*
+ * FunctionTace.h
+ *
+ *  Created on: Apr 10, 2016
+ *      Author: micha
+ */
+
+#ifndef FUNCTIONTACE_H_
+#define FUNCTIONTACE_H_
+
+#include <string>
+#include <iostream>
+#include <memory>
+
+#include <sys/syscall.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <errno.h>
+
+using namespace std;
+
+#include <map>
+#include <mutex> //cpp11
+#include <iostream>
+
+#include <time.h>
+
+template <class K, class V, class Compare = std::less<K>, class Allocator = std::allocator<std::pair<const K, V> > >
+class guarded_map {
+private:
+   std::map<K, V, Compare, Allocator> _map;
+   std::mutex _m;
+
+public:
+   void set(K key, V value) {
+      std::lock_guard<std::mutex> lk(this->_m);
+      this->_map[key] = value;
+   }
+
+   V & get(K key) {
+      std::lock_guard<std::mutex> lk(this->_m);
+      return this->_map[key];
+   }
+
+   bool empty() {
+      std::lock_guard<std::mutex> lk(this->_m);
+      return this->_map.empty();
+   }
+
+   // other public methods you need to implement
+};
+
+class FunctionTracer {
+public:
+   FunctionTracer(std::string name) :sFunctionName(name), EntryTraceDone(false), ExitTraceDone(false)
+   {
+      ThreadId = getpid();
+      int Counter = FunctionTraceCounter.get(ThreadId);
+      Counter++;
+      sIndent = std::string((size_t)(Counter*2), '-');
+      if (Counter <= FunctionTrace_TraceLevel){
+         std::cout << sIndent << "FunctionTracer Entry:" << sFunctionName << " - ThreadId = " << ThreadId << " - CallDepth = " << Counter << std::endl;
+         if(-1 == clock_gettime(CLOCK_MONOTONIC_COARSE, &Entry_Clock_Time)) {
+            perror( "clock gettime CLOCK_MONOTONIC_COARSE" );
+         }
+         if (-1 == clock_gettime(CLOCK_THREAD_CPUTIME_ID, &Entry_Cpu_Time)) {
+            perror( "clock gettime CLOCK_THREAD_CPUTIME_ID" );
+         }
+         EntryTraceDone = true;
+      }
+      FunctionTraceCounter.set(ThreadId, Counter);
+   }
+   ~FunctionTracer(){Destructor();}
+
+protected:
+   std::string sFunctionName;
+   bool EntryTraceDone;
+   bool ExitTraceDone;
+   int ThreadId;
+   int Clock_EntryTime;
+   timespec Entry_Cpu_Time, Entry_Clock_Time;
+   std::string sIndent;
+
+};
+
+//#define FUNCTION_TRACE FunctionTracer fct(__FUNCTION__);
+
+#define FUNCTION_TRACE  auto_ptr<FunctionTracer> p; \
+                        int ThreadId = getpid(); \
+                        int Counter = FunctionTraceCounter.get(ThreadId); \
+                        if (Counter < FunctionTrace_TraceLevel){ \
+                           p = auto_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__)); \
+                        }
+
+#endif /* FUNCTIONTACE_H_ */
