@@ -1,4 +1,4 @@
-13:01:12 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
+13:33:20 **** Incremental Build of configuration Debug for project FunctionTracer_Test ****
 make all 
 Building file: ../src/main.cpp
 Invoking: GCC C++ Compiler
@@ -11,5 +11,5 @@ g++  -o "FunctionTracer_Test"  ./src/FunctionTracer.o ./src/main.o   -lgtest -lg
 Finished building target: FunctionTracer_Test
  
 
-13:01:16 Build Finished (took 4s.159ms)
+13:33:29 Build Finished (took 8s.693ms)
 

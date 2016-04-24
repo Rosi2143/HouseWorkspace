@@ -136,7 +136,7 @@ TEST(House, TraceLevel2_TwoTwoParallelCalls_ThreeOutputs) {
    }
 }
 
-TEST(House, TraceLevel1_SmallDelay_ClockTime) {
+TEST(House, TraceLevel1_SmallDelay_ClockTimeSmall) {
    SetTraceLevel(1);
    FUNCTION_TRACE
    usleep(5050);
@@ -145,7 +145,7 @@ TEST(House, TraceLevel1_SmallDelay_ClockTime) {
    ASSERT_GE(p0->_Clock_Time_Used_ms, 5);
 }
 
-TEST(House, TraceLevel1_LargeDelay_ClockTime) {
+TEST(House, TraceLevel1_LargeDelay_ClockTimeLarge) {
    SetTraceLevel(1);
    FUNCTION_TRACE
    usleep(5000000);
@@ -154,7 +154,7 @@ TEST(House, TraceLevel1_LargeDelay_ClockTime) {
    ASSERT_GE(p0->_Clock_Time_Used_ms, 5000);
 }
 
-TEST(House, TraceLevel1_SmallCpuConsumption_CpuTime) {
+TEST(House, TraceLevel1_SmallCpuConsumption_CpuTimeSmall) {
    SetTraceLevel(1);
    FUNCTION_TRACE
    int i;
@@ -164,7 +164,7 @@ TEST(House, TraceLevel1_SmallCpuConsumption_CpuTime) {
    ASSERT_GE(p0->_Clock_Time_Used_ms, 10);
 }
 
-TEST(House, TraceLevel1_LargeCpuConsumption_CpuTime) {
+TEST(House, TraceLevel1_LargeCpuConsumption_CpuTimeLarge) {
    SetTraceLevel(1);
    FUNCTION_TRACE
    int i;
@@ -188,7 +188,7 @@ TEST(House, TraceLevel2_TwoFunction_InnerShorterThanOuter) {
    ASSERT_GE(p0->_Clock_Time_Used_ms, p1->_Clock_Time_Used_ms);
 }
 
-TEST(House, TraceLevel1_MultipleCalls_CheckPerformance) {
+TEST(House, TraceLevel1_MultipleCalls_CheckPerformanceNotTooHigh) {
    SetTraceLevel(1);
    const int iLoopCounter = 1000*1000;
    FUNCTION_TRACE_TEST(1)
