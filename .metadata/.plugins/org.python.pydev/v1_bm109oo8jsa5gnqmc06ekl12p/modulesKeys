@@ -2467,6 +2467,7 @@ duplicity.backends._boto_multi|/usr/lib64/python2.7/site-packages/duplicity/back
 duplicity.backends._boto_single|/usr/lib64/python2.7/site-packages/duplicity/backends/_boto_single.py
 duplicity.backends._cf_cloudfiles|/usr/lib64/python2.7/site-packages/duplicity/backends/_cf_cloudfiles.py
 duplicity.backends._cf_pyrax|/usr/lib64/python2.7/site-packages/duplicity/backends/_cf_pyrax.py
+duplicity.backends.acdclibackend|/usr/lib64/python2.7/site-packages/duplicity/backends/acdclibackend.py
 duplicity.backends.azurebackend|/usr/lib64/python2.7/site-packages/duplicity/backends/azurebackend.py
 duplicity.backends.b2backend|/usr/lib64/python2.7/site-packages/duplicity/backends/b2backend.py
 duplicity.backends.botobackend|/usr/lib64/python2.7/site-packages/duplicity/backends/botobackend.py
@@ -2480,6 +2481,7 @@ duplicity.backends.hubicbackend|/usr/lib64/python2.7/site-packages/duplicity/bac
 duplicity.backends.imapbackend|/usr/lib64/python2.7/site-packages/duplicity/backends/imapbackend.py
 duplicity.backends.lftpbackend|/usr/lib64/python2.7/site-packages/duplicity/backends/lftpbackend.py
 duplicity.backends.localbackend|/usr/lib64/python2.7/site-packages/duplicity/backends/localbackend.py
+duplicity.backends.mediafirebackend|/usr/lib64/python2.7/site-packages/duplicity/backends/mediafirebackend.py
 duplicity.backends.megabackend|/usr/lib64/python2.7/site-packages/duplicity/backends/megabackend.py
 duplicity.backends.multibackend|/usr/lib64/python2.7/site-packages/duplicity/backends/multibackend.py
 duplicity.backends.ncftpbackend|/usr/lib64/python2.7/site-packages/duplicity/backends/ncftpbackend.py
@@ -2507,6 +2509,7 @@ duplicity.errors|/usr/lib64/python2.7/site-packages/duplicity/errors.py
 duplicity.file_naming|/usr/lib64/python2.7/site-packages/duplicity/file_naming.py
 duplicity.filechunkio|/usr/lib64/python2.7/site-packages/duplicity/filechunkio.py
 duplicity.globals|/usr/lib64/python2.7/site-packages/duplicity/globals.py
+duplicity.globmatch|/usr/lib64/python2.7/site-packages/duplicity/globmatch.py
 duplicity.gpg|/usr/lib64/python2.7/site-packages/duplicity/gpg.py
 duplicity.gpginterface|/usr/lib64/python2.7/site-packages/duplicity/gpginterface.py
 duplicity.lazy|/usr/lib64/python2.7/site-packages/duplicity/lazy.py

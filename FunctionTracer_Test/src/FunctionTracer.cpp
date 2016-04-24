@@ -17,7 +17,9 @@ void SetTraceLevel(int level){
 void FunctionTracer::Constructor(){
    _ThreadId = getpid();
    _sIndent = std::string((size_t)(_Counter*2), '-');
-   std::cout << _sIndent << "FunctionTracer Entry:" << _sFunctionName << " - ThreadId = " << _ThreadId << " - CallDepth = " << _Counter << std::endl;
+   #ifndef UNIT_TEST
+      std::cout << _sIndent << "FunctionTracer Entry:" << _sFunctionName << " - ThreadId = " << _ThreadId << " - CallDepth = " << _Counter << std::endl;
+   #endif
    if(-1 == clock_gettime(CLOCK_MONOTONIC_COARSE, &_Entry_Clock_Time)) {
       perror( "clock gettime CLOCK_MONOTONIC_COARSE" );
    }
@@ -37,9 +39,11 @@ void FunctionTracer::Destructor(){
    }
    _Clock_Time_Used_ms = (Clock_Time.tv_sec - _Entry_Clock_Time.tv_sec) * 1000 + ( Clock_Time.tv_nsec - _Entry_Clock_Time.tv_nsec) / 1000 / 1000;
    _Cpu_Time_Used_ms = ( Cpu_Time.tv_sec - _Entry_Cpu_Time.tv_sec) * 1000 + ( Cpu_Time.tv_nsec - _Entry_Cpu_Time.tv_nsec) / 1000 / 1000;
-   std::cout << _sIndent << "FunctionTracer Exit :" << _sFunctionName << " - ThreadId = " << _ThreadId << " - CallDepth = " << _Counter << std::endl;
-   std::cout << _sIndent << "Function used CPU for " << _Cpu_Time_Used_ms << "ms" << std::endl;
-   std::cout << _sIndent << "Function Duration     " << _Clock_Time_Used_ms  << "ms" << std::endl;
+   #ifndef UNIT_TEST
+      std::cout << _sIndent << "FunctionTracer Exit :" << _sFunctionName << " - ThreadId = " << _ThreadId << " - CallDepth = " << _Counter << std::endl;
+      std::cout << _sIndent << "Function used CPU for " << _Cpu_Time_Used_ms << "ms" << std::endl;
+      std::cout << _sIndent << "Function Duration     " << _Clock_Time_Used_ms  << "ms" << std::endl;
+   #endif
    _ExitTraceDone = true;
 }
 
@@ -50,7 +54,7 @@ Counter::Counter() {
    FunctionTraceCounter.set(_ThreadId, _Counter);
 }
 
-Counter::~Counter() {
+void Counter::Destructor() {
    _Counter--;
    FunctionTraceCounter.set(_ThreadId, _Counter);
 }

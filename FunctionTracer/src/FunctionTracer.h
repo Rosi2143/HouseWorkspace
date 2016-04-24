@@ -85,11 +85,17 @@ class FunctionTracer {
 class Counter {
    public:
       Counter();
-      ~Counter();
+      ~Counter() {Destructor();};
       int getCounter(){return _Counter;}
-   private:
+#ifdef UNIT_TEST
+      public:
+#else
+      private:
+#endif
       int _Counter;
       int _ThreadId;
+
+      void Destructor();
 };
 
 //#define FUNCTION_TRACE FunctionTracer fct(__FUNCTION__);
@@ -102,6 +108,8 @@ extern int FunctionTrace_TraceLevel;
                         if (CounterValue ## ARG <= FunctionTrace_TraceLevel){ \
                            p ## ARG = unique_ptr<FunctionTracer> (new FunctionTracer(__FUNCTION__, CounterValue ## ARG)); \
                         }
+#define FUNCTION_TRACE_TEST_END(ARG)  p ## ARG->Destructor(); \
+                                      counter ## ARG.Destructor();
 
 #define FUNCTION_TRACE  FUNCTION_TRACE_TEST(0)
 
