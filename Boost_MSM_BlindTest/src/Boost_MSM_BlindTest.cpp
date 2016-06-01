@@ -13,6 +13,20 @@
 
 using namespace BlindsSm;
 
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
+
+using namespace std;
+using ::testing::_;
+using ::testing::Return;
+using ::testing::Invoke;
+using ::testing::TestWithParam;
+using ::testing::Values;
+using ::testing::StrCaseEq;
+
+// statechart: http://www.boost.org/doc/libs/1_60_0/libs/msm/doc/images/SimpleTutorial.jpg
+
+#ifdef COLLAPSE
 void test()
 {
    // statechart: http://www.boost.org/doc/libs/1_60_0/libs/msm/doc/images/SimpleTutorial.jpg
@@ -38,3 +52,12 @@ int main() {
 test();
 return 0;
 }
+#else
+
+TEST(House, TraceLevel0_inactive) {
+   blind _blind;
+   _blind.start();
+   pstate(_blind);
+   ASSERT_EQ(NULL, 0);
+}
+#endif

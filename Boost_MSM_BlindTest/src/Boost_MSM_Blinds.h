@@ -12,15 +12,18 @@
 #include <iostream>
 
 #include <boost/phoenix/phoenix.hpp>
+#include <boost/mpl/string.hpp>
 
 // add phoenix support in eUML
 #define BOOST_MSM_EUML_PHOENIX_SUPPORT
 #include <boost/msm/back/state_machine.hpp>
 #include <boost/msm/front/euml/euml.hpp>
+#include <boost/msm/front/euml/stl.hpp>
 
 using namespace std;
 using namespace boost::msm::front::euml;
 namespace msm = boost::msm;
+namespace mpl= boost::mpl;
 using namespace boost::phoenix;
 
 // entry/exit/action/guard logging functors
@@ -44,7 +47,7 @@ struct MsmData {
 // **********************
 // events
 // **********************
-BOOST_MSM_EUML_DECLARE_ATTRIBUTE(mpl::string,m_name)
+BOOST_MSM_EUML_DECLARE_ATTRIBUTE(std::string,m_name)
 BOOST_MSM_EUML_ATTRIBUTES((attributes_ << m_name ), set_name_attr)
 BOOST_MSM_EUML_EVENT_WITH_ATTRIBUTES(SetName,set_name_attr)
 
@@ -231,8 +234,9 @@ BOOST_MSM_EUML_TRANSITION_TABLE((
 // create a state machine "on the fly"
 BOOST_MSM_EUML_DECLARE_STATE_MACHINE(( transition_table,//STT
       init_ << BlindSomeWhere,// Init State
-      fsm_(m_name)=String_<"Test">(),// Entry
-//      no_action,// Entry
+//      fsm_(m_name)=String_<mpl::string<'Test ','FSM'> >(),// Entry
+//      fsm_(m_type)=Int_<1>(),
+      no_action,// Entry
       no_action,// Exit
       attributes_ << Blind_name << Blind_type << Blind_MoveCount,// Attributes
       configure_ << no_configure_,// configuration
@@ -249,6 +253,7 @@ typedef msm::back::state_machine<blind_> blind;
 static char const* const state_names[] = { "BlindMovingUp", "BlindDown", "BlindSomeWhere", "BlindUp", "BlindMovingDown"};
 void pstate(blind const& p) {
    std::cout << " -> " << p.current_state()[0] << "-"<< state_names[p.current_state()[0]] << std::endl;
+   std::cout << " -> " << p.get_attribute(m_name) << "-"/*<< p.get_attribute(m_type)*/  << std::endl;
 }
 }
 
