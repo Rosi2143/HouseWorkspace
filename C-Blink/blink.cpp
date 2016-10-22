@@ -37,7 +37,7 @@ enum _WhatToDo{
   rotate,
   inout,
   randomly,
-  rotate2
+  swipe
 };
 
 enum _Direction{
@@ -65,27 +65,31 @@ void Blink(void) {
  * rotate a single LED
  * @param direction left or right
  */
-void Rotate(bool direction) {
+void Rotate(_Direction direction) {
    // use 8..15 to make it easier to turn OFF the last LED after "overrun"
    if(direction == left)
    {
-//      for (int i=8 ; i<16; i++)
-      for (int i=10 ; i<16; i++) // no relays
+      int i;
+//      for (i=8 ; i<16; i++)
+      for (i=10 ; i<16; i++) // no relays
       {
          digitalWrite(PIFACE + ((i-1)%8), LOW);
          digitalWrite(PIFACE + (i%8), HIGH);
          delay(Delay);
       }
+      digitalWrite(PIFACE + ((i-1)%8), LOW);
    }
    else
    {
-//      for (int i=15 ; i>7; i--)
-      for (int i=15 ; i>9; i--) // no relays
+      int i;
+//      for (i=15 ; i>7; i--)
+      for (i=15 ; i>9; i--) // no relays
       {
          digitalWrite(PIFACE + ((i+1)%8), LOW);
          digitalWrite(PIFACE + (i%8), HIGH);
          delay(Delay);
       }
+      digitalWrite(PIFACE + ((i+1)%8), LOW);
    }
 }
 
@@ -116,6 +120,7 @@ int main (int argc, char *argv [])
       ("help", "produce help message")
       ("single", boost::program_options::value<int>(), "blink a single Led 0..7")
       ("rotate", boost::program_options::value<std::string >(), "rotate left or right")
+      ("swipe","rotate left and right")
       ("inout",  "move in and out")
       ("random", "change randomly between modes")
       ("delay", boost::program_options::value<int>()->default_value(500), "delay between changes")
@@ -137,6 +142,18 @@ int main (int argc, char *argv [])
      std::cout << "Rotating Led.\n";
      if (WhatToDo == none){
         WhatToDo = rotate;
+     }
+     else
+     {
+        std::cout << "Only one option is allowed" << ".\n";
+        std::cout << desc << "\n";
+        return 1;
+     }
+  }
+  if (vm.count("swipe")) {
+     std::cout << "Rotating Led left and right.\n";
+     if (WhatToDo == none){
+        WhatToDo = swipe;
      }
      else
      {
@@ -223,6 +240,15 @@ int main (int argc, char *argv [])
      }
   }
 
+  if(WhatToDo == swipe){
+
+     for (;;)
+     {
+        Rotate(left);
+        Rotate(right);
+     }
+  }
+
   if(WhatToDo == inout){
      for (;;)
      {
@@ -242,6 +268,10 @@ int main (int argc, char *argv [])
               break;
            case rotate:
               Rotate(left);
+              break;
+           case swipe:
+              Rotate(left);
+              Rotate(right);
               break;
            case inout:
               Inout();

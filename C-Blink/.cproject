@@ -14,7 +14,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cross.exe.debug.1204555515" name="Debug" parent="cdt.managedbuild.config.gnu.cross.exe.debug" postbuildStep="$ cp ~/workspace/C-Blink/Debug/C-Blink ~/mntpi/projects/">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="cdt.managedbuild.config.gnu.cross.exe.debug.1204555515" name="Debug" parent="cdt.managedbuild.config.gnu.cross.exe.debug" postbuildStep="$ cp ${workspace_loc}/C-Blink/Debug/C-Blink /mnt/pihome/projects/">
 					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.1204555515." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.debug.1220817473" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.debug">
 							<option id="cdt.managedbuild.option.gnu.cross.prefix.877181988" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix" value="arm-linux-gnueabihf-" valueType="string"/>
@@ -35,8 +35,9 @@
 								<option id="gnu.cpp.compiler.option.optimization.level.2044941445" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.debugging.level.266667017" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.251973514" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="/home/micha/git_repositories/wiringPi/wiringPi"/>
-									<listOptionValue builtIn="false" value="/home/micha/git_repositories/wiringPi/devLib"/>
+									<listOptionValue builtIn="false" value="&quot;${WorkspaceDirPath}/../HSHSB3_C/WiringPi/wiringPi&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${WorkspaceDirPath}/../HSHSB3_C/WiringPi/devLib&quot;"/>
+									<listOptionValue builtIn="false" value="/mnt/piusrinclude"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.dialect.std.898950357" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.c++11" valueType="enumerated"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1079482398" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
@@ -50,8 +51,8 @@
 								</option>
 								<option id="gnu.cpp.link.option.flags.2143056004" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-L/home/micha/mntpi_usrlocallib" valueType="string"/>
 								<option id="gnu.cpp.link.option.paths.142496036" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="/home/micha/mntpi_usrlocallib"/>
-									<listOptionValue builtIn="false" value="/home/micha/mntpi_usrlib"/>
+									<listOptionValue builtIn="false" value="/mnt/piusrlocallib"/>
+									<listOptionValue builtIn="false" value="/mnt/piusrlib"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.657738233" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -107,12 +108,13 @@
 								<option id="gnu.cpp.compiler.option.include.paths.815412097" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="../~/mntpi/wiringPi/wiringPi/wiringPi/"/>
 									<listOptionValue builtIn="false" value="/home/micha/mntpi/wiringPi/wiringPi/devLib/"/>
+									<listOptionValue builtIn="false" value="/mnt/piusrinclude"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.2027921823" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.229937528" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker"/>
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.1690381614" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker">
-								<option id="gnu.cpp.link.option.paths.423016009" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+								<option id="gnu.cpp.link.option.paths.423016009" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
 									<listOptionValue builtIn="false" value="/home/micha/mntpi_usrlib"/>
 									<listOptionValue builtIn="false" value="/home/micha/mntpi_usrlocallib"/>
 								</option>
@@ -155,6 +157,13 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
-	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/C-Blink"/>
+		</configuration>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/C-Blink"/>
+		</configuration>
+	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>

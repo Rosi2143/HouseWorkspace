@@ -43,7 +43,7 @@ all: C-Blink
 C-Blink: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross G++ Linker'
-	arm-linux-gnueabihf-g++ -L/home/micha/mntpi_usrlocallib -L/home/micha/mntpi_usrlib -L/home/micha/mntpi_usrlocallib -o "C-Blink" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-linux-gnueabihf-g++ -L/mnt/piusrlocallib -L/mnt/piusrlib -L/home/micha/mntpi_usrlocallib -o "C-Blink" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
@@ -54,7 +54,7 @@ clean:
 	-@echo ' '
 
 post-build:
-	-$ cp ~/workspace/C-Blink/Debug/C-Blink ~/mntpi/projects/
+	-$ cp /home/micha/rpi/projects/HouseWorkspace/C-Blink/Debug/C-Blink /mnt/pihome/projects/
 	-@echo ' '
 
 .PHONY: all clean dependents
