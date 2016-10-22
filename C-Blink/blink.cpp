@@ -36,7 +36,8 @@ enum _WhatToDo{
   blink,
   rotate,
   inout,
-  randomly
+  randomly,
+  rotate2
 };
 
 enum _Direction{

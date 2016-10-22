@@ -1637,3 +1637,14 @@ In file included from /usr/include/boost/msm/front/common_states.hpp:19:0,
      ^
 /usr/include/boost/msm/front/detail/common_states.hpp:42:5: note:   substitution of deduced template arguments resulted in errors seen above
 make: *** [src/Boost_MSM_BlindTest.o] Error 1
+16:41:43 **** Build of configuration Debug for project C-Blink ****
+make all 
+Building file: ../blink.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -std=c++0x -I/home/micha/git_repositories/wiringPi/wiringPi -I/home/micha/git_repositories/wiringPi/devLib -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"blink.d" -MT"blink.o" -o "blink.o" "../blink.cpp"
+../blink.cpp:28:22: fatal error: wiringPi.h: No such file or directory
+subdir.mk:18: recipe for target 'blink.o' failed
+ #include <wiringPi.h>
+                      ^
+compilation terminated.
+make: *** [blink.o] Error 1
