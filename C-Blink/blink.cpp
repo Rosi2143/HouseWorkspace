@@ -47,7 +47,9 @@ enum _Direction{
 // Use 200 as the pin-base for the PiFace board, and pick a pin
 //	for the Led that's not connected to a relay
 
-#define	PIFACE	200
+#define  PIFACE      200
+#define  FIRST_LED   10
+#define  MAX_LEDS    6
 int Led;
 int Delay;
 
@@ -65,13 +67,16 @@ void Blink(void) {
  * rotate a single LED
  * @param direction left or right
  */
-void Rotate(_Direction direction) {
+void Rotate(_Direction direction, int NumOfLeds = 5) {
    // use 8..15 to make it easier to turn OFF the last LED after "overrun"
+   if (NumOfLeds > ( MAX_LEDS - 1 ) ) {
+      NumOfLeds = ( MAX_LEDS - 1 );
+   }
    if(direction == left)
    {
       int i;
 //      for (i=8 ; i<16; i++)
-      for (i=10 ; i<16; i++) // no relays
+      for (i=FIRST_LED ; i<=FIRST_LED+NumOfLeds; i++) // no relays
       {
          digitalWrite(PIFACE + ((i-1)%8), LOW);
          digitalWrite(PIFACE + (i%8), HIGH);
@@ -83,7 +88,7 @@ void Rotate(_Direction direction) {
    {
       int i;
 //      for (i=15 ; i>7; i--)
-      for (i=15 ; i>9; i--) // no relays
+      for (i=FIRST_LED+NumOfLeds ; i>=FIRST_LED; i--) // no relays
       {
          digitalWrite(PIFACE + ((i+1)%8), LOW);
          digitalWrite(PIFACE + (i%8), HIGH);
@@ -91,6 +96,35 @@ void Rotate(_Direction direction) {
       }
       digitalWrite(PIFACE + ((i+1)%8), LOW);
    }
+}
+
+/**
+ * swipe a single LED
+ * @param number of LED's to swipe
+ */
+void Swipe(int NumOfLeds = 5) {
+   // use 8..15 to make it easier to turn OFF the last LED after "overrun"
+   NumOfLeds--;
+   if (NumOfLeds > ( MAX_LEDS - 2 ) ) {
+      NumOfLeds = ( MAX_LEDS - 2 );
+   }
+   int i;
+//      for (i=8 ; i<16; i++)
+   for (i=FIRST_LED ; i<=FIRST_LED+NumOfLeds; i++) // no relays
+   {
+      digitalWrite(PIFACE + ((i-1)%8), LOW);
+      digitalWrite(PIFACE + (i%8), HIGH);
+      delay(Delay);
+   }
+   digitalWrite(PIFACE + ((i-1)%8), LOW);
+//      for (i=15 ; i>7; i--)
+   for (i=FIRST_LED + 1 +NumOfLeds ; i>=FIRST_LED + 1; i--) // no relays
+   {
+      digitalWrite(PIFACE + ((i+1)%8), LOW);
+      digitalWrite(PIFACE + (i%8), HIGH);
+      delay(Delay);
+   }
+   digitalWrite(PIFACE + ((i+1)%8), LOW);
 }
 
 /**
@@ -244,8 +278,7 @@ int main (int argc, char *argv [])
 
      for (;;)
      {
-        Rotate(left);
-        Rotate(right);
+        Swipe();
      }
   }
 
@@ -270,8 +303,7 @@ int main (int argc, char *argv [])
               Rotate(left);
               break;
            case swipe:
-              Rotate(left);
-              Rotate(right);
+              Swipe();
               break;
            case inout:
               Inout();

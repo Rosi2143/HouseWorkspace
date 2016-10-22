@@ -1,15 +1,18 @@
-22:13:48 **** Incremental Build of configuration Debug for project Heater_test ****
+20:50:11 **** Build of configuration Debug for project Heater_test ****
 make all 
-Building file: ../src/HeaterSwitchIn.cpp
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/HeaterSwitchIn.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/workspace/Mocks/mocks" -I"/home/micha/workspace/House/include" -I"/home/micha/workspace/House/interfaces" -I../Heater_test/include -I"/home/micha/workspace/Heater_test/src" -I"/home/micha/workspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HeaterSwitchIn.d" -MT"src/HeaterSwitchIn.d" -o "src/HeaterSwitchIn.o" "../src/HeaterSwitchIn.cpp"
-Finished building: ../src/HeaterSwitchIn.cpp
- 
-Building target: Heater_test
-Invoking: GCC C++ Linker
-g++  -o "Heater_test"  ./src/HeaterSwitchIn.o ./src/main.o   -lgmock -lpthread -lgtest_main -lgtest
-Finished building target: Heater_test
- 
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I../Heater_test/include -I"/home/micha/rpi/projects/HouseWorkspace/TimeAndDate/include" -I/mnt/piusrinclude/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HeaterSwitchIn.d" -MT"src/HeaterSwitchIn.d" -o "src/HeaterSwitchIn.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/HeaterSwitchIn.cpp"
+In file included from /usr/include/c++/6.2.1/x86_64-redhat-linux/bits/os_defines.h:39:0,
+                 from /usr/include/c++/6.2.1/x86_64-redhat-linux/bits/c++config.h:2385,
+                 from /usr/include/c++/6.2.1/iostream:38,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/HeaterSwitchIn.cpp:8:
+/mnt/piusrinclude/features.h:323:26: fatal error: bits/predefs.h: No such file or directory
+src/subdir.mk:21: recipe for target 'src/HeaterSwitchIn.o' failed
+ #include <bits/predefs.h>
+                          ^
+compilation terminated.
+make: *** [src/HeaterSwitchIn.o] Error 1
 
-22:13:54 Build Finished (took 5s.847ms)
+20:50:11 Build Finished (took 194ms)
 
