@@ -1,7 +1,8 @@
-links/Ds1621.d: ../links/Ds1621.cpp \
- /home/micha/workspace/wiringPi_gmock/mocks/wiringPiI2C.h \
- ../links/Ds1621.h
+links/Ds1621.o: \
+ /home/micha/rpi/projects/HouseWorkspace/Ds1621/src/Ds1621.cpp \
+ /home/micha/rpi/projects/HouseWorkspace/../HSHSB3_C/WiringPi/wiringPi/wiringPiI2C.h \
+ /home/micha/rpi/projects/HouseWorkspace/Ds1621/src/Ds1621.h
 
-/home/micha/workspace/wiringPi_gmock/mocks/wiringPiI2C.h:
+/home/micha/rpi/projects/HouseWorkspace/../HSHSB3_C/WiringPi/wiringPi/wiringPiI2C.h:
 
-../links/Ds1621.h:
+/home/micha/rpi/projects/HouseWorkspace/Ds1621/src/Ds1621.h:

@@ -25,4 +25,21 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>links/Ds1621.cpp</name>
+			<type>1</type>
+			<locationURI>WORKSPACE_LOC/Ds1621/src/Ds1621.cpp</locationURI>
+		</link>
+		<link>
+			<name>links/Ds1621.h</name>
+			<type>1</type>
+			<locationURI>WORKSPACE_LOC/Ds1621/src/Ds1621.h</locationURI>
+		</link>
+		<link>
+			<name>links/gmock-all.cc</name>
+			<type>1</type>
+			<location>/usr/src/gmock/gmock-all.cc</location>
+		</link>
+	</linkedResources>
 </projectDescription>

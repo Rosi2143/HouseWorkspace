@@ -1,0 +1,21 @@
+22:42:29 **** Incremental Build of configuration Debug for project Ds1621 ****
+make all 
+Building file: ../src/Ds1621.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/home/micha/git_repositories/wiringPi/wiringPi -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Ds1621.d" -MT"src/Ds1621.o" -o "src/Ds1621.o" "../src/Ds1621.cpp"
+../src/Ds1621.cpp:11:25: fatal error: wiringPiI2C.h: No such file or directory
+ #include <wiringPiI2C.h>
+                         ^
+compilation terminated.
+src/subdir.mk:18: recipe for target 'src/Ds1621.o' failed
+make: *** [src/Ds1621.o] Error 1
+22:42:30 **** Incremental Build of configuration Debug for project DS1621_utest ****
+make all 
+Building target: DS1621_utest
+Invoking: GCC C++ Linker
+g++ -L/mnt/piusrlib -o "DS1621_utest"  ./test/main.o  ./links/Ds1621.o ./links/gmock-all.o  /home/micha/rpi/projects/HouseWorkspace/wiringPi_gmock/Debug/libwiringPi_gmock.a -lgtest -lgtest_main -lpthread -lwiringPi -lwiringPiDev
+/usr/bin/ld: cannot find -lwiringPi
+makefile:46: recipe for target 'DS1621_utest' failed
+/usr/bin/ld: cannot find -lwiringPiDev
+collect2: error: ld returned 1 exit status
+make: *** [DS1621_utest] Error 1

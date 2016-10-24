@@ -45,7 +45,7 @@ all: DS1621_utest
 DS1621_utest: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++  -o "DS1621_utest" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L/mnt/piusrlib -o "DS1621_utest" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

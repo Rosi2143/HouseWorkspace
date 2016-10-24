@@ -1,14 +1,14 @@
-21:41:17 **** Incremental Build of configuration Debug for project House ****
+21:33:02 **** Build of configuration Debug for project House ****
 make all 
 Building file: ../src/BlindStates.cpp
 Invoking: Cross G++ Compiler
-arm-linux-gnueabihf-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BlindStates.d" -MT"src/BlindStates.d" -o "src/BlindStates.o" "../src/BlindStates.cpp"
+arm-linux-gnueabihf-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BlindStates.d" -MT"src/BlindStates.o" -o "src/BlindStates.o" "../src/BlindStates.cpp"
 ../src/BlindStates.cpp:10:25: fatal error: BlindStates.h: No such file or directory
+src/subdir.mk:39: recipe for target 'src/BlindStates.o' failed
  #include "BlindStates.h"
                          ^
 compilation terminated.
-src/subdir.mk:39: recipe for target 'src/BlindStates.o' failed
 make: *** [src/BlindStates.o] Error 1
 
-21:41:18 Build Finished (took 633ms)
+21:33:02 Build Finished (took 625ms)
 

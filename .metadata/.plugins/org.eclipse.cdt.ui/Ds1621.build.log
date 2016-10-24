@@ -1,6 +1,14 @@
-17:35:51 **** Build of configuration Debug for project Ds1621 ****
+22:42:29 **** Incremental Build of configuration Debug for project Ds1621 ****
 make all 
-make: Nothing to be done for 'all'.
+Building file: ../src/Ds1621.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I/home/micha/git_repositories/wiringPi/wiringPi -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Ds1621.d" -MT"src/Ds1621.o" -o "src/Ds1621.o" "../src/Ds1621.cpp"
+../src/Ds1621.cpp:11:25: fatal error: wiringPiI2C.h: No such file or directory
+ #include <wiringPiI2C.h>
+                         ^
+compilation terminated.
+src/subdir.mk:18: recipe for target 'src/Ds1621.o' failed
+make: *** [src/Ds1621.o] Error 1
 
-17:35:51 Build Finished (took 139ms)
+22:42:29 Build Finished (took 217ms)
 

@@ -30,5 +30,10 @@
 			<type>1</type>
 			<locationURI>WORKSPACE_LOC/House/src/HeaterSwitchIn.cpp</locationURI>
 		</link>
+		<link>
+			<name>src/gmock-all.cc</name>
+			<type>1</type>
+			<location>/usr/src/gmock/gmock-all.cc</location>
+		</link>
 	</linkedResources>
 </projectDescription>

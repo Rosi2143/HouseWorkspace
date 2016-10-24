@@ -1,18 +1,25 @@
-20:50:11 **** Build of configuration Debug for project Heater_test ****
+22:28:02 **** Incremental Build of configuration Debug for project Heater_test ****
 make all 
 Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/HeaterSwitchIn.cpp
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I../Heater_test/include -I"/home/micha/rpi/projects/HouseWorkspace/TimeAndDate/include" -I/mnt/piusrinclude/ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HeaterSwitchIn.d" -MT"src/HeaterSwitchIn.d" -o "src/HeaterSwitchIn.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/HeaterSwitchIn.cpp"
-In file included from /usr/include/c++/6.2.1/x86_64-redhat-linux/bits/os_defines.h:39:0,
-                 from /usr/include/c++/6.2.1/x86_64-redhat-linux/bits/c++config.h:2385,
-                 from /usr/include/c++/6.2.1/iostream:38,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/src/HeaterSwitchIn.cpp:8:
-/mnt/piusrinclude/features.h:323:26: fatal error: bits/predefs.h: No such file or directory
-src/subdir.mk:21: recipe for target 'src/HeaterSwitchIn.o' failed
- #include <bits/predefs.h>
-                          ^
-compilation terminated.
-make: *** [src/HeaterSwitchIn.o] Error 1
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I../Heater_test/include -I"/home/micha/rpi/projects/HouseWorkspace/TimeAndDate/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/HeaterSwitchIn.d" -MT"src/HeaterSwitchIn.d" -o "src/HeaterSwitchIn.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/HeaterSwitchIn.cpp"
+Finished building: /home/micha/rpi/projects/HouseWorkspace/House/src/HeaterSwitchIn.cpp
+ 
+Building file: /usr/src/gmock/gmock-all.cc
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I../Heater_test/include -I"/home/micha/rpi/projects/HouseWorkspace/TimeAndDate/include" -I/usr/src/gmock -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/gmock-all.d" -MT"src/gmock-all.o" -o "src/gmock-all.o" "/usr/src/gmock/gmock-all.cc"
+Finished building: /usr/src/gmock/gmock-all.cc
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I../Heater_test/include -I"/home/micha/rpi/projects/HouseWorkspace/TimeAndDate/include" -I/usr/src/gmock -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Heater_test
+Invoking: GCC C++ Linker
+g++  -o "Heater_test"  ./src/HeaterSwitchIn.o ./src/gmock-all.o ./src/main.o   -lpthread -lgtest_main -lgtest
+Finished building target: Heater_test
+ 
 
-20:50:11 Build Finished (took 194ms)
+22:28:25 Build Finished (took 22s.933ms)
 
