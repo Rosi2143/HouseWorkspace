@@ -33,3 +33,7 @@ Room& Room::operator=(Room other) {
    _Switches = other._Switches;
    return *this;
 }
+
+void Room::addSwitchIn(const iSwitchIn& SwitchIn) {
+   _Switches.push_back(SwitchIn);
+}

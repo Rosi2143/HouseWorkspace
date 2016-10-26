@@ -5,6 +5,7 @@
  *      Author: micha
  */
 #include "Floor.h"
+#include "Room.h"
 #include "exceptions.h"
 
 #include <boost/foreach.hpp>
@@ -23,7 +24,7 @@ NoRoomException  FloorNoRoomEx;
  * @param _name: Name of the floor
  */
 Floor::Floor(std::string _name)
-:Name(_name)
+:_Name(_name)
 {
 
 }
@@ -39,25 +40,25 @@ Floor::~Floor()
  */
 unsigned int Floor::getNumberOfRooms() const
 {
-   return RoomList.size();
+   return _RoomList.size();
 }
 
 /*!
  * add a room to the floor
  * @param _pRoom: Pointer of the room to add. object will be copied
  */
-void Floor::addRoom(const Room& _Room)
+void Floor::addRoom(Room* ptrRoom)
 {
-   RoomList.push_back(_Room);
+   _RoomList.push_back(ptrRoom);
 }
 
 const Room& Floor::getRoom(std::string name) const
 {
-   for (const Room& room: RoomList)
+   for (Room* ptrRoom: _RoomList)
    {
-      if(boost::algorithm::iequals(room.Name, name))
+      if(boost::algorithm::iequals(ptrRoom->getName(), name))
       {
-         return room;
+         return *ptrRoom;
       }
    }
 

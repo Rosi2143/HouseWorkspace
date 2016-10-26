@@ -23,12 +23,6 @@ typedef boost::gregorian::date Date;
 typedef std::vector<Floor*> FloorsPtr;
 
 
-struct ptree {
-      std::string data;     // data associated with the node
-      std::list<std::pair<std::string, ptree> > children; // ordered list of named children
-};
-
-
 class House: public iHouse {
 public:
       House();

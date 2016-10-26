@@ -5,6 +5,8 @@
  *      Author: micha
  */
 #include "House.h"
+#include "Floor.h"
+#include "Room.h"
 #include "exceptions.h"
 #include <boost/foreach.hpp>
 #include <boost/algorithm/string/predicate.hpp>
@@ -83,8 +85,7 @@ void House::readHouseXml(const std::string &filename)
                   BOOST_FOREACH( ptree::value_type const& xmlSubRooms, xmlSubFloor.second.get_child("") ) {
                      BOOST_FOREACH( ptree::value_type const& xmlSubRoom, xmlSubRooms.second.get_child("") ) {
                         if (boost::algorithm::iequals(xmlSubRoom.first, XML_NAME_TAG)) {
-                           pRoom = new Room;;
-                           pRoom->Name = xmlSubRoom.second.data();
+                           pRoom = new Room(0, xmlSubRoom.second.data(), pFloor);
                         }
                         if(pRoom == nullptr)
                         {
@@ -113,7 +114,7 @@ void House::readHouseXml(const std::string &filename)
                            pRoom->Switches.push_back(_Switch);
                         }
                      }
-                     pFloor->addRoom(*pRoom);
+                     pFloor->addRoom(pRoom);
                   }
                }
             }

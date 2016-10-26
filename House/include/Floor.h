@@ -22,7 +22,7 @@ class Floor
       // Constructors
       Floor(std::string _name);
       Floor( const Floor &_floor);  // copy constructor
-      virtual ~Floor(){}
+      virtual ~Floor();
 
       // Operators
       Floor& operator=(const Floor& other);    // assignment operator
@@ -32,7 +32,7 @@ class Floor
       virtual const Room& getRoom(std::string name) const;
 
       // construction functions
-      virtual void addRoom(const Room& _Room);
+      virtual void addRoom(Room* ptrRoom);
 
    protected:
       Floor():_Name(""), _Id(0){std::cout << "Wrong default constructor";}

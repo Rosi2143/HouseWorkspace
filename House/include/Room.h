@@ -41,7 +41,7 @@ class Room: public iRoom {
 //      virtual void addLight(const Light& Light);
 //      virtual void addHeater(const Heater& Heater);
 //      virtual void addBlind(const Blind& Blind);
-      virtual void addSwitchIn(const SwitchIn& SwitchIn);
+      virtual void addSwitchIn(const iSwitchIn& SwitchIn);
 
    protected:
       Room() :

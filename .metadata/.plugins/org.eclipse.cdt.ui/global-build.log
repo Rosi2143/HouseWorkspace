@@ -1,21 +1,58 @@
-22:42:29 **** Incremental Build of configuration Debug for project Ds1621 ****
+21:29:29 **** Build of configuration Debug for project House_test ****
 make all 
-Building file: ../src/Ds1621.cpp
-Invoking: Cross G++ Compiler
-arm-linux-gnueabihf-g++ -I/home/micha/git_repositories/wiringPi/wiringPi -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Ds1621.d" -MT"src/Ds1621.o" -o "src/Ds1621.o" "../src/Ds1621.cpp"
-../src/Ds1621.cpp:11:25: fatal error: wiringPiI2C.h: No such file or directory
- #include <wiringPiI2C.h>
-                         ^
-compilation terminated.
-src/subdir.mk:18: recipe for target 'src/Ds1621.o' failed
-make: *** [src/Ds1621.o] Error 1
-22:42:30 **** Incremental Build of configuration Debug for project DS1621_utest ****
-make all 
-Building target: DS1621_utest
-Invoking: GCC C++ Linker
-g++ -L/mnt/piusrlib -o "DS1621_utest"  ./test/main.o  ./links/Ds1621.o ./links/gmock-all.o  /home/micha/rpi/projects/HouseWorkspace/wiringPi_gmock/Debug/libwiringPi_gmock.a -lgtest -lgtest_main -lpthread -lwiringPi -lwiringPiDev
-/usr/bin/ld: cannot find -lwiringPi
-makefile:46: recipe for target 'DS1621_utest' failed
-/usr/bin/ld: cannot find -lwiringPiDev
-collect2: error: ld returned 1 exit status
-make: *** [DS1621_utest] Error 1
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/House.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/House.d" -MT"src/House.o" -o "src/House.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/House.cpp"
+/home/micha/rpi/projects/HouseWorkspace/House/src/House.cpp: In member function ‘virtual void House::readHouseXml(const string&)’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/House.cpp:97:35: error: ‘class Room’ has no member named ‘Lights’
+                            pRoom->Lights.push_back(std::stoi(xmlSubRoom.second.data()));
+                                   ^~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/House.cpp:100:35: error: ‘class Room’ has no member named ‘Heaters’
+                            pRoom->Heaters.push_back(std::stoi(xmlSubRoom.second.data()));
+                                   ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/House.cpp:103:35: error: ‘class Room’ has no member named ‘Blinds’
+                            pRoom->Blinds.push_back(std::stoi(xmlSubRoom.second.data()));
+                                   ^~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/House.cpp:106:35: error: aggregate ‘Switch _Switch’ has incomplete type and cannot be defined
+                            Switch _Switch;
+                                   ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/House.cpp:114:35: error: ‘class Room’ has no member named ‘Switches’; did you mean ‘_Switches’?
+                            pRoom->Switches.push_back(_Switch);
+                                   ^~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/House.cpp: In member function ‘virtual const Floor& House::getFloor(std::__cxx11::string) const’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/House.cpp:151:29: error: invalid initialization of reference of type ‘const Floor&’ from expression of type ‘Floor* const’
+    for (const Floor& floor: FloorList)
+                             ^~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/House.cpp:153:42: error: ‘const class Floor’ has no member named ‘getName’; did you mean ‘_Name’?
+       if(boost::algorithm::iequals(floor.getName(),name))
+                                          ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/House.cpp: In member function ‘virtual void House::addFloor(const Floor&)’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/House.cpp:168:30: error: no matching function for call to ‘std::vector<Floor*>::push_back(const Floor&)’
+    FloorList.push_back(_Floor);
+                              ^
+In file included from /usr/include/c++/6.2.1/vector:64:0,
+                 from /usr/include/boost/property_tree/detail/xml_parser_read_rapidxml.hpp:18,
+                 from /usr/include/boost/property_tree/xml_parser.hpp:19,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/House.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/House.cpp:7:
+/usr/include/c++/6.2.1/bits/stl_vector.h:914:7: note: candidate: void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = Floor*; _Alloc = std::allocator<Floor*>; std::vector<_Tp, _Alloc>::value_type = Floor*]
+       push_back(const value_type& __x)
+       ^~~~~~~~~
+/usr/include/c++/6.2.1/bits/stl_vector.h:914:7: note:   no known conversion for argument 1 from ‘const Floor’ to ‘Floor* const&’
+/usr/include/c++/6.2.1/bits/stl_vector.h:932:7: note: candidate: void std::vector<_Tp, _Alloc>::push_back(std::vector<_Tp, _Alloc>::value_type&&) [with _Tp = Floor*; _Alloc = std::allocator<Floor*>; std::vector<_Tp, _Alloc>::value_type = Floor*]
+       push_back(value_type&& __x)
+       ^~~~~~~~~
+/usr/include/c++/6.2.1/bits/stl_vector.h:932:7: note:   no known conversion for argument 1 from ‘const Floor’ to ‘Floor*&&’
+/home/micha/rpi/projects/HouseWorkspace/House/src/House.cpp: In member function ‘virtual unsigned int House::getNumberOfRooms() const’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/House.cpp:181:29: error: invalid initialization of reference of type ‘const Floor&’ from expression of type ‘Floor* const’
+    for (const Floor& floor: FloorList)
+                             ^~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/House.cpp: In member function ‘virtual const Room& House::getRoom(std::__cxx11::string) const’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/House.cpp:195:29: error: invalid initialization of reference of type ‘const Floor&’ from expression of type ‘Floor* const’
+    for (const Floor& floor: FloorList)
+                             ^~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/House.cpp:197:56: error: ‘const class Room’ has no member named ‘Name’; did you mean ‘_Name’?
+       if(boost::algorithm::iequals(floor.getRoom(name).Name, name))
+                                                        ^~~~
+src/subdir.mk:21: recipe for target 'src/House.o' failed
+make: *** [src/House.o] Error 1

@@ -8,7 +8,11 @@
 #ifndef IHOUSE_H_
 #define IHOUSE_H_
 
+#include "Base.h"
+
 class Floor;
+class Room;
+class Switch;
 
 struct ptree {
       std::string data;     // data associated with the node
