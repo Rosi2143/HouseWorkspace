@@ -7,7 +7,7 @@
 #include "Room.h"
 
 Room::Room(unsigned int Id, std::string Name, const Floor* pFloor) :
-      Base(Id, Name), _pFloor(pFloor) {
+      iRoom(Id, Name, pFloor) {
    _Lights.clear();
    _Heaters.clear();
    _Blinds.clear();
@@ -15,7 +15,7 @@ Room::Room(unsigned int Id, std::string Name, const Floor* pFloor) :
 }
 
 Room::Room(const Room &_Room) :
-      Base(_Room._Id, _Room._Name), _pFloor(_Room._pFloor) {
+      iRoom(_Room._Id, _Room._Name, _Room._pFloor) {
    _Lights   = _Room._Lights;
    _Heaters  = _Room._Heaters;
    _Blinds   = _Room._Blinds;

@@ -8,19 +8,20 @@
 #ifndef FLOOR_H_
 #define FLOOR_H_
 
+#include "iFloor.h"
 #include <string>
 #include <vector>
 #include <iostream>
 
-class Room;
+class iRoom;
 
-typedef std::vector<Room*> RoomsPtr;
+typedef std::vector<iRoom*> RoomsPtr;
 
-class Floor
+class Floor : public iFloor
 {
    public:
       // Constructors
-      Floor(std::string _name);
+      Floor(unsigned int Id, std::string _name);
       Floor( const Floor &_floor);  // copy constructor
       virtual ~Floor();
 
@@ -29,15 +30,13 @@ class Floor
 
       // access functions
       virtual unsigned int getNumberOfRooms() const;
-      virtual const Room& getRoom(std::string name) const;
+      virtual const iRoom& getRoom(std::string name) const;
 
       // construction functions
-      virtual void addRoom(Room* ptrRoom);
+      virtual void addRoom(iRoom* ptrRoom);
 
    protected:
-      Floor():_Name(""), _Id(0){std::cout << "Wrong default constructor";}
-      std::string  _Name;
-      unsigned int _Id;
+      Floor(){std::cout << "Wrong default constructor for Floor";}
       RoomsPtr _RoomList;
 };
 

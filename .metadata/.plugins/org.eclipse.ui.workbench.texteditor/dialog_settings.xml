@@ -6,12 +6,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="_RoomList" key="selection"/>
+		<item value="Room" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Room"/>
 			<item value="_RoomList"/>
 			<item value="RoomsPtr"/>
 			<item value="wiringPiI2C"/>
@@ -19,9 +20,9 @@
 			<item value="pstate"/>
 			<item value="PlayerSm"/>
 			<item value="get"/>
-			<item value="getValue"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Floor"/>
 			<item value="sc::state"/>
 			<item value="BlindMovingDown"/>
 			<item value="BlindMovingUp"/>
@@ -29,7 +30,6 @@
 			<item value="BlindUp"/>
 			<item value="BlindSomewhere"/>
 			<item value=""/>
-			<item value="SwitchInActionList"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

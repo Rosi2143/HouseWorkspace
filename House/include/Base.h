@@ -8,6 +8,8 @@
 #ifndef SRC_BASE_H_
 #define SRC_BASE_H_
 
+#define BASE_NO_ROOM nullptr
+
 #include <iostream>
 
 class iRoom;

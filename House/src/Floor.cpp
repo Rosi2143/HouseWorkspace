@@ -23,15 +23,28 @@ NoRoomException  FloorNoRoomEx;
  * Floor represents a single floor with all its rooms
  * @param _name: Name of the floor
  */
-Floor::Floor(std::string _name)
-:_Name(_name)
-{
-
+Floor::Floor(unsigned int Id, std::string Name) :
+      iFloor(Id, Name, BASE_NO_ROOM) {
+   _RoomList.clear();
 }
+
+Floor::Floor(const Floor &_Floor) :
+      iFloor(_Floor._Id, _Floor._Name, _Floor._pFloor) {
+   _RoomList = _Floor._RoomList;
+}
+
+Floor& Floor::operator=(Floor other) {
+   if (&other == this) {
+      return *this;
+   }
+   _RoomList = other._RoomList;
+   return *this;
+}
+
 
 Floor::~Floor()
 {
-
+   _RoomList.erase();
 }
 
 /*!
@@ -47,14 +60,14 @@ unsigned int Floor::getNumberOfRooms() const
  * add a room to the floor
  * @param _pRoom: Pointer of the room to add. object will be copied
  */
-void Floor::addRoom(Room* ptrRoom)
+void Floor::addRoom(iRoom* ptrRoom)
 {
    _RoomList.push_back(ptrRoom);
 }
 
-const Room& Floor::getRoom(std::string name) const
+const iRoom& Floor::getRoom(std::string name) const
 {
-   for (Room* ptrRoom: _RoomList)
+   for (iRoom* ptrRoom: _RoomList)
    {
       if(boost::algorithm::iequals(ptrRoom->getName(), name))
       {
