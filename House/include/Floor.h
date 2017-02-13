@@ -13,8 +13,6 @@
 #include <vector>
 #include <iostream>
 
-class iRoom;
-
 typedef std::vector<iRoom*> RoomsPtr;
 
 class Floor : public iFloor

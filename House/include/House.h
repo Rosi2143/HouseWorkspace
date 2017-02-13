@@ -5,8 +5,7 @@
  *      Author: micha
  */
 
-#ifndef HOUSE_H_
-#define HOUSE_H_
+#pragma once
 
 #include <boost/property_tree/xml_parser.hpp>
 #include <boost/property_tree/ptree.hpp>
@@ -17,10 +16,8 @@
 
 #include "iHouse.h"
 
-class Floor;
-
 typedef boost::gregorian::date Date;
-typedef std::vector<Floor*> FloorsPtr;
+typedef std::vector<iFloor*> FloorsPtr;
 
 
 class House: public iHouse {
@@ -38,22 +35,21 @@ public:
 
       // handling floors
       unsigned int getNumberOfFloors() const;
-      const Floor& getFloor(std::string name) const;
+      const iFloor& getFloor(std::string name) const;
 
       // handling rooms
       unsigned int getNumberOfRooms() const;
-      const Room& getRoom(std::string name) const;
+      const iRoom& getRoom(std::string name) const;
 
       // handling Switches
       unsigned int getNumberOfSwitches() const;
-      const Switch& getSwitch(unsigned int ID) const;
+      const iSwitch& getSwitch(std::string name) const;
 
       // construction functions
-      void addFloor(const Floor& _Floor);
+      void addFloor(const iFloor& _Floor);
 protected:
       unsigned int Version;
       std::string Name;
       FloorsPtr FloorList;
 };
 
-#endif /* HOUSE_H_ */

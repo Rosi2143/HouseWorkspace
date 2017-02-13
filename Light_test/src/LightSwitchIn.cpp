@@ -7,8 +7,8 @@
 
 #include <iostream>
 
-#include "../include/LightSwitchIn.h"
-#include "Room.h"
+#include "LightSwitchIn.h"
+#include "iRoom.h"
 
 /*!
  *

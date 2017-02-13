@@ -5,14 +5,17 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../src/LightSwitchIn.cpp \
+../src/_LightSwitchIn.cpp \
 ../src/main.cpp 
 
 OBJS += \
 ./src/LightSwitchIn.o \
+./src/_LightSwitchIn.o \
 ./src/main.o 
 
 CPP_DEPS += \
 ./src/LightSwitchIn.d \
+./src/_LightSwitchIn.d \
 ./src/main.d 
 
 
@@ -20,7 +23,7 @@ CPP_DEPS += \
 src/%.o: ../src/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C++ Compiler'
-	g++ -std=c++0x -I../Light_test/include -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

@@ -5,8 +5,7 @@
  *      Author: micha
  */
 
-#ifndef IROOM_H
-#define IROOM_H
+#pragma once
 
 #include <string>
 #include <list>
@@ -54,4 +53,3 @@ class iRoom: public Base {
       }
 };
 
-#endif /* IROOM_H */

@@ -5,8 +5,7 @@
  *      Author: micha
  */
 
-#ifndef HEATERSWITCHIN_H
-#define HEATERSWITCHIN_H
+#pragma once
 
 #include <string>
 #include <list>
@@ -36,4 +35,4 @@ protected:
       HeaterSwitchInState  _State;
 };
 
-#endif /* HEATERSWITCHIN_H */
+

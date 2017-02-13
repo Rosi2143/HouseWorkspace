@@ -1,6 +1,15 @@
-11:08:35 **** Build of configuration Debug for project Light_test ****
+22:00:42 **** Incremental Build of configuration Debug for project Light_test ****
 make all 
-make: Nothing to be done for 'all'.
+Building file: ../src/LightSwitchIn.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/LightSwitchIn.d" -MT"src/LightSwitchIn.o" -o "src/LightSwitchIn.o" "../src/LightSwitchIn.cpp"
+In file included from ../src/LightSwitchIn.cpp:10:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/LightSwitchIn.h:15:28: fatal error: iLightSwitchIn.h: No such file or directory
+ #include "iLightSwitchIn.h"
+                            ^
+compilation terminated.
+src/subdir.mk:24: recipe for target 'src/LightSwitchIn.o' failed
+make: *** [src/LightSwitchIn.o] Error 1
 
-11:08:35 Build Finished (took 122ms)
+22:00:43 Build Finished (took 261ms)
 

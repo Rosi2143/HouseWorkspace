@@ -9,9 +9,9 @@
 #define IFLOOR_H
 
 #include "Base.h"
-#include "iBlind.h"
-#include "iHeater.h"
-#include "iFloor.h"
+
+class iRoom;
+class iSwitchIn;
 
 class iFloor: public Base {
 public:
