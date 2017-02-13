@@ -8,26 +8,28 @@
 #ifndef IFLOOR_H
 #define IFLOOR_H
 
+#include "Base.h"
+#include "iBlind.h"
+#include "iHeater.h"
+#include "iFloor.h"
 
 class iFloor: public Base {
 public:
-      iFloor(unsigned int Id, std::string Name, const Room* pRoom):Base(Id, Name, pRoom){};
-      iFloor(const iBlind& light);  // copy constructor
-      virtual ~iFloor();
+      iFloor(unsigned int Id, std::string Name, iRoom* pRoom=nullptr):Base(Id, Name, pRoom){};
+      iFloor(const iFloor& floor);  // copy constructor
+      virtual ~iFloor(){}
 
       // access functions
-      virtual unsigned int getVersion() const = 0;
-      virtual std::string  getName() const = 0;
+      //virtual unsigned int getVersion() const = 0;
 
       virtual unsigned int getNumberOfRooms() const = 0;
-      virtual const Room& getRoom(std::string name) const = 0;
 
       // handling Switches
       virtual unsigned int getNumberOfSwitches() const = 0;
-      virtual const Switch& getSwitch(unsigned int ID) const = 0;
+      virtual const iSwitchIn* getSwitch(std::string name) const = 0;
 
       // construction functions
-      virtual void addFloor(const Floor& _Floor) = 0;
+      virtual unsigned int addRoom(iRoom& room) = 0;
 protected:
       iFloor(): Base(0, "", nullptr){
          std::cout << "Wrong default constructor iFloor";

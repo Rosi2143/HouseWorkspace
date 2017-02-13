@@ -1,19 +1,4 @@
-20:48:50 **** Build of configuration Debug for project Floor_test ****
-make all 
-make: Nothing to be done for 'all'.
-20:50:26 **** Incremental Build of configuration Debug for project Floor_test ****
-make all 
-Building file: ../src/main.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
-Finished building: ../src/main.cpp
- 
-Building target: Floor_test
-Invoking: GCC C++ Linker
-g++ -Lworkspace_loc:/XmlParser/Debug -o "Floor_test"  ./src/Floor.o ./src/gmock-all.o ./src/main.o   -lgtest -lgtest_main -lpthread
-Finished building target: Floor_test
- 
-21:32:37 **** Build of configuration Debug for project Floor_test ****
+11:56:06 **** Incremental Build of configuration Debug for project Floor_test ****
 make all 
 Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
 Invoking: GCC C++ Compiler
@@ -55,17 +40,28 @@ In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floo
 /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:33:10: error: ‘cout’ is not a member of ‘std’
           std::cout << "Wrong default constructor iFloor";
           ^~~
-In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iBlindSwitchIn.h:14:0,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/include/BlindSwitchIn.h:11,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Room.h:15,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:8:
 /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In constructor ‘Floor::Floor(unsigned int, std::__cxx11::string)’:
-/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:11:22: error: ‘null_ptr’ was not declared in this scope
- #define BASE_NO_ROOM null_ptr
-                      ^
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:27:24: note: in expansion of macro ‘BASE_NO_ROOM’
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:27:36: error: no matching function for call to ‘iFloor::iFloor(unsigned int&, std::__cxx11::string&, std::nullptr_t)’
        iFloor(Id, Name, BASE_NO_ROOM) {
-                        ^~~~~~~~~~~~
+                                    ^
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:32:7: note: candidate: iFloor::iFloor()
+       iFloor(): Base(0, "", nullptr){
+       ^~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:32:7: note:   candidate expects 0 arguments, 3 provided
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:15:7: note: candidate: iFloor::iFloor(const int&)
+       iFloor(const iBlind& light);  // copy constructor
+       ^~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:15:7: note:   candidate expects 1 argument, 3 provided
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:14:7: note: candidate: iFloor::iFloor(unsigned int, int, const int*)
+       iFloor(unsigned int Id, std::string Name, const Room* pRoom):Base(Id, Name, pRoom){};
+       ^~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:14:7: note:   no known conversion for argument 2 from ‘std::__cxx11::string {aka std::__cxx11::basic_string<char>}’ to ‘int’
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:12:7: note: candidate: constexpr iFloor::iFloor(const iFloor&)
+ class iFloor: public Base {
+       ^~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:12:7: note:   candidate expects 1 argument, 3 provided
 /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In copy constructor ‘Floor::Floor(const Floor&)’:
 /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:32:21: error: ‘const class Floor’ has no member named ‘_Id’
        iFloor(_Floor._Id, _Floor._Name, _Floor._pFloor) {
@@ -106,20 +102,28 @@ In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cp
 /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:47:20: error: no matching function for call to ‘std::vector<iRoom*>::erase()’
     _RoomList.erase();
                     ^
-In file included from /usr/include/c++/6.2.1/vector:64:0,
+In file included from /usr/include/c++/6.3.1/vector:64:0,
                  from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:13,
                  from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/usr/include/c++/6.2.1/bits/stl_vector.h:1147:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
        erase(const_iterator __position)
        ^~~~~
-/usr/include/c++/6.2.1/bits/stl_vector.h:1147:7: note:   candidate expects 1 argument, 0 provided
-/usr/include/c++/6.2.1/bits/stl_vector.h:1174:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator, std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note:   candidate expects 1 argument, 0 provided
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator, std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
        erase(const_iterator __first, const_iterator __last)
        ^~~~~
-/usr/include/c++/6.2.1/bits/stl_vector.h:1174:7: note:   candidate expects 2 arguments, 0 provided
-src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note:   candidate expects 2 arguments, 0 provided
 make: *** [src/Floor.o] Error 1
-21:33:29 **** Incremental Build of configuration Debug for project Floor_test ****
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+11:58:21 **** Incremental Build of configuration Debug for project House ****
+make all 
+Building file: ../src/BlindStates.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BlindStates.d" -MT"src/BlindStates.o" -o "src/BlindStates.o" "../src/BlindStates.cpp"
+/bin/sh: arm-linux-gnueabihf-g++: command not found
+src/subdir.mk:39: recipe for target 'src/BlindStates.o' failed
+make: *** [src/BlindStates.o] Error 127
+11:58:35 **** Incremental Build of configuration Debug for project Floor_test ****
 make all 
 Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
 Invoking: GCC C++ Compiler
@@ -160,16 +164,6 @@ In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/i
        Base(unsigned int _Id, std::string _Name, iRoom* pRoom) :
        ^~~~
 /home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:20:7: note:   no known conversion for argument 3 from ‘const int*’ to ‘iRoom*’
-In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In constructor ‘Floor::Floor(unsigned int, std::__cxx11::string)’:
-/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:11:22: error: ‘null_ptr’ was not declared in this scope
- #define BASE_NO_ROOM null_ptr
-                      ^
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:27:24: note: in expansion of macro ‘BASE_NO_ROOM’
-       iFloor(Id, Name, BASE_NO_ROOM) {
-                        ^~~~~~~~~~~~
 /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In copy constructor ‘Floor::Floor(const Floor&)’:
 /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:32:47: error: ‘const class Floor’ has no member named ‘_pFloor’; did you mean ‘Floor’?
        iFloor(_Floor._Id, _Floor._Name, _Floor._pFloor) {
@@ -207,236 +201,137 @@ In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cp
 /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:47:20: error: no matching function for call to ‘std::vector<iRoom*>::erase()’
     _RoomList.erase();
                     ^
-In file included from /usr/include/c++/6.2.1/vector:64:0,
+In file included from /usr/include/c++/6.3.1/vector:64:0,
                  from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:13,
                  from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/usr/include/c++/6.2.1/bits/stl_vector.h:1147:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
        erase(const_iterator __position)
        ^~~~~
-/usr/include/c++/6.2.1/bits/stl_vector.h:1147:7: note:   candidate expects 1 argument, 0 provided
-/usr/include/c++/6.2.1/bits/stl_vector.h:1174:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator, std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note:   candidate expects 1 argument, 0 provided
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator, std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
        erase(const_iterator __first, const_iterator __last)
        ^~~~~
-/usr/include/c++/6.2.1/bits/stl_vector.h:1174:7: note:   candidate expects 2 arguments, 0 provided
-src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note:   candidate expects 2 arguments, 0 provided
 make: *** [src/Floor.o] Error 1
-21:34:03 **** Incremental Build of configuration Debug for project Floor_test ****
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+13:06:23 **** Incremental Build of configuration Debug for project House ****
+make all 
+Building file: ../src/BlindStates.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/BlindStates.d" -MT"src/BlindStates.o" -o "src/BlindStates.o" "../src/BlindStates.cpp"
+/bin/sh: arm-linux-gnueabihf-g++: command not found
+src/subdir.mk:39: recipe for target 'src/BlindStates.o' failed
+make: *** [src/BlindStates.o] Error 127
+13:06:28 **** Incremental Build of configuration Debug for project Floor_test ****
 make all 
 Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
 Invoking: GCC C++ Compiler
 g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
 In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
                  from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:18:20: error: ‘iBlind’ does not name a type
-       iFloor(const iBlind& light);  // copy constructor
-                    ^~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:30:21: error: ‘Switch’ does not name a type
-       virtual const Switch& getSwitch(unsigned int ID) const = 0;
-                     ^~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:33:35: error: ‘Floor’ does not name a type
-       virtual void addFloor(const Floor& _Floor) = 0;
-                                   ^~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h: In constructor ‘iFloor::iFloor(unsigned int, std::__cxx11::string, const Room*)’:
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:17:88: error: no matching function for call to ‘Base::Base(unsigned int&, std::__cxx11::string&, const Room*&)’
-       iFloor(unsigned int Id, std::string Name, const Room* pRoom):Base(Id, Name, pRoom){};
-                                                                                        ^
-In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:54:7: note: candidate: Base::Base()
-       Base() :
-       ^~~~
-/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:54:7: note:   candidate expects 0 arguments, 3 provided
-/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:23:7: note: candidate: Base::Base(const Base&)
-       Base(const Base &base) :  // copy constructor
-       ^~~~
-/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:23:7: note:   candidate expects 1 argument, 3 provided
-/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:20:7: note: candidate: Base::Base(unsigned int, std::__cxx11::string, iRoom*)
-       Base(unsigned int _Id, std::string _Name, iRoom* pRoom) :
-       ^~~~
-/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:20:7: note:   no known conversion for argument 3 from ‘const Room*’ to ‘iRoom*’
-In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
-/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h: At global scope:
-/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:33:28: error: invalid covariant return type for ‘virtual const iRoom& Floor::getRoom(std::__cxx11::string) const’
-       virtual const iRoom& getRoom(std::string name) const;
-                            ^~~~~~~
-In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:26:27: error:   overriding ‘virtual const Room& iFloor::getRoom(std::__cxx11::string) const’
-       virtual const Room& getRoom(std::string name) const = 0;
-                           ^~~~~~~
-In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In constructor ‘Floor::Floor(unsigned int, std::__cxx11::string)’:
-/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:11:22: error: ‘null_ptr’ was not declared in this scope
- #define BASE_NO_ROOM null_ptr
-                      ^
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:27:24: note: in expansion of macro ‘BASE_NO_ROOM’
-       iFloor(Id, Name, BASE_NO_ROOM) {
-                        ^~~~~~~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In copy constructor ‘Floor::Floor(const Floor&)’:
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:32:47: error: ‘const class Floor’ has no member named ‘_pFloor’; did you mean ‘Floor’?
-       iFloor(_Floor._Id, _Floor._Name, _Floor._pFloor) {
-                                               ^~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: At global scope:
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:36:31: error: cannot declare parameter ‘other’ to be of abstract type ‘Floor’
- Floor& Floor::operator=(Floor other) {
-                               ^~~~~
-In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
-/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:20:7: note:   because the following virtual functions are pure within ‘Floor’:
- class Floor : public iFloor
-       ^~~~~
-In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:23:28: note: 	virtual std::__cxx11::string iFloor::getName() const
-       virtual std::string  getName() const = 0;
-                            ^~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:22:28: note: 	virtual unsigned int iFloor::getVersion() const
-       virtual unsigned int getVersion() const = 0;
-                            ^~~~~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:29:28: note: 	virtual unsigned int iFloor::getNumberOfSwitches() const
-       virtual unsigned int getNumberOfSwitches() const = 0;
-                            ^~~~~~~~~~~~~~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:33:20: note: 	virtual void iFloor::addFloor(const int&)
-       virtual void addFloor(const Floor& _Floor) = 0;
-                    ^~~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:36:8: error: prototype for ‘Floor& Floor::operator=(Floor)’ does not match any in class ‘Floor’
- Floor& Floor::operator=(Floor other) {
-        ^~~~~
-In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
-/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:29:14: error: candidate is: Floor& Floor::operator=(const Floor&)
-       Floor& operator=(const Floor& other);    // assignment operator
-              ^~~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In destructor ‘virtual Floor::~Floor()’:
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:47:20: error: no matching function for call to ‘std::vector<iRoom*>::erase()’
-    _RoomList.erase();
-                    ^
-In file included from /usr/include/c++/6.2.1/vector:64:0,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:13,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/usr/include/c++/6.2.1/bits/stl_vector.h:1147:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
-       erase(const_iterator __position)
-       ^~~~~
-/usr/include/c++/6.2.1/bits/stl_vector.h:1147:7: note:   candidate expects 1 argument, 0 provided
-/usr/include/c++/6.2.1/bits/stl_vector.h:1174:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator, std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
-       erase(const_iterator __first, const_iterator __last)
-       ^~~~~
-/usr/include/c++/6.2.1/bits/stl_vector.h:1174:7: note:   candidate expects 2 arguments, 0 provided
-src/subdir.mk:28: recipe for target 'src/Floor.o' failed
-make: *** [src/Floor.o] Error 1
-21:38:00 **** Incremental Build of configuration Debug for project Floor_test ****
-make all 
-Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
-In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:30:21: error: ‘Switch’ does not name a type
-       virtual const Switch& getSwitch(unsigned int ID) const = 0;
-                     ^~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:33:35: error: ‘Floor’ does not name a type
-       virtual void addFloor(const Floor& _Floor) = 0;
-                                   ^~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h: In constructor ‘iFloor::iFloor(unsigned int, std::__cxx11::string, const Room*)’:
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:17:88: error: no matching function for call to ‘Base::Base(unsigned int&, std::__cxx11::string&, const Room*&)’
-       iFloor(unsigned int Id, std::string Name, const Room* pRoom):Base(Id, Name, pRoom){};
-                                                                                        ^
-In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:54:7: note: candidate: Base::Base()
-       Base() :
-       ^~~~
-/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:54:7: note:   candidate expects 0 arguments, 3 provided
-/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:23:7: note: candidate: Base::Base(const Base&)
-       Base(const Base &base) :  // copy constructor
-       ^~~~
-/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:23:7: note:   candidate expects 1 argument, 3 provided
-/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:20:7: note: candidate: Base::Base(unsigned int, std::__cxx11::string, iRoom*)
-       Base(unsigned int _Id, std::string _Name, iRoom* pRoom) :
-       ^~~~
-/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:20:7: note:   no known conversion for argument 3 from ‘const Room*’ to ‘iRoom*’
-In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
-/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h: At global scope:
-/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:33:28: error: invalid covariant return type for ‘virtual const iRoom& Floor::getRoom(std::__cxx11::string) const’
-       virtual const iRoom& getRoom(std::string name) const;
-                            ^~~~~~~
-In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:26:27: error:   overriding ‘virtual const Room& iFloor::getRoom(std::__cxx11::string) const’
-       virtual const Room& getRoom(std::string name) const = 0;
-                           ^~~~~~~
-In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In constructor ‘Floor::Floor(unsigned int, std::__cxx11::string)’:
-/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:11:22: error: ‘null_ptr’ was not declared in this scope
- #define BASE_NO_ROOM null_ptr
-                      ^
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:27:24: note: in expansion of macro ‘BASE_NO_ROOM’
-       iFloor(Id, Name, BASE_NO_ROOM) {
-                        ^~~~~~~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In copy constructor ‘Floor::Floor(const Floor&)’:
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:32:47: error: ‘const class Floor’ has no member named ‘_pFloor’; did you mean ‘Floor’?
-       iFloor(_Floor._Id, _Floor._Name, _Floor._pFloor) {
-                                               ^~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: At global scope:
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:36:31: error: cannot declare parameter ‘other’ to be of abstract type ‘Floor’
- Floor& Floor::operator=(Floor other) {
-                               ^~~~~
-In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
-/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:20:7: note:   because the following virtual functions are pure within ‘Floor’:
- class Floor : public iFloor
-       ^~~~~
-In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:23:28: note: 	virtual std::__cxx11::string iFloor::getName() const
-       virtual std::string  getName() const = 0;
-                            ^~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:22:28: note: 	virtual unsigned int iFloor::getVersion() const
-       virtual unsigned int getVersion() const = 0;
-                            ^~~~~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:29:28: note: 	virtual unsigned int iFloor::getNumberOfSwitches() const
-       virtual unsigned int getNumberOfSwitches() const = 0;
-                            ^~~~~~~~~~~~~~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:33:20: note: 	virtual void iFloor::addFloor(const int&)
-       virtual void addFloor(const Floor& _Floor) = 0;
-                    ^~~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:36:8: error: prototype for ‘Floor& Floor::operator=(Floor)’ does not match any in class ‘Floor’
- Floor& Floor::operator=(Floor other) {
-        ^~~~~
-In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
-/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:29:14: error: candidate is: Floor& Floor::operator=(const Floor&)
-       Floor& operator=(const Floor& other);    // assignment operator
-              ^~~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In destructor ‘virtual Floor::~Floor()’:
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:47:20: error: no matching function for call to ‘std::vector<iRoom*>::erase()’
-    _RoomList.erase();
-                    ^
-In file included from /usr/include/c++/6.2.1/vector:64:0,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:13,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/usr/include/c++/6.2.1/bits/stl_vector.h:1147:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
-       erase(const_iterator __position)
-       ^~~~~
-/usr/include/c++/6.2.1/bits/stl_vector.h:1147:7: note:   candidate expects 1 argument, 0 provided
-/usr/include/c++/6.2.1/bits/stl_vector.h:1174:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator, std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
-       erase(const_iterator __first, const_iterator __last)
-       ^~~~~
-/usr/include/c++/6.2.1/bits/stl_vector.h:1174:7: note:   candidate expects 2 arguments, 0 provided
-make: *** [src/Floor.o] Error 1
-src/subdir.mk:28: recipe for target 'src/Floor.o' failed
-21:40:44 **** Incremental Build of configuration Debug for project Floor_test ****
-make all 
-Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
-Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
-In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
-                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:28:21: error: ‘iSwitch’ does not name a type
+       virtual const iSwitch& getSwitch(unsigned int ID) const = 0;
+                     ^~~~~~~
 /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h: In constructor ‘iFloor::iFloor(unsigned int, std::__cxx11::string, const iRoom*)’:
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:18:89: error: invalid conversion from ‘const iRoom*’ to ‘iRoom*’ [-fpermissive]
-       iFloor(unsigned int Id, std::string Name, const iRoom* pRoom):Base(Id, Name, pRoom){};
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:15:97: error: invalid conversion from ‘const iRoom*’ to ‘iRoom*’ [-fpermissive]
+       iFloor(unsigned int Id, std::string Name, const iRoom* pRoom=nullptr):Base(Id, Name, pRoom){};
+                                                                                                 ^
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:20:7: note:   initializing argument 3 of ‘Base::Base(unsigned int, std::__cxx11::string, iRoom*)’
+       Base(unsigned int _Id, std::string _Name, iRoom* pRoom) :
+       ^~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In copy constructor ‘Floor::Floor(const Floor&)’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:32:47: error: ‘const class Floor’ has no member named ‘_pFloor’; did you mean ‘Floor’?
+       iFloor(_Floor._Id, _Floor._Name, _Floor._pFloor) {
+                                               ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: At global scope:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:36:31: error: cannot declare parameter ‘other’ to be of abstract type ‘Floor’
+ Floor& Floor::operator=(Floor other) {
+                               ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:20:7: note:   because the following virtual functions are pure within ‘Floor’:
+ class Floor : public iFloor
+       ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:21:28: note: 	virtual std::__cxx11::string iFloor::getName() const
+       virtual std::string  getName() const = 0;
+                            ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:20:28: note: 	virtual unsigned int iFloor::getVersion() const
+       virtual unsigned int getVersion() const = 0;
+                            ^~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:27:28: note: 	virtual unsigned int iFloor::getNumberOfSwitches() const
+       virtual unsigned int getNumberOfSwitches() const = 0;
+                            ^~~~~~~~~~~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:31:20: note: 	virtual void iFloor::addFloor(const iFloor&)
+       virtual void addFloor(const iFloor& _Floor) = 0;
+                    ^~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:36:8: error: prototype for ‘Floor& Floor::operator=(Floor)’ does not match any in class ‘Floor’
+ Floor& Floor::operator=(Floor other) {
+        ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:29:14: error: candidate is: Floor& Floor::operator=(const Floor&)
+       Floor& operator=(const Floor& other);    // assignment operator
+              ^~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In destructor ‘virtual Floor::~Floor()’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:47:20: error: no matching function for call to ‘std::vector<iRoom*>::erase()’
+    _RoomList.erase();
+                    ^
+In file included from /usr/include/c++/6.3.1/vector:64:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:13,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+       erase(const_iterator __position)
+       ^~~~~
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note:   candidate expects 1 argument, 0 provided
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator, std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+       erase(const_iterator __first, const_iterator __last)
+       ^~~~~
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note:   candidate expects 2 arguments, 0 provided
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+make: *** [src/Floor.o] Error 1
+13:10:50 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:12:20: fatal error: iBlind.h: No such file or directory
+ #include "iBlind.h"
+                    ^
+compilation terminated.
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+make: *** [src/Floor.o] Error 1
+13:15:43 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:13:21: fatal error: iHeater.h: No such file or directory
+ #include "iHeater.h"
+                     ^
+compilation terminated.
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+make: *** [src/Floor.o] Error 1
+13:16:58 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:12:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iBlind.h:22:21: error: ‘iSwitch’ does not name a type
+       virtual const iSwitch& getSwitch(unsigned int ID) const = 0;
+                     ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iBlind.h: In constructor ‘iBlind::iBlind(unsigned int, std::__cxx11::string, const iRoom*)’:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iBlind.h:14:89: error: invalid conversion from ‘const iRoom*’ to ‘iRoom*’ [-fpermissive]
+       iBlind(unsigned int Id, std::string Name, const iRoom* pRoom):Base(Id, Name, pRoom){};
                                                                                          ^
 In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
                  from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
@@ -444,16 +339,39 @@ In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/i
 /home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:20:7: note:   initializing argument 3 of ‘Base::Base(unsigned int, std::__cxx11::string, iRoom*)’
        Base(unsigned int _Id, std::string _Name, iRoom* pRoom) :
        ^~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:13:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h: At global scope:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h:22:21: error: ‘iSwitch’ does not name a type
+       virtual const iSwitch& getSwitch(unsigned int ID) const = 0;
+                     ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h: In constructor ‘iHeater::iHeater(unsigned int, std::__cxx11::string, const iRoom*)’:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h:14:90: error: invalid conversion from ‘const iRoom*’ to ‘iRoom*’ [-fpermissive]
+       iHeater(unsigned int Id, std::string Name, const iRoom* pRoom):Base(Id, Name, pRoom){};
+                                                                                          ^
 In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
                  from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
                  from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In constructor ‘Floor::Floor(unsigned int, std::__cxx11::string)’:
-/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:11:22: error: ‘null_ptr’ was not declared in this scope
- #define BASE_NO_ROOM null_ptr
-                      ^
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:27:24: note: in expansion of macro ‘BASE_NO_ROOM’
-       iFloor(Id, Name, BASE_NO_ROOM) {
-                        ^~~~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:20:7: note:   initializing argument 3 of ‘Base::Base(unsigned int, std::__cxx11::string, iRoom*)’
+       Base(unsigned int _Id, std::string _Name, iRoom* pRoom) :
+       ^~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h: At global scope:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:30:21: error: ‘iSwitch’ does not name a type
+       virtual const iSwitch& getSwitch(unsigned int ID) const = 0;
+                     ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h: In constructor ‘iFloor::iFloor(unsigned int, std::__cxx11::string, const iRoom*)’:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:18:97: error: invalid conversion from ‘const iRoom*’ to ‘iRoom*’ [-fpermissive]
+       iFloor(unsigned int Id, std::string Name, const iRoom* pRoom=nullptr):Base(Id, Name, pRoom){};
+                                                                                                 ^
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:20:7: note:   initializing argument 3 of ‘Base::Base(unsigned int, std::__cxx11::string, iRoom*)’
+       Base(unsigned int _Id, std::string _Name, iRoom* pRoom) :
+       ^~~~
 /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In copy constructor ‘Floor::Floor(const Floor&)’:
 /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:32:47: error: ‘const class Floor’ has no member named ‘_pFloor’; did you mean ‘Floor’?
        iFloor(_Floor._Id, _Floor._Name, _Floor._pFloor) {
@@ -468,19 +386,13 @@ In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cp
        ^~~~~
 In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
                  from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:24:28: note: 	virtual std::__cxx11::string iFloor::getName() const
-       virtual std::string  getName() const = 0;
-                            ^~~~~~~
 /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:23:28: note: 	virtual unsigned int iFloor::getVersion() const
        virtual unsigned int getVersion() const = 0;
                             ^~~~~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:30:28: note: 	virtual unsigned int iFloor::getNumberOfSwitches() const
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:29:28: note: 	virtual unsigned int iFloor::getNumberOfSwitches() const
        virtual unsigned int getNumberOfSwitches() const = 0;
                             ^~~~~~~~~~~~~~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:31:30: note: 	virtual const iSwitch& iFloor::getSwitch(unsigned int) const
-       virtual const iSwitch& getSwitch(unsigned int ID) const = 0;
-                              ^~~~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:34:20: note: 	virtual void iFloor::addFloor(const iFloor&)
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:33:20: note: 	virtual void iFloor::addFloor(const iFloor&)
        virtual void addFloor(const iFloor& _Floor) = 0;
                     ^~~~~~~~
 /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:36:8: error: prototype for ‘Floor& Floor::operator=(Floor)’ does not match any in class ‘Floor’
@@ -494,34 +406,73 @@ In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cp
 /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:47:20: error: no matching function for call to ‘std::vector<iRoom*>::erase()’
     _RoomList.erase();
                     ^
-In file included from /usr/include/c++/6.2.1/vector:64:0,
+In file included from /usr/include/c++/6.3.1/vector:64:0,
                  from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:13,
                  from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/usr/include/c++/6.2.1/bits/stl_vector.h:1147:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
        erase(const_iterator __position)
        ^~~~~
-/usr/include/c++/6.2.1/bits/stl_vector.h:1147:7: note:   candidate expects 1 argument, 0 provided
-/usr/include/c++/6.2.1/bits/stl_vector.h:1174:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator, std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note:   candidate expects 1 argument, 0 provided
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator, std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
        erase(const_iterator __first, const_iterator __last)
        ^~~~~
-/usr/include/c++/6.2.1/bits/stl_vector.h:1174:7: note:   candidate expects 2 arguments, 0 provided
-src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note:   candidate expects 2 arguments, 0 provided
 make: *** [src/Floor.o] Error 1
-21:42:55 **** Incremental Build of configuration Debug for project Floor_test ****
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+13:48:26 **** Incremental Build of configuration Debug for project Floor_test ****
 make all 
 Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
 Invoking: GCC C++ Compiler
 g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:12:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iBlind.h:21:21: error: ‘iSwitch’ does not name a type
+       virtual const iSwitch& getSwitch(unsigned int ID) const = 0;
+                     ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iBlind.h: In constructor ‘iBlind::iBlind(unsigned int, std::__cxx11::string, const iRoom*)’:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iBlind.h:14:89: error: invalid conversion from ‘const iRoom*’ to ‘iRoom*’ [-fpermissive]
+       iBlind(unsigned int Id, std::string Name, const iRoom* pRoom):Base(Id, Name, pRoom){};
+                                                                                         ^
 In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
                  from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
                  from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In constructor ‘Floor::Floor(unsigned int, std::__cxx11::string)’:
-/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:11:22: error: ‘null_ptr’ was not declared in this scope
- #define BASE_NO_ROOM null_ptr
-                      ^
-/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:27:24: note: in expansion of macro ‘BASE_NO_ROOM’
-       iFloor(Id, Name, BASE_NO_ROOM) {
-                        ^~~~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:20:7: note:   initializing argument 3 of ‘Base::Base(unsigned int, std::__cxx11::string, iRoom*)’
+       Base(unsigned int _Id, std::string _Name, iRoom* pRoom) :
+       ^~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:13:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h: At global scope:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h:20:21: error: ‘iSwitch’ does not name a type
+       virtual const iSwitch& getSwitch(unsigned int ID) const = 0;
+                     ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h: In constructor ‘iHeater::iHeater(unsigned int, std::__cxx11::string, const iRoom*)’:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h:14:90: error: invalid conversion from ‘const iRoom*’ to ‘iRoom*’ [-fpermissive]
+       iHeater(unsigned int Id, std::string Name, const iRoom* pRoom):Base(Id, Name, pRoom){};
+                                                                                          ^
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:20:7: note:   initializing argument 3 of ‘Base::Base(unsigned int, std::__cxx11::string, iRoom*)’
+       Base(unsigned int _Id, std::string _Name, iRoom* pRoom) :
+       ^~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h: At global scope:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:29:21: error: ‘iSwitch’ does not name a type
+       virtual const iSwitch& getSwitch(unsigned int ID) const = 0;
+                     ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h: In constructor ‘iFloor::iFloor(unsigned int, std::__cxx11::string, const iRoom*)’:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:18:97: error: invalid conversion from ‘const iRoom*’ to ‘iRoom*’ [-fpermissive]
+       iFloor(unsigned int Id, std::string Name, const iRoom* pRoom=nullptr):Base(Id, Name, pRoom){};
+                                                                                                 ^
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:20:7: note:   initializing argument 3 of ‘Base::Base(unsigned int, std::__cxx11::string, iRoom*)’
+       Base(unsigned int _Id, std::string _Name, iRoom* pRoom) :
+       ^~~~
 /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In copy constructor ‘Floor::Floor(const Floor&)’:
 /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:32:47: error: ‘const class Floor’ has no member named ‘_pFloor’; did you mean ‘Floor’?
        iFloor(_Floor._Id, _Floor._Name, _Floor._pFloor) {
@@ -536,19 +487,13 @@ In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cp
        ^~~~~
 In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
                  from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:24:28: note: 	virtual std::__cxx11::string iFloor::getName() const
-       virtual std::string  getName() const = 0;
-                            ^~~~~~~
 /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:23:28: note: 	virtual unsigned int iFloor::getVersion() const
        virtual unsigned int getVersion() const = 0;
                             ^~~~~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:30:28: note: 	virtual unsigned int iFloor::getNumberOfSwitches() const
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:28:28: note: 	virtual unsigned int iFloor::getNumberOfSwitches() const
        virtual unsigned int getNumberOfSwitches() const = 0;
                             ^~~~~~~~~~~~~~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:31:30: note: 	virtual const iSwitch& iFloor::getSwitch(unsigned int) const
-       virtual const iSwitch& getSwitch(unsigned int ID) const = 0;
-                              ^~~~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:34:20: note: 	virtual void iFloor::addFloor(const iFloor&)
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:32:20: note: 	virtual void iFloor::addFloor(const iFloor&)
        virtual void addFloor(const iFloor& _Floor) = 0;
                     ^~~~~~~~
 /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:36:8: error: prototype for ‘Floor& Floor::operator=(Floor)’ does not match any in class ‘Floor’
@@ -562,24 +507,87 @@ In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cp
 /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:47:20: error: no matching function for call to ‘std::vector<iRoom*>::erase()’
     _RoomList.erase();
                     ^
-In file included from /usr/include/c++/6.2.1/vector:64:0,
+In file included from /usr/include/c++/6.3.1/vector:64:0,
                  from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:13,
                  from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/usr/include/c++/6.2.1/bits/stl_vector.h:1147:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
        erase(const_iterator __position)
        ^~~~~
-/usr/include/c++/6.2.1/bits/stl_vector.h:1147:7: note:   candidate expects 1 argument, 0 provided
-/usr/include/c++/6.2.1/bits/stl_vector.h:1174:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator, std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note:   candidate expects 1 argument, 0 provided
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator, std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
        erase(const_iterator __first, const_iterator __last)
        ^~~~~
-/usr/include/c++/6.2.1/bits/stl_vector.h:1174:7: note:   candidate expects 2 arguments, 0 provided
-make: *** [src/Floor.o] Error 1
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note:   candidate expects 2 arguments, 0 provided
 src/subdir.mk:28: recipe for target 'src/Floor.o' failed
-21:44:05 **** Incremental Build of configuration Debug for project Floor_test ****
+make: *** [src/Floor.o] Error 1
+13:49:27 **** Incremental Build of configuration Debug for project Floor_test ****
 make all 
 Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
 Invoking: GCC C++ Compiler
 g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:12:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iBlind.h:11:21: fatal error: iSwitch.h: No such file or directory
+ #include "iSwitch.h"
+                     ^
+compilation terminated.
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+make: *** [src/Floor.o] Error 1
+13:52:54 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:12:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iBlind.h:22:21: error: ‘iSwitch’ does not name a type
+       virtual const iSwitch& getSwitch(unsigned int ID) const = 0;
+                     ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iBlind.h: In constructor ‘iBlind::iBlind(unsigned int, std::__cxx11::string, const iRoom*)’:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iBlind.h:15:89: error: invalid conversion from ‘const iRoom*’ to ‘iRoom*’ [-fpermissive]
+       iBlind(unsigned int Id, std::string Name, const iRoom* pRoom):Base(Id, Name, pRoom){};
+                                                                                         ^
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:20:7: note:   initializing argument 3 of ‘Base::Base(unsigned int, std::__cxx11::string, iRoom*)’
+       Base(unsigned int _Id, std::string _Name, iRoom* pRoom) :
+       ^~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:13:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h: At global scope:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h:21:21: error: ‘iSwitch’ does not name a type
+       virtual const iSwitch& getSwitch(unsigned int ID) const = 0;
+                     ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h: In constructor ‘iHeater::iHeater(unsigned int, std::__cxx11::string, const iRoom*)’:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h:15:90: error: invalid conversion from ‘const iRoom*’ to ‘iRoom*’ [-fpermissive]
+       iHeater(unsigned int Id, std::string Name, const iRoom* pRoom):Base(Id, Name, pRoom){};
+                                                                                          ^
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:20:7: note:   initializing argument 3 of ‘Base::Base(unsigned int, std::__cxx11::string, iRoom*)’
+       Base(unsigned int _Id, std::string _Name, iRoom* pRoom) :
+       ^~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h: At global scope:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:29:21: error: ‘iSwitch’ does not name a type
+       virtual const iSwitch& getSwitch(unsigned int ID) const = 0;
+                     ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h: In constructor ‘iFloor::iFloor(unsigned int, std::__cxx11::string, const iRoom*)’:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:18:97: error: invalid conversion from ‘const iRoom*’ to ‘iRoom*’ [-fpermissive]
+       iFloor(unsigned int Id, std::string Name, const iRoom* pRoom=nullptr):Base(Id, Name, pRoom){};
+                                                                                                 ^
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:20:7: note:   initializing argument 3 of ‘Base::Base(unsigned int, std::__cxx11::string, iRoom*)’
+       Base(unsigned int _Id, std::string _Name, iRoom* pRoom) :
+       ^~~~
 /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In copy constructor ‘Floor::Floor(const Floor&)’:
 /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:32:47: error: ‘const class Floor’ has no member named ‘_pFloor’; did you mean ‘Floor’?
        iFloor(_Floor._Id, _Floor._Name, _Floor._pFloor) {
@@ -594,19 +602,13 @@ In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cp
        ^~~~~
 In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
                  from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:24:28: note: 	virtual std::__cxx11::string iFloor::getName() const
-       virtual std::string  getName() const = 0;
-                            ^~~~~~~
 /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:23:28: note: 	virtual unsigned int iFloor::getVersion() const
        virtual unsigned int getVersion() const = 0;
                             ^~~~~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:30:28: note: 	virtual unsigned int iFloor::getNumberOfSwitches() const
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:28:28: note: 	virtual unsigned int iFloor::getNumberOfSwitches() const
        virtual unsigned int getNumberOfSwitches() const = 0;
                             ^~~~~~~~~~~~~~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:31:30: note: 	virtual const iSwitch& iFloor::getSwitch(unsigned int) const
-       virtual const iSwitch& getSwitch(unsigned int ID) const = 0;
-                              ^~~~~~~~~
-/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:34:20: note: 	virtual void iFloor::addFloor(const iFloor&)
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:32:20: note: 	virtual void iFloor::addFloor(const iFloor&)
        virtual void addFloor(const iFloor& _Floor) = 0;
                     ^~~~~~~~
 /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:36:8: error: prototype for ‘Floor& Floor::operator=(Floor)’ does not match any in class ‘Floor’
@@ -620,16 +622,1471 @@ In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cp
 /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:47:20: error: no matching function for call to ‘std::vector<iRoom*>::erase()’
     _RoomList.erase();
                     ^
-In file included from /usr/include/c++/6.2.1/vector:64:0,
+In file included from /usr/include/c++/6.3.1/vector:64:0,
                  from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:13,
                  from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
-/usr/include/c++/6.2.1/bits/stl_vector.h:1147:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
        erase(const_iterator __position)
        ^~~~~
-/usr/include/c++/6.2.1/bits/stl_vector.h:1147:7: note:   candidate expects 1 argument, 0 provided
-/usr/include/c++/6.2.1/bits/stl_vector.h:1174:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator, std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note:   candidate expects 1 argument, 0 provided
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator, std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
        erase(const_iterator __first, const_iterator __last)
        ^~~~~
-/usr/include/c++/6.2.1/bits/stl_vector.h:1174:7: note:   candidate expects 2 arguments, 0 provided
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note:   candidate expects 2 arguments, 0 provided
 src/subdir.mk:28: recipe for target 'src/Floor.o' failed
 make: *** [src/Floor.o] Error 1
+16:10:07 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:12:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iBlind.h: In constructor ‘iBlind::iBlind(unsigned int, std::__cxx11::string, const iRoom*)’:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iBlind.h:15:89: error: invalid conversion from ‘const iRoom*’ to ‘iRoom*’ [-fpermissive]
+       iBlind(unsigned int Id, std::string Name, const iRoom* pRoom):Base(Id, Name, pRoom){};
+                                                                                         ^
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:23:7: note:   initializing argument 3 of ‘Base::Base(unsigned int, std::__cxx11::string, iRoom*)’
+       Base(unsigned int _Id, std::string _Name, iRoom* pRoom) :
+       ^~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:13:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h: At global scope:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h:21:21: error: ‘iSwitch’ does not name a type
+       virtual const iSwitch& getSwitch(unsigned int ID) const = 0;
+                     ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h: In constructor ‘iHeater::iHeater(unsigned int, std::__cxx11::string, const iRoom*)’:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h:15:90: error: invalid conversion from ‘const iRoom*’ to ‘iRoom*’ [-fpermissive]
+       iHeater(unsigned int Id, std::string Name, const iRoom* pRoom):Base(Id, Name, pRoom){};
+                                                                                          ^
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:23:7: note:   initializing argument 3 of ‘Base::Base(unsigned int, std::__cxx11::string, iRoom*)’
+       Base(unsigned int _Id, std::string _Name, iRoom* pRoom) :
+       ^~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h: At global scope:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:29:21: error: ‘iSwitch’ does not name a type
+       virtual const iSwitch& getSwitch(unsigned int ID) const = 0;
+                     ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h: In constructor ‘iFloor::iFloor(unsigned int, std::__cxx11::string, const iRoom*)’:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:18:97: error: invalid conversion from ‘const iRoom*’ to ‘iRoom*’ [-fpermissive]
+       iFloor(unsigned int Id, std::string Name, const iRoom* pRoom=nullptr):Base(Id, Name, pRoom){};
+                                                                                                 ^
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:23:7: note:   initializing argument 3 of ‘Base::Base(unsigned int, std::__cxx11::string, iRoom*)’
+       Base(unsigned int _Id, std::string _Name, iRoom* pRoom) :
+       ^~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In copy constructor ‘Floor::Floor(const Floor&)’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:32:47: error: ‘const class Floor’ has no member named ‘_pFloor’; did you mean ‘Floor’?
+       iFloor(_Floor._Id, _Floor._Name, _Floor._pFloor) {
+                                               ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: At global scope:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:36:31: error: cannot declare parameter ‘other’ to be of abstract type ‘Floor’
+ Floor& Floor::operator=(Floor other) {
+                               ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:20:7: note:   because the following virtual functions are pure within ‘Floor’:
+ class Floor : public iFloor
+       ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:23:28: note: 	virtual unsigned int iFloor::getVersion() const
+       virtual unsigned int getVersion() const = 0;
+                            ^~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:28:28: note: 	virtual unsigned int iFloor::getNumberOfSwitches() const
+       virtual unsigned int getNumberOfSwitches() const = 0;
+                            ^~~~~~~~~~~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:32:20: note: 	virtual void iFloor::addFloor(const iFloor&)
+       virtual void addFloor(const iFloor& _Floor) = 0;
+                    ^~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:36:8: error: prototype for ‘Floor& Floor::operator=(Floor)’ does not match any in class ‘Floor’
+ Floor& Floor::operator=(Floor other) {
+        ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:29:14: error: candidate is: Floor& Floor::operator=(const Floor&)
+       Floor& operator=(const Floor& other);    // assignment operator
+              ^~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In destructor ‘virtual Floor::~Floor()’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:47:20: error: no matching function for call to ‘std::vector<iRoom*>::erase()’
+    _RoomList.erase();
+                    ^
+In file included from /usr/include/c++/6.3.1/vector:64:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:13,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+       erase(const_iterator __position)
+       ^~~~~
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note:   candidate expects 1 argument, 0 provided
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator, std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+       erase(const_iterator __first, const_iterator __last)
+       ^~~~~
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note:   candidate expects 2 arguments, 0 provided
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+make: *** [src/Floor.o] Error 1
+16:10:37 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:13:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h:21:21: error: ‘iSwitch’ does not name a type
+       virtual const iSwitch& getSwitch(unsigned int ID) const = 0;
+                     ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h: In constructor ‘iHeater::iHeater(unsigned int, std::__cxx11::string, const iRoom*)’:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h:15:90: error: invalid conversion from ‘const iRoom*’ to ‘iRoom*’ [-fpermissive]
+       iHeater(unsigned int Id, std::string Name, const iRoom* pRoom):Base(Id, Name, pRoom){};
+                                                                                          ^
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:23:7: note:   initializing argument 3 of ‘Base::Base(unsigned int, std::__cxx11::string, iRoom*)’
+       Base(unsigned int _Id, std::string _Name, iRoom* pRoom) :
+       ^~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h: At global scope:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:29:21: error: ‘iSwitch’ does not name a type
+       virtual const iSwitch& getSwitch(unsigned int ID) const = 0;
+                     ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h: In constructor ‘iFloor::iFloor(unsigned int, std::__cxx11::string, const iRoom*)’:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:18:97: error: invalid conversion from ‘const iRoom*’ to ‘iRoom*’ [-fpermissive]
+       iFloor(unsigned int Id, std::string Name, const iRoom* pRoom=nullptr):Base(Id, Name, pRoom){};
+                                                                                                 ^
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:23:7: note:   initializing argument 3 of ‘Base::Base(unsigned int, std::__cxx11::string, iRoom*)’
+       Base(unsigned int _Id, std::string _Name, iRoom* pRoom) :
+       ^~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In copy constructor ‘Floor::Floor(const Floor&)’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:32:47: error: ‘const class Floor’ has no member named ‘_pFloor’; did you mean ‘Floor’?
+       iFloor(_Floor._Id, _Floor._Name, _Floor._pFloor) {
+                                               ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: At global scope:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:36:31: error: cannot declare parameter ‘other’ to be of abstract type ‘Floor’
+ Floor& Floor::operator=(Floor other) {
+                               ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:20:7: note:   because the following virtual functions are pure within ‘Floor’:
+ class Floor : public iFloor
+       ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:23:28: note: 	virtual unsigned int iFloor::getVersion() const
+       virtual unsigned int getVersion() const = 0;
+                            ^~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:28:28: note: 	virtual unsigned int iFloor::getNumberOfSwitches() const
+       virtual unsigned int getNumberOfSwitches() const = 0;
+                            ^~~~~~~~~~~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:32:20: note: 	virtual void iFloor::addFloor(const iFloor&)
+       virtual void addFloor(const iFloor& _Floor) = 0;
+                    ^~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:36:8: error: prototype for ‘Floor& Floor::operator=(Floor)’ does not match any in class ‘Floor’
+ Floor& Floor::operator=(Floor other) {
+        ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:29:14: error: candidate is: Floor& Floor::operator=(const Floor&)
+       Floor& operator=(const Floor& other);    // assignment operator
+              ^~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In destructor ‘virtual Floor::~Floor()’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:47:20: error: no matching function for call to ‘std::vector<iRoom*>::erase()’
+    _RoomList.erase();
+                    ^
+In file included from /usr/include/c++/6.3.1/vector:64:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:13,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+       erase(const_iterator __position)
+       ^~~~~
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note:   candidate expects 1 argument, 0 provided
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator, std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+       erase(const_iterator __first, const_iterator __last)
+       ^~~~~
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note:   candidate expects 2 arguments, 0 provided
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+make: *** [src/Floor.o] Error 1
+16:11:04 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:13:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h: In constructor ‘iHeater::iHeater(unsigned int, std::__cxx11::string, const iRoom*)’:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iHeater.h:15:90: error: invalid conversion from ‘const iRoom*’ to ‘iRoom*’ [-fpermissive]
+       iHeater(unsigned int Id, std::string Name, const iRoom* pRoom):Base(Id, Name, pRoom){};
+                                                                                          ^
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:23:7: note:   initializing argument 3 of ‘Base::Base(unsigned int, std::__cxx11::string, iRoom*)’
+       Base(unsigned int _Id, std::string _Name, iRoom* pRoom) :
+       ^~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h: At global scope:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:29:21: error: ‘iSwitch’ does not name a type
+       virtual const iSwitch& getSwitch(unsigned int ID) const = 0;
+                     ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h: In constructor ‘iFloor::iFloor(unsigned int, std::__cxx11::string, const iRoom*)’:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:18:97: error: invalid conversion from ‘const iRoom*’ to ‘iRoom*’ [-fpermissive]
+       iFloor(unsigned int Id, std::string Name, const iRoom* pRoom=nullptr):Base(Id, Name, pRoom){};
+                                                                                                 ^
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Base.h:23:7: note:   initializing argument 3 of ‘Base::Base(unsigned int, std::__cxx11::string, iRoom*)’
+       Base(unsigned int _Id, std::string _Name, iRoom* pRoom) :
+       ^~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In copy constructor ‘Floor::Floor(const Floor&)’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:32:47: error: ‘const class Floor’ has no member named ‘_pFloor’; did you mean ‘Floor’?
+       iFloor(_Floor._Id, _Floor._Name, _Floor._pFloor) {
+                                               ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: At global scope:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:36:31: error: cannot declare parameter ‘other’ to be of abstract type ‘Floor’
+ Floor& Floor::operator=(Floor other) {
+                               ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:20:7: note:   because the following virtual functions are pure within ‘Floor’:
+ class Floor : public iFloor
+       ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:23:28: note: 	virtual unsigned int iFloor::getVersion() const
+       virtual unsigned int getVersion() const = 0;
+                            ^~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:28:28: note: 	virtual unsigned int iFloor::getNumberOfSwitches() const
+       virtual unsigned int getNumberOfSwitches() const = 0;
+                            ^~~~~~~~~~~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:32:20: note: 	virtual void iFloor::addFloor(const iFloor&)
+       virtual void addFloor(const iFloor& _Floor) = 0;
+                    ^~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:36:8: error: prototype for ‘Floor& Floor::operator=(Floor)’ does not match any in class ‘Floor’
+ Floor& Floor::operator=(Floor other) {
+        ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:29:14: error: candidate is: Floor& Floor::operator=(const Floor&)
+       Floor& operator=(const Floor& other);    // assignment operator
+              ^~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In destructor ‘virtual Floor::~Floor()’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:47:20: error: no matching function for call to ‘std::vector<iRoom*>::erase()’
+    _RoomList.erase();
+                    ^
+In file included from /usr/include/c++/6.3.1/vector:64:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:13,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+       erase(const_iterator __position)
+       ^~~~~
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note:   candidate expects 1 argument, 0 provided
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator, std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+       erase(const_iterator __first, const_iterator __last)
+       ^~~~~
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note:   candidate expects 2 arguments, 0 provided
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+make: *** [src/Floor.o] Error 1
+16:11:55 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:29:21: error: ‘iSwitch’ does not name a type
+       virtual const iSwitch& getSwitch(unsigned int ID) const = 0;
+                     ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In copy constructor ‘Floor::Floor(const Floor&)’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:32:47: error: ‘const class Floor’ has no member named ‘_pFloor’; did you mean ‘Floor’?
+       iFloor(_Floor._Id, _Floor._Name, _Floor._pFloor) {
+                                               ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: At global scope:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:36:31: error: cannot declare parameter ‘other’ to be of abstract type ‘Floor’
+ Floor& Floor::operator=(Floor other) {
+                               ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:20:7: note:   because the following virtual functions are pure within ‘Floor’:
+ class Floor : public iFloor
+       ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:23:28: note: 	virtual unsigned int iFloor::getVersion() const
+       virtual unsigned int getVersion() const = 0;
+                            ^~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:28:28: note: 	virtual unsigned int iFloor::getNumberOfSwitches() const
+       virtual unsigned int getNumberOfSwitches() const = 0;
+                            ^~~~~~~~~~~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:32:20: note: 	virtual void iFloor::addFloor(const iFloor&)
+       virtual void addFloor(const iFloor& _Floor) = 0;
+                    ^~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:36:8: error: prototype for ‘Floor& Floor::operator=(Floor)’ does not match any in class ‘Floor’
+ Floor& Floor::operator=(Floor other) {
+        ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:29:14: error: candidate is: Floor& Floor::operator=(const Floor&)
+       Floor& operator=(const Floor& other);    // assignment operator
+              ^~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In destructor ‘virtual Floor::~Floor()’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:47:20: error: no matching function for call to ‘std::vector<iRoom*>::erase()’
+    _RoomList.erase();
+                    ^
+In file included from /usr/include/c++/6.3.1/vector:64:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:13,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+       erase(const_iterator __position)
+       ^~~~~
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note:   candidate expects 1 argument, 0 provided
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator, std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+       erase(const_iterator __first, const_iterator __last)
+       ^~~~~
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note:   candidate expects 2 arguments, 0 provided
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+make: *** [src/Floor.o] Error 1
+16:15:54 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:36:31: error: cannot declare parameter ‘other’ to be of abstract type ‘Floor’
+ Floor& Floor::operator=(Floor other) {
+                               ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:20:7: note:   because the following virtual functions are pure within ‘Floor’:
+ class Floor : public iFloor
+       ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:23:28: note: 	virtual unsigned int iFloor::getVersion() const
+       virtual unsigned int getVersion() const = 0;
+                            ^~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:28:28: note: 	virtual unsigned int iFloor::getNumberOfSwitches() const
+       virtual unsigned int getNumberOfSwitches() const = 0;
+                            ^~~~~~~~~~~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:29:32: note: 	virtual const iSwitchIn& iFloor::getSwitch(unsigned int) const
+       virtual const iSwitchIn& getSwitch(unsigned int ID) const = 0;
+                                ^~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:32:20: note: 	virtual void iFloor::addFloor(const iFloor&)
+       virtual void addFloor(const iFloor& _Floor) = 0;
+                    ^~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:36:8: error: prototype for ‘Floor& Floor::operator=(Floor)’ does not match any in class ‘Floor’
+ Floor& Floor::operator=(Floor other) {
+        ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:29:14: error: candidate is: Floor& Floor::operator=(const Floor&)
+       Floor& operator=(const Floor& other);    // assignment operator
+              ^~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In destructor ‘virtual Floor::~Floor()’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:47:20: error: no matching function for call to ‘std::vector<iRoom*>::erase()’
+    _RoomList.erase();
+                    ^
+In file included from /usr/include/c++/6.3.1/vector:64:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:13,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+       erase(const_iterator __position)
+       ^~~~~
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note:   candidate expects 1 argument, 0 provided
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator, std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+       erase(const_iterator __first, const_iterator __last)
+       ^~~~~
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note:   candidate expects 2 arguments, 0 provided
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+make: *** [src/Floor.o] Error 1
+16:17:21 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In destructor ‘virtual Floor::~Floor()’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:47:20: error: no matching function for call to ‘std::vector<iRoom*>::erase()’
+    _RoomList.erase();
+                    ^
+In file included from /usr/include/c++/6.3.1/vector:64:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:13,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+       erase(const_iterator __position)
+       ^~~~~
+/usr/include/c++/6.3.1/bits/stl_vector.h:1147:7: note:   candidate expects 1 argument, 0 provided
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note: candidate: std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator, std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<iRoom**, std::vector<iRoom*> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = iRoom**; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<iRoom* const*, std::vector<iRoom*> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = iRoom* const*]
+       erase(const_iterator __first, const_iterator __last)
+       ^~~~~
+/usr/include/c++/6.3.1/bits/stl_vector.h:1174:7: note:   candidate expects 2 arguments, 0 provided
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+make: *** [src/Floor.o] Error 1
+16:24:46 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In destructor ‘virtual Floor::~Floor()’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:47:55: error: expected ‘;’ before ‘)’ token
+    _RoomList.erase(_RoomList.begin(), _RoomList.end()));
+                                                       ^
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:53:37: error: qualified-id in declaration before ‘(’ token
+ unsigned int Floor::getNumberOfRooms() const
+                                     ^
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:62:20: error: qualified-id in declaration before ‘(’ token
+ void Floor::addRoom(iRoom* ptrRoom)
+                    ^
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:67:28: error: qualified-id in declaration before ‘(’ token
+ const iRoom& Floor::getRoom(std::string name) const
+                            ^
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:67:41: error: expected primary-expression before ‘name’
+ const iRoom& Floor::getRoom(std::string name) const
+                                         ^~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:78:1: error: expected ‘}’ at end of input
+ }
+ ^
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+make: *** [src/Floor.o] Error 1
+16:25:23 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In destructor ‘virtual Floor::~Floor()’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:53:37: error: qualified-id in declaration before ‘(’ token
+ unsigned int Floor::getNumberOfRooms() const
+                                     ^
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:62:20: error: qualified-id in declaration before ‘(’ token
+ void Floor::addRoom(iRoom* ptrRoom)
+                    ^
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:67:28: error: qualified-id in declaration before ‘(’ token
+ const iRoom& Floor::getRoom(std::string name) const
+                            ^
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:67:41: error: expected primary-expression before ‘name’
+ const iRoom& Floor::getRoom(std::string name) const
+                                         ^~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:78:1: error: expected ‘}’ at end of input
+ }
+ ^
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+make: *** [src/Floor.o] Error 1
+16:27:14 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+Finished building: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In member function ‘virtual void House_Constructor_EmptyRoomList_Test::TestBody()’:
+../src/main.cpp:21:10: error: cannot declare variable ‘_Floor’ to be of abstract type ‘Floor’
+    Floor _Floor(0, "Test");
+          ^~~~~~
+In file included from ../src/main.cpp:11:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:20:7: note:   because the following virtual functions are pure within ‘Floor’:
+ class Floor : public iFloor
+       ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from ../src/main.cpp:11:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:23:28: note: 	virtual unsigned int iFloor::getVersion() const
+       virtual unsigned int getVersion() const = 0;
+                            ^~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:28:28: note: 	virtual unsigned int iFloor::getNumberOfSwitches() const
+       virtual unsigned int getNumberOfSwitches() const = 0;
+                            ^~~~~~~~~~~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:29:32: note: 	virtual const iSwitchIn& iFloor::getSwitch(unsigned int) const
+       virtual const iSwitchIn& getSwitch(unsigned int ID) const = 0;
+                                ^~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:32:20: note: 	virtual void iFloor::addFloor(const iFloor&)
+       virtual void addFloor(const iFloor& _Floor) = 0;
+                    ^~~~~~~~
+../src/main.cpp: In member function ‘virtual void House_Constructor_CheckName_Equal_Test::TestBody()’:
+../src/main.cpp:26:10: error: cannot declare variable ‘_Floor’ to be of abstract type ‘Floor’
+    Floor _Floor(0, "Test");
+          ^~~~~~
+src/subdir.mk:42: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+17:08:44 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+Finished building: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In member function ‘virtual void House_Constructor_EmptyRoomList_Test::TestBody()’:
+../src/main.cpp:21:10: error: cannot declare variable ‘_Floor’ to be of abstract type ‘Floor’
+    Floor _Floor(0, "Test");
+          ^~~~~~
+In file included from ../src/main.cpp:11:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:20:7: note:   because the following virtual functions are pure within ‘Floor’:
+ class Floor : public iFloor
+       ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from ../src/main.cpp:11:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:28:28: note: 	virtual unsigned int iFloor::getNumberOfSwitches() const
+       virtual unsigned int getNumberOfSwitches() const = 0;
+                            ^~~~~~~~~~~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:29:32: note: 	virtual const iSwitchIn& iFloor::getSwitch(unsigned int) const
+       virtual const iSwitchIn& getSwitch(unsigned int ID) const = 0;
+                                ^~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:32:20: note: 	virtual void iFloor::addFloor(const iFloor&)
+       virtual void addFloor(const iFloor& _Floor) = 0;
+                    ^~~~~~~~
+../src/main.cpp: In member function ‘virtual void House_Constructor_CheckName_Equal_Test::TestBody()’:
+../src/main.cpp:26:10: error: cannot declare variable ‘_Floor’ to be of abstract type ‘Floor’
+    Floor _Floor(0, "Test");
+          ^~~~~~
+src/subdir.mk:42: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+17:20:38 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In function ‘unsigned int getNumberOfSwitches()’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:57:25: error: ‘_RoomList’ was not declared in this scope
+    for (iRoom* ptrRoom: _RoomList)
+                         ^~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:59:56: error: ‘name’ was not declared in this scope
+       if(boost::algorithm::iequals(ptrRoom->getName(), name))
+                                                        ^~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:61:18: error: cannot convert ‘iRoom’ to ‘unsigned int’ in return
+          return *ptrRoom;
+                  ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:56:17: warning: unused variable ‘NumberOfSwitches’ [-Wunused-variable]
+    unsigned int NumberOfSwitches = 0;
+                 ^~~~~~~~~~~~~~~~
+make: *** [src/Floor.o] Error 1
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+17:23:12 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+Finished building: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In member function ‘virtual void House_Constructor_EmptyRoomList_Test::TestBody()’:
+../src/main.cpp:21:10: error: cannot declare variable ‘_Floor’ to be of abstract type ‘Floor’
+    Floor _Floor(0, "Test");
+          ^~~~~~
+In file included from ../src/main.cpp:11:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:20:7: note:   because the following virtual functions are pure within ‘Floor’:
+ class Floor : public iFloor
+       ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from ../src/main.cpp:11:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:28:28: note: 	virtual unsigned int iFloor::getNumberOfSwitches() const
+       virtual unsigned int getNumberOfSwitches() const = 0;
+                            ^~~~~~~~~~~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:29:32: note: 	virtual const iSwitchIn& iFloor::getSwitch(unsigned int) const
+       virtual const iSwitchIn& getSwitch(unsigned int ID) const = 0;
+                                ^~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:32:20: note: 	virtual void iFloor::addFloor(const iFloor&)
+       virtual void addFloor(const iFloor& _Floor) = 0;
+                    ^~~~~~~~
+../src/main.cpp: In member function ‘virtual void House_Constructor_CheckName_Equal_Test::TestBody()’:
+../src/main.cpp:26:10: error: cannot declare variable ‘_Floor’ to be of abstract type ‘Floor’
+    Floor _Floor(0, "Test");
+          ^~~~~~
+src/subdir.mk:42: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+17:28:48 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:54:14: error: prototype for ‘unsigned int Floor::getNumberOfSwitches() const’ does not match any in class ‘Floor’
+ unsigned int Floor::getNumberOfSwitches() const
+              ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:32:28: error: candidate is: virtual unsigned int Floor::getNumberOfSwitches()
+       virtual unsigned int getNumberOfSwitches();
+                            ^~~~~~~~~~~~~~~~~~~
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+make: *** [src/Floor.o] Error 1
+17:29:29 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+Finished building: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In member function ‘virtual void House_Constructor_EmptyRoomList_Test::TestBody()’:
+../src/main.cpp:21:10: error: cannot declare variable ‘_Floor’ to be of abstract type ‘Floor’
+    Floor _Floor(0, "Test");
+          ^~~~~~
+In file included from ../src/main.cpp:11:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:20:7: note:   because the following virtual functions are pure within ‘Floor’:
+ class Floor : public iFloor
+       ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from ../src/main.cpp:11:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:29:32: note: 	virtual const iSwitchIn& iFloor::getSwitch(unsigned int) const
+       virtual const iSwitchIn& getSwitch(unsigned int ID) const = 0;
+                                ^~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:32:20: note: 	virtual void iFloor::addFloor(const iFloor&)
+       virtual void addFloor(const iFloor& _Floor) = 0;
+                    ^~~~~~~~
+../src/main.cpp: In member function ‘virtual void House_Constructor_CheckName_Equal_Test::TestBody()’:
+../src/main.cpp:26:10: error: cannot declare variable ‘_Floor’ to be of abstract type ‘Floor’
+    Floor _Floor(0, "Test");
+          ^~~~~~
+src/subdir.mk:42: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+17:40:01 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+Finished building: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In member function ‘virtual void House_Constructor_EmptyRoomList_Test::TestBody()’:
+../src/main.cpp:21:10: error: cannot declare variable ‘_Floor’ to be of abstract type ‘Floor’
+    Floor _Floor(0, "Test");
+          ^~~~~~
+In file included from ../src/main.cpp:11:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:20:7: note:   because the following virtual functions are pure within ‘Floor’:
+ class Floor : public iFloor
+       ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:11:0,
+                 from ../src/main.cpp:11:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:32:20: note: 	virtual void iFloor::addFloor(const iFloor&)
+       virtual void addFloor(const iFloor& _Floor) = 0;
+                    ^~~~~~~~
+../src/main.cpp: In member function ‘virtual void House_Constructor_CheckName_Equal_Test::TestBody()’:
+../src/main.cpp:26:10: error: cannot declare variable ‘_Floor’ to be of abstract type ‘Floor’
+    Floor _Floor(0, "Test");
+          ^~~~~~
+src/subdir.mk:42: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+17:46:58 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:56:23: error: stray ‘@’ in program
+   _RoomList.push_back(@room);
+                       ^
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In member function ‘virtual unsigned int Floor::addRoom(const iRoom&)’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:56:28: error: no matching function for call to ‘std::vector<iRoom*>::push_back(const iRoom&)’
+   _RoomList.push_back(@room);
+                            ^
+In file included from /usr/include/c++/6.3.1/vector:64:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:13,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/usr/include/c++/6.3.1/bits/stl_vector.h:914:7: note: candidate: void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::value_type = iRoom*]
+       push_back(const value_type& __x)
+       ^~~~~~~~~
+/usr/include/c++/6.3.1/bits/stl_vector.h:914:7: note:   no known conversion for argument 1 from ‘const iRoom’ to ‘iRoom* const&’
+/usr/include/c++/6.3.1/bits/stl_vector.h:932:7: note: candidate: void std::vector<_Tp, _Alloc>::push_back(std::vector<_Tp, _Alloc>::value_type&&) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::value_type = iRoom*]
+       push_back(value_type&& __x)
+       ^~~~~~~~~
+/usr/include/c++/6.3.1/bits/stl_vector.h:932:7: note:   no known conversion for argument 1 from ‘const iRoom’ to ‘iRoom*&&’
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: At global scope:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:104:6: error: prototype for ‘void Floor::addRoom(iRoom*)’ does not match any in class ‘Floor’
+ void Floor::addRoom(iRoom* ptrRoom)
+      ^~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:54:14: error: candidate is: virtual unsigned int Floor::addRoom(const iRoom&)
+ unsigned int Floor::addRoom(const iRoom& room)
+              ^~~~~
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+make: *** [src/Floor.o] Error 1
+17:47:21 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In member function ‘virtual unsigned int Floor::addRoom(const iRoom&)’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:56:23: error: no match for ‘operator*’ (operand type is ‘const iRoom’)
+   _RoomList.push_back(*room);
+                       ^~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: At global scope:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:104:6: error: prototype for ‘void Floor::addRoom(iRoom*)’ does not match any in class ‘Floor’
+ void Floor::addRoom(iRoom* ptrRoom)
+      ^~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:54:14: error: candidate is: virtual unsigned int Floor::addRoom(const iRoom&)
+ unsigned int Floor::addRoom(const iRoom& room)
+              ^~~~~
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+make: *** [src/Floor.o] Error 1
+17:47:59 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: In member function ‘virtual unsigned int Floor::addRoom(const iRoom&)’:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:56:28: error: no matching function for call to ‘push_back(const iRoom*)’
+   _RoomList.push_back(&room);
+                            ^
+In file included from /usr/include/c++/6.3.1/vector:64:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:13,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/usr/include/c++/6.3.1/bits/stl_vector.h:914:7: note: candidate: void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::value_type = iRoom*] <near match>
+       push_back(const value_type& __x)
+       ^~~~~~~~~
+/usr/include/c++/6.3.1/bits/stl_vector.h:914:7: note:   conversion of argument 1 would be ill-formed:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:56:23: error: invalid conversion from ‘const iRoom*’ to ‘std::vector<iRoom*>::value_type {aka iRoom*}’ [-fpermissive]
+   _RoomList.push_back(&room);
+                       ^~~~~
+In file included from /usr/include/c++/6.3.1/vector:64:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:13,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:
+/usr/include/c++/6.3.1/bits/stl_vector.h:932:7: note: candidate: void std::vector<_Tp, _Alloc>::push_back(std::vector<_Tp, _Alloc>::value_type&&) [with _Tp = iRoom*; _Alloc = std::allocator<iRoom*>; std::vector<_Tp, _Alloc>::value_type = iRoom*] <near match>
+       push_back(value_type&& __x)
+       ^~~~~~~~~
+/usr/include/c++/6.3.1/bits/stl_vector.h:932:7: note:   conversion of argument 1 would be ill-formed:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:56:23: error: invalid conversion from ‘const iRoom*’ to ‘std::vector<iRoom*>::value_type {aka iRoom*}’ [-fpermissive]
+   _RoomList.push_back(&room);
+                       ^~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp: At global scope:
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:104:6: error: prototype for ‘void Floor::addRoom(iRoom*)’ does not match any in class ‘Floor’
+ void Floor::addRoom(iRoom* ptrRoom)
+      ^~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:54:14: error: candidate is: virtual unsigned int Floor::addRoom(const iRoom&)
+ unsigned int Floor::addRoom(const iRoom& room)
+              ^~~~~
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+make: *** [src/Floor.o] Error 1
+17:49:38 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:54:35: error: cannot declare parameter ‘room’ to be of abstract type ‘iRoom’
+ unsigned int Floor::addRoom(iRoom room)
+                                   ^~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/include/Room.h:16:0,
+                 from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:8:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iRoom.h:24:7: note:   because the following virtual functions are pure within ‘iRoom’:
+ class iRoom: public Base {
+       ^~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iRoom.h:38:32: note: 	virtual const iSwitchIn* iRoom::getSwitchIn(std::__cxx11::string) const
+       virtual const iSwitchIn* getSwitchIn(std::string Name) const = 0;
+                                ^~~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iRoom.h:41:28: note: 	virtual const iTime* iRoom::getTimeRef() const
+       virtual const iTime* getTimeRef() const = 0;
+                            ^~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iRoom.h:47:20: note: 	virtual void iRoom::addSwitchIn(const iSwitchIn&)
+       virtual void addSwitchIn(const iSwitchIn& SwitchIn) = 0;
+                    ^~~~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:54:14: error: prototype for ‘unsigned int Floor::addRoom(iRoom)’ does not match any in class ‘Floor’
+ unsigned int Floor::addRoom(iRoom room)
+              ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:38:28: error: candidate is: virtual unsigned int Floor::addRoom(const iRoom&)
+       virtual unsigned int addRoom(const iRoom& room);
+                            ^~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:104:6: error: prototype for ‘void Floor::addRoom(iRoom*)’ does not match any in class ‘Floor’
+ void Floor::addRoom(iRoom* ptrRoom)
+      ^~~~~
+In file included from /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:7:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:38:28: error: candidate is: virtual unsigned int Floor::addRoom(const iRoom&)
+       virtual unsigned int addRoom(const iRoom& room);
+                            ^~~~~~~
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+make: *** [src/Floor.o] Error 1
+17:50:23 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:104:6: error: prototype for ‘void Floor::addRoom(iRoom*)’ does not match any in class ‘Floor’
+ void Floor::addRoom(iRoom* ptrRoom)
+      ^~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:54:14: error: candidate is: virtual unsigned int Floor::addRoom(iRoom&)
+ unsigned int Floor::addRoom(iRoom& room)
+              ^~~~~
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+make: *** [src/Floor.o] Error 1
+17:50:50 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:104:6: error: prototype for ‘void Floor::addRoom(iRoom&)’ does not match any in class ‘Floor’
+ void Floor::addRoom(iRoom& ptrRoom)
+      ^~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:54:14: error: candidate is: virtual unsigned int Floor::addRoom(iRoom&)
+ unsigned int Floor::addRoom(iRoom& room)
+              ^~~~~
+make: *** [src/Floor.o] Error 1
+src/subdir.mk:28: recipe for target 'src/Floor.o' failed
+17:51:51 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+Finished building: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Floor_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Floor_test"  ./src/Floor.o ./src/gmock-all.o ./src/main.o   -lgtest -lgtest_main -lpthread
+./src/Floor.o: In function `Floor::Floor(Floor const&)':
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:32: undefined reference to `iFloor::~iFloor()'
+makefile:45: recipe for target 'Floor_test' failed
+./src/Floor.o: In function `Floor::~Floor()':
+/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp:45: undefined reference to `iFloor::~iFloor()'
+./src/Floor.o: In function `iFloor::iFloor(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, iRoom*)':
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iFloor.h:18: undefined reference to `vtable for iFloor'
+./src/Floor.o:(.rodata._ZTI5Floor[_ZTI5Floor]+0x10): undefined reference to `typeinfo for iFloor'
+collect2: error: ld returned 1 exit status
+make: *** [Floor_test] Error 1
+17:52:42 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+Finished building: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Floor_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Floor_test"  ./src/Floor.o ./src/gmock-all.o ./src/main.o   -lgtest -lgtest_main -lpthread
+Finished building target: Floor_test
+ 
+18:11:08 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+Finished building: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+ 
+Building file: /usr/src/gmock/gmock-all.cc
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/gmock-all.d" -MT"src/gmock-all.o" -o "src/gmock-all.o" "/usr/src/gmock/gmock-all.cc"
+Finished building: /usr/src/gmock/gmock-all.cc
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from /usr/include/gmock/gmock.h:61:0,
+                 from ../src/main.cpp:9:
+/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks/MockRoom.h:16:23: error: conflicting return type specified for ‘virtual const iSwitchIn& MockRoom::getSwitchIn(testing::internal::Function<const iSwitchIn&(std::__cxx11::basic_string<char>)>::Argument1) const’
+    MOCK_CONST_METHOD1(getSwitchIn,   const iSwitchIn&(std::string Name));
+                       ^
+In file included from /home/micha/rpi/projects/HouseWorkspace/Mocks/mocks/MockRoom.h:2:0,
+                 from ../src/main.cpp:13:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iRoom.h:38:32: error:   overriding ‘virtual const iSwitchIn* iRoom::getSwitchIn(std::__cxx11::string) const’
+       virtual const iSwitchIn* getSwitchIn(std::string Name) const = 0;
+                                ^~~~~~~~~~~
+../src/main.cpp: In member function ‘virtual void House_Constructor_addOneRoom_NonEmptyRoomList_Test::TestBody()’:
+../src/main.cpp:35:4: error: expected initializer before ‘_Floor’
+    _Floor.addRoom(_Room1();)
+    ^~~~~~
+../src/main.cpp:35:28: error: expected primary-expression before ‘)’ token
+    _Floor.addRoom(_Room1();)
+                            ^
+In file included from /usr/include/gtest/gtest.h:1929:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp:36:4: error: ‘else’ without a previous ‘if’
+    EXPECT_EQ(1, _Floor.getNumberOfRooms());
+    ^
+In file included from /usr/include/gtest/gtest.h:58:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp:36:4: error: ‘gtest_ar’ was not declared in this scope
+    EXPECT_EQ(1, _Floor.getNumberOfRooms());
+    ^
+make: *** [src/main.o] Error 1
+src/subdir.mk:42: recipe for target 'src/main.o' failed
+18:14:15 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+Finished building: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from /usr/include/gmock/gmock.h:61:0,
+                 from ../src/main.cpp:9:
+/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks/MockRoom.h:22:4: error: ‘Result’ in ‘struct testing::internal::Function<unsigned int>’ does not name a type
+    MOCK_CONST_METHOD0(getNumberOfSwitches, unsigned int);
+    ^
+In file included from /usr/include/gtest/gtest.h:58:0,
+                 from ../src/main.cpp:8:
+/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks/MockRoom.h:22:4: error: field ‘gmockconst0_getNumberOfSwitches_22’ has incomplete type ‘testing::internal::FunctionMocker<unsigned int>’
+    MOCK_CONST_METHOD0(getNumberOfSwitches, unsigned int);
+    ^
+In file included from /usr/include/gmock/gmock-generated-function-mockers.h:43:0,
+                 from /usr/include/gmock/gmock.h:61,
+                 from ../src/main.cpp:9:
+/usr/include/gmock/gmock-spec-builders.h:93:29: note: declaration of ‘class testing::internal::FunctionMocker<unsigned int>’
+ template <typename F> class FunctionMocker;
+                             ^~~~~~~~~~~~~~
+../src/main.cpp: In member function ‘virtual void House_Constructor_addOneRoom_NonEmptyRoomList_Test::TestBody()’:
+../src/main.cpp:35:4: error: expected initializer before ‘_Floor’
+    _Floor.addRoom(_Room1();)
+    ^~~~~~
+../src/main.cpp:35:28: error: expected primary-expression before ‘)’ token
+    _Floor.addRoom(_Room1();)
+                            ^
+In file included from /usr/include/gtest/gtest.h:1929:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp:36:4: error: ‘else’ without a previous ‘if’
+    EXPECT_EQ(1, _Floor.getNumberOfRooms());
+    ^
+In file included from /usr/include/gtest/gtest.h:58:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp:36:4: error: ‘gtest_ar’ was not declared in this scope
+    EXPECT_EQ(1, _Floor.getNumberOfRooms());
+    ^
+make: *** [src/main.o] Error 1
+src/subdir.mk:42: recipe for target 'src/main.o' failed
+18:15:00 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In member function ‘virtual void House_Constructor_addOneRoom_NonEmptyRoomList_Test::TestBody()’:
+../src/main.cpp:35:4: error: expected initializer before ‘_Floor’
+    _Floor.addRoom(_Room1();)
+    ^~~~~~
+../src/main.cpp:35:28: error: expected primary-expression before ‘)’ token
+    _Floor.addRoom(_Room1();)
+                            ^
+In file included from /usr/include/gtest/gtest.h:1929:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp:36:4: error: ‘else’ without a previous ‘if’
+    EXPECT_EQ(1, _Floor.getNumberOfRooms());
+    ^
+In file included from /usr/include/gtest/gtest.h:58:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp:36:4: error: ‘gtest_ar’ was not declared in this scope
+    EXPECT_EQ(1, _Floor.getNumberOfRooms());
+    ^
+src/subdir.mk:42: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+18:16:02 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In member function ‘virtual void House_Constructor_addOneRoom_NonEmptyRoomList_Test::TestBody()’:
+../src/main.cpp:35:26: error: no match for call to ‘(MockRoom) ()’
+    _Floor.addRoom(_Room1();)
+                          ^
+../src/main.cpp:35:28: error: expected primary-expression before ‘)’ token
+    _Floor.addRoom(_Room1();)
+                            ^
+In file included from /usr/include/gtest/gtest.h:1929:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp:36:4: error: ‘else’ without a previous ‘if’
+    EXPECT_EQ(1, _Floor.getNumberOfRooms());
+    ^
+In file included from /usr/include/gtest/gtest.h:58:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp:36:4: error: ‘gtest_ar’ was not declared in this scope
+    EXPECT_EQ(1, _Floor.getNumberOfRooms());
+    ^
+src/subdir.mk:42: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+18:16:34 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Floor_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Floor_test"  ./src/Floor.o ./src/gmock-all.o ./src/main.o   -lgtest -lgtest_main -lpthread
+makefile:45: recipe for target 'Floor_test' failed
+./src/main.o: In function `iRoom::iRoom(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, iFloor const*)':
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iRoom.h:27: undefined reference to `vtable for iRoom'
+./src/main.o: In function `iRoom::~iRoom()':
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iRoom.h:29: undefined reference to `vtable for iRoom'
+./src/main.o:(.rodata._ZTI8MockRoom[_ZTI8MockRoom]+0x10): undefined reference to `typeinfo for iRoom'
+collect2: error: ld returned 1 exit status
+make: *** [Floor_test] Error 1
+18:20:05 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+Finished building: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Floor_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Floor_test"  ./src/Floor.o ./src/gmock-all.o ./src/main.o   -lgtest -lgtest_main -lpthread
+./src/main.o: In function `iRoom::iRoom(unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, iFloor const*)':
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iRoom.h:27: undefined reference to `vtable for iRoom'
+./src/main.o: In function `iRoom::~iRoom()':
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iRoom.h:29: undefined reference to `vtable for iRoom'
+./src/main.o:(.rodata._ZTI8MockRoom[_ZTI8MockRoom]+0x10): undefined reference to `typeinfo for iRoom'
+collect2: error: ld returned 1 exit status
+make: *** [Floor_test] Error 1
+makefile:45: recipe for target 'Floor_test' failed
+18:23:52 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+Finished building: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Floor_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Floor_test"  ./src/Floor.o ./src/gmock-all.o ./src/main.o   -lgtest -lgtest_main -lpthread
+Finished building target: Floor_test
+ 
+18:26:04 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Floor_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Floor_test"  ./src/Floor.o ./src/gmock-all.o ./src/main.o   -lgtest -lgtest_main -lpthread
+Finished building target: Floor_test
+ 
+18:26:49 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Floor_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Floor_test"  ./src/Floor.o ./src/gmock-all.o ./src/main.o   -lgtest -lgtest_main -lpthread
+Finished building target: Floor_test
+ 
+18:28:29 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from /usr/include/gmock/gmock-generated-function-mockers.h:43:0,
+                 from /usr/include/gmock/gmock.h:61,
+                 from ../src/main.cpp:9:
+../src/main.cpp: In member function ‘virtual void House_Constructor_addOneRoom_CheckNumberofSwitches_Test::TestBody()’:
+../src/main.cpp:48:4: error: expected primary-expression before ‘)’ token
+    EXPECT_CALL(MockRoom, getNumberOfSwitches()).WillOnce(Return(1));
+    ^
+src/subdir.mk:42: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+18:30:16 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from /usr/include/gmock/gmock-generated-function-mockers.h:43:0,
+                 from /usr/include/gmock/gmock.h:61,
+                 from ../src/main.cpp:9:
+../src/main.cpp: In member function ‘virtual void House_Constructor_addOneRoom_CheckNumberofSwitches_Test::TestBody()’:
+../src/main.cpp:48:4: error: expected primary-expression before ‘)’ token
+    EXPECT_CALL(MockRoom, getNumberOfSwitches()).WillOnce(Return(3));
+    ^
+src/subdir.mk:42: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+18:33:39 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from /usr/include/gmock/gmock-generated-function-mockers.h:43:0,
+                 from /usr/include/gmock/gmock.h:61,
+                 from ../src/main.cpp:9:
+../src/main.cpp: In member function ‘virtual void House_Constructor_addOneRoom_CheckNumberofSwitches_Test::TestBody()’:
+../src/main.cpp:48:4: error: expected primary-expression before ‘)’ token
+    EXPECT_CALL(MockRoom, getNumberOfSwitches());
+    ^
+src/subdir.mk:42: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+18:34:54 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Floor_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Floor_test"  ./src/Floor.o ./src/gmock-all.o ./src/main.o   -lgtest -lgtest_main -lpthread
+Finished building target: Floor_test
+ 
+18:35:35 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Floor_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Floor_test"  ./src/Floor.o ./src/gmock-all.o ./src/main.o   -lgtest -lgtest_main -lpthread
+Finished building target: Floor_test
+ 
+18:36:06 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Floor_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Floor_test"  ./src/Floor.o ./src/gmock-all.o ./src/main.o   -lgtest -lgtest_main -lpthread
+Finished building target: Floor_test
+ 
+18:39:38 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+../src/main.cpp: In member function ‘virtual void House_Constructor_addTwoRooms_CheckNumberOfSwitches_Test::TestBody()’:
+../src/main.cpp:55:19: error: redeclaration of ‘MockRoom _Room1’
+    MockRoom _Room1(2, "TestRoom2", &_Floor);
+                   ^
+../src/main.cpp:54:13: note: ‘MockRoom _Room1’ previously declared here
+    MockRoom _Room1(1, "TestRoom1", &_Floor);
+             ^~~~~~
+In file included from /usr/include/gmock/gmock-generated-function-mockers.h:43:0,
+                 from /usr/include/gmock/gmock.h:61,
+                 from ../src/main.cpp:9:
+../src/main.cpp:58:16: error: ‘_Room2’ was not declared in this scope
+    EXPECT_CALL(_Room2, getNumberOfSwitches()).WillOnce(Return(30));
+                ^
+make: *** [src/main.o] Error 1
+src/subdir.mk:42: recipe for target 'src/main.o' failed
+18:39:53 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Floor_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Floor_test"  ./src/Floor.o ./src/gmock-all.o ./src/main.o   -lgtest -lgtest_main -lpthread
+Finished building target: Floor_test
+ 
+18:40:38 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: Floor_test
+Invoking: GCC C++ Linker
+g++ -Lworkspace_loc:/XmlParser/Debug -o "Floor_test"  ./src/Floor.o ./src/gmock-all.o ./src/main.o   -lgtest -lgtest_main -lpthread
+Finished building target: Floor_test
+ 
+19:16:48 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from /usr/include/gmock/gmock-generated-function-mockers.h:43:0,
+                 from /usr/include/gmock/gmock.h:61,
+                 from ../src/main.cpp:9:
+../src/main.cpp: In member function ‘virtual void House_Constructor_addOneRoom_CheckSwitchesWrongName_Test::TestBody()’:
+../src/main.cpp:72:36: error: no matching function for call to ‘MockRoom::gmock_getSwitchIn()’
+    EXPECT_CALL(_Room1, getSwitchIn()).WillOnce(Return(nullptr));
+                                    ^
+In file included from /usr/include/gmock/gmock.h:61:0,
+                 from ../src/main.cpp:9:
+/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks/MockRoom.h:12:4: note: candidate: testing::internal::MockSpec<const iSwitchIn*(std::__cxx11::basic_string<char>)>& MockRoom::gmock_getSwitchIn(const testing::Matcher<std::__cxx11::basic_string<char> >&) const
+    MOCK_CONST_METHOD1(getSwitchIn,   const iSwitchIn*(std::string Name));
+    ^
+/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks/MockRoom.h:12:4: note:   candidate expects 1 argument, 0 provided
+In file included from /usr/include/gtest/gtest.h:1929:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp:73:40: error: no matching function for call to ‘Floor::getSwitch()’
+    EXPECT_EQ(nullptr, _Floor.getSwitch());
+                                        ^
+In file included from ../src/main.cpp:11:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:35:32: note: candidate: virtual const iSwitchIn* Floor::getSwitch(std::__cxx11::string) const
+       virtual const iSwitchIn* getSwitch(std::string name) const;
+                                ^~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:35:32: note:   candidate expects 1 argument, 0 provided
+In file included from /usr/include/gmock/gmock-generated-function-mockers.h:43:0,
+                 from /usr/include/gmock/gmock.h:61,
+                 from ../src/main.cpp:9:
+../src/main.cpp: In member function ‘virtual void House_Constructor_addOneRoom_CheckSwitchesRightName_Test::TestBody()’:
+../src/main.cpp:80:36: error: no matching function for call to ‘MockRoom::gmock_getSwitchIn()’
+    EXPECT_CALL(_Room1, getSwitchIn()).WillOnce(Return(1234));
+                                    ^
+In file included from /usr/include/gmock/gmock.h:61:0,
+                 from ../src/main.cpp:9:
+/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks/MockRoom.h:12:4: note: candidate: testing::internal::MockSpec<const iSwitchIn*(std::__cxx11::basic_string<char>)>& MockRoom::gmock_getSwitchIn(const testing::Matcher<std::__cxx11::basic_string<char> >&) const
+    MOCK_CONST_METHOD1(getSwitchIn,   const iSwitchIn*(std::string Name));
+    ^
+/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks/MockRoom.h:12:4: note:   candidate expects 1 argument, 0 provided
+In file included from /usr/include/gtest/gtest.h:1929:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp:81:37: error: no matching function for call to ‘Floor::getSwitch()’
+    EXPECT_EQ(1234, _Floor.getSwitch());
+                                     ^
+In file included from ../src/main.cpp:11:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:35:32: note: candidate: virtual const iSwitchIn* Floor::getSwitch(std::__cxx11::string) const
+       virtual const iSwitchIn* getSwitch(std::string name) const;
+                                ^~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:35:32: note:   candidate expects 1 argument, 0 provided
+In file included from /usr/include/gtest/gtest.h:58:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp: At global scope:
+../src/main.cpp:84:6: error: redefinition of ‘class House_Constructor_addTwoRooms_CheckNumberOfSwitches_Test’
+ TEST(House, Constructor_addTwoRooms_CheckNumberOfSwitches) {
+      ^
+../src/main.cpp:52:6: error: previous definition of ‘class House_Constructor_addTwoRooms_CheckNumberOfSwitches_Test’
+ TEST(House, Constructor_addTwoRooms_CheckNumberOfSwitches) {
+      ^
+../src/main.cpp:84:1: error: redefinition of ‘testing::TestInfo* const House_Constructor_addTwoRooms_CheckNumberOfSwitches_Test::test_info_’
+ TEST(House, Constructor_addTwoRooms_CheckNumberOfSwitches) {
+ ^
+../src/main.cpp:52:6: note: ‘testing::TestInfo* const House_Constructor_addTwoRooms_CheckNumberOfSwitches_Test::test_info_’ previously declared here
+ TEST(House, Constructor_addTwoRooms_CheckNumberOfSwitches) {
+      ^
+../src/main.cpp:84:6: error: redefinition of ‘void House_Constructor_addTwoRooms_CheckNumberOfSwitches_Test::TestBody()’
+ TEST(House, Constructor_addTwoRooms_CheckNumberOfSwitches) {
+      ^
+../src/main.cpp:52:6: note: ‘virtual void House_Constructor_addTwoRooms_CheckNumberOfSwitches_Test::TestBody()’ previously defined here
+ TEST(House, Constructor_addTwoRooms_CheckNumberOfSwitches) {
+      ^
+src/subdir.mk:42: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+19:18:24 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from /usr/include/gtest/gtest.h:1929:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp: In member function ‘virtual void House_Constructor_addOneRoom_CheckSwitchesWrongName_Test::TestBody()’:
+../src/main.cpp:73:40: error: no matching function for call to ‘Floor::getSwitch()’
+    EXPECT_EQ(nullptr, _Floor.getSwitch());
+                                        ^
+In file included from ../src/main.cpp:11:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:35:32: note: candidate: virtual const iSwitchIn* Floor::getSwitch(std::__cxx11::string) const
+       virtual const iSwitchIn* getSwitch(std::string name) const;
+                                ^~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:35:32: note:   candidate expects 1 argument, 0 provided
+In file included from /usr/include/gtest/gtest.h:1929:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp: In member function ‘virtual void House_Constructor_addOneRoom_CheckSwitchesRightName_Test::TestBody()’:
+../src/main.cpp:81:37: error: no matching function for call to ‘Floor::getSwitch()’
+    EXPECT_EQ(1234, _Floor.getSwitch());
+                                     ^
+In file included from ../src/main.cpp:11:0:
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:35:32: note: candidate: virtual const iSwitchIn* Floor::getSwitch(std::__cxx11::string) const
+       virtual const iSwitchIn* getSwitch(std::string name) const;
+                                ^~~~~~~~~
+/home/micha/rpi/projects/HouseWorkspace/House/include/Floor.h:35:32: note:   candidate expects 1 argument, 0 provided
+In file included from /usr/include/gtest/gtest.h:58:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp: At global scope:
+../src/main.cpp:84:6: error: redefinition of ‘class House_Constructor_addTwoRooms_CheckNumberOfSwitches_Test’
+ TEST(House, Constructor_addTwoRooms_CheckNumberOfSwitches) {
+      ^
+../src/main.cpp:52:6: error: previous definition of ‘class House_Constructor_addTwoRooms_CheckNumberOfSwitches_Test’
+ TEST(House, Constructor_addTwoRooms_CheckNumberOfSwitches) {
+      ^
+../src/main.cpp:84:1: error: redefinition of ‘testing::TestInfo* const House_Constructor_addTwoRooms_CheckNumberOfSwitches_Test::test_info_’
+ TEST(House, Constructor_addTwoRooms_CheckNumberOfSwitches) {
+ ^
+../src/main.cpp:52:6: note: ‘testing::TestInfo* const House_Constructor_addTwoRooms_CheckNumberOfSwitches_Test::test_info_’ previously declared here
+ TEST(House, Constructor_addTwoRooms_CheckNumberOfSwitches) {
+      ^
+../src/main.cpp:84:6: error: redefinition of ‘void House_Constructor_addTwoRooms_CheckNumberOfSwitches_Test::TestBody()’
+ TEST(House, Constructor_addTwoRooms_CheckNumberOfSwitches) {
+      ^
+../src/main.cpp:52:6: note: ‘virtual void House_Constructor_addTwoRooms_CheckNumberOfSwitches_Test::TestBody()’ previously defined here
+ TEST(House, Constructor_addTwoRooms_CheckNumberOfSwitches) {
+      ^
+In file included from /usr/include/gmock/gmock.h:58:0,
+                 from ../src/main.cpp:9:
+/usr/include/gmock/gmock-actions.h: In instantiation of ‘testing::internal::ReturnAction<R>::Impl<F>::Impl(R) [with F = const iSwitchIn*(std::__cxx11::basic_string<char>); R = int]’:
+/usr/include/gmock/gmock-actions.h:474:22:   required from ‘testing::internal::ReturnAction<R>::operator testing::Action<Func>() const [with F = const iSwitchIn*(std::__cxx11::basic_string<char>); R = int]’
+../src/main.cpp:80:65:   required from here
+/usr/include/gmock/gmock-actions.h:493:60: error: no matching function for call to ‘ImplicitCast_(int&)’
+         : value_(::testing::internal::ImplicitCast_<Result>(value)) {}
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /usr/include/gtest/internal/gtest-internal.h:40:0,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/gtest/internal/gtest-port.h:1098:11: note: candidate: template<class To> To testing::internal::ImplicitCast_(To)
+ inline To ImplicitCast_(To x) { return x; }
+           ^~~~~~~~~~~~~
+/usr/include/gtest/internal/gtest-port.h:1098:11: note:   template argument deduction/substitution failed:
+In file included from /usr/include/gmock/gmock.h:58:0,
+                 from ../src/main.cpp:9:
+/usr/include/gmock/gmock-actions.h:493:60: note:   cannot convert ‘value’ (type ‘int’) to type ‘const iSwitchIn*’
+         : value_(::testing::internal::ImplicitCast_<Result>(value)) {}
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+src/subdir.mk:42: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+19:19:16 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from /usr/include/gtest/gtest.h:58:0,
+                 from ../src/main.cpp:8:
+../src/main.cpp:84:6: error: redefinition of ‘class House_Constructor_addTwoRooms_CheckNumberOfSwitches_Test’
+ TEST(House, Constructor_addTwoRooms_CheckNumberOfSwitches) {
+      ^
+../src/main.cpp:52:6: error: previous definition of ‘class House_Constructor_addTwoRooms_CheckNumberOfSwitches_Test’
+ TEST(House, Constructor_addTwoRooms_CheckNumberOfSwitches) {
+      ^
+../src/main.cpp:84:1: error: redefinition of ‘testing::TestInfo* const House_Constructor_addTwoRooms_CheckNumberOfSwitches_Test::test_info_’
+ TEST(House, Constructor_addTwoRooms_CheckNumberOfSwitches) {
+ ^
+../src/main.cpp:52:6: note: ‘testing::TestInfo* const House_Constructor_addTwoRooms_CheckNumberOfSwitches_Test::test_info_’ previously declared here
+ TEST(House, Constructor_addTwoRooms_CheckNumberOfSwitches) {
+      ^
+../src/main.cpp:84:6: error: redefinition of ‘void House_Constructor_addTwoRooms_CheckNumberOfSwitches_Test::TestBody()’
+ TEST(House, Constructor_addTwoRooms_CheckNumberOfSwitches) {
+      ^
+../src/main.cpp:52:6: note: ‘virtual void House_Constructor_addTwoRooms_CheckNumberOfSwitches_Test::TestBody()’ previously defined here
+ TEST(House, Constructor_addTwoRooms_CheckNumberOfSwitches) {
+      ^
+In file included from /usr/include/gmock/gmock.h:58:0,
+                 from ../src/main.cpp:9:
+/usr/include/gmock/gmock-actions.h: In instantiation of ‘testing::internal::ReturnAction<R>::Impl<F>::Impl(R) [with F = const iSwitchIn*(std::__cxx11::basic_string<char>); R = int]’:
+/usr/include/gmock/gmock-actions.h:474:22:   required from ‘testing::internal::ReturnAction<R>::operator testing::Action<Func>() const [with F = const iSwitchIn*(std::__cxx11::basic_string<char>); R = int]’
+../src/main.cpp:80:65:   required from here
+/usr/include/gmock/gmock-actions.h:493:60: error: no matching function for call to ‘ImplicitCast_(int&)’
+         : value_(::testing::internal::ImplicitCast_<Result>(value)) {}
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /usr/include/gtest/internal/gtest-internal.h:40:0,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/gtest/internal/gtest-port.h:1098:11: note: candidate: template<class To> To testing::internal::ImplicitCast_(To)
+ inline To ImplicitCast_(To x) { return x; }
+           ^~~~~~~~~~~~~
+/usr/include/gtest/internal/gtest-port.h:1098:11: note:   template argument deduction/substitution failed:
+In file included from /usr/include/gmock/gmock.h:58:0,
+                 from ../src/main.cpp:9:
+/usr/include/gmock/gmock-actions.h:493:60: note:   cannot convert ‘value’ (type ‘int’) to type ‘const iSwitchIn*’
+         : value_(::testing::internal::ImplicitCast_<Result>(value)) {}
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h: In instantiation of ‘testing::AssertionResult testing::internal::CmpHelperEQ(const char*, const char*, const T1&, const T2&) [with T1 = int; T2 = const iSwitchIn*]’:
+/usr/include/gtest/gtest.h:1484:23:   required from ‘static testing::AssertionResult testing::internal::EqHelper<lhs_is_null_literal>::Compare(const char*, const char*, const T1&, const T2&) [with T1 = int; T2 = const iSwitchIn*; bool lhs_is_null_literal = false]’
+../src/main.cpp:81:4:   required from here
+/usr/include/gtest/gtest.h:1448:16: error: ISO C++ forbids comparison between pointer and integer [-fpermissive]
+   if (expected == actual) {
+       ~~~~~~~~~^~~~~~~~~
+src/subdir.mk:42: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+20:34:20 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Floor.d" -MT"src/Floor.o" -o "src/Floor.o" "/home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp"
+Finished building: /home/micha/rpi/projects/HouseWorkspace/House/src/Floor.cpp
+ 
+Building file: /usr/src/gmock/gmock-all.cc
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/gmock-all.d" -MT"src/gmock-all.o" -o "src/gmock-all.o" "/usr/src/gmock/gmock-all.cc"
+Finished building: /usr/src/gmock/gmock-all.cc
+ 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from /usr/include/gmock/gmock.h:58:0,
+                 from ../src/main.cpp:9:
+/usr/include/gmock/gmock-actions.h: In instantiation of ‘testing::internal::ReturnAction<R>::Impl<F>::Impl(R) [with F = const iSwitchIn*(std::__cxx11::basic_string<char>); R = int]’:
+/usr/include/gmock/gmock-actions.h:474:22:   required from ‘testing::internal::ReturnAction<R>::operator testing::Action<Func>() const [with F = const iSwitchIn*(std::__cxx11::basic_string<char>); R = int]’
+../src/main.cpp:80:65:   required from here
+/usr/include/gmock/gmock-actions.h:493:60: error: no matching function for call to ‘ImplicitCast_(int&)’
+         : value_(::testing::internal::ImplicitCast_<Result>(value)) {}
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /usr/include/gtest/internal/gtest-internal.h:40:0,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/gtest/internal/gtest-port.h:1098:11: note: candidate: template<class To> To testing::internal::ImplicitCast_(To)
+ inline To ImplicitCast_(To x) { return x; }
+           ^~~~~~~~~~~~~
+/usr/include/gtest/internal/gtest-port.h:1098:11: note:   template argument deduction/substitution failed:
+In file included from /usr/include/gmock/gmock.h:58:0,
+                 from ../src/main.cpp:9:
+/usr/include/gmock/gmock-actions.h:493:60: note:   cannot convert ‘value’ (type ‘int’) to type ‘const iSwitchIn*’
+         : value_(::testing::internal::ImplicitCast_<Result>(value)) {}
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h: In instantiation of ‘testing::AssertionResult testing::internal::CmpHelperEQ(const char*, const char*, const T1&, const T2&) [with T1 = int; T2 = const iSwitchIn*]’:
+/usr/include/gtest/gtest.h:1484:23:   required from ‘static testing::AssertionResult testing::internal::EqHelper<lhs_is_null_literal>::Compare(const char*, const char*, const T1&, const T2&) [with T1 = int; T2 = const iSwitchIn*; bool lhs_is_null_literal = false]’
+../src/main.cpp:81:4:   required from here
+/usr/include/gtest/gtest.h:1448:16: error: ISO C++ forbids comparison between pointer and integer [-fpermissive]
+   if (expected == actual) {
+       ~~~~~~~~~^~~~~~~~~
+src/subdir.mk:42: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1
+20:54:21 **** Incremental Build of configuration Debug for project Floor_test ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:8:0:
+/usr/include/gtest/gtest.h: In instantiation of ‘testing::AssertionResult testing::internal::CmpHelperEQ(const char*, const char*, const T1&, const T2&) [with T1 = int; T2 = const iSwitchIn*]’:
+/usr/include/gtest/gtest.h:1484:23:   required from ‘static testing::AssertionResult testing::internal::EqHelper<lhs_is_null_literal>::Compare(const char*, const char*, const T1&, const T2&) [with T1 = int; T2 = const iSwitchIn*; bool lhs_is_null_literal = false]’
+../src/main.cpp:81:4:   required from here
+/usr/include/gtest/gtest.h:1448:16: error: ISO C++ forbids comparison between pointer and integer [-fpermissive]
+   if (expected == actual) {
+       ~~~~~~~~~^~~~~~~~~
+In file included from /usr/include/gmock/gmock.h:58:0,
+                 from ../src/main.cpp:9:
+/usr/include/gmock/gmock-actions.h: In instantiation of ‘testing::internal::ReturnAction<R>::Impl<F>::Impl(R) [with F = const iSwitchIn*(std::__cxx11::basic_string<char>); R = int]’:
+/usr/include/gmock/gmock-actions.h:474:22:   required from ‘testing::internal::ReturnAction<R>::operator testing::Action<Func>() const [with F = const iSwitchIn*(std::__cxx11::basic_string<char>); R = int]’
+../src/main.cpp:90:65:   required from here
+/usr/include/gmock/gmock-actions.h:493:60: error: no matching function for call to ‘ImplicitCast_(int&)’
+         : value_(::testing::internal::ImplicitCast_<Result>(value)) {}
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+In file included from /usr/include/gtest/internal/gtest-internal.h:40:0,
+                 from /usr/include/gtest/gtest.h:58,
+                 from ../src/main.cpp:8:
+/usr/include/gtest/internal/gtest-port.h:1098:11: note: candidate: template<class To> To testing::internal::ImplicitCast_(To)
+ inline To ImplicitCast_(To x) { return x; }
+           ^~~~~~~~~~~~~
+/usr/include/gtest/internal/gtest-port.h:1098:11: note:   template argument deduction/substitution failed:
+In file included from /usr/include/gmock/gmock.h:58:0,
+                 from ../src/main.cpp:9:
+/usr/include/gmock/gmock-actions.h:493:60: note:   cannot convert ‘value’ (type ‘int’) to type ‘const iSwitchIn*’
+         : value_(::testing::internal::ImplicitCast_<Result>(value)) {}
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+src/subdir.mk:42: recipe for target 'src/main.o' failed
+make: *** [src/main.o] Error 1

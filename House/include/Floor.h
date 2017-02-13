@@ -29,11 +29,13 @@ class Floor : public iFloor
       Floor& operator=(const Floor& other);    // assignment operator
 
       // access functions
+      virtual unsigned int getNumberOfSwitches() const;
       virtual unsigned int getNumberOfRooms() const;
       virtual const iRoom& getRoom(std::string name) const;
+      virtual const iSwitchIn* getSwitch(std::string name) const;
 
       // construction functions
-      virtual void addRoom(iRoom* ptrRoom);
+      virtual unsigned int addRoom(iRoom& room);
 
    protected:
       Floor(){std::cout << "Wrong default constructor for Floor";}

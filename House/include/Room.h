@@ -30,10 +30,10 @@ class Room: public iRoom {
       Room& operator=(const Room& other);
 
       // access functions
-//      virtual const Light& getLight(std::string Name) const;
-//      virtual const Heater& getHeater(std::string Name) const;
-//      virtual const Blind& getBlind(std::string Name) const;
-      virtual const SwitchIn& getSwitchIn(std::string Name) const;
+//      virtual const Light* getLight(std::string Name) const;
+//      virtual const Heater* getHeater(std::string Name) const;
+//      virtual const Blind* getBlind(std::string Name) const;
+      virtual const SwitchIn* getSwitchIn(std::string Name) const;
 
       virtual const iTime* getTimeRef() const;
 
