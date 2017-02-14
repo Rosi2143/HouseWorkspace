@@ -1,15 +1,15 @@
-22:00:42 **** Incremental Build of configuration Debug for project Light_test ****
-make all 
-Building file: ../src/LightSwitchIn.cpp
+18:54:52 **** Incremental Build of configuration Debug for project Light_test ****
+make -j2 all 
+Building file: /usr/src/gmock/gmock-all.cc
 Invoking: GCC C++ Compiler
-g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/LightSwitchIn.d" -MT"src/LightSwitchIn.o" -o "src/LightSwitchIn.o" "../src/LightSwitchIn.cpp"
-In file included from ../src/LightSwitchIn.cpp:10:0:
-/home/micha/rpi/projects/HouseWorkspace/House/include/LightSwitchIn.h:15:28: fatal error: iLightSwitchIn.h: No such file or directory
- #include "iLightSwitchIn.h"
-                            ^
-compilation terminated.
-src/subdir.mk:24: recipe for target 'src/LightSwitchIn.o' failed
-make: *** [src/LightSwitchIn.o] Error 1
+g++ -std=c++0x -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/Mocks/mocks" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/gmock-all.d" -MT"src/gmock-all.o" -o "src/gmock-all.o" "/usr/src/gmock/gmock-all.cc"
+Finished building: /usr/src/gmock/gmock-all.cc
+ 
+Building target: Light_test
+Invoking: GCC C++ Linker
+g++  -o "Light_test"  ./src/LightSwitchIn.o ./src/gmock-all.o ./src/main.o   -lpthread -lgtest_main -lgtest
+Finished building target: Light_test
+ 
 
-22:00:43 Build Finished (took 261ms)
+18:55:00 Build Finished (took 7s.260ms)
 

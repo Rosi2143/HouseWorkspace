@@ -1,7 +1,7 @@
-src/main.d: ../src/main.cpp \
- /home/micha/workspace/TimeAndDate/include/TimeAndDate.h \
- /home/micha/workspace/House/interfaces/iTime.h
+src/main.o: ../src/main.cpp \
+ /home/micha/rpi/projects/HouseWorkspace/TimeAndDate/include/TimeAndDate.h \
+ /home/micha/rpi/projects/HouseWorkspace/House/interfaces/iTime.h
 
-/home/micha/workspace/TimeAndDate/include/TimeAndDate.h:
+/home/micha/rpi/projects/HouseWorkspace/TimeAndDate/include/TimeAndDate.h:
 
-/home/micha/workspace/House/interfaces/iTime.h:
+/home/micha/rpi/projects/HouseWorkspace/House/interfaces/iTime.h:

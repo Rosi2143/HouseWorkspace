@@ -17,6 +17,7 @@
 
 using namespace std;
 using namespace boost::gregorian;
+using namespace boost::posix_time;
 
 using ::testing::_;
 using ::testing::Return;

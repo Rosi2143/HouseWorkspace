@@ -24,4 +24,11 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/gmock-all.cc</name>
+			<type>1</type>
+			<location>/usr/src/gmock/gmock-all.cc</location>
+		</link>
+	</linkedResources>
 </projectDescription>

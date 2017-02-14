@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -lgtest -lgmock -lgtest_main -lpthread
+LIBS := -lgtest -lgtest_main -lpthread
 

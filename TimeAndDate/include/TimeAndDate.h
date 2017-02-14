@@ -18,8 +18,8 @@ class Time: public iTime {
       ;
       virtual ~Time() {
       }
-      virtual ptime getCurrentTime() const {
-         return microsec_clock::local_time();
+      virtual boost::posix_time::ptime getCurrentTime() const {
+         return boost::posix_time::microsec_clock::local_time();
       }
       virtual PressType evalPressType(
             boost::posix_time::time_duration duration) const {

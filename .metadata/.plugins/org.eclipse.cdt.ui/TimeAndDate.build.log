@@ -1,4 +1,14 @@
+19:51:21 **** Build of configuration Debug for project TimeAndDate ****
+make all 
+Building file: ../src/TimeandDate.cpp
+Invoking: Cross G++ Compiler
+arm-linux-gnueabihf-g++ -I"/home/micha/rpi/projects/HouseWorkspace/House/interfaces" -I"/home/micha/rpi/projects/HouseWorkspace/House/include" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/TimeandDate.d" -MT"src/TimeandDate.o" -o "src/TimeandDate.o" "../src/TimeandDate.cpp"
+../src/TimeandDate.cpp:7:25: fatal error: TimeAndDate.h: No such file or directory
+ #include "TimeAndDate.h"
+                         ^
+compilation terminated.
+src/subdir.mk:18: recipe for target 'src/TimeandDate.o' failed
+make: *** [src/TimeandDate.o] Error 1
 
-**** Build of configuration Debug for project TimeAndDate ****
+19:51:21 Build Finished (took 307ms)
 
-Nothing to build for project TimeAndDate
