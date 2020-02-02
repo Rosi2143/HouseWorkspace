@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Mocks/mocks/MockSwitch.h&apos; to &apos;MockSwitchIn.h&apos;" description="Rename resource &apos;MockSwitch.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="mocks/MockSwitch.h" name="MockSwitchIn.h" stamp="1425924503898" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Mocks/mocks/MockHeater.h&apos; to &apos;MockHeaterSwitchIn.h&apos;" description="Rename resource &apos;MockHeater.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="mocks/MockHeater.h" name="MockHeaterSwitchIn.h" stamp="1425928911736" updateReferences="true"/>
-</session>

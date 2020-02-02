@@ -1,1 +1,0 @@
-/Max7312/src/Max7311.Doxyfile

@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;FunctionTracer/src/FunctionTace.h&apos; to &apos;FunctionTrace.h&apos;" description="Rename resource &apos;FunctionTace.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/FunctionTace.h" name="FunctionTrace.h" stamp="1460323887405" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;FunctionTracer/src/FunctionTrace.h&apos; to &apos;FunctionTracer.h&apos;" description="Rename resource &apos;FunctionTrace.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/FunctionTrace.h" name="FunctionTracer.h" stamp="1460323925406" updateReferences="true"/>
-</session>
